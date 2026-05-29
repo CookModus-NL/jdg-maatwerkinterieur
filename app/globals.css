@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── JDG Maatwerk Interieur — Dark Editorial ────────── */
+  /* Bron: jdg-maatwerkinterieur.nl — pure dark + groene fauteuil-mark + Inter */
+
+  /* Ink (background levels) */
+  --color-ink-950: #08090A;
+  --color-ink-900: #0E0F11;
+  --color-ink-800: #16181B;
+  --color-ink-700: #1E2125;
+  --color-ink-600: #2A2D32;
+  --color-ink-500: #3D4148;
+  --color-ink-400: #6B6F76;
+  --color-ink-300: #9CA0A6;
+  --color-ink-200: #C8CCD1;
+  --color-ink-100: #E9EBEE;
+  --color-ink-50:  #F6F7F8;
+
+  /* JDG-groen (uit logo cirkel) */
+  --color-jdg-50:  #E8F6EE;
+  --color-jdg-100: #C7EAD4;
+  --color-jdg-200: #98D9B0;
+  --color-jdg-300: #66C589;
+  --color-jdg-400: #3FB272;
+  --color-jdg-500: #2E9B5C;
+  --color-jdg-600: #248049;
+  --color-jdg-700: #1D6539;
+  --color-jdg-800: #15482A;
+  --color-jdg-900: #0E2F1B;
+
+  /* Warm wood accent (zichtbaar in zijn werk: deco legno, eik) */
+  --color-wood-300: #D6B991;
+  --color-wood-400: #B89870;
+  --color-wood-500: #97774F;
+
+  /* ─── Backward-compat aliassen (subpages gebruiken nog primary/accent/paper/mist/clay) ─── */
+  --color-paper: var(--color-ink-950);
+  --color-mist:  var(--color-ink-800);
+  --color-clay:  var(--color-ink-900);
+
+  --color-primary-50:  var(--color-ink-50);
+  --color-primary-100: var(--color-ink-800);
+  --color-primary-200: var(--color-ink-700);
+  --color-primary-300: var(--color-ink-400);
+  --color-primary-400: var(--color-ink-400);
+  --color-primary-500: var(--color-ink-400);
+  --color-primary-600: var(--color-ink-300);
+  --color-primary-700: var(--color-ink-200);
+  --color-primary-800: var(--color-ink-100);
+  --color-primary-900: #FFFFFF;
+
+  --color-accent-50:  var(--color-jdg-50);
+  --color-accent-100: var(--color-jdg-100);
+  --color-accent-200: var(--color-jdg-200);
+  --color-accent-300: var(--color-jdg-300);
+  --color-accent-400: var(--color-jdg-400);
+  --color-accent-500: var(--color-jdg-400);
+  --color-accent-600: var(--color-jdg-500);
+  --color-accent-700: var(--color-jdg-700);
+  --color-accent-800: var(--color-jdg-800);
+  --color-accent-900: var(--color-jdg-900);
+
+  /* ─── Typografie ────────────────────────────── */
+  /* Display: Fraunces — editorial serif, contemporary classic — voor headlines/atelier feel */
+  /* Body: Inter — clean grotesk — voor leesbaarheid */
+  --font-display: 'Fraunces Variable', 'Editorial New', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Inter Variable', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+
+  /* ─── Layout ────────────────────────────────── */
+  --breakpoint-3xl: 110rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background: var(--color-ink-950);
+  }
+  body {
+    background: var(--color-ink-950);
+    color: var(--color-ink-200);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    font-optical-sizing: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    color: #FFFFFF;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    font-feature-settings: 'ss01', 'ss02', 'liga';
+  }
+  h1 { font-weight: 400; letter-spacing: -0.035em; }
+  h2 { font-weight: 400; letter-spacing: -0.025em; }
+  h3 { font-weight: 500; letter-spacing: -0.02em; }
+  *:focus-visible {
+    outline: 2px solid var(--color-jdg-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--color-jdg-400);
+    color: var(--color-ink-950);
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-ink-950); }
+  ::-webkit-scrollbar-thumb { background: var(--color-ink-700); border-radius: 6px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-jdg-600); }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16;
+  }
+  .container-tight {
+    @apply mx-auto w-full max-w-5xl px-6 sm:px-10 lg:px-16;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-medium text-ink-950 transition-all duration-300 hover:bg-jdg-400 hover:text-white active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-600 bg-transparent px-7 py-3.5 text-base font-medium text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-ink-950 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-jdg-400 px-7 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-jdg-500 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink-300 transition-all hover:text-white hover:bg-ink-800;
+  }
+
+  /* Subtiele uppercase eyebrow — clean, no line ornament */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-jdg-400;
+  }
+  .eyebrow::before {
+    content: '◆';
+    @apply text-[6px] text-jdg-400 leading-none;
+  }
+
+  /* Photo-tile met zacht JDG-groen overlay-glow */
+  .photo-card {
+    @apply relative overflow-hidden rounded-2xl bg-ink-800;
+  }
+  .photo-card::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/0 to-ink-950/10 pointer-events-none;
+  }
+
+  /* Reveal-animatie */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .reveal-delay-1 { animation-delay: 0.08s; }
+  .reveal-delay-2 { animation-delay: 0.16s; }
+  .reveal-delay-3 { animation-delay: 0.24s; }
+  .reveal-delay-4 { animation-delay: 0.32s; }
+
+  /* Image hover */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  .img-zoom img {
+    @apply transition-transform duration-[1200ms] ease-out;
+  }
+  .img-zoom:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Subtiel grid pattern op dark — zoals op zijn eigen site */
+  .ink-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 88px 88px;
+  }
+
+  /* Glow voor logo cirkel */
+  .jdg-glow {
+    box-shadow: 0 0 0 1px rgba(63, 178, 114, 0.2), 0 8px 40px -8px rgba(63, 178, 114, 0.4);
+  }
+
+  /* Big display nummers (counters etc.) */
+  .num-display {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum', 'ss01';
+    letter-spacing: -0.04em;
+  }
+
+  /* Horizontale rule subtiel */
+  .hr-soft {
+    @apply border-0 border-t border-ink-800;
+  }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-drift { animation: drift 6s ease-in-out infinite; }
+
+/* Marquee voor service-strip */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}

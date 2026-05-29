@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" role="img" aria-label="JDG Maatwerk Interieur">
+  <defs>
+    <style>
+      .name { font: 700 26px/1 'Fraunces Variable', Georgia, serif; fill: #1F3D2D; letter-spacing: 0.02em; }
+      .sub  { font: 500 10px/1 'Inter Variable', system-ui, sans-serif; fill: #B8915E; letter-spacing: 0.32em; text-transform: uppercase; }
+    </style>
+  </defs>
+  <!-- Icoon: drie houten lamellen in oplopende hoogte (JDG) -->
+  <g transform="translate(10 14)">
+    <rect x="0"  y="14" width="12" height="38" rx="3" fill="#1F3D2D"/>
+    <rect x="16" y="0"  width="12" height="52" rx="3" fill="#B8915E"/>
+    <rect x="32" y="24" width="12" height="28" rx="3" fill="#1F3D2D"/>
+  </g>
+  <!-- Woordmerk -->
+  <text class="name" x="74" y="38">JDG</text>
+  <text class="sub"  x="74" y="58">MAATWERK INTERIEUR</text>
+</svg>
