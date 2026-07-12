@@ -118,7 +118,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      <section className="py-24 bg-bone-100">
+      <section className="py-24 bg-paper-2">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">

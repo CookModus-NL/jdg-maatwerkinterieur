@@ -62,7 +62,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
-      <section className="py-24 bg-bone-100">
+      <section className="py-24 bg-paper-2">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8 mb-12">
             <div className="col-span-12 lg:col-span-6">

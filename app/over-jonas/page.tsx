@@ -75,7 +75,7 @@ export default function OverJonas() {
         </div>
       </section>
 
-      <section className="py-24 bg-bone-100">
+      <section className="py-24 bg-paper-2">
         <div className="container-x">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Werkwijze</span>

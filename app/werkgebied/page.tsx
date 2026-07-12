@@ -62,12 +62,12 @@ export default function Werkgebied() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-ink-950 text-bone-50">
+      <section className="py-24 lg:py-32 bg-ink-950 text-paper">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
               <span className="eyebrow !text-jdg-400">Zoeken op dienst</span>
-              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-normal leading-[1.05] tracking-[-0.02em] text-bone-50">
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-normal leading-[1.05] tracking-[-0.02em] text-paper">
                 Waar zoek je maatwerk voor?
               </h2>
             </div>
@@ -83,7 +83,7 @@ export default function Werkgebied() {
                       <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-jdg-400 tabular">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <h3 className="font-display text-2xl font-normal text-bone-50 group-hover:text-jdg-400 transition-colors">
+                      <h3 className="font-display text-2xl font-normal text-paper group-hover:text-jdg-400 transition-colors">
                         {s.title}
                       </h3>
                     </div>

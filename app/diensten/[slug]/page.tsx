@@ -87,7 +87,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Voordelen */}
-      <section className="py-24 lg:py-32 bg-bone-100">
+      <section className="py-24 lg:py-32 bg-paper-2">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8 mb-14">
             <div className="col-span-12 lg:col-span-5">
@@ -142,7 +142,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-ink-950 text-bone-50">
+      <section className="py-24 bg-ink-950 text-paper">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
@@ -156,7 +156,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 {s.faqs.map((f, i) => (
                   <details key={i} className="border-b border-ink-800 py-6 group">
                     <summary className="flex cursor-pointer items-start justify-between gap-4 list-none">
-                      <h3 className="font-display text-xl lg:text-2xl font-normal text-bone-50 pr-6">{f.q}</h3>
+                      <h3 className="font-display text-xl lg:text-2xl font-normal text-paper pr-6">{f.q}</h3>
                       <span className="text-jdg-400 text-2xl mt-1 group-open:rotate-45 transition-transform inline-block">+</span>
                     </summary>
                     <p className="mt-4 text-[15px] leading-relaxed text-ink-300 max-w-2xl">{f.a}</p>
@@ -169,7 +169,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Werkgebied cross-sell */}
-      <section className="py-24 lg:py-32 bg-bone-100">
+      <section className="py-24 lg:py-32 bg-paper-2">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="eyebrow">Werkgebied</span>

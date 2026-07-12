@@ -28,7 +28,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-bone-50/90 backdrop-blur-md border-b border-ink-900/10'
+          ? 'bg-paper/90 backdrop-blur-md border-b border-ink-900/8'
           : 'bg-transparent'
       }`}
     >
@@ -38,7 +38,7 @@ export function Header() {
             <Logo variant="lockup" tone="ink" />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-9">
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -72,7 +72,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-bone-50 border-t border-ink-900/10">
+        <div className="lg:hidden bg-paper border-t border-ink-900/10">
           <div className="container-x py-8 flex flex-col gap-6">
             {nav.map((item) => (
               <Link
