@@ -3,7 +3,7 @@ import { services } from '@/content/services'
 import { cities } from '@/content/cities'
 
 export function localBusinessSchema() {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'HomeAndConstructionBusiness', 'FurnitureStore'],
     '@id': `${business.url}/#business`,
@@ -12,16 +12,12 @@ export function localBusinessSchema() {
     description: business.description,
     slogan: business.tagline,
     url: business.url,
+    logo: `${business.url}/logo/jdg-mark.png`,
     image: `${business.url}/opengraph-image`,
-    telephone: business.phoneE164,
     email: business.email,
+    telephone: business.phoneE164,
     foundingDate: business.founded,
-    knowsLanguage: ['nl-NL'],
-    founder: {
-      '@type': 'Person',
-      name: 'Jonas',
-      jobTitle: 'Maatwerk interieurbouwer',
-    },
+    knowsLanguage: ['nl-NL', 'en'],
     address: {
       '@type': 'PostalAddress',
       streetAddress: business.address.street,
@@ -30,9 +26,11 @@ export function localBusinessSchema() {
       addressRegion: business.address.province,
       addressCountry: business.address.country,
     },
-    areaServed: cities.map((c) => ({ '@type': 'City', name: c.name })),
-    geo: { '@type': 'GeoCoordinates', latitude: 51.665, longitude: 4.755 },
-    identifier: [{ '@type': 'PropertyValue', name: 'KvK', value: business.kvk }],
+    areaServed: [
+      { '@type': 'Country', name: 'Nederland' },
+      ...cities.map((c) => ({ '@type': 'City', name: c.name })),
+    ],
+    geo: { '@type': 'GeoCoordinates', latitude: 51.6653, longitude: 4.7526 },
     openingHoursSpecification: business.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: `https://schema.org/${h.day}`,
@@ -55,6 +53,10 @@ export function localBusinessSchema() {
         },
       })),
     },
-    sameAs: business.social.instagram ? [business.social.instagram] : [],
+    sameAs: business.social.instagram ? [business.social.instagram] : undefined,
   }
+  if (business.kvk) {
+    schema.identifier = [{ '@type': 'PropertyValue', name: 'KvK', value: business.kvk }]
+  }
+  return schema
 }

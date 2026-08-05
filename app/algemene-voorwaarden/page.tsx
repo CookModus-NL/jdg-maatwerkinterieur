@@ -11,16 +11,16 @@ export default function AVPage() {
     <section className="bg-paper py-16 lg:py-24">
       <article className="container-tight">
         <div className="eyebrow">Juridisch</div>
-        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-primary-900 sm:text-5xl">
+        <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink-950 sm:text-5xl">
           Algemene voorwaarden
         </h1>
-        <p className="mt-4 text-primary-600">
+        <p className="mt-4 text-ink-700">
           {business.legalName} · KvK {business.kvk} · Vestigingsadres: {business.address.street}, {business.address.postalCode} {business.address.city}
         </p>
 
-        <div className="mt-12 space-y-10 text-primary-700 leading-relaxed">
+        <div className="mt-12 space-y-10 text-ink-800 leading-relaxed">
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 1 – Definities</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 1 – Definities</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li><strong>JDG Maatwerk Interieur</strong>: de onderneming gevestigd te Terheijden, ingeschreven bij de Kamer van Koophandel onder nummer {business.kvk}.</li>
               <li><strong>Opdrachtgever</strong>: iedere natuurlijke persoon of rechtspersoon die werkzaamheden laat uitvoeren door JDG Maatwerk Interieur.</li>
@@ -29,7 +29,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 2 – Toepasselijkheid</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 2 – Toepasselijkheid</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Deze algemene voorwaarden zijn van toepassing op alle offertes, overeenkomsten, werkzaamheden, leveringen en diensten van JDG Maatwerk Interieur.</li>
               <li>Afwijkingen van deze voorwaarden zijn uitsluitend geldig indien schriftelijk overeengekomen.</li>
@@ -38,7 +38,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 3 – Offertes en overeenkomsten</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 3 – Offertes en overeenkomsten</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Alle offertes zijn vrijblijvend tenzij schriftelijk anders vermeld.</li>
               <li>Offertes zijn gebaseerd op de op dat moment bekende informatie, opgegeven maten, materiaalkeuze en omstandigheden.</li>
@@ -49,7 +49,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 4 – Aanbetaling en productie</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 4 – Aanbetaling en productie</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur is gerechtigd een aanbetaling te verlangen van maximaal 50% van de overeengekomen prijs voor het bestellen van materialen en het starten van de productie.</li>
               <li>Productie start pas na ontvangst van de aanbetaling en schriftelijk akkoord op de definitieve maatvoering.</li>
@@ -58,7 +58,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 5 – Planning en annulering</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 5 – Planning en annulering</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur reserveert tijd, capaciteit en productieruimte specifiek voor opdrachtgever.</li>
               <li>Opdrachtgever dient ervoor zorg te dragen dat de plaatsing op de afgesproken datum direct kan worden uitgevoerd.</li>
@@ -75,7 +75,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 6 – Verplichtingen opdrachtgever</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 6 – Verplichtingen opdrachtgever</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>
                 Opdrachtgever zorgt ervoor dat:
@@ -92,7 +92,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 7 – Uitvoering werkzaamheden</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 7 – Uitvoering werkzaamheden</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur voert werkzaamheden uit naar beste inzicht, vakmanschap en professionele normen.</li>
               <li>Kleine kleur-, maat-, nerf- of structuurverschillen in hout, fineer of plaatmateriaal vallen binnen normale toleranties en vormen geen grond voor afkeuring.</li>
@@ -102,7 +102,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 8 – Meerwerk</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 8 – Meerwerk</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Werkzaamheden buiten de oorspronkelijke opdracht worden beschouwd als meerwerk.</li>
               <li>Meerwerk wordt afzonderlijk gefactureerd tegen het geldende tarief.</li>
@@ -111,7 +111,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 9 – Betaling</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 9 – Betaling</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Facturen dienen binnen 7 dagen na factuurdatum te worden voldaan tenzij schriftelijk anders overeengekomen.</li>
               <li>Bij niet tijdige betaling is opdrachtgever van rechtswege in verzuim.</li>
@@ -121,7 +121,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 10 – Oplevering en klachten</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 10 – Oplevering en klachten</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Werkzaamheden gelden als opgeleverd zodra opdrachtgever het werk in gebruik neemt, akkoord geeft of JDG Maatwerk Interieur redelijkerwijs heeft aangegeven dat het werk gereed is.</li>
               <li>Klachten dienen binnen 5 werkdagen na oplevering schriftelijk gemeld te worden.</li>
@@ -131,7 +131,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 11 – Aansprakelijkheid</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 11 – Aansprakelijkheid</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur is uitsluitend aansprakelijk voor directe schade veroorzaakt door aantoonbare opzet of grove nalatigheid.</li>
               <li>Aansprakelijkheid is beperkt tot het factuurbedrag van de betreffende werkzaamheden.</li>
@@ -149,7 +149,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 12 – Overmacht</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 12 – Overmacht</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur is niet aansprakelijk voor vertragingen of tekortkomingen als gevolg van overmacht.</li>
               <li>
@@ -159,7 +159,7 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 13 – Garantie</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 13 – Garantie</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>JDG Maatwerk Interieur verleent 5 jaar garantie op de constructie en plaatsing van het geleverde maatwerk, mits correct gebruikt en onderhouden.</li>
               <li>Op beslag (scharnieren, geleiders, sluitwerk) geldt de fabrieksgarantie van de leverancier.</li>
@@ -176,14 +176,14 @@ export default function AVPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 14 – Eigendomsvoorbehoud</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 14 – Eigendomsvoorbehoud</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Alle geleverde meubels, materialen en gemonteerde elementen blijven eigendom van JDG Maatwerk Interieur totdat volledige betaling heeft plaatsgevonden.</li>
             </ol>
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold text-primary-900">Artikel 15 – Toepasselijk recht en geschillen</h2>
+            <h2 className="font-display text-2xl font-bold text-ink-950">Artikel 15 – Toepasselijk recht en geschillen</h2>
             <ol className="mt-4 space-y-2 list-decimal pl-5">
               <li>Op alle overeenkomsten is uitsluitend Nederlands recht van toepassing.</li>
               <li>Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement waarin JDG Maatwerk Interieur gevestigd is.</li>

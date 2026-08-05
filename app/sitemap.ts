@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/diensten`, lastModified: now, priority: 0.9, changeFrequency: 'monthly' },
     { url: `${base}/werkgebied`, lastModified: now, priority: 0.9, changeFrequency: 'monthly' },
     { url: `${base}/projecten`, lastModified: now, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/over-jonas`, lastModified: now, priority: 0.7, changeFrequency: 'yearly' },
+    { url: `${base}/werkwijze`, lastModified: now, priority: 0.7, changeFrequency: 'yearly' },
     { url: `${base}/contact`, lastModified: now, priority: 0.8, changeFrequency: 'yearly' },
     { url: `${base}/privacy`, lastModified: now, priority: 0.3, changeFrequency: 'yearly' },
     { url: `${base}/algemene-voorwaarden`, lastModified: now, priority: 0.3, changeFrequency: 'yearly' },

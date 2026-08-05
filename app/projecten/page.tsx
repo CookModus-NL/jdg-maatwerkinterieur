@@ -2,75 +2,71 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { projects } from '@/content/projects'
+import { business } from '@/content/business'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Projecten · recent maatwerk',
-  description: 'Recente keukens, kledingkasten, tv-meubels en trapkasten op maat. Bekijk wat JDG recent heeft opgeleverd in West-Brabant.',
+  title: 'Projecten',
+  description: 'Recent maatwerk van JDG — keukens, kledingkasten, tv-meubels en overig maatwerk. Alles vanuit de werkplaats in Terheijden, geleverd door heel Nederland.',
+  alternates: { canonical: `${business.url}/projecten` },
 }
 
 export default function ProjectenPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-paper pt-16 pb-16 lg:pt-24">
-        <div aria-hidden className="absolute inset-0 -z-10 tile-pattern opacity-30" />
+      <section className="pt-40 pb-16">
         <div className="container-x">
           <div className="max-w-3xl">
-            <div className="eyebrow">Projecten</div>
-            <h1 className="mt-6 font-display text-5xl font-bold tracking-tight text-primary-900 sm:text-6xl lg:text-7xl leading-[1.02]">
-              Werk dat<br/>
-              <span className="italic font-light text-primary-600">voor zichzelf spreekt.</span>
+            <span className="eyebrow">Projecten</span>
+            <h1 className="mt-8 font-display text-[clamp(3rem,9vw,8rem)] leading-[0.92] tracking-[-0.02em] text-ink-950">
+              Werk dat voor
+              <br />
+              <span className="text-jdg-700">zichzelf spreekt</span>.
             </h1>
-            <p className="mt-8 text-lg text-primary-600 max-w-xl leading-relaxed">
-              Een selectie van recent opgeleverd maatwerk in West-Brabant. Klik door voor foto’s, gebruikte materialen en afwerking.
+            <p className="mt-8 max-w-xl text-[17px] leading-[1.75] text-ink-700">
+              Recente projecten van JDG Maatwerk Interieur. Klik door voor foto's, gebruikte materialen en context.
             </p>
           </div>
         </div>
       </section>
 
-      {/* GRID */}
-      <section className="bg-paper pb-24 lg:pb-32">
+      <section className="pb-32">
         <div className="container-x">
-          <div className="grid gap-6 lg:grid-cols-12">
-            {projects.map((p, i) => {
-              // Magazine layout: 1e groot, daarna varieren
-              const layouts = [
-                'lg:col-span-8 lg:row-span-2',
-                'lg:col-span-4',
-                'lg:col-span-4',
-              ]
-              const span = layouts[i % layouts.length]
-              return (
-                <Link
-                  key={p.slug}
-                  href={`/projecten/${p.slug}`}
-                  className={`group relative overflow-hidden rounded-3xl img-zoom reveal ${span}`}
-                  style={{ animationDelay: `${i * 0.05}s` }}
-                >
-                  <div className="relative aspect-[4/3] lg:h-full">
-                    <Image
-                      src={p.hero}
-                      alt={p.title}
-                      fill
-                      sizes={i === 0 ? '(max-width: 1024px) 100vw, 60vw' : '(max-width: 1024px) 100vw, 40vw'}
-                      className="object-cover"
-                    />
-                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/30 to-transparent" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((p, i) => (
+              <Link
+                key={p.slug}
+                href={`/projecten/${p.slug}`}
+                className={`group relative overflow-hidden rounded-xl bg-ink-900 ${
+                  i === 0 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[4/3]'
+                }`}
+              >
+                <Image
+                  src={p.hero}
+                  alt={p.title}
+                  fill
+                  sizes={i === 0 ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                {/* Overlay-verloop van BENEDEN naar boven — voorkomt tekstoverlap bovenaan */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink-950 via-ink-950/70 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 lg:p-10">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-300">
+                    {p.location}
+                  </span>
+                  <h2 className="mt-2 font-display text-3xl lg:text-4xl leading-tight text-paper">
+                    {p.title}
+                  </h2>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-paper/80">
+                    {p.description}
+                  </p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-paper transition-all group-hover:gap-3">
+                    Bekijk project
+                    <ArrowUpRight className="h-4 w-4" />
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-300">
-                      {p.location} · {p.date}
-                    </div>
-                    <h2 className="mt-2 font-display text-2xl font-semibold text-paper lg:text-3xl">{p.title}</h2>
-                    <p className="mt-3 text-sm leading-relaxed text-paper/85 max-w-md line-clamp-2">{p.description}</p>
-                    <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-paper transition-all group-hover:gap-3">
-                      Bekijk project <ArrowUpRight className="h-4 w-4" />
-                    </div>
-                  </div>
-                </Link>
-              )
-            })}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -5,8 +5,8 @@ import { services } from '@/content/services'
 import { business } from '@/content/business'
 
 export const metadata = {
-  title: 'Werkgebied',
-  description: 'Jonas van JDG werkt vanuit Terheijden door heel Nederland. Bekijk hier het volledige werkgebied per plaats.',
+  title: 'Werkgebied — heel Nederland',
+  description: 'JDG Maatwerk Interieur werkt vanuit Terheijden door heel Nederland — en op verzoek daarbuiten. Bekijk het volledige werkgebied per plaats.',
   alternates: { canonical: `${business.url}/werkgebied` },
 }
 
@@ -18,13 +18,13 @@ export default function Werkgebied() {
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-9">
               <span className="eyebrow">Werkgebied</span>
-              <h1 className="mt-8 font-display text-[clamp(3rem,9vw,8rem)] font-normal leading-[0.92] tracking-[-0.03em] text-ink-900">
-                Vanuit Terheijden,
+              <h1 className="mt-8 font-display text-[clamp(3rem,9vw,8rem)] leading-[0.92] tracking-[-0.02em] text-ink-950">
+                Vanuit Terheijden
                 <br />
-                <span className="italic font-light text-jdg-600">door heel Nederland</span>.
+                door <span className="text-jdg-700">heel Nederland</span>.
               </h1>
               <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
-                Jonas werkt vanuit Terheijden en komt door heel Nederland — voor grotere projecten reist hij overal. Op korte reisafstand komt hij kosteloos langs voor een eerste gesprek.
+                JDG werkt door heel Nederland, met focus op Noord- en West-Brabant. Grote projecten in het buitenland? Op verzoek ook geen probleem.
               </p>
             </div>
           </div>
@@ -35,18 +35,14 @@ export default function Werkgebied() {
         <div className="container-x">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-16 lg:gap-y-16 border-t border-ink-900/15 pt-14">
             {cities.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/werkgebied/${c.slug}`}
-                className="group"
-              >
+              <Link key={c.slug} href={`/werkgebied/${c.slug}`} className="group">
                 <div className="flex items-baseline gap-4 mb-3">
-                  <MapPin className="h-4 w-4 text-jdg-600" />
-                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-500 tabular">
+                  <MapPin className="h-4 w-4 text-jdg-700" />
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink-500 tabular">
                     {c.distanceKm} km · {c.region}
                   </span>
                 </div>
-                <h2 className="font-display text-3xl font-normal text-ink-900 group-hover:text-jdg-600 transition-colors">
+                <h2 className="font-display text-3xl leading-tight text-ink-950 group-hover:text-jdg-700 transition-colors">
                   {c.name}
                 </h2>
                 <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700 max-w-md">
@@ -66,8 +62,8 @@ export default function Werkgebied() {
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
-              <span className="eyebrow !text-jdg-400">Zoeken op dienst</span>
-              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-normal leading-[1.05] tracking-[-0.02em] text-paper">
+              <span className="eyebrow !text-jdg-300">Zoeken op dienst</span>
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.02] tracking-[-0.02em] text-paper">
                 Waar zoek je maatwerk voor?
               </h2>
             </div>
@@ -80,15 +76,15 @@ export default function Werkgebied() {
                     className="group flex items-center justify-between gap-6 py-6 border-b border-ink-800"
                   >
                     <div className="flex items-baseline gap-6">
-                      <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-jdg-400 tabular">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-jdg-300 tabular">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <h3 className="font-display text-2xl font-normal text-paper group-hover:text-jdg-400 transition-colors">
+                      <h3 className="font-display text-2xl leading-tight text-paper group-hover:text-jdg-300 transition-colors">
                         {s.title}
                       </h3>
                     </div>
                     <ArrowUpRight
-                      className="h-5 w-5 shrink-0 text-ink-500 group-hover:text-jdg-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500"
+                      className="h-5 w-5 shrink-0 text-ink-500 group-hover:text-jdg-300 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500"
                       strokeWidth={1}
                     />
                   </Link>

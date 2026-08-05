@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowUpRight, ArrowLeft, MapPin, Phone } from 'lucide-react'
+import { ArrowUpRight, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react'
 import { services, getService } from '@/content/services'
 import { cities, getCity } from '@/content/cities'
 import { business } from '@/content/business'
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const c = getCity(city)
   if (!s || !c) return {}
   const title = `${s.title} in ${c.name} — JDG Maatwerk Interieur`
-  const desc = `${s.title} in ${c.name}? Jonas van JDG ontwerpt en bouwt maatwerk voor woningen in ${c.name} en omgeving. Vrijblijvend gesprek binnen een week.`
+  const desc = `${s.title} in ${c.name}? JDG ontwerpt en bouwt maatwerk voor woningen in ${c.name} en omgeving. Werkplaats Terheijden, geleverd door heel Nederland.`
   return {
     title,
     description: desc,
@@ -54,22 +54,17 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
 
       <section className="pt-8 pb-16">
         <div className="container-x">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 lg:col-span-9">
-              <span className="eyebrow">{c.region} · {c.postcodePrefix}</span>
-              <h1 className="mt-6 font-display text-[clamp(2.5rem,6.5vw,6rem)] font-normal leading-[0.98] tracking-[-0.02em] text-ink-900">
-                {s.title} in{' '}
-                <span className="italic font-light text-jdg-600">{c.name}</span>.
-              </h1>
-              <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
-                {c.intro}
-              </p>
-            </div>
-          </div>
+          <span className="eyebrow">{c.region} · {c.postcodePrefix}</span>
+          <h1 className="mt-6 font-display text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.02em] text-ink-950">
+            {s.title} in <span className="text-jdg-700">{c.name}</span>.
+          </h1>
+          <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
+            {c.intro}
+          </p>
 
           <div className="mt-16 grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-7">
-              <div className="relative aspect-[4/3] overflow-hidden bg-ink-900">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-ink-900">
                 <Image
                   src={s.hero}
                   alt={`${s.title} in ${c.name}`}
@@ -82,30 +77,28 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
             </div>
 
             <div className="col-span-12 lg:col-span-5 flex flex-col">
-              <div className="border-t border-ink-900/15 pt-6">
+              <div className="rounded-xl border border-ink-900/12 bg-paper-2 p-6">
                 <span className="eyebrow">De afstand</span>
                 <div className="mt-4 flex items-baseline gap-3">
-                  <span className="font-display text-6xl font-normal text-ink-900 tabular">
-                    {c.distanceKm || '±0'}
-                  </span>
+                  <span className="font-display text-6xl text-ink-950 tabular">{c.distanceKm || '±0'}</span>
                   <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-500">km vanuit Terheijden</span>
                 </div>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-ink-700">
-                  Jonas komt kosteloos langs voor een eerste gesprek. Rond {c.landmark} werken we vaker aan {s.title.toLowerCase()}.
+                  JDG komt kosteloos langs voor een eerste gesprek. Rond {c.landmark} staat JDG vaker ingepland voor {s.title.toLowerCase()}.
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-ink-900/15 pt-6">
+              <div className="mt-6 rounded-xl border border-ink-900/12 p-6">
                 <span className="eyebrow">Direct contact</span>
                 <div className="mt-6 flex flex-col gap-3">
                   <a
-                    href={waHref(`Hoi Jonas, ik zoek ${s.title.toLowerCase()} in ${c.name}. Kunnen we vrijblijvend afspreken?`)}
+                    href={waHref(`Hoi JDG, ik zoek ${s.title.toLowerCase()} in ${c.name}. Kunnen we vrijblijvend afspreken?`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary justify-center"
                   >
-                    WhatsApp Jonas
-                    <ArrowUpRight className="h-4 w-4" />
+                    <MessageCircle className="h-4 w-4" />
+                    WhatsApp JDG
                   </a>
                   <a href={`tel:${business.phoneE164}`} className="btn btn-outline justify-center">
                     <Phone className="h-4 w-4" />
@@ -122,12 +115,12 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
-              <span className="eyebrow">Onze aanpak in {c.name}</span>
-              <h2 className="mt-6 font-display text-4xl lg:text-5xl font-normal leading-[1.05] tracking-[-0.02em] text-ink-900">
+              <span className="eyebrow">Aanpak in {c.name}</span>
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
                 Zo verloopt een project.
               </h2>
               <p className="mt-6 text-[15px] leading-[1.7] text-ink-700 max-w-md">
-                Voor {c.name} volgt Jonas dezelfde vier stappen als voor elk ander project. Klaar tot in het detail, zonder verrassingen.
+                Voor {c.name} volgt JDG dezelfde vier stappen als voor elk ander project — zonder verrassingen.
               </p>
             </div>
 
@@ -136,10 +129,10 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 {s.process.map((step) => (
                   <div key={step.n} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
                     <div className="col-span-3 lg:col-span-2">
-                      <span className="font-mono text-[13px] text-jdg-600 tabular">{step.n}</span>
+                      <span className="font-mono text-[13px] text-jdg-700 tabular">{step.n}</span>
                     </div>
                     <div className="col-span-9 lg:col-span-10">
-                      <h3 className="font-display text-2xl font-normal text-ink-900">{step.title}</h3>
+                      <h3 className="font-display text-2xl text-ink-950 leading-tight">{step.title}</h3>
                       <p className="mt-2 text-[14.5px] leading-relaxed text-ink-700">{step.body}</p>
                     </div>
                   </div>
@@ -154,8 +147,8 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
         <div className="container-x">
           <div className="max-w-3xl">
             <span className="eyebrow">Andere plaatsen</span>
-            <h2 className="mt-6 font-display text-3xl lg:text-4xl font-normal leading-[1.1] tracking-[-0.02em] text-ink-900">
-              {s.title} elders in de regio.
+            <h2 className="mt-6 font-display text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] text-ink-950">
+              {s.title} elders in Nederland.
             </h2>
           </div>
 
@@ -167,10 +160,10 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 className="group flex items-center justify-between border-b border-ink-900/15 py-3 hover:border-jdg-500 transition-colors"
               >
                 <span className="flex items-center gap-2 text-[14px] font-medium text-ink-900">
-                  <MapPin className="h-3.5 w-3.5 text-jdg-600" />
+                  <MapPin className="h-3.5 w-3.5 text-jdg-700" />
                   {oc.name}
                 </span>
-                <ArrowUpRight className="h-3.5 w-3.5 text-ink-500 group-hover:text-jdg-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
+                <ArrowUpRight className="h-3.5 w-3.5 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
               </Link>
             ))}
           </div>

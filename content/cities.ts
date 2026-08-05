@@ -23,8 +23,8 @@ export const cities: City[] = [
     region: 'West-Brabant',
     distanceKm: 0,
     postcodePrefix: '4844',
-    intro: 'Vanuit ons atelier in Terheijden bouwen wij dagelijks nieuwe interieurs. Jonas kent iedere wijk in het dorp en werkt hier vaker aan huis dan hij gedacht had.',
-    landmark: 'ons atelier aan de Zeggelaan',
+    intro: 'Vanuit onze werkplaats in Terheijden bouwen wij dagelijks nieuwe interieurs. Jonas kent iedere wijk in het dorp en werkt hier vaker aan huis dan hij gedacht had.',
+    landmark: 'ons werkplaats aan de Bredaseweg',
   },
   {
     slug: 'breda',
@@ -41,7 +41,7 @@ export const cities: City[] = [
     region: 'West-Brabant',
     distanceKm: 6,
     postcodePrefix: '4921',
-    intro: 'Made ligt op tien minuten van ons atelier. Wij komen hier regelmatig voor keukens, kasten en tv-meubels op maat in zowel bestaande bouw als nieuwbouw.',
+    intro: 'Made ligt op tien minuten van onze werkplaats. Wij komen hier regelmatig voor keukens, kasten en tv-meubels op maat in zowel bestaande bouw als nieuwbouw.',
     landmark: 'centrum Made',
   },
   {
@@ -95,7 +95,7 @@ export const cities: City[] = [
     region: 'Midden-Brabant',
     distanceKm: 20,
     postcodePrefix: '5121',
-    intro: 'Rijen is bereikbaar binnen een half uur vanuit ons atelier. Wij werken hier vaak aan tv-meubels en boekenkasten op maat in nieuwbouwwoningen.',
+    intro: 'Rijen is bereikbaar binnen een half uur vanuit onze werkplaats. Wij werken hier vaak aan tv-meubels en boekenkasten op maat in nieuwbouwwoningen.',
     landmark: 'centrum Rijen',
   },
   {
