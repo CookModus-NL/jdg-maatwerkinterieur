@@ -55,7 +55,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
 
           <div className="mt-8 inline-flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-500">
-            <span className="text-jdg-700">Afstand</span> — <span className="tabular">{c.distanceKm} km vanuit Terheijden</span>
+            <span className="text-jdg-700">Afstand</span>, <span className="tabular">{c.distanceKm} km vanuit Terheijden</span>
           </div>
         </div>
       </section>

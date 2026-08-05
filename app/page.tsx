@@ -22,7 +22,7 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-6 lg:gap-10">
             <div className="col-span-12 lg:col-span-7">
               <div className="reveal">
-                <span className="eyebrow">Maatwerk interieur — sinds 2025</span>
+                <span className="eyebrow">Maatwerk interieur, sinds 2025</span>
               </div>
               <h1
                 className="reveal mt-8 font-display text-[clamp(3rem,9vw,9rem)] leading-[0.94] tracking-[-0.025em] text-ink-950"
@@ -38,7 +38,7 @@ export default function Home() {
                 className="reveal mt-8 max-w-xl text-[17px] leading-[1.7] text-ink-800"
                 style={{ animationDelay: '0.15s' }}
               >
-                JDG ontwerpt en maakt maatwerk interieur — vanuit de werkplaats in Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.
+                JDG ontwerpt en maakt maatwerk interieur, vanuit de werkplaats in Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.
               </p>
               <div
                 className="reveal mt-10 flex flex-wrap gap-3"
@@ -102,20 +102,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════ FEATURED — KEUKENS ══ */}
+      {/* ══════════════════════════════════════════════ FEATURED, KEUKENS ══ */}
       <section className="relative py-24 lg:py-32 bg-ink-950 text-paper overflow-hidden">
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-1 grain-strip opacity-30" />
         <div className="container-x relative">
           <div className="grid grid-cols-12 gap-8 mb-14">
             <div className="col-span-12 lg:col-span-6">
-              <span className="eyebrow !text-jdg-300">Vak nummer één — keukens</span>
+              <span className="eyebrow !text-jdg-300">Vak nummer één, keukens</span>
               <h2 className="mt-6 font-display text-5xl lg:text-6xl leading-[0.98] tracking-[-0.02em] text-paper">
                 Een keuken die past bij hoe jij kookt.
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-5 lg:col-start-8 lg:pt-4">
               <p className="text-[16.5px] leading-[1.75] text-ink-300 max-w-lg">
-                Keukens zijn het grootste vak — en waar JDG het diepst in duikt. Van eiken massieve fronten tot composieten bladen, alles wordt getekend, gebouwd en gemonteerd door hetzelfde team.
+                Keukens zijn het grootste vak, en waar JDG het diepst in duikt. Van eiken massieve fronten tot composieten bladen, alles wordt getekend, gebouwd en gemonteerd door hetzelfde team.
               </p>
               <Link href={`/diensten/${keukens.slug}`} className="mt-6 inline-flex items-center gap-2 text-[13.5px] font-medium text-jdg-300 link-underline">
                 Alles over keukens op maat
@@ -272,12 +272,12 @@ export default function Home() {
           <div className="rounded-2xl bg-jdg-800 text-paper p-10 lg:p-20">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 lg:col-span-8">
-                <span className="eyebrow !text-jdg-200">Een gesprek verder</span>
+                <span className="eyebrow !text-jdg-200">Even overleggen</span>
                 <h2 className="mt-6 font-display text-4xl lg:text-6xl leading-[0.98] tracking-[-0.02em] text-paper">
-                  Een goede maat begint met een goed gesprek.
+                  Een goede maat begint bij een goed gesprek.
                 </h2>
                 <p className="mt-8 max-w-lg text-[16.5px] leading-[1.75] text-jdg-100">
-                  Bel of stuur een appje met foto's van de ruimte. Binnen één à twee weken hoor je een eerste schets en indicatie.
+                  Bel of stuur een appje met foto's van de ruimte. Meestal binnen één tot twee weken hoor je van ons met een schets en een prijsindicatie.
                 </p>
                 <div className="mt-10 flex flex-wrap gap-3">
                   <a

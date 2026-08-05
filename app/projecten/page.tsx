@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Projecten',
-  description: 'Recent maatwerk van JDG — keukens, kledingkasten, tv-meubels en overig maatwerk. Alles vanuit de werkplaats in Terheijden, geleverd door heel Nederland.',
+  description: 'Recent maatwerk van JDG, keukens, kledingkasten, tv-meubels en overig maatwerk. Alles vanuit de werkplaats in Terheijden, geleverd door heel Nederland.',
   alternates: { canonical: `${business.url}/projecten` },
 }
 
@@ -48,7 +48,7 @@ export default function ProjectenPage() {
                   sizes={i === 0 ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                {/* Overlay-verloop van BENEDEN naar boven — voorkomt tekstoverlap bovenaan */}
+                {/* Overlay-verloop van BENEDEN naar boven, voorkomt tekstoverlap bovenaan */}
                 <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink-950 via-ink-950/70 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 lg:p-10">
                   <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-300">

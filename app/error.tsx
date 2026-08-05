@@ -13,7 +13,7 @@ export default function GlobalError({
   reset: () => void
 }) {
   useEffect(() => {
-    // Logging — Vercel pakt console errors automatisch op via Vercel Logs
+    // Logging, Vercel pakt console errors automatisch op via Vercel Logs
     console.error('Page error:', error)
   }, [error])
 

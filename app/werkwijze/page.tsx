@@ -21,10 +21,10 @@ export default function Werkwijze() {
               <h1 className="mt-6 font-display text-[clamp(3rem,9vw,8rem)] leading-[0.94] tracking-[-0.02em] text-ink-950">
                 Ontwerp, bouw, plaats
                 <br />
-                <span className="text-jdg-700">— één huisstijl</span>.
+                <span className="text-jdg-700">, één huisstijl</span>.
               </h1>
               <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-800">
-                JDG werkt aan één project tegelijk. Ontwerp, productie en montage gebeuren zonder tussenlagen — één handschrift van eerste schets tot laatste knop.
+                JDG werkt aan één project tegelijk. Ontwerp, productie en montage gebeuren zonder tussenlagen, één handschrift van eerste schets tot laatste knop.
               </p>
             </div>
           </div>
@@ -35,10 +35,10 @@ export default function Werkwijze() {
         <div className="container-x">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { n: '01', title: 'Kennismaking', body: 'JDG komt vrijblijvend bij je thuis. Kijken naar de ruimte, luisteren naar wat je zoekt. Geen verkoopgesprek — een gesprek.' },
+              { n: '01', title: 'Kennismaking', body: 'JDG komt vrijblijvend bij je thuis. Kijken naar de ruimte, luisteren naar wat je zoekt. Geen verkoopgesprek, een gesprek.' },
               { n: '02', title: 'Ontwerp en offerte', body: 'Binnen één à twee weken ligt er een schets met materialen en heldere prijsopgave. Aanpassingen zijn onbeperkt tot je akkoord bent.' },
               { n: '03', title: 'Productie in de werkplaats', body: 'In de werkplaats in Terheijden wordt jouw project op maat gebouwd. Onderdelen worden genummerd en gecontroleerd.' },
-              { n: '04', title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Bij voorkeur op casco — sloop van bestaande installatie is in overleg mogelijk.' },
+              { n: '04', title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Bij voorkeur op casco, sloop van bestaande installatie is in overleg mogelijk.' },
             ].map((s) => (
               <div key={s.n} className="rounded-xl border border-ink-900/12 bg-paper-2 p-8">
                 <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-jdg-700">Stap {s.n}</span>
@@ -52,7 +52,7 @@ export default function Werkwijze() {
             <span className="eyebrow">Wat je van JDG mag verwachten</span>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { title: 'Vast contact door het project', body: 'Van eerste appje tot laatste knop — één aanspreekpunt binnen JDG, zonder tussenkanalen.' },
+                { title: 'Vast contact door het project', body: 'Van eerste appje tot laatste knop, één aanspreekpunt binnen JDG, zonder tussenkanalen.' },
                 { title: 'Ontwerp op papier voor productie', body: 'Wat wordt gemaakt is eerst getekend en akkoord bevonden. Geen improviseren op locatie.' },
                 { title: 'Productie in eigen werkplaats', body: 'Alle onderdelen worden in Terheijden gebouwd en gecontroleerd voordat ze naar jou vertrekken.' },
                 { title: 'Garantie op constructie', body: 'Vijf jaar op de constructie. Fabrieksgarantie op scharnieren en beslag. Kitwerk is onderhoudsartikel.' },

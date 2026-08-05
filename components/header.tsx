@@ -20,6 +20,7 @@ export function Header() {
     { href: '/diensten', label: 'Diensten' },
     { href: '/projecten', label: 'Projecten' },
     { href: '/werkwijze', label: 'Werkwijze' },
+    { href: '/over-jonas', label: 'Over Jonas' },
     { href: '/werkgebied', label: 'Werkgebied' },
     { href: '/contact', label: 'Contact' },
   ]

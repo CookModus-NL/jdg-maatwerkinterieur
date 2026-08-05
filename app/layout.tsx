@@ -9,15 +9,15 @@ import '@fontsource-variable/dm-sans'
 import '@fontsource/dm-serif-display'
 import './globals.css'
 
-const TITLE = 'JDG Maatwerk Interieur — Keukens, kasten en meubels op maat'
+const TITLE = 'JDG Maatwerk Interieur, Keukens, kasten en meubels op maat'
 const DESC =
-  'JDG Maatwerk Interieur ontwerpt en maakt keukens, kledingkasten, tv-meubels en overig maatwerk op maat. Werkplaats Terheijden — geleverd door heel Nederland en op verzoek daarbuiten.'
+  'JDG Maatwerk Interieur ontwerpt en maakt keukens, kledingkasten, tv-meubels en overig maatwerk op maat. Werkplaats Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.'
 
 export const viewport: Viewport = { themeColor: '#100e08' }
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.url),
-  title: { default: TITLE, template: '%s — JDG Maatwerk Interieur' },
+  title: { default: TITLE, template: '%s, JDG Maatwerk Interieur' },
   description: DESC,
   keywords: [
     'maatwerk interieur',

@@ -5,8 +5,8 @@ import { services } from '@/content/services'
 import { business } from '@/content/business'
 
 export const metadata = {
-  title: 'Werkgebied — heel Nederland',
-  description: 'JDG Maatwerk Interieur werkt vanuit Terheijden door heel Nederland — en op verzoek daarbuiten. Bekijk het volledige werkgebied per plaats.',
+  title: 'Werkgebied, heel Nederland',
+  description: 'JDG Maatwerk Interieur werkt vanuit Terheijden door heel Nederland, en op verzoek daarbuiten. Bekijk het volledige werkgebied per plaats.',
   alternates: { canonical: `${business.url}/werkgebied` },
 }
 

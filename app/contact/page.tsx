@@ -3,7 +3,7 @@ import { business } from '@/content/business'
 
 export const metadata = {
   title: 'Contact',
-  description: 'Neem contact op met JDG Maatwerk Interieur. WhatsApp gaat het snelst — binnen één à twee weken hoor je een eerste schets en indicatie.',
+  description: 'Neem contact op met JDG Maatwerk Interieur. WhatsApp gaat het snelst, binnen één à twee weken hoor je een eerste schets en indicatie.',
   alternates: { canonical: `${business.url}/contact` },
 }
 
@@ -66,7 +66,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 space-y-1 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500">
-              <div>Werkgebied — heel Nederland, op verzoek daarbuiten</div>
+              <div>Werkgebied, heel Nederland, op verzoek daarbuiten</div>
             </div>
           </div>
         </div>

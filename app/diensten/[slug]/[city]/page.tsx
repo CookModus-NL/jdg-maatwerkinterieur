@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const s = getService(slug)
   const c = getCity(city)
   if (!s || !c) return {}
-  const title = `${s.title} in ${c.name} — JDG Maatwerk Interieur`
+  const title = `${s.title} in ${c.name}, JDG Maatwerk Interieur`
   const desc = `${s.title} in ${c.name}? JDG ontwerpt en bouwt maatwerk voor woningen in ${c.name} en omgeving. Werkplaats Terheijden, geleverd door heel Nederland.`
   return {
     title,
@@ -120,7 +120,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 Zo verloopt een project.
               </h2>
               <p className="mt-6 text-[15px] leading-[1.7] text-ink-700 max-w-md">
-                Voor {c.name} volgt JDG dezelfde vier stappen als voor elk ander project — zonder verrassingen.
+                Voor {c.name} volgt JDG dezelfde vier stappen als voor elk ander project, zonder verrassingen.
               </p>
             </div>
 

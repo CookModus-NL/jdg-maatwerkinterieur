@@ -3,7 +3,7 @@
  *
  * Jonas werkt vanuit Terheijden (West-Brabant) door heel Nederland.
  * Deze lijst voedt de dynamische landing pages voor lokale SEO:
- * /diensten/[service]/[stad] — bijvoorbeeld /diensten/keukens-op-maat/breda.
+ * /diensten/[service]/[stad], bijvoorbeeld /diensten/keukens-op-maat/breda.
  */
 
 export type City = {
@@ -77,7 +77,7 @@ export const cities: City[] = [
     region: 'Midden-Brabant',
     distanceKm: 25,
     postcodePrefix: '50',
-    intro: 'Tilburg is een van onze grotere werkgebieden. Van monumentale panden in het centrum tot moderne appartementen in de Piushaven — wij tekenen ieder ontwerp opnieuw uit.',
+    intro: 'Tilburg is een van onze grotere werkgebieden. Van monumentale panden in het centrum tot moderne appartementen in de Piushaven, wij tekenen ieder ontwerp opnieuw uit.',
     landmark: 'de Piushaven',
   },
   {

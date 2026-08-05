@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="col-span-12 lg:col-span-8">
               <span className="eyebrow">Klaar om te beginnen?</span>
               <h2 className="mt-6 font-display text-4xl lg:text-6xl leading-[0.98] tracking-[-0.02em] text-ink-950">
-                Stuur een appje. JDG belt binnen twee weken terug.
+                Stuur een appje. Wij horen graag van je.
               </h2>
               <div className="mt-10 flex flex-wrap gap-3">
                 <a

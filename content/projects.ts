@@ -1,6 +1,6 @@
 /**
  * Portfolio JDG Maatwerk Interieur.
- * Foto's via jdg-maatwerkinterieur.nl WordPress media — vanzelf in sync.
+ * Foto's via jdg-maatwerkinterieur.nl WordPress media, vanzelf in sync.
  */
 
 import { business } from './business'

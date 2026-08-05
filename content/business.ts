@@ -10,7 +10,7 @@ export const business = {
   ownerFirstName: 'Jonas',
   tagline: 'Maatwerk interieur uit één handschrift',
   description:
-    'Keukens, kledingkasten, tv-meubels en overig maatwerk. Ontworpen en gemaakt in de werkplaats van JDG in Terheijden — geleverd door heel Nederland en op verzoek daarbuiten.',
+    'Keukens, kledingkasten, tv-meubels en overig maatwerk. Ontworpen en gemaakt in de werkplaats van JDG in Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.',
 
   // KvK en BTW volgen zodra registratie voltooid is
   kvk: '',

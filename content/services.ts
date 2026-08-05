@@ -1,5 +1,5 @@
 /**
- * JDG Maatwerk Interieur — diensten.
+ * JDG Maatwerk Interieur, diensten.
  *
  * Toon: JDG als merk/collectief (niet "één man"). Realistische termijnen.
  * Casco als voorkeur, sloop optioneel. Keukens krijgen extra ruimte (grootste
@@ -33,13 +33,13 @@ export const services: Service[] = [
     slug: 'keukens-op-maat',
     title: 'Keukens op maat',
     h1: 'Een keuken die past bij hoe jij kookt.',
-    seoTitle: 'Keuken op maat laten maken — JDG Maatwerk Interieur',
-    metaDescription: 'Keukens op maat van JDG uit Terheijden. Eigen ontwerp, productie en montage — geleverd door heel Nederland en op verzoek daarbuiten.',
+    seoTitle: 'Keuken op maat laten maken, JDG Maatwerk Interieur',
+    metaDescription: 'Keukens op maat van JDG uit Terheijden. Eigen ontwerp, productie en montage, geleverd door heel Nederland en op verzoek daarbuiten.',
     short: 'Elk detail past, elke centimeter klopt.',
     intro: 'Een keuken op maat begint bij hoe je dag eruitziet. Waar je koffie zet, waar de kinderen ontbijten, waar je vrienden komen zitten als er gekookt wordt. Vanuit die dagelijkse routine tekent JDG het ontwerp uit.',
     paragraphs: [
       'Iedere keuken is anders. Een oude vloer die scheef ligt, een schoorsteen die dwarsligt, een raam op een rare hoogte. In een standaardkeuken moet je die dingen negeren. In een keuken op maat maken ze het ontwerp juist beter.',
-      'JDG werkt vanaf schets tot montage aan hetzelfde project. Ontwerp, productie in eigen werkplaats en plaatsing komen samen uit één huis — waardoor er niets tussen wal en schip valt en de kwaliteit strak in de hand blijft.',
+      'JDG werkt vanaf schets tot montage aan hetzelfde project. Ontwerp, productie in eigen werkplaats en plaatsing komen samen uit één huis, waardoor er niets tussen wal en schip valt en de kwaliteit strak in de hand blijft.',
     ],
     benefits: [
       { title: 'Millimeterprecies', body: 'Elke lade, elk kastdeurtje en elke plank passen exact. Geen kitranden om scheve naden weg te werken.' },
@@ -60,7 +60,7 @@ export const services: Service[] = [
       { q: 'Mag ik mijn eigen apparatuur meebrengen?', a: 'In overleg. JDG werkt graag met vaste merken zoals Bosch, Miele en Quooker, maar eigen apparatuur is mogelijk als dat past in het ontwerp.' },
       { q: 'Wat kost een keuken op maat ongeveer?', a: 'Rechte compacte keukens beginnen rond 12.000 euro. Uitgebreide keukens met eiland en premium apparatuur lopen tot 30.000 of meer. Stuur foto\'s van je huidige ruimte voor een indicatie op maat.' },
       { q: 'Komt JDG ook in mijn plaats?', a: 'JDG werkt vanuit Terheijden door heel Nederland. Op verzoek zelfs internationaal. Op korte reisafstand komt JDG kosteloos langs voor een eerste gesprek.' },
-      { q: 'Hoe zit het met garantie?', a: 'Op de constructie geldt vijf jaar garantie. Onderdelen zoals scharnieren en lade-geleiders vallen onder fabrieksgarantie. Kitwerk is onderhoudsartikel — daar geldt geen langlopende garantie op.' },
+      { q: 'Hoe zit het met garantie?', a: 'Op de constructie geldt vijf jaar garantie. Onderdelen zoals scharnieren en lade-geleiders vallen onder fabrieksgarantie. Kitwerk is onderhoudsartikel, daar geldt geen langlopende garantie op.' },
     ],
     icon: ChefHat,
     hero: business.photos.keuken1,
@@ -71,8 +71,8 @@ export const services: Service[] = [
     slug: 'kledingkasten-op-maat',
     title: 'Kledingkasten op maat',
     h1: 'Een kast waar alles écht in past.',
-    seoTitle: 'Kledingkast op maat laten maken — JDG Maatwerk Interieur',
-    metaDescription: 'Kledingkasten op maat van JDG. Tot het plafond, precies passend in nissen en schuine daken. Werkplaats Terheijden — heel Nederland.',
+    seoTitle: 'Kledingkast op maat laten maken, JDG Maatwerk Interieur',
+    metaDescription: 'Kledingkasten op maat van JDG. Tot het plafond, precies passend in nissen en schuine daken. Werkplaats Terheijden, heel Nederland.',
     short: 'Elke centimeter benut, niets verspild.',
     intro: 'Een kledingkast op maat vult precies die ruimte die anders leeg blijft. Nissen, schuine daken, een hoek achter de deur. JDG tekent de kast zo dat elke centimeter benut wordt.',
     paragraphs: [
@@ -92,7 +92,7 @@ export const services: Service[] = [
       { n: '04', title: 'Plaatsing', body: 'Montage bij jou thuis, inclusief afkitting en schoonmaken. Meestal binnen één werkdag klaar.' },
     ],
     faqs: [
-      { q: 'Kan een kast op maat tot het plafond?', a: 'Ja, altijd. Ook bij schuine daken. Dat is juist de kracht van maatwerk — geen ruimte verspild tussen kast en plafond.' },
+      { q: 'Kan een kast op maat tot het plafond?', a: 'Ja, altijd. Ook bij schuine daken. Dat is juist de kracht van maatwerk, geen ruimte verspild tussen kast en plafond.' },
       { q: 'Wat kost een kledingkast op maat?', a: 'Een garderobekast van twee meter breed begint rond 2.000 euro. Voor een inloopkast met complete inrichting reken je op 4.000 tot 8.000 euro. Exact bedrag hangt af van afwerking en indeling.' },
       { q: 'Hoe snel krijg ik een offerte?', a: 'Na inmeting reken je op één à twee weken voor het ontwerp en de heldere prijsopgave.' },
       { q: 'Hoe lang duurt de complete kast?', a: 'Van eerste inmeting tot plaatsing reken je op vier tot zes weken.' },
@@ -106,12 +106,12 @@ export const services: Service[] = [
     slug: 'inloopkasten-op-maat',
     title: 'Inloopkasten op maat',
     h1: 'Een inloopkast die werkt zoals jij aankleedt.',
-    seoTitle: 'Inloopkast op maat laten maken — JDG Maatwerk Interieur',
+    seoTitle: 'Inloopkast op maat laten maken, JDG Maatwerk Interieur',
     metaDescription: 'Inloopkasten op maat door JDG. Complete indeling met hangruimte, lades, schoenenrekken en LED. Terheijden en heel Nederland.',
     short: 'Alles zichtbaar, alles bij de hand.',
     intro: 'Een inloopkast is meer dan opbergen. Het is de plek waar je begint met je dag. JDG tekent de indeling zo dat wat je vaak nodig hebt vooraan zit, en wat je zelden gebruikt netjes uit het zicht.',
     paragraphs: [
-      'Meestal begint een inloopkast met een kamer die te groot is voor een slaapkamer maar te klein voor een tweede zit. Perfect voor een aankleedruimte. De inloopkast wordt zo ontworpen dat de resterende ruimte comfortabel blijft — met plek voor een spiegel, een bankje of zelfs een make-up plek.',
+      'Meestal begint een inloopkast met een kamer die te groot is voor een slaapkamer maar te klein voor een tweede zit. Perfect voor een aankleedruimte. De inloopkast wordt zo ontworpen dat de resterende ruimte comfortabel blijft, met plek voor een spiegel, een bankje of zelfs een make-up plek.',
       'Verlichting is een onderschat detail. Een LED-strip onder elke plank of achter elke hanglat maakt dat je in de winterochtend precies ziet wat je pakt. Geen zaklamp op je telefoon nodig.',
     ],
     benefits: [
@@ -140,12 +140,12 @@ export const services: Service[] = [
     slug: 'tv-meubels-op-maat',
     title: 'Tv-meubels en wandmeubels',
     h1: 'Een tv-meubel dat de woonkamer af maakt.',
-    seoTitle: 'Tv-meubel op maat laten maken — JDG Maatwerk Interieur',
-    metaDescription: 'Tv-meubels en wandmeubels op maat door JDG. Verborgen bekabeling, zwevende lades, verlichte nissen. Terheijden — heel Nederland.',
+    seoTitle: 'Tv-meubel op maat laten maken, JDG Maatwerk Interieur',
+    metaDescription: 'Tv-meubels en wandmeubels op maat door JDG. Verborgen bekabeling, zwevende lades, verlichte nissen. Terheijden, heel Nederland.',
     short: 'Verdwijnt in de kamer, of maakt de kamer.',
     intro: 'Een tv-meubel op maat maakt van je woonkamer een geheel. Zwevend, over de hele lengte van de wand, met verborgen bekabeling en verlichte nissen. Of juist compact en onopvallend zodat de rest van de kamer de aandacht krijgt.',
     paragraphs: [
-      'Kabels zijn altijd een probleem. Een standaard tv-meubel laat ze uit de achterkant vallen alsof het je niks kan schelen. Bij een meubel op maat gaan ze door de wand of via een kanaal in de constructie — zo blijft het beeld strak.',
+      'Kabels zijn altijd een probleem. Een standaard tv-meubel laat ze uit de achterkant vallen alsof het je niks kan schelen. Bij een meubel op maat gaan ze door de wand of via een kanaal in de constructie, zo blijft het beeld strak.',
       'Verlichting maakt het verschil. Een subtiele LED achter de tv voorkomt vermoeide ogen bij het bingewatchen. Verlichte nissen tillen boeken en decoratie naar een hoger niveau.',
     ],
     benefits: [
@@ -174,12 +174,12 @@ export const services: Service[] = [
     slug: 'boekenkasten-en-wandmeubels',
     title: 'Boekenkasten en wandmeubels',
     h1: 'Een boekenkast als middelpunt.',
-    seoTitle: 'Boekenkast op maat laten maken — JDG Maatwerk Interieur',
+    seoTitle: 'Boekenkast op maat laten maken, JDG Maatwerk Interieur',
     metaDescription: 'Boekenkasten en wandmeubels op maat door JDG. Tot het plafond, met of zonder deuren, LED-verlichting mogelijk. Heel Nederland.',
     short: 'Een boekenkast die iedere kamer karakter geeft.',
     intro: 'Een boekenkast op maat maakt van boeken een decorstuk. Van vloer tot plafond, met of zonder gesloten kastjes onderin voor spullen die niet gezien hoeven worden. JDG ontwerpt met verhoudingen die kloppen bij de kamer.',
     paragraphs: [
-      'Een standaard boekenkast wordt vaak te klein. Je koopt hem, en drie jaar later staan je boeken alweer verspreid door het huis. Een boekenkast op maat groeit mee — berekend op wat je verzamelt.',
+      'Een standaard boekenkast wordt vaak te klein. Je koopt hem, en drie jaar later staan je boeken alweer verspreid door het huis. Een boekenkast op maat groeit mee, berekend op wat je verzamelt.',
       'Ook technisch belangrijk: boeken zijn zwaar. Planken die te dun zijn buigen door. JDG gebruikt constructies die deze belasting aankunnen zonder dat je een balk achter iedere plank ziet.',
     ],
     benefits: [
@@ -197,7 +197,7 @@ export const services: Service[] = [
     faqs: [
       { q: 'Kan een boekenkast om een raam of deur heen?', a: 'Ja, dat komt vaak voor. Kast om een radiator, om een raamnis of om een deur zijn allemaal mogelijk.' },
       { q: 'Wat kost een boekenkast op maat?', a: 'Een enkelwandig meubel van drie meter breed en tot het plafond begint rond 2.500 euro. Grote wandvullende systemen lopen tot 8.000 euro.' },
-      { q: 'Hoe zwaar mogen de planken belast worden?', a: 'De constructie is berekend op twintig kilo per strekkende meter — genoeg voor complete boekenseries.' },
+      { q: 'Hoe zwaar mogen de planken belast worden?', a: 'De constructie is berekend op twintig kilo per strekkende meter, genoeg voor complete boekenseries.' },
     ],
     icon: LibraryBig,
     hero: business.photos.keuken2,
@@ -207,8 +207,8 @@ export const services: Service[] = [
     slug: 'badkamermeubels-op-maat',
     title: 'Badkamermeubels op maat',
     h1: 'Een badkamermeubel dat blijft staan.',
-    seoTitle: 'Badkamermeubel op maat laten maken — JDG Maatwerk Interieur',
-    metaDescription: 'Badkamermeubels op maat door JDG. Bestand tegen vocht, met opgezette waskom of onderbouw. Terheijden — heel Nederland.',
+    seoTitle: 'Badkamermeubel op maat laten maken, JDG Maatwerk Interieur',
+    metaDescription: 'Badkamermeubels op maat door JDG. Bestand tegen vocht, met opgezette waskom of onderbouw. Terheijden, heel Nederland.',
     short: 'Meubel dat vocht en tijd doorstaat.',
     intro: 'Een badkamermeubel op maat maakt de badkamer af. Precies passend tussen de muren, met ruimte voor spullen die anders op het aanrecht rondslingeren. Bouw en afwerking zijn afgestemd op dagelijkse vochtigheid.',
     paragraphs: [
