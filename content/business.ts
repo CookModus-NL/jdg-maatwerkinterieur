@@ -13,15 +13,15 @@ export const business = {
     'Keukens, kledingkasten, tv-meubels en overig maatwerk. Ontworpen en gemaakt in de werkplaats van JDG in Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.',
 
   // KvK en BTW volgen zodra registratie voltooid is
-  kvk: '',
+  kvk: '93463332',
   vestigingsnummer: '',
   btw: '',
 
   founded: '2025',
 
   address: {
-    street: 'Bredaseweg 47',
-    postalCode: '4844 CK',
+    street: 'Zeggelaan 47',
+    postalCode: '4844 SB',
     city: 'Terheijden',
     municipality: 'Drimmelen',
     province: 'Noord-Brabant',
