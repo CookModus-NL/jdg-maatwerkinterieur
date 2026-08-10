@@ -24,7 +24,7 @@ export default function Werkgebied() {
                 door <span className="text-jdg-700">heel Nederland</span>.
               </h1>
               <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
-                JDG werkt door heel Nederland, met focus op Noord- en West-Brabant. Grote projecten in het buitenland? Op verzoek ook geen probleem.
+                JDG werkt door heel Nederland, met focus op Noord- en West-Brabant. Ook kleine projecten in het buitenland zijn welkom.
               </p>
             </div>
           </div>

@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
       { source: '/wp-admin/:path*', destination: '/', permanent: false },
       { source: '/wp-login.php', destination: '/', permanent: false },
       { source: '/xmlrpc.php', destination: '/', permanent: false },
+      // Oude project detail URLs (na photo gallery model) → algemene /projecten
+      { source: '/projecten/:slug', destination: '/projecten', permanent: true },
+      { source: '/blog/:path*', destination: '/', permanent: true },
+      { source: '/nieuws/:path*', destination: '/', permanent: true },
     ]
   },
 }

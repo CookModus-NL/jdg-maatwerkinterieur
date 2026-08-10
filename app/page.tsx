@@ -203,15 +203,15 @@ export default function Home() {
             <div className="col-span-12 lg:col-span-7">
               <div className="space-y-3">
                 {[
-                  { n: '01', title: 'Kennismaking', body: 'Vrijblijvend gesprek bij jou thuis. JDG kijkt naar de ruimte en luistert naar hoe je erin wilt leven.' },
-                  { n: '02', title: 'Ontwerp en offerte', body: 'Binnen één à twee weken na het gesprek ligt er een schets met materialen en heldere prijsopgave. Aanpassingen zijn onbeperkt.' },
-                  { n: '03', title: 'Productie in de werkplaats', body: 'In de werkplaats in Terheijden wordt jouw project op maat gebouwd. Onderdelen worden genummerd en gecontroleerd.' },
-                  { n: '04', title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Meestal binnen enkele werkdagen.' },
-                ].map((step) => (
-                  <div key={step.n} className="grid grid-cols-12 gap-4 rounded-xl border border-ink-900/10 bg-paper p-6 lg:p-7">
+                  { title: 'Kennismaking', body: 'Vrijblijvend gesprek bij jou thuis. JDG kijkt naar de ruimte en luistert naar hoe je erin wilt leven.' },
+                  { title: 'Ontwerp en offerte', body: 'Binnen één à twee weken na het gesprek ligt er een schets met materialen en heldere prijsopgave. Aanpassingen zijn onbeperkt.' },
+                  { title: 'Productie in de werkplaats', body: 'In de werkplaats in Terheijden wordt jouw project op maat gebouwd. Onderdelen worden genummerd en gecontroleerd.' },
+                  { title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Meestal binnen enkele werkdagen.' },
+                ].map((step, idx) => (
+                  <div key={idx} className="grid grid-cols-12 gap-4 rounded-xl border border-ink-900/10 bg-paper p-6 lg:p-7">
                     <div className="col-span-2 lg:col-span-1">
                       <span className="inline-flex items-center justify-center rounded-full bg-jdg-700 text-paper w-9 h-9 font-mono text-[11px] font-medium tabular">
-                        {step.n}
+                        {String(idx + 1).padStart(2, '0')}
                       </span>
                     </div>
                     <div className="col-span-10 lg:col-span-11">

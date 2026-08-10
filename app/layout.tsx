@@ -3,7 +3,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { localBusinessSchema } from '@/lib/schema'
+import { localBusinessSchema, organizationSchema, websiteSchema, founderPersonSchema, faqPageSchema, siteNavigationSchema } from '@/lib/schema'
+import { faqsForSchema } from '@/content/faq'
 import { business } from '@/content/business'
 import '@fontsource-variable/dm-sans'
 import '@fontsource/dm-serif-display'
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'JDG Maatwerk Interieur' }],
   creator: business.name,
   publisher: business.name,
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
@@ -51,6 +52,14 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESC },
   alternates: { canonical: business.url },
   category: 'business',
+  other: {
+    'geo.region': 'NL-NB',
+    'geo.placename': 'Terheijden',
+    'geo.position': '51.6653;4.7526',
+    'ICBM': '51.6653, 4.7526',
+    'DC.language': 'nl',
+    'DC.publisher': business.name,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -59,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessSchema(), organizationSchema(), websiteSchema(), founderPersonSchema(), faqPageSchema(faqsForSchema), ...siteNavigationSchema()]) }}
         />
       </head>
       <body>

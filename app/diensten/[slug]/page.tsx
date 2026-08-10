@@ -103,10 +103,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="col-span-12 lg:col-span-7">
               <div className="border-t border-ink-900/15">
-                {s.process.map((step) => (
-                  <div key={step.n} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
+                {s.process.map((step, idx) => (
+                  <div key={idx} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
                     <div className="col-span-3 lg:col-span-2">
-                      <span className="font-mono text-[13px] text-jdg-700 tabular">{step.n}</span>
+                      <span className="font-mono text-[13px] text-jdg-700 tabular">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
                     <div className="col-span-9 lg:col-span-10">
                       <h3 className="font-display text-2xl text-ink-950 leading-tight">{step.title}</h3>

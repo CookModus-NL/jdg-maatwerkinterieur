@@ -39,9 +39,9 @@ export default function Werkwijze() {
               { n: '02', title: 'Ontwerp en offerte', body: 'Binnen één à twee weken ligt er een schets met materialen en heldere prijsopgave. Aanpassingen zijn onbeperkt tot je akkoord bent.' },
               { n: '03', title: 'Productie in de werkplaats', body: 'In de werkplaats in Terheijden wordt jouw project op maat gebouwd. Onderdelen worden genummerd en gecontroleerd.' },
               { n: '04', title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Bij voorkeur op casco, sloop van bestaande installatie is in overleg mogelijk.' },
-            ].map((s) => (
-              <div key={s.n} className="rounded-xl border border-ink-900/12 bg-paper-2 p-8">
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-jdg-700">Stap {s.n}</span>
+            ].map((s, idx) => (
+              <div key={idx} className="rounded-xl border border-ink-900/12 bg-paper-2 p-8">
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-jdg-700">Stap {String(idx + 1).padStart(2, '0')}</span>
                 <h2 className="mt-4 font-display text-3xl text-ink-950 leading-tight">{s.title}</h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{s.body}</p>
               </div>
@@ -55,7 +55,7 @@ export default function Werkwijze() {
                 { title: 'Vast contact door het project', body: 'Van eerste appje tot laatste knop, één aanspreekpunt binnen JDG, zonder tussenkanalen.' },
                 { title: 'Ontwerp op papier voor productie', body: 'Wat wordt gemaakt is eerst getekend en akkoord bevonden. Geen improviseren op locatie.' },
                 { title: 'Productie in eigen werkplaats', body: 'Alle onderdelen worden in Terheijden gebouwd en gecontroleerd voordat ze naar jou vertrekken.' },
-                { title: 'Garantie op constructie', body: 'Vijf jaar op de constructie. Fabrieksgarantie op scharnieren en beslag. Kitwerk is onderhoudsartikel.' },
+                { title: 'Garantie op constructie', body: 'Vijf jaar op de constructie. Fabrieksgarantie op scharnieren en beslag.' },
               ].map((v) => (
                 <div key={v.title} className="border-t border-ink-900/15 pt-5">
                   <h3 className="font-display text-2xl text-ink-950">{v.title}</h3>

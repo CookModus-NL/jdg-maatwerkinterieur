@@ -54,9 +54,9 @@ export const business = {
   /** Echte foto's vanaf jdg-maatwerkinterieur.nl (publieke WordPress URLs) */
   photos: {
     logo:    '/logo/jdg-mark.png',
-    keuken1: '/images/jdg-01.jpg',
-    kast1:   '/images/jdg-04.jpg',
-    keuken2: '/images/jdg-25.jpg',
+    keuken1: '/images/jdg-16.jpg',
+    kast1:   '/images/jdg-13.jpg',
+    keuken2: '/images/jdg-23.jpg',
   },
 
   serviceArea: 'nl-and-abroad-on-request',
