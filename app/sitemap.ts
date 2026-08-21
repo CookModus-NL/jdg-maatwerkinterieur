@@ -3,7 +3,7 @@ import { business } from '@/content/business'
 import { services } from '@/content/services'
 import { cities } from '@/content/cities'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
   const base = business.url
 
@@ -39,5 +39,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     }
   }
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages]
+    const { materialen } = await import('@/content/materialen')
+  const { blogPosts } = await import('@/content/blog')
+  const materialenIndex: MetadataRoute.Sitemap = [
+    { url: `${base}/materialen`, lastModified: now, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/blog`, lastModified: now, priority: 0.8, changeFrequency: 'weekly' },
+  ]
+  const materialenPages: MetadataRoute.Sitemap = materialen.map((m) => ({
+    url: `${base}/materialen/${m.slug}`, lastModified: now, priority: 0.75, changeFrequency: 'monthly',
+  }))
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`, lastModified: new Date(post.updatedAt), priority: 0.75, changeFrequency: 'monthly',
+  }))
+  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...materialenIndex, ...materialenPages, ...blogPostPages]
 }
