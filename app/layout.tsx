@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import Beacon from '@/components/Beacon'
 import { localBusinessSchema, organizationSchema, websiteSchema, founderPersonSchema, faqPageSchema, siteNavigationSchema } from '@/lib/schema'
 import { faqsForSchema } from '@/content/faq'
 import { business } from '@/content/business'
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <Beacon />
         <SpeedInsights />
       </body>
     </html>
