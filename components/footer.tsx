@@ -118,6 +118,17 @@ export function Footer() {
                 vertrouwenssignaal dat er is voor een jong bedrijf. */}
             {business.kvk && <span>KvK {business.kvk}</span>}
             <span>Terheijden — heel Nederland</span>
+            {/* Bouwerscredit. LET OP: deze balk staat op `uppercase`, en de merknaam
+                l3art hoort nooit in kapitaaltekst (brand/voice-of-tone.md). Vandaar
+                `normal-case` op dit ene element — anders leest er "L3ART.NL". */}
+            <a
+              href="https://l3art.nl"
+              target="_blank"
+              rel="noopener"
+              className="normal-case tracking-normal transition-colors hover:text-paper"
+            >
+              Powered by l3art.nl
+            </a>
           </div>
         </div>
       </div>
