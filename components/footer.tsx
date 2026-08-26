@@ -112,6 +112,11 @@ export function Footer() {
         <div className="container-x py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] uppercase tracking-[0.22em] text-ink-500 font-mono">
           <div>© {new Date().getFullYear()} {business.legalName}</div>
           <div className="flex items-center gap-4">
+            {/* KvK stond wel in content/business.ts maar nergens op de site.
+                Een online dienstverlener hoort in Nederland vindbaar te zijn met
+                inschrijfnummer, en het is bovendien het goedkoopste
+                vertrouwenssignaal dat er is voor een jong bedrijf. */}
+            {business.kvk && <span>KvK {business.kvk}</span>}
             <span>Terheijden — heel Nederland</span>
           </div>
         </div>
