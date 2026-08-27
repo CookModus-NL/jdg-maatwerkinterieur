@@ -34,7 +34,9 @@ export const business = {
   whatsapp: '+31619831621',
   email: 'info@jdg-maatwerkinterieur.nl',
 
-  url: 'https://jdg-maatwerkinterieur.nl',
+  // Canonieke host = www: productie redirect non-www met 308 naar www en de
+  // Search Console-property staat op https://www.jdg-maatwerkinterieur.nl/
+  url: 'https://www.jdg-maatwerkinterieur.nl',
 
   openingHours: [
     { day: 'Monday', opens: '08:00', closes: '18:00' },
@@ -48,7 +50,8 @@ export const business = {
     facebook: '',
     instagram: 'https://www.instagram.com/jdg_maatwerk_interieur/',
     instagramHandle: 'jdg_maatwerk_interieur',
-    google: '',
+    // Google-bedrijfsprofiel (geverifieerd aanwezig, lokaal pakket Terheijden 27-08-2026)
+    google: 'https://maps.google.com/?cid=510288199378998363',
   },
 
   /** Echte foto's vanaf jdg-maatwerkinterieur.nl (publieke WordPress URLs) */
