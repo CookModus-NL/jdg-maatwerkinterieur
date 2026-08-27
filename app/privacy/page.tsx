@@ -25,8 +25,8 @@ export default function PrivacyPage() {
             <h2 className="font-display text-2xl font-bold text-ink-950">Verwerkingsverantwoordelijke</h2>
             <p className="mt-3">
               {business.legalName}<br/>
-              {business.address.street}<br/>
-              {business.address.postalCode} {business.address.city}<br/>
+              {business.registeredAddress.street}<br/>
+              {business.registeredAddress.postalCode} {business.registeredAddress.city}<br/>
               KvK: {business.kvk}<br/>
               E-mail: {business.email}<br/>
               Telefoon: {business.phone}

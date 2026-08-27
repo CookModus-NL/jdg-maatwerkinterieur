@@ -49,10 +49,10 @@ export function localBusinessSchema() {
     ],
     serviceArea: {
       '@type': 'GeoCircle',
-      geoMidpoint: { '@type': 'GeoCoordinates', latitude: 51.6653, longitude: 4.7526 },
+      geoMidpoint: { '@type': 'GeoCoordinates', latitude: business.geo.latitude, longitude: business.geo.longitude },
       geoRadius: '150000',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 51.6653, longitude: 4.7526 },
+    geo: { '@type': 'GeoCoordinates', latitude: business.geo.latitude, longitude: business.geo.longitude },
     hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${business.name} ${business.address.street} ${business.address.city}`)}`,
     openingHoursSpecification: business.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',

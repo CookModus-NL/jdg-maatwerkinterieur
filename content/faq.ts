@@ -8,7 +8,7 @@ export const faqs: FAQ[] = [
   { category: 'algemeen', q: 'Wat maakt JDG Maatwerk Interieur?',
     a: 'JDG maakt keukens op maat, kledingkasten, inloopkasten, TV-meubels, boekenkasten en badkamermeubels. Alles wordt ontworpen, geproduceerd in de eigen werkplaats in Terheijden en op locatie gemonteerd, door heel Nederland en op verzoek daarbuiten.' },
   { category: 'algemeen', q: 'Waar is JDG gevestigd?',
-    a: 'De werkplaats staat aan de Zeggelaan 47 in Terheijden (Noord-Brabant), gemeente Drimmelen. Bezoek is uitsluitend op afspraak.' },
+    a: 'De werkplaats staat aan de Bredaseweg 47 in Terheijden (Noord-Brabant), gemeente Drimmelen. Bezoek is uitsluitend op afspraak.' },
   { category: 'algemeen', q: 'Werkt JDG in heel Nederland?',
     a: 'Ja. Vanuit Terheijden komen we bij projecten in heel Nederland. West-Brabant en Noord-Brabant zijn de primaire werkgebieden, maar we werken structureel in de Randstad, Zeeland, Utrecht en Gelderland. Ook kleine projecten in het buitenland zijn welkom.' },
   { category: 'proces', q: 'Hoe werkt het traject van eerste gesprek tot oplevering?',

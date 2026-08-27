@@ -14,20 +14,36 @@ export const business = {
 
   // KvK en BTW volgen zodra registratie voltooid is
   kvk: '93463332',
-  vestigingsnummer: '',
+  vestigingsnummer: '000059003677',
   btw: '',
 
   founded: '2025',
 
+  /**
+   * Werkplaats en bezoekadres. Dit is ook het adres van het Google-bedrijfsprofiel
+   * (cid 510288199378998363) — die twee moeten letterlijk gelijk zijn, anders kan
+   * Google site en profiel niet aan elkaar knopen.
+   */
   address: {
-    street: 'Zeggelaan 47',
-    postalCode: '4844 SB',
+    street: 'Bredaseweg 47',
+    postalCode: '4844 CK',
     city: 'Terheijden',
     municipality: 'Drimmelen',
     province: 'Noord-Brabant',
     country: 'NL',
   },
   visitByAppointmentOnly: true,
+
+  /** Inschrijfadres in het handelsregister. Alleen voor de juridische pagina's. */
+  registeredAddress: {
+    street: 'Zeggelaan 47',
+    postalCode: '4844 SB',
+    city: 'Terheijden',
+    country: 'NL',
+  },
+
+  /** Werkelijke coordinaten van de werkplaats, overgenomen van het Google-bedrijfsprofiel. */
+  geo: { latitude: 51.6361617, longitude: 4.7658397 },
 
   phone: '06-19831621',
   phoneE164: '+31619831621',
