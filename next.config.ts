@@ -36,6 +36,13 @@ const nextConfig: NextConfig = {
       { source: '/projecten/:slug', destination: '/projecten', permanent: true },
       { source: '/blog/:path*', destination: '/', permanent: true },
       { source: '/nieuws/:path*', destination: '/', permanent: true },
+      // Reviewlink: alles wat iemand redelijkerwijs intypt of voorleest komt uit bij /review
+      { source: '/reviews', destination: '/review', permanent: true },
+      { source: '/Review', destination: '/review', permanent: true },
+      { source: '/Reviews', destination: '/review', permanent: true },
+      { source: '/REVIEW', destination: '/review', permanent: true },
+      { source: '/beoordeling', destination: '/review', permanent: true },
+      { source: '/beoordelingen', destination: '/review', permanent: true },
     ]
   },
 }

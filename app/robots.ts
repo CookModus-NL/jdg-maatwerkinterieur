@@ -4,7 +4,7 @@ import { business } from '@/content/business'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: '*', allow: '/', disallow: ['/api/', '/_next/', '/review'] },
+      { userAgent: '*', allow: '/', disallow: ['/api/', '/_next/', '/review', '/reviews'] },
       { userAgent: 'Googlebot', allow: '/' },
       { userAgent: 'Googlebot-Image', allow: '/' },
       { userAgent: 'Bingbot', allow: '/' },
