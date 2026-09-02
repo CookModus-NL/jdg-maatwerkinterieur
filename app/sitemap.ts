@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { business } from '@/content/business'
 import { services } from '@/content/services'
 import { cities } from '@/content/cities'
+import { projects } from '@/content/projects'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
@@ -31,16 +32,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({
     url: `${base}/werkgebied/${c.slug}`, lastModified: now, priority: 0.75, changeFrequency: 'monthly',
   }))
-  const serviceCityPages: MetadataRoute.Sitemap = []
-  for (const s of services) {
-    for (const c of cities) {
-      serviceCityPages.push({
-        url: `${base}/diensten/${s.slug}/${c.slug}`, lastModified: now, priority: 0.65, changeFrequency: 'monthly',
-      })
-    }
-  }
+  // Alleen de dienst×stad-combinaties met gemeten vraag. Het volledige rooster
+  // van 6 × 16 stond hier eerder: 96 URL's die onderling voor ~80% gelijk waren,
+  // gemiddeld op positie 24 stonden en nul klikken opleverden. De rest leidt nu
+  // met een 308 naar de stadpagina. Zie content/lokaal-rooster.ts.
+  const { lokaalRooster } = await import('@/content/lokaal-rooster')
+  const serviceCityPages: MetadataRoute.Sitemap = lokaalRooster.map((r) => ({
+    url: `${base}/diensten/${r.dienst}/${r.stad}`, lastModified: now, priority: 0.7, changeFrequency: 'monthly',
+  }))
     const { materialen } = await import('@/content/materialen')
-  const { blogPosts } = await import('@/content/blog')
+  const { livePosts } = await import('@/content/blog')
   const materialenIndex: MetadataRoute.Sitemap = [
     { url: `${base}/materialen`, lastModified: now, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/blog`, lastModified: now, priority: 0.8, changeFrequency: 'weekly' },
@@ -48,8 +49,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const materialenPages: MetadataRoute.Sitemap = materialen.map((m) => ({
     url: `${base}/materialen/${m.slug}`, lastModified: now, priority: 0.75, changeFrequency: 'monthly',
   }))
-  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  const blogPostPages: MetadataRoute.Sitemap = livePosts.map((post) => ({
     url: `${base}/blog/${post.slug}`, lastModified: new Date(post.updatedAt), priority: 0.75, changeFrequency: 'monthly',
   }))
-  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...materialenIndex, ...materialenPages, ...blogPostPages]
+  // De veertien projectpagina's ontbraken hier, terwijl ze het enige volledig
+  // unieke materiaal van de site bevatten: eigen foto's en eigen tekst.
+  const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
+    url: `${base}/projecten/${p.slug}`,
+    lastModified: now,
+    priority: 0.8,
+    changeFrequency: 'yearly',
+    images: [`${base}${p.hero}`, ...p.gallery.map((g) => `${base}${g}`)].filter((v, i, a) => a.indexOf(v) === i),
+  }))
+  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages, ...materialenIndex, ...materialenPages, ...blogPostPages, ...projectPages]
 }

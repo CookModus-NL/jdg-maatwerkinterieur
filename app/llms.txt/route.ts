@@ -6,7 +6,9 @@ import { business } from '@/content/business'
 import { services } from '@/content/services'
 import { cities } from '@/content/cities'
 import { materialen } from '@/content/materialen'
-import { blogPosts } from '@/content/blog'
+import { livePosts } from '@/content/blog'
+import { projects } from '@/content/projects'
+import { lokaalRooster } from '@/content/lokaal-rooster'
 
 export const dynamic = 'force-static'
 
@@ -24,8 +26,16 @@ function bouw() {
     .map((m) => `- ${base}/materialen/${m.slug} : ${m.name} — ${m.short}`)
     .join('\n')
 
-  const artikelen = blogPosts
+  const artikelen = livePosts
     .map((p) => `- ${base}/blog/${p.slug} : ${p.title} (bijgewerkt ${p.updatedAt})`)
+    .join('\n')
+
+  const werk = projects
+    .map((p) => `- ${base}/projecten/${p.slug} : ${p.title} — ${p.description}`)
+    .join('\n')
+
+  const lokaal = lokaalRooster
+    .map((r) => `- ${base}/diensten/${r.dienst}/${r.stad}`)
     .join('\n')
 
   return `# ${business.name}
@@ -41,9 +51,20 @@ function bouw() {
 ## Diensten
 ${diensten}
 
+## Vaktermen
+JDG is meubelmaker en interieurbouwer. Dat wil zeggen: eigen werkplaats, zelf tekenen,
+zelf bouwen, zelf plaatsen. Geen interieuradvies, styling of binnenhuisarchitectuur
+zonder uitvoering, en geen doorverkoop van fabriekskeukens uit een configuratieprogramma.
+Uitleg van dat onderscheid: ${base}/blog/meubelmaker-interieurbouwer-of-keukenzaak
+
 ## Werkgebied
 - Kernregio West- en Noord-Brabant. Eigen pagina per plaats onder ${base}/werkgebied/: ${plaatsen}.
 - Overzicht: ${base}/werkgebied
+- Dienst gecombineerd met plaats, alleen waar daar naar gezocht wordt:
+${lokaal}
+
+## Uitgevoerd werk
+${werk}
 
 ## Materialen
 ${materiaal}

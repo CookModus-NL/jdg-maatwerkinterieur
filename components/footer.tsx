@@ -78,7 +78,7 @@ export function Footer() {
               JDG werkt door heel Nederland — en op verzoek daarbuiten.
             </p>
             <ul className="mt-4 space-y-3 text-[14px]">
-              {cities.slice(0, 8).map((c) => (
+              {cities.map((c) => (
                 <li key={c.slug}>
                   <Link href={`/werkgebied/${c.slug}`} className="text-ink-200 hover:text-paper transition-colors">
                     {c.name}
@@ -96,9 +96,13 @@ export function Footer() {
           </div>
 
           <div className="col-span-12 lg:col-span-2">
-            <h3 className="eyebrow !text-jdg-300">Site</h3>
+            <h3 className="eyebrow !text-jdg-300">Uitzoeken</h3>
             <ul className="mt-6 space-y-3 text-[14px]">
+              <li><Link href="/materialen" className="text-ink-200 hover:text-paper transition-colors">Materialen</Link></li>
+              <li><Link href="/blog" className="text-ink-200 hover:text-paper transition-colors">Kennis en advies</Link></li>
+              <li><Link href="/veelgestelde-vragen" className="text-ink-200 hover:text-paper transition-colors">Veelgestelde vragen</Link></li>
               <li><Link href="/werkwijze" className="text-ink-200 hover:text-paper transition-colors">Werkwijze</Link></li>
+              <li><Link href="/over-jonas" className="text-ink-200 hover:text-paper transition-colors">Over Jonas</Link></li>
               <li><Link href="/projecten" className="text-ink-200 hover:text-paper transition-colors">Projecten</Link></li>
               <li><Link href="/contact" className="text-ink-200 hover:text-paper transition-colors">Contact</Link></li>
               <li><Link href="/privacy" className="text-ink-200 hover:text-paper transition-colors">Privacy</Link></li>

@@ -2,12 +2,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { ArrowUpRight, ArrowLeft } from 'lucide-react'
-import { blogPosts, getBlogPost } from '@/content/blog'
+import { ArrowUpRight } from 'lucide-react'
+import { livePosts, getBlogPost } from '@/content/blog'
+import { services } from '@/content/services'
+import { breadcrumbSchema, pageSchema } from '@/lib/schema'
+import { Kruimelpad, ContactBlok } from '@/components/secties'
 import { business } from '@/content/business'
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }))
+  return livePosts.map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -44,11 +49,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: `${business.url}${post.hero}`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-      url: `${business.url}/over-jonas`,
-    },
+    author:
+      post.author === 'Jonas de Graaf'
+        ? { '@type': 'Person', name: post.author, url: `${business.url}/over-jonas` }
+        : { '@id': `${business.url}/#organization` },
     publisher: {
       '@type': 'Organization',
       name: business.name,
@@ -58,14 +62,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     mainEntityOfPage: `${business.url}/blog/${post.slug}`,
   }
 
+  const kruimels = [
+    { name: 'Home', url: '/' },
+    { name: 'Kennis', url: '/blog' },
+    { name: post.title },
+  ]
+  const ld = pageSchema([
+    articleSchema,
+    breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/blog/${post.slug}` }))),
+  ])
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       <section className="pt-32 pb-4">
         <div className="container-x">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-[13px] text-ink-500 hover:text-ink-900 transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Alle artikelen
-          </Link>
+          <Kruimelpad items={kruimels} />
         </div>
       </section>
 
@@ -118,14 +130,51 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="flex items-center gap-4 mb-4">
               <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700">Geschreven door</span>
             </div>
-            <div className="font-display text-2xl text-ink-950">Jonas de Graaf</div>
-            <div className="text-[14px] text-ink-600 mt-1">Oprichter van JDG Maatwerk Interieur, Terheijden</div>
+            <div className="font-display text-2xl text-ink-950">{post.author}</div>
+            <div className="text-[14px] text-ink-600 mt-1">
+              {post.author === 'Jonas de Graaf'
+                ? 'Oprichter van JDG Maatwerk Interieur, Terheijden'
+                : 'Uit de werkplaats van JDG Maatwerk Interieur in Terheijden'}
+            </div>
             <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[13px] font-medium hover:bg-jdg-700 transition-colors">
               Overleg jouw project <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
+
+          <div className="mt-10">
+            <span className="eyebrow">Verder lezen</span>
+            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-[14px] text-ink-700">
+              {services.map((s2) => (
+                <Link key={s2.slug} href={`/diensten/${s2.slug}`} className="hover:text-jdg-700 transition-colors">
+                  {s2.singular}
+                </Link>
+              ))}
+              <Link href="/materialen" className="hover:text-jdg-700 transition-colors">Materialen</Link>
+              <Link href="/projecten" className="hover:text-jdg-700 transition-colors">Projecten</Link>
+            </div>
+          </div>
+
+          {livePosts.filter((p) => p.slug !== post.slug).length > 0 && (
+            <div className="mt-12 border-t border-ink-900/10 pt-8">
+              <span className="eyebrow">Andere artikelen</span>
+              <ul className="mt-5 space-y-3">
+                {livePosts.filter((p) => p.slug !== post.slug).map((p) => (
+                  <li key={p.slug}>
+                    <Link href={`/blog/${p.slug}`} className="text-[15.5px] text-ink-900 hover:text-jdg-700 transition-colors">
+                      {p.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
+
+      <ContactBlok
+        kop="Iets laten maken? Stuur een appje."
+        waMsg="Hoi JDG, ik las een artikel op jullie site en heb een vraag over maatwerk."
+      />
     </>
   )
 }

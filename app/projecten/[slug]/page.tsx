@@ -1,9 +1,25 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, MapPin, Calendar, Ruler, Layers, ArrowUpRight } from 'lucide-react'
+import { MapPin, Calendar, Ruler, Layers, ArrowUpRight } from 'lucide-react'
 import { projects } from '@/content/projects'
+import { services, getService } from '@/content/services'
+import { materialen } from '@/content/materialen'
+import { dienstVoorCategorie, categorieToelichting } from '@/content/relaties'
+import { business } from '@/content/business'
+import { Kruimelpad, ContactBlok } from '@/components/secties'
+import { breadcrumbSchema, projectSchema, pageSchema } from '@/lib/schema'
 import type { Metadata } from 'next'
+
+/**
+ * Deze pagina's waren tot 02-09-2026 onbereikbaar: next.config.ts stuurde
+ * /projecten/:slug met een 301 naar /projecten, terwijl het overzicht er wél
+ * naar linkte. Veertien pagina's met échte foto's en eigen tekst — de enige
+ * volledig unieke content van de site — stonden dus buitenspel. De redirect is
+ * weg, de canonical staat er nu wel op (die erfde de homepage-canonical uit de
+ * root layout, wat neerkomt op "Google, negeer deze pagina") en ze staan in de
+ * sitemap.
+ */
 
 export const dynamicParams = false
 
@@ -18,7 +34,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: project.title,
     description: project.description,
-    openGraph: { images: [project.hero] },
+    alternates: { canonical: `${business.url}/projecten/${project.slug}` },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: 'article',
+      images: [project.hero],
+    },
   }
 }
 
@@ -27,16 +49,35 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = projects.find((p) => p.slug === slug)
   if (!project) notFound()
 
-  const otherProjects = projects.filter((p) => p.slug !== slug).slice(0, 2)
+  // Verwante projecten uit dezelfde categorie eerst: dat is voor de lezer
+  // relevanter dan de eerste twee uit de lijst, en het legt interne links tussen
+  // pagina's die inhoudelijk bij elkaar horen.
+  const zelfdeSoort = projects.filter((p) => p.slug !== slug && p.category === project.category)
+  const otherProjects = [...zelfdeSoort, ...projects.filter((p) => p.slug !== slug && p.category !== project.category)].slice(0, 2)
+  const dienst = getService(dienstVoorCategorie[project.category] ?? '')
+  const toelichting = categorieToelichting[project.category]
+  // Materialen die letterlijk in de materiaalregel van dit project genoemd worden.
+  const genoemdeMaterialen = materialen.filter((m) =>
+    (project.material ?? '').toLowerCase().includes(m.name.split(' ')[0].toLowerCase()),
+  )
+
+  const kruimels = [
+    { name: 'Home', url: '/' },
+    { name: 'Projecten', url: '/projecten' },
+    { name: project.title },
+  ]
+  const ld = pageSchema([
+    breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/projecten/${project.slug}` }))),
+    projectSchema(project),
+  ])
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       {/* HERO */}
       <section className="relative bg-paper pt-12">
         <div className="container-x">
-          <Link href="/projecten" className="inline-flex items-center gap-1 text-sm text-ink-700 hover:text-jdg-700 transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Alle projecten
-          </Link>
+          <Kruimelpad items={kruimels} />
 
           <div className="mt-8 max-w-3xl reveal">
             <div className="eyebrow">{project.location} · {project.date}</div>
@@ -146,6 +187,54 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </section>
+
+      {toelichting && (
+        <section className="py-20 bg-paper-2">
+          <div className="container-x">
+            <div className="grid grid-cols-12 gap-8">
+              <div className="col-span-12 lg:col-span-5">
+                <span className="eyebrow">Wat dit type werk inhoudt</span>
+                <h2 className="mt-6 font-display text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] text-ink-950">
+                  {dienst ? dienst.singular : 'Maatwerk'}, in de praktijk.
+                </h2>
+              </div>
+              <div className="col-span-12 lg:col-span-7">
+                <p className="text-[16px] leading-[1.8] text-ink-700">{toelichting}</p>
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[14px]">
+                  {dienst && (
+                    <Link href={`/diensten/${dienst.slug}`} className="text-ink-900 hover:text-jdg-700 transition-colors">
+                      Alles over {dienst.singular.toLowerCase()}
+                    </Link>
+                  )}
+                  {genoemdeMaterialen.map((m) => (
+                    <Link key={m.slug} href={`/materialen/${m.slug}`} className="text-ink-700 hover:text-jdg-700 transition-colors">
+                      Over {m.name.toLowerCase()}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="py-16 border-t border-ink-900/10">
+        <div className="container-x">
+          <span className="eyebrow">Zelf iets laten maken</span>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[14px] text-ink-700">
+            {services.map((s2) => (
+              <Link key={s2.slug} href={`/diensten/${s2.slug}`} className="hover:text-jdg-700 transition-colors">
+                {s2.singular}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactBlok
+        kop="Zoiets in jouw huis? Stuur een appje."
+        waMsg={`Hoi JDG, ik zag het project "${project.title}" op de site. Kunnen we iets soortgelijks bespreken?`}
+      />
     </>
   )
 }

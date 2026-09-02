@@ -18,6 +18,15 @@ export type Material = {
   hero: string
   metaTitle: string
   metaDescription: string
+  /**
+   * Vragen die mensen letterlijk intikken over dit materiaal.
+   * Toegevoegd 02-09-2026: /materialen/hpl-laminaat leverde de énige klik op die
+   * de site tussen 23 en 31 aug 2026 binnenhaalde, op 66 vertoningen voor twaalf
+   * HPL-zoekopdrachten ("wat is hpl laminaat", "hpl keukenfronten", "hpl fronten",
+   * "hpl keukendeurtjes"). De pagina had 272 woorden en beantwoordde die vragen
+   * niet. Dit veld doet dat wel.
+   */
+  vragen?: { q: string; a: string }[]
 }
 
 export const materialen: Material[] = [
@@ -48,6 +57,16 @@ export const materialen: Material[] = [
     onderhoud: 'Stofvrij houden met droge doek. Eenmaal per jaar bijhouden met milde zeep en zachte doek. Bij gelakte fineer geen agressieve middelen. Bij geoliede fineer eenmaal per twee jaar bijoliëmoment.',
     prijsklasse: 'middenklasse',
     hero: '/images/jdg-01.jpg',
+    vragen: [
+      { q: 'Wat is het verschil tussen eiken fineer en massief eiken?',
+        a: 'Fineer is een dun laagje echt eikenhout op een stabiele draagplaat; massief is door en door hout. Op een front is het verschil nauwelijks te zien, constructief wel: massief werkt met vocht en temperatuur mee en kan bij grote vlakken kromtrekken of scheuren. Voor deuren van twee meter hoog is fineer daarom vaak de betere keuze, niet de goedkopere.' },
+      { q: 'Kun je eiken fineer in elke kleur laten beitsen?',
+        a: 'Het laat zich beitsen tot bijna elke tint, van gewit tot vrijwel zwart. Wel blijft de nerf zichtbaar meelopen: beitsen is geen verven. Wie een volledig egaal vlak wil, komt uit bij lak of HPL.' },
+      { q: 'Kun je een beschadiging in fineer repareren?',
+        a: 'Oppervlakkige krassen in de lak of olie zijn meestal bij te werken. Gaat de beschadiging door het fineer heen, dan is plaatselijk herstel zichtbaar en is een front vervangen doorgaans de nettere oplossing.' },
+      { q: 'Is eiken fineer geschikt voor een keuken?',
+        a: 'Ja, mits goed afgewerkt. Rond de spoelbak en boven de vaatwasser is de randafwerking bepalend: daar komt stoom en water, en daar begint schade als de kant niet dicht is.' },
+    ],
     metaTitle: 'Eiken fineer voor maatwerk keukens en kasten, JDG',
     metaDescription: 'Eiken fineer met de nerf van massief eiken en stabiliteit voor grote fronten. Licht, rustiek, gerookt of gewit. Gebruikt in JDG maatwerk keukens en kastenwanden.',
   },
@@ -78,6 +97,14 @@ export const materialen: Material[] = [
     onderhoud: 'Zeer stabiel en krasbestendig als correct afgewerkt. Bij olie-afwerking eens per jaar bijoliëmoment. Bij lakwerk gewone reiniging met vochtige doek.',
     prijsklasse: 'premium',
     hero: '/images/jdg-12.jpg',
+    vragen: [
+      { q: 'Wordt walnoot lichter of donkerder met de jaren?',
+        a: 'Walnoot verkleurt onder invloed van licht en wordt met de jaren juist iets lichter en warmer, waar veel andere houtsoorten donkerder worden. Dat gebeurt geleidelijk en gelijkmatig, mits er niet jarenlang iets op één plek blijft staan.' },
+      { q: 'Waarom is walnoot duurder dan eiken?',
+        a: 'Walnoot groeit langzamer, de bomen zijn kleiner en het bruikbare deel van de stam is beperkter. De prijs volgt de beschikbaarheid, niet de bewerking.' },
+      { q: 'Past walnoot in een kleine ruimte?',
+        a: 'Een donkere houtsoort maakt een kleine ruimte optisch krapper wanneer je hele wanden vult. In kleinere ruimtes werkt walnoot meestal beter als accent — een fronten-partij, een bureaublad, een tv-wand — dan als volledige kastenwand.' },
+    ],
     metaTitle: 'Walnoot fineer voor maatwerk meubels en kasten, JDG',
     metaDescription: 'Walnoot fineer geeft je interieur diepte en karakter. Amerikaans of Europees walnoot voor wandsystemen, TV-meubels en boekenkasten op maat.',
   },
@@ -90,6 +117,9 @@ export const materialen: Material[] = [
     paragraphs: [
       'JDG werkt met HPL van Fenix, Formica en Kronospan. Fenix NTM heeft een nano-technologisch matte finish die vingerafdrukken tegengaat en zichzelf herstelt bij lichte krassen. Populair voor keukens met kinderen. Formica biedt de breedste range aan decors, van hout tot beton. Kronospan is de budget-vriendelijke optie met nog steeds hoge kwaliteit.',
       'HPL wordt op een plaat spaanplaat of MDF geperst. De rand kan afgewerkt worden met ABS kantenband in dezelfde kleur (naadloos), met een houten kader (visueel accent) of met een postformat rand (afgeronde overgang voor keukenwerkbladen).',
+      'De naam zorgt voor verwarring, omdat vloerlaminaat ook laminaat heet. Dat is doorgaans DPL: één slijtlaag, direct op een drager geperst, gemaakt om op te lopen. HPL heeft veel meer papierlagen onder hogere druk en is gemaakt om aangeraakt te worden: fronten, deurtjes, werkbladen, tafelbladen en wandpanelen. Wie zoekt op HPL klikvloer zoekt dus in de praktijk naar een vloer, niet naar dit materiaal.',
+      'De zwakke plek van HPL zit nooit in het vlak, maar in de rand. Een kantenband die door stoom of staand water loslaat is de meest voorkomende schade in een keuken. Daarom is het van belang dat de rand strak verlijmd is en dat een front boven een vaatwasser of naast een kookplaat de juiste afwerking krijgt. Op het vlak zelf is het materiaal krasvast en kleurvast; op de naad valt of staat de levensduur.',
+      'Fronten vervangen op bestaande kasten is met HPL goed te doen, zolang de corpussen recht en heel zijn. Dat is een reële tussenweg tussen niets doen en een volledig nieuwe keuken: nieuwe deurtjes en een nieuw werkblad, op de kasten die er al staan.',
     ],
     toepassingen: [
       'Keukenfronten in druk gezinshuishouden',
@@ -108,8 +138,26 @@ export const materialen: Material[] = [
     onderhoud: 'Zeer weinig onderhoud. Vochtige doek en mild reinigingsmiddel volstaan. Geen schuurmiddelen. Fenix NTM herstelt lichte krassen door verwarming met warme doek.',
     prijsklasse: 'middenklasse',
     hero: '/images/jdg-17.jpg',
-    metaTitle: 'HPL laminaat voor keukens en kasten op maat, JDG',
-    metaDescription: 'HPL fronten van Fenix, Formica en Kronospan voor JDG maatwerk. Krasvast, vlekvrij, duizenden decors. Ideaal voor drukke gezinnen en keukens.',
+    metaTitle: 'Wat is HPL laminaat? Fronten, keukendeurtjes en toepassingen',
+    metaDescription: 'HPL laminaat uitgelegd: wat het is, het verschil met vloerlaminaat, waarom het veel gebruikt wordt voor keukenfronten en keukendeurtjes, en waar je bij de randafwerking op moet letten.',
+    vragen: [
+      { q: 'Wat is HPL laminaat precies?',
+        a: 'HPL staat voor High Pressure Laminate. Het zijn lagen papier die met kunsthars zijn doordrenkt en onder hoge druk en temperatuur tot één harde plaat zijn samengeperst. Die plaat is enkele tienden van een millimeter tot een paar millimeter dik en wordt op een dragende plaat gelijmd, meestal spaanplaat of MDF. De bovenste laag is bedrukt met een decor: houtnerf, betonlook, marmer of een egale kleur.' },
+      { q: 'Wat is het verschil tussen HPL en gewoon laminaat?',
+        a: 'Verwarrend, want beide heten laminaat. Vloerlaminaat is doorgaans DPL (Direct Pressure Laminate): één slijtlaag direct op een drager geperst, bedoeld voor vloeren. HPL bestaat uit veel meer papierlagen onder hogere druk, is daardoor harder en slagvaster, en wordt gebruikt voor fronten, werkbladen, tafelbladen en wandpanelen. Zoek je een vloer, dan zoek je geen HPL.' },
+      { q: 'Is HPL geschikt voor keukenfronten?',
+        a: 'Ja, en het is er een van de meest gebruikte materialen voor. HPL is krasvast, kleurvast, bestand tegen vet en schoonmaakmiddelen en verdraagt vocht beter dan gelakt MDF. Voor een keuken die dagelijks intensief gebruikt wordt door een gezin is het vaak de verstandigste keuze.' },
+      { q: 'Kun je HPL keukendeurtjes op maat laten maken?',
+        a: 'Dat is precies hoe het werkt. HPL komt op grote platen binnen en wordt op maat gezaagd, waarna de zichtranden worden afgewerkt met ABS-kantenband in dezelfde kleur. Daardoor kan een front elke maat krijgen die het ontwerp vraagt, in plaats van de standaardmaten van een keukenmerk.' },
+      { q: 'Kan HPL over een bestaande keuken heen?',
+        a: 'Fronten vervangen kan bijna altijd, mits de corpussen (de kastkasten) nog recht en heel zijn. Nieuwe HPL-fronten en een nieuw werkblad op bestaande kasten is een reële tussenweg tussen niets doen en een complete keuken.' },
+      { q: 'Gaan er vingerafdrukken op HPL zitten?',
+        a: 'Bij hoogglans HPL wel, net als bij elk hoogglans oppervlak. Bij matte varianten met een gesloten toplaag, zoals Fenix NTM, vallen vingerafdrukken juist nauwelijks op. Bij donkere, egale kleuren zie je afdrukken sneller dan bij een decor met structuur.' },
+      { q: 'Hoe lang gaat HPL mee?',
+        a: 'De toplaag zelf slijt in normaal huishoudelijk gebruik niet noemenswaardig. Waar het meestal misgaat is de rand: een kantenband die loslaat door stoom of door water dat langdurig in een naad staat. Een goed verlijmde ABS-rand en het vermijden van staand vocht zijn dus belangrijker dan het decor dat je kiest.' },
+      { q: 'Waar koop je HPL?',
+        a: 'HPL wordt per plaat geleverd door plaatmateriaalgroothandels en door fabrikanten als Fenix, Formica en Kronospan. Voor een particulier is losse platen kopen zelden zinvol: zagen, kanten en monteren vraagt machines en ervaring. In maatwerkprojecten wordt het materiaal ingekocht en verwerkt door de meubelmaker.' },
+    ],
   },
   {
     slug: 'composiet-werkblad',
@@ -138,6 +186,14 @@ export const materialen: Material[] = [
     onderhoud: 'Nauwelijks onderhoud. Dagelijks schoonmaken met vochtige doek en mild reinigingsmiddel. Geen coating nodig zoals bij marmer of graniet. Geen ophopingen mogelijk.',
     prijsklasse: 'premium',
     hero: '/images/jdg-23.jpg',
+    vragen: [
+      { q: 'Is composiet hittebestendig?',
+        a: 'Composiet verdraagt warmte, maar niet onbeperkt: de hars tussen de kwartskorrels kan bij een gloeiend hete pan verkleuren of haarscheuren geven. Een onderzetter is bij composiet geen overdreven voorzichtigheid.' },
+      { q: 'Kun je een composiet werkblad krassen?',
+        a: 'Het is harder dan de meeste natuursteen, maar niet onkwetsbaar. Snijden doe je op een plank, niet op het blad — al is het maar omdat je er anders je messen op verpest.' },
+      { q: 'Waar komt de naad bij een lang werkblad?',
+        a: 'Platen komen in vaste maximale afmetingen. Bij een langer blad komt er dus een naad, en waar die valt is een ontwerpkeuze: meestal in een hoek of bij de spoelbak, waar hij het minst opvalt.' },
+    ],
     metaTitle: 'Composiet werkbladen (Caesarstone, Silestone), JDG',
     metaDescription: 'Composiet werkbladen van Caesarstone, Silestone en Compac voor JDG maatwerk keukens. Krasvast, vlekvrij, honderden kleuren en marmer-imitaties.',
   },
@@ -168,6 +224,14 @@ export const materialen: Material[] = [
     onderhoud: 'Nauwelijks onderhoud. Vochtige doek volstaat. Kan zelfs met sterke chemicaliën gereinigd worden zonder aantasting. Geen coating of impregnatie nodig.',
     prijsklasse: 'topklasse',
     hero: '/images/jdg-23.jpg',
+    vragen: [
+      { q: 'Wat maakt keramiek anders dan composiet?',
+        a: 'Keramiek wordt bij zeer hoge temperatuur gebakken en bevat geen hars. Daardoor is het beter bestand tegen hitte en tegen uv-licht. Het is harder dan composiet, en tegelijk gevoeliger voor een harde klap op een rand of hoek.' },
+      { q: 'Kan keramiek breken?',
+        a: 'Bij een harde klap op een hoek of rand kan een schilfer afspringen; het vlak zelf is uitzonderlijk sterk. Verwerking en transport zijn daarom precies werk, en dunne platen worden bij montage ondersteund.' },
+      { q: 'Kun je keramiek in een dunne dikte krijgen?',
+        a: 'Ja, keramiek wordt vaak in dunne platen geleverd en op een drager verlijmd. Zo ontstaat een strak blad met enkele millimeters zichtdikte, of juist een dikke rand door de plaat om te zetten.' },
+    ],
     metaTitle: 'Keramisch werkblad (Dekton, Neolith) voor JDG keukens',
     metaDescription: 'Keramisch werkbladen zoals Dekton en Neolith voor JDG maatwerk. Onverwoestbaar, ultra dun, UV bestendig. Geschikt voor moderne keukens en buitenkeukens.',
   },

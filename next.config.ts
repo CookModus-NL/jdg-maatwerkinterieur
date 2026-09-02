@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { gesnoeideCombinaties } from './content/lokaal-rooster'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -32,10 +33,28 @@ const nextConfig: NextConfig = {
       { source: '/wp-admin/:path*', destination: '/', permanent: false },
       { source: '/wp-login.php', destination: '/', permanent: false },
       { source: '/xmlrpc.php', destination: '/', permanent: false },
-      // Oude project detail URLs (na photo gallery model) → algemene /projecten
-      { source: '/projecten/:slug', destination: '/projecten', permanent: true },
-      { source: '/blog/:path*', destination: '/', permanent: true },
-      { source: '/nieuws/:path*', destination: '/', permanent: true },
+      // 02-09-2026: de twee regels hieronder stonden hier en sloopten stilletjes de
+      // twee sterkste contentlagen van de site.
+      //   - /projecten/:slug -> /projecten  gooide 14 projectpagina's met échte foto's weg,
+      //     terwijl /projecten er wel naar linkte (14 interne links naar een 301).
+      //   - /blog/:path*     -> /           gooide de hele kennislaag weg, inclusief
+      //     "Wat kost een keuken op maat", terwijl die 4 URL's wél in sitemap.xml stonden.
+      // Gemeten: de enige klik van de site in 23-31 aug kwam van een informatieve pagina
+      // (/materialen/hpl-laminaat). Informatie werkt hier; die laag moet dus juist open.
+      { source: '/nieuws/:path*', destination: '/blog', permanent: true },
+      // 'Oosterhout Zuid' was dezelfde plaats als Oosterhout met een eigen slug:
+      // zeven duplicaat-URL's (1 stadpagina + 6 dienst×stad) die alleen met
+      // zichzelf konden concurreren. Samengevoegd.
+      { source: '/werkgebied/oosterhout-zuid', destination: '/werkgebied/oosterhout', permanent: true },
+      { source: '/diensten/:slug/oosterhout-zuid', destination: '/werkgebied/oosterhout', permanent: true },
+      // Gesnoeide dienst×stad-combinaties: een echte 308 naar de stadpagina.
+      // Afgeleid uit content/lokaal-rooster.ts, dus de lijst loopt automatisch
+      // mee als er een combinatie bij komt of afvalt.
+      ...gesnoeideCombinaties().map(({ van, naar }) => ({
+        source: van,
+        destination: naar,
+        permanent: true,
+      })),
       // Reviewlink: alles wat iemand redelijkerwijs intypt of voorleest komt uit bij /review
       { source: '/reviews', destination: '/review', permanent: true },
       { source: '/Review', destination: '/review', permanent: true },

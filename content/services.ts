@@ -9,9 +9,10 @@
 import type { LucideIcon } from 'lucide-react'
 import { ChefHat, Shirt, Tv, DoorOpen, LibraryBig, Bath } from 'lucide-react'
 import { business } from './business'
+import type { DienstSlug } from './dienst-slugs'
 
 export type Service = {
-  slug: string
+  slug: DienstSlug
   title: string
   h1: string
   seoTitle: string
@@ -26,11 +27,22 @@ export type Service = {
   hero: string
   searchTerms: string[]
   featured?: boolean
+  /**
+   * Enkelvoud zoals een zoeker het intikt. Toegevoegd 02-09-2026: de titels
+   * stonden in het meervoud ("Kledingkasten op maat in Breda") terwijl Search
+   * Console laat zien dat er in het enkelvoud gezocht wordt ("kledingkast op
+   * maat breda", "kast op maat breda", "inloopkast op maat breda").
+   */
+  singular: string
+  /** Woorden waarmee dezelfde dienst óók gezocht wordt, uit GSC 23-31 aug 2026. */
+  synoniemen: string[]
 }
 
 export const services: Service[] = [
   {
     slug: 'keukens-op-maat',
+    singular: 'Keuken op maat',
+    synoniemen: ['keuken op maat laten maken', 'maatwerkkeuken', 'keukenmaker', 'nieuwe keuken op maat'],
     title: 'Keukens op maat',
     h1: 'Een keuken die past bij hoe jij kookt.',
     seoTitle: 'Keuken op maat laten maken, JDG Maatwerk Interieur',
@@ -68,6 +80,8 @@ export const services: Service[] = [
   },
   {
     slug: 'kledingkasten-op-maat',
+    singular: 'Kledingkast op maat',
+    synoniemen: ['kast op maat', 'kasten op maat', 'garderobekast op maat', 'inbouwkast op maat', 'kledingkast montage'],
     title: 'Kledingkasten op maat',
     h1: 'Een kast waar alles écht in past.',
     seoTitle: 'Kledingkast op maat laten maken, JDG Maatwerk Interieur',
@@ -102,6 +116,8 @@ export const services: Service[] = [
   },
   {
     slug: 'inloopkasten-op-maat',
+    singular: 'Inloopkast op maat',
+    synoniemen: ['walk-in closet', 'aankleedkamer op maat', 'inloopkast laten maken'],
     title: 'Inloopkasten op maat',
     h1: 'Een inloopkast die werkt zoals jij aankleedt.',
     seoTitle: 'Inloopkast op maat laten maken, JDG Maatwerk Interieur',
@@ -135,6 +151,8 @@ export const services: Service[] = [
   },
   {
     slug: 'tv-meubels-op-maat',
+    singular: 'Tv-meubel op maat',
+    synoniemen: ['tv wandmeubel', 'wandmeubel op maat', 'zwevend tv-meubel', 'tv-wand op maat'],
     title: 'Tv-meubels op maat',
     h1: 'Een tv-meubel dat de woonkamer af maakt.',
     seoTitle: 'Tv-meubel op maat laten maken, JDG Maatwerk Interieur',
@@ -168,6 +186,8 @@ export const services: Service[] = [
   },
   {
     slug: 'boekenkasten-en-wandmeubels',
+    singular: 'Boekenkast op maat',
+    synoniemen: ['wandkast op maat', 'wandmeubel op maat', 'kast rond het raam', 'kastenwand op maat'],
     title: 'Boekenkasten op maat',
     h1: 'Een boekenkast als middelpunt.',
     seoTitle: 'Boekenkast op maat laten maken, JDG Maatwerk Interieur',
@@ -199,6 +219,8 @@ export const services: Service[] = [
   },
   {
     slug: 'badkamermeubels-op-maat',
+    singular: 'Badkamermeubel op maat',
+    synoniemen: ['wastafelmeubel op maat', 'badmeubel op maat', 'badkamermeubels op maat'],
     title: 'Badkamermeubels op maat',
     h1: 'Een badkamermeubel dat blijft staan.',
     seoTitle: 'Badkamermeubel op maat laten maken, JDG Maatwerk Interieur',

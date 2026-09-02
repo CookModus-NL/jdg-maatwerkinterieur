@@ -133,11 +133,8 @@ export function websiteSchema() {
     description: business.description,
     inLanguage: 'nl-NL',
     publisher: { '@id': `${BASE}/#organization` },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${BASE}/zoek?q={search_term_string}` },
-      'query-input': 'required name=search_term_string',
-    },
+    // Geen SearchAction: die wees naar /zoek?q=, en die pagina bestaat niet.
+    // Schema dat iets belooft wat de site niet heeft is een fout, geen extraatje.
   }
 }
 
@@ -226,4 +223,102 @@ export function siteNavigationSchema() {
     name: item.name,
     url: `${BASE}${item.url}`,
   }))
+}
+
+/* ------------------------------------------------------------------ *
+ * Toegevoegd 02-09-2026 bij de vindbaarheidsronde.
+ *
+ * Aanleiding: serviceSchema() en breadcrumbSchema() stonden hier al maanden,
+ * maar werden nergens aangeroepen. 134 van de 138 pagina's gingen live met
+ * uitsluitend de sitewide LocalBusiness-blok uit layout.tsx — geen Service,
+ * geen FAQPage, geen kruimelpad, terwijl de FAQ's per dienst al in
+ * content/services.ts klaarstonden.
+ * ------------------------------------------------------------------ */
+
+/** Eén <script type="application/ld+json"> met alle blokken van deze pagina. */
+export function pageSchema(blocks: (object | null | undefined)[]) {
+  return JSON.stringify(blocks.filter(Boolean))
+}
+
+/** Een gerealiseerd project: echte foto, echte omschrijving, eigen URL. */
+export function projectSchema(p: {
+  slug: string; title: string; description: string; hero: string
+  gallery: string[]; location: string; date: string; material?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    '@id': `${BASE}/projecten/${p.slug}#project`,
+    name: p.title,
+    headline: p.title,
+    description: p.description,
+    url: `${BASE}/projecten/${p.slug}`,
+    dateCreated: p.date,
+    creator: { '@id': `${BASE}/#business` },
+    contentLocation: { '@type': 'Place', name: p.location },
+    material: p.material,
+    image: p.gallery.map((g) => `${BASE}${g}`),
+    primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}${p.hero}`, caption: p.title },
+    isPartOf: { '@id': `${BASE}/#website` },
+  }
+}
+
+/** Een lijst van pagina's (projectoverzicht, dienstenoverzicht, werkgebied). */
+export function itemListSchema(name: string, items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      url: it.url.startsWith('http') ? it.url : `${BASE}${it.url}`,
+    })),
+  }
+}
+
+/**
+ * Het vak zoals de zoeker het noemt. GSC 23-31 aug 2026: 161 vertoningen op
+ * 'interieurbouwer', 'interieurbouw', 'meubelmaker', 'meubelmakerij' en
+ * 'projectinrichting' — woorden die op de site zelf nergens stonden.
+ * Dit zijn geen nieuwe claims: het is hetzelfde vak, in de woorden van de klant.
+ */
+export const vakTermen = [
+  'meubelmaker',
+  'meubelmakerij',
+  'interieurbouwer',
+  'interieurbouw',
+  'maatwerk interieur',
+  'meubelmaker op maat',
+] as const
+
+/** LocalBusiness-variant voor één plaats: dezelfde zaak, expliciet gekoppeld aan de stad. */
+export function localBusinessInCitySchema(city: { name: string; slug: string; region: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${BASE}/werkgebied/${city.slug}#service`,
+    name: `Meubelmaker en interieurbouwer in ${city.name}`,
+    serviceType: 'Maatwerk interieur, meubelmakerij en interieurbouw',
+    description: `JDG Maatwerk Interieur ontwerpt, bouwt en plaatst maatwerk keukens, kasten en meubels voor woningen in ${city.name} en omgeving, vanuit de eigen werkplaats in ${business.address.city}.`,
+    provider: { '@id': `${BASE}/#business` },
+    areaServed: { '@type': 'City', name: city.name, containedInPlace: { '@type': 'AdministrativeArea', name: city.region } },
+    url: `${BASE}/werkgebied/${city.slug}`,
+    category: 'Meubelmakerij en interieurbouw',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Maatwerk in ${city.name}`,
+      itemListElement: services.map((s, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        itemOffered: {
+          '@type': 'Service',
+          name: `${s.title} in ${city.name}`,
+          url: `${BASE}/diensten/${s.slug}/${city.slug}`,
+        },
+      })),
+    },
+  }
 }

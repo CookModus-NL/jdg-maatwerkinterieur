@@ -3,8 +3,12 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowUpRight, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react'
 import { services, getService } from '@/content/services'
-import { cities } from '@/content/cities'
+import { cities, getCity } from '@/content/cities'
+import { stedenVoorDienst } from '@/content/lokaal-rooster'
 import { business } from '@/content/business'
+import { projectenVoorDienst, materialenVoorDienst, prijsfactorenVoor } from '@/content/relaties'
+import { Kruimelpad, ProjectenStrook, MaterialenStrook, PrijsfactorenBlok } from '@/components/secties'
+import { breadcrumbSchema, faqPageSchema, serviceSchema, pageSchema } from '@/lib/schema'
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -15,7 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const s = getService(slug)
   if (!s) return {}
   return {
-    title: s.seoTitle,
+    // Enkelvoud vooraan: zo wordt er gezocht (GSC 23-31 aug 2026).
+    title: `${s.singular} laten maken`,
     description: s.metaDescription,
     alternates: { canonical: `${business.url}/diensten/${s.slug}` },
     openGraph: { title: s.seoTitle, description: s.metaDescription, type: 'article' },
@@ -31,14 +36,31 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     `https://wa.me/${business.whatsapp.replace('+', '')}?text=${encodeURIComponent(msg)}`
 
   const others = services.filter((x) => x.slug !== s.slug).slice(0, 3)
+  const projecten = projectenVoorDienst(s.slug, 3)
+  const stoffen = materialenVoorDienst(s.slug, 4)
+  const factoren = prijsfactorenVoor(s.slug)
+
+  const kruimels = [
+    { name: 'Home', url: '/' },
+    { name: 'Diensten', url: '/diensten' },
+    { name: s.title },
+  ]
+
+  // Stond hier tot 02-09-2026 niet: Service, FAQPage en kruimelpad ontbraken op
+  // álle dienstpagina's, terwijl de FAQ's er zichtbaar op staan.
+  const ld = pageSchema([
+    breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/diensten/${s.slug}` }))),
+    serviceSchema(s.slug),
+    faqPageSchema(s.faqs),
+  ])
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
+
       <section className="pt-32 pb-4">
         <div className="container-x">
-          <Link href="/diensten" className="inline-flex items-center gap-2 text-[13px] text-ink-500 hover:text-ink-900 transition-colors">
-            <ArrowLeft className="h-4 w-4" /> Alle diensten
-          </Link>
+          <Kruimelpad items={kruimels} />
         </div>
       </section>
 
@@ -120,6 +142,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      <ProjectenStrook
+        projecten={projecten}
+        titel={`Eerder gemaakt: ${s.title.toLowerCase()}.`}
+        intro="Werk uit de eigen werkplaats in Terheijden, met de materialen en het beslag die hieronder staan."
+      />
+
+      <PrijsfactorenBlok
+        factoren={factoren}
+        titel={`Wat kost ${s.singular.toLowerCase()}?`}
+        intro="Maatwerk heeft geen kant-en-klare prijs. Wel een vaste set knoppen die de offerte bepalen. Stuur een foto en globale maten, dan volgt er een indicatie."
+      />
+
+      <MaterialenStrook
+        materialen={stoffen}
+        titel={`Materialen voor ${s.singular.toLowerCase()}.`}
+        intro="Per materiaal staat wat het kost, hoe het slijt en waar het wel en niet voor bedoeld is."
+      />
+
       <section className="py-24 bg-ink-950 text-paper">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
@@ -154,24 +194,31 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               {s.title} in jouw plaats.
             </h2>
             <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700">
-              JDG rijdt vanuit Terheijden door heel Nederland. Op deze plekken staat JDG regelmatig ingepland voor {s.title.toLowerCase()}.
+              JDG rijdt vanuit {business.address.city} door heel Nederland. Voor deze plaatsen staat er een
+              aparte pagina over {s.singular.toLowerCase()}, met de afstand en wat de woningen daar praktisch
+              vragen. Staat jouw plaats er niet bij, kijk dan bij het werkgebied.
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {cities.map((c) => (
+            {stedenVoorDienst(s.slug).map((slugStad) => getCity(slugStad)).filter(Boolean).map((c) => (
               <Link
-                key={c.slug}
-                href={`/diensten/${s.slug}/${c.slug}`}
+                key={c!.slug}
+                href={`/diensten/${s.slug}/${c!.slug}`}
                 className="group flex items-center justify-between border-b border-ink-900/15 py-3 hover:border-jdg-500 transition-colors"
               >
                 <span className="flex items-center gap-2 text-[14px] font-medium text-ink-900">
                   <MapPin className="h-3.5 w-3.5 text-jdg-700" />
-                  {c.name}
+                  {c!.name}
                 </span>
                 <ArrowUpRight className="h-3.5 w-3.5 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
               </Link>
             ))}
+          </div>
+          <div className="mt-10">
+            <Link href="/werkgebied" className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-ink-900 hover:text-jdg-700 transition-colors">
+              Volledig werkgebied ({cities.length} plaatsen) <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
       </section>

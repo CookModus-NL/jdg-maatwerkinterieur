@@ -16,12 +16,18 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // 02-09-2026: /materialen en /blog stonden nergens in de navigatie — niet in
+  // de header, niet in de footer. Ze waren alleen via sitemap.xml te vinden,
+  // terwijl de enige klik die de site in 23-31 aug binnenhaalde uit precies die
+  // hoek kwam (/materialen/hpl-laminaat). Werkwijze verhuist naar de footer om
+  // de balk niet te laten overlopen.
   const nav = [
     { href: '/diensten', label: 'Diensten' },
     { href: '/projecten', label: 'Projecten' },
-    { href: '/werkwijze', label: 'Werkwijze' },
-    { href: '/over-jonas', label: 'Over Jonas' },
+    { href: '/materialen', label: 'Materialen' },
+    { href: '/blog', label: 'Kennis' },
     { href: '/werkgebied', label: 'Werkgebied' },
+    { href: '/over-jonas', label: 'Over Jonas' },
     { href: '/contact', label: 'Contact' },
   ]
 

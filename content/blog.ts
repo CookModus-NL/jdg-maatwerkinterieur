@@ -4,6 +4,21 @@
  */
 
 export type BlogPost = {
+  /**
+   * Staat dit artikel live? Toegevoegd 02-09-2026.
+   *
+   * Op 10 aug 2026 heeft Jonas bij zijn review álle prijs-FAQ's van de site
+   * laten verwijderen (commit d421379: "Alle prijs-FAQ's verwijderd per Jonas'
+   * verzoek", zeven stuks). Elf dagen later zette de contentmotor twee artikelen
+   * neer die precies dat weer terugbrengen: bedragen van 12.000 tot 40.000 euro
+   * per keuken, 4.000 euro per kledingkast, en een claim van "30 tot 40 procent
+   * meer opbergruimte" zonder bron.
+   *
+   * Die artikelen zijn niet verwijderd — ze staan klaar. Ze gaan pas live als
+   * Jonas de bedragen bevestigt (DE WET art. 1.3: prijzen zijn pas publiek
+   * bruikbaar met akkoord van de eigenaar). Eén veld omzetten volstaat.
+   */
+  gepubliceerd: boolean
   slug: string
   title: string
   h1: string
@@ -11,7 +26,7 @@ export type BlogPost = {
   metaDescription: string
   publishedAt: string
   updatedAt: string
-  author: 'Jonas de Graaf'
+  author: 'Jonas de Graaf' | 'JDG Maatwerk Interieur'
   category: 'kosten' | 'proces' | 'materialen' | 'inspiratie'
   primaryKeyword: string
   relatedKeywords: string[]
@@ -23,6 +38,8 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    // WACHT OP JONAS: bedragen 12.000 / 18.000 / 28.000 / 40.000 euro.
+    gepubliceerd: false,
     slug: 'wat-kost-een-keuken-op-maat-2026',
     title: 'Wat kost een keuken op maat in 2026?',
     h1: 'Wat kost een keuken op maat in 2026? Eerlijke prijzen en wat je krijgt.',
@@ -89,6 +106,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 5,
   },
   {
+    gepubliceerd: true,
     slug: 'zolderinbouw-op-maat-7-dingen-vergeten',
     title: 'Zolderinbouw op maat: 7 dingen die vaak vergeten worden',
     h1: 'Zolderinbouw op maat: 7 dingen die klanten vaak vergeten.',
@@ -141,6 +159,9 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 6,
   },
   {
+    // WACHT OP JONAS: 800 euro / 4.000 euro, en "30 tot 40 procent meer
+    // opbergruimte" heeft geen bron.
+    gepubliceerd: false,
     slug: 'kledingkast-op-maat-vs-kant-en-klaar',
     title: 'Kledingkast op maat vs kant-en-klaar: 5 verschillen die tellen',
     h1: 'Kledingkast op maat of kant-en-klaar? De vijf verschillen die echt tellen.',
@@ -193,6 +214,220 @@ export const blogPosts: BlogPost[] = [
     hero: '/images/jdg-13.jpg',
     readingMinutes: 6,
   },
+  /* ------------------------------------------------------------------ *
+   * Toegevoegd 02-09-2026. Niet verzonnen onderwerpen: dit zijn de drie
+   * clusters waar Search Console tussen 23 en 31 aug 2026 vraag laat zien
+   * waarop de site geen enkel antwoord had staan.
+   * ------------------------------------------------------------------ */
+  {
+    gepubliceerd: true,
+    slug: 'meubelmaker-interieurbouwer-of-keukenzaak',
+    title: 'Meubelmaker, interieurbouwer of keukenzaak: wie doet wat?',
+    h1: 'Meubelmaker, interieurbouwer of keukenzaak: wie doet nu eigenlijk wat?',
+    metaTitle: 'Meubelmaker of interieurbouwer? Het verschil uitgelegd',
+    metaDescription: 'Meubelmaker, interieurbouwer, keukenzaak, interieurstylist: vier partijen die iets heel anders doen. Wie maakt wat, wie tekent alleen, en bij wie moet je zijn voor een kast of keuken op maat.',
+    publishedAt: '2026-09-02',
+    updatedAt: '2026-09-02',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'verschil meubelmaker interieurbouwer',
+    relatedKeywords: [
+      'interieurbouwer',
+      'interieurbouw',
+      'meubelmaker',
+      'meubelmakerij',
+      'wat doet een interieurbouwer',
+      'meubelmaker of keukenzaak',
+      'interieurstylist of meubelmaker',
+    ],
+    intro:
+      'Wie zoekt naar iemand die een kast of keuken op maat maakt, komt vier woorden tegen die door elkaar gebruikt worden: meubelmaker, interieurbouwer, keukenzaak en interieurstylist. Ze betekenen niet hetzelfde, en het verschil bepaalt wie er uiteindelijk met een schroevendraaier in jouw huis staat. Hieronder staat per partij wat die wél en niet doet.',
+    sections: [
+      {
+        heading: 'De meubelmaker maakt het zelf',
+        body: 'Een meubelmaker heeft een werkplaats met machines en maakt het meubel daar. Tekening, zaagwerk, verlijmen, kanten, beslag monteren en afwerken gebeuren onder één dak, en meestal plaatst dezelfde partij het ook. Dat betekent dat de persoon die je aan de telefoon hebt, ook degene is die de fout maakt of voorkomt. Een meubelmaker werkt per project, niet uit een catalogus: er is geen standaardmaat waar jouw ruimte in moet passen.',
+        bullets: [
+          'Eigen werkplaats en eigen machines',
+          'Werkt op maat, niet uit een programma met vaste maten',
+          'Tekent, bouwt en plaatst meestal zelf',
+          'Aanspreekpunt blijft dezelfde van eerste gesprek tot oplevering',
+        ],
+      },
+      {
+        heading: 'De interieurbouwer is hetzelfde vak, andere schaal',
+        body: 'Interieurbouw is in de praktijk hetzelfde ambacht, maar de term wordt vaker gebruikt voor grotere en vaste inbouw: kastenwanden, wandsystemen, balies, winkelinterieurs en projectinrichting. Veel bedrijven noemen zich allebei, en terecht — het onderscheid zit in het soort opdracht, niet in een andere opleiding of andere machines. Zoek je een wandvullende kast of een keuken die vast aan het huis zit, dan zoek je in beide gevallen bij dezelfde soort partij.',
+      },
+      {
+        heading: 'De keukenzaak verkoopt, en laat maken',
+        body: 'Een keukenzaak of showroom is in de eerste plaats een verkooporganisatie. Er wordt geadviseerd, getekend in een configuratieprogramma en besteld bij een fabrikant; monteurs plaatsen het daarna. Dat werkt goed en snel zolang je ruimte binnen het maatsysteem van die fabrikant valt. Zit er een schoorsteen in de weg, ligt de vloer scheef of wil je een kastdiepte die niet in het programma zit, dan wordt het passtukwerk — en dat is precies waar het verschil met maatwerk zichtbaar wordt.',
+        bullets: [
+          'Vaste maatsystemen, kortingsstructuur en showroomprijzen',
+          'Productie bij een fabrikant, montage door een derde partij',
+          'Sterk in doorlooptijd en in keuze uit apparatuur',
+          'Passtukken en vulpanelen waar de ruimte niet in het systeem past',
+        ],
+      },
+      {
+        heading: 'De interieurstylist en de binnenhuisarchitect tekenen, maar bouwen niet',
+        body: 'Een interieurstylist, interieuradviseur of binnenhuisarchitect denkt na over indeling, licht, kleur, materiaal en sfeer. Dat is een eigen vak met een eigen waarde, maar er komt geen kast uit een werkplaats. Zij leveren een plan; de uitvoering gaat daarna alsnog naar een meubelmaker, een interieurbouwer of een aannemer. Wie zoekt op interieuradvies terwijl hij eigenlijk een kast wil laten maken, zoekt dus één schakel te vroeg in de keten.',
+      },
+      {
+        heading: 'Waar JDG in dit rijtje staat',
+        body: 'JDG Maatwerk Interieur is meubelmaker en interieurbouwer: er is een eigen werkplaats in Terheijden, er wordt zelf getekend, zelf gebouwd en zelf geplaatst. Er zit geen fabrikant en geen tussenpartij in. Wat JDG niet doet is losse interieuradvies-opdrachten of stylingtrajecten zonder dat er iets gemaakt wordt.',
+        bullets: [
+          'Wel: keukens, kledingkasten, inloopkasten, tv-meubels, boekenkasten en badkamermeubels op maat',
+          'Wel: het ontwerp dat bij dat meubel hoort, inbegrepen in het traject',
+          'Niet: los interieuradvies of styling zonder uitvoering',
+          'Niet: doorverkopen van een fabriekskeuken uit een programma',
+        ],
+      },
+      {
+        heading: 'Hoe je kiest in drie vragen',
+        body: 'Moet het passen in een ruimte die niet recht, niet standaard of niet leeg is? Dan is maatwerk geen luxe maar de enige manier waarop het klopt. Wil je vooral snel en binnen een vast systeem? Dan is een keukenzaak sneller. Weet je nog niet wát je wilt met de ruimte? Dan is een stylist of binnenhuisarchitect de logische eerste stap, en komt de maker daarna.',
+      },
+    ],
+    hero: '/images/jdg-01.jpg',
+    readingMinutes: 5,
+  },
+  {
+    gepubliceerd: true,
+    slug: 'kledingkast-montage-of-kast-op-maat',
+    title: 'Kledingkast laten monteren of een kast op maat: wat is verstandig?',
+    h1: 'Kledingkast laten monteren, of meteen een kast op maat?',
+    metaTitle: 'Kledingkast montage of kast op maat: wat kies je wanneer?',
+    metaDescription: 'Een gekochte kledingkast laten monteren, een bestaande kast laten inbouwen of meteen een kast op maat: drie routes met een ander resultaat. Wanneer welke route logisch is, en waar het bij montage vaak misgaat.',
+    publishedAt: '2026-09-02',
+    updatedAt: '2026-09-02',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'kledingkast montage',
+    relatedKeywords: [
+      'kledingkast laten monteren',
+      'kast op maat of kant en klaar',
+      'bestaande kast inbouwen',
+      'kledingkast op maat',
+      'kast tot aan het plafond',
+    ],
+    intro:
+      'Veel mensen zoeken eerst iemand die een gekochte kledingkast in elkaar zet en aan de muur hangt. Begrijpelijk, want dat lijkt de goedkoopste route. Alleen lost montage niet op waar het meestal om begon: dat de kast niet past. Hieronder de drie routes en wat ze in de praktijk opleveren.',
+    sections: [
+      {
+        heading: 'Route 1: een gekochte kast laten monteren',
+        body: 'Je koopt een kastsysteem in vaste maten en laat het opbouwen en verankeren. Dat gaat prima wanneer de muur recht is, de plint eenvoudig weggewerkt kan worden en er boven de kast een kier mag blijven. De montage zelf is meestal binnen een dag klaar.',
+        bullets: [
+          'Snelste route en de laagste eenmalige uitgave',
+          'Werkt goed bij rechte, moderne muren zonder obstakels',
+          'Er blijft doorgaans ruimte boven de kast en langs de zijkant',
+          'Bij een scheve muur ontstaat een zichtbare kier of een kitrand',
+        ],
+      },
+      {
+        heading: 'Route 2: een bestaande kast laten aanvullen of inbouwen',
+        body: 'Staat er al een kastsysteem waar je tevreden over bent, dan hoeft dat er niet uit. De ruimte eromheen kan worden opgevuld met maatwerk: een opzetkast tot aan het plafond, een passtuk tegen de schuine wand, een zijpaneel dat de kier dichtzet en fronten die het geheel één ding maken. JDG doet dit: bestaande kasten, bijvoorbeeld een Pax, kunnen worden aangevuld met onderdelen op maat.',
+        bullets: [
+          'Behoudt wat er al staat en werkt daaromheen',
+          'Wint vooral hoogte, want daar zit de meeste ongebruikte ruimte',
+          'Vraagt om inmeten ter plaatse, niet om standaardmaten',
+        ],
+      },
+      {
+        heading: 'Route 3: meteen een kast op maat',
+        body: 'De kast wordt getekend op de ruimte die er is: van muur tot muur, van vloer tot plafond, langs de schuine wand en om de radiator heen. De binnenindeling volgt wat je opbergt in plaats van wat het systeem toevallig aanbiedt. Dit is de duurste route in aanschaf en de enige waarbij er achteraf niets weggewerkt hoeft te worden.',
+        bullets: [
+          'Geen kieren, geen vulpanelen, geen kitrand als noodoplossing',
+          'De volle hoogte wordt gebruikt, ook onder een schuin dak',
+          'Indeling naar wat er in moet: hangen, vouwen, schoenen, koffers',
+          'Langere doorlooptijd, want het wordt gemaakt en niet gepakt',
+        ],
+      },
+      {
+        heading: 'Waar het bij montage het vaakst misgaat',
+        body: 'Drie dingen komen steeds terug. Muren zijn zelden haaks, zeker in oudere woningen — een kast van 240 centimeter past dan niet in een gat van 240 centimeter. Plinten en leidingkokers zorgen ervoor dat een kast niet tegen de muur aan kan. En de ruimte boven de kast blijft ongebruikt, terwijl daar juist de meeste opbergruimte zit die je nooit dagelijks nodig hebt.',
+      },
+      {
+        heading: 'Hoe je kiest',
+        body: 'Meet de breedte van de wand op drie hoogtes: vlak boven de vloer, op ooghoogte en vlak onder het plafond. Verschillen die maten meer dan een centimeter, dan is de wand niet recht en ga je bij een kastsysteem sowieso passtukken nodig hebben. Is er meer dan dertig centimeter ruimte boven een standaardkast, dan is dat de goedkoopste opbergruimte die je nooit koopt. Met die twee maten in de hand is de keuze meestal binnen een minuut gemaakt.',
+      },
+    ],
+    hero: '/images/jdg-13.jpg',
+    readingMinutes: 5,
+  },
+  {
+    gepubliceerd: true,
+    slug: 'hoe-een-offerte-voor-maatwerk-is-opgebouwd',
+    title: 'Hoe een offerte voor maatwerk is opgebouwd',
+    h1: 'Hoe een offerte voor maatwerk is opgebouwd, en waarom prijzen verschillen.',
+    metaTitle: 'Offerte maatwerk interieur: hoe die is opgebouwd',
+    metaDescription: 'Waarom twee offertes voor dezelfde kast ver uit elkaar kunnen liggen. De posten waaruit een maatwerkofferte bestaat, wat er vaak buiten valt, en welke vragen je stelt voor je tekent.',
+    publishedAt: '2026-09-02',
+    updatedAt: '2026-09-02',
+    author: 'JDG Maatwerk Interieur',
+    category: 'kosten',
+    primaryKeyword: 'offerte maatwerk interieur',
+    relatedKeywords: [
+      'wat kost maatwerk',
+      'offerte keuken op maat',
+      'offerte kast op maat',
+      'prijs maatwerk interieur',
+      'offertes vergelijken interieurbouw',
+    ],
+    intro:
+      'Twee offertes voor dezelfde kast kunnen ver uit elkaar liggen zonder dat een van beide te duur is. Meestal zit het verschil niet in de marge maar in wat er wel en niet in staat. Hieronder de posten waaruit een maatwerkofferte is opgebouwd, en de vragen waarmee je twee offertes eerlijk naast elkaar legt.',
+    sections: [
+      {
+        heading: 'Waar de prijs uit bestaat',
+        body: 'Een maatwerkofferte valt uiteen in een paar herkenbare blokken. Materiaal is er daar één van, en meestal niet de grootste.',
+        bullets: [
+          'Plaatmateriaal voor het corpus: de kastdozen zelf',
+          'Fronten en zichtdelen: het materiaal dat je ziet en aanraakt',
+          'Werkblad, waar dat van toepassing is',
+          'Beslag: scharnieren, ladegeleiders, grepen, dempers',
+          'Tekenwerk en werkvoorbereiding',
+          'Uren in de werkplaats: zagen, kanten, boren, verlijmen, afwerken',
+          'Transport en montage-uren op locatie',
+          'Eventueel sloop, afvoer en het aanpassen van leidingen of elektra',
+        ],
+      },
+      {
+        heading: 'Waarom dezelfde kast twee prijzen heeft',
+        body: 'De grootste verschillen ontstaan bij de posten die je niet ziet. Een corpus in dun, licht plaatmateriaal met genietede achterwand kost minder dan een corpus in dik materiaal met een ingefreesde rug. Standaardbeslag kost minder dan beslag met een lange levensduurgarantie. Een kast die op standaardmaat wordt gemaakt en met vulpanelen wordt ingepast, kost minder tekenwerk dan een kast die op de scheve muur is getekend. Alle drie zijn legitieme keuzes; ze horen alleen wel expliciet in de offerte te staan.',
+      },
+      {
+        heading: 'Wat er vaak buiten valt',
+        body: 'Let bij het vergelijken vooral op de randen van de opdracht. Dit zijn de posten die achteraf voor verrassingen zorgen.',
+        bullets: [
+          'Demontage en afvoer van wat er nu staat',
+          'Aanpassen of verplaatsen van water, gas, elektra en afzuiging',
+          'Aansluiten van apparatuur',
+          'Afkitten en het afwerken van plinten en aansluitnaden',
+          'Schilder- of stucwerk dat nodig is nadat de oude kast eruit is',
+          'Meerwerk bij een vloer die niet waterpas ligt',
+        ],
+      },
+      {
+        heading: 'Zes vragen die twee offertes vergelijkbaar maken',
+        body: 'Stel bij beide partijen precies dezelfde vragen. Verschillen in het antwoord verklaren het verschil in de prijs vrijwel altijd.',
+        bullets: [
+          'Welk materiaal en welke dikte gebruikt u voor het corpus?',
+          'Welk merk beslag zit erin, en met welke garantie?',
+          'Is het ontwerp en het tekenwerk in de prijs inbegrepen?',
+          'Wie meet in, en wanneer wordt er definitief gemeten?',
+          'Zitten montage, afkitten en afwerken in de prijs?',
+          'Wat gebeurt er als de muur scheef blijkt: meerwerk of inbegrepen?',
+        ],
+      },
+      {
+        heading: 'Waarom er geen prijslijst op deze site staat',
+        body: 'Een prijs per meter zegt bij maatwerk weinig, omdat dezelfde meter met een ander front, ander beslag en een andere situatie ter plaatse een heel ander bedrag oplevert. JDG geeft daarom geen richtprijzen op de site maar een offerte op basis van wat er werkelijk staat. Het eerste gesprek en de offerte zijn gratis en vrijblijvend; een appje met foto\'s en globale maten is genoeg om te beginnen.',
+      },
+    ],
+    hero: '/images/jdg-23.jpg',
+    readingMinutes: 6,
+  },
 ]
 
-export const getBlogPost = (slug: string) => blogPosts.find((p) => p.slug === slug)
+/** Alleen wat daadwerkelijk gepubliceerd mag worden. Gebruik dit overal. */
+export const livePosts = blogPosts.filter((p) => p.gepubliceerd)
+
+export const getBlogPost = (slug: string) =>
+  blogPosts.find((p) => p.slug === slug && p.gepubliceerd)

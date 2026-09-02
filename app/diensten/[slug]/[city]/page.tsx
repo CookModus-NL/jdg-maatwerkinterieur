@@ -1,24 +1,47 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowUpRight, ArrowLeft, MapPin, Phone, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, MapPin, Phone, MessageCircle } from 'lucide-react'
 import { services, getService } from '@/content/services'
-import { cities, getCity } from '@/content/cities'
+import { cities, getCity, nearbyCities } from '@/content/cities'
 import { business } from '@/content/business'
+import { lokaalRooster, heeftLokalePagina, roosterRegel } from '@/content/lokaal-rooster'
+import { projectenVoorDienst, vragenVoorDienst, prijsfactorenVoor } from '@/content/relaties'
+import {
+  Kruimelpad,
+  ProjectenStrook,
+  PrijsfactorenBlok,
+  VragenBlok,
+  PlaatsFeiten,
+  ContactBlok,
+  PlaatsenRooster,
+  waHref,
+} from '@/components/secties'
+import { breadcrumbSchema, faqPageSchema, serviceSchema, pageSchema } from '@/lib/schema'
+
+/**
+ * Alleen de combinaties waar aantoonbaar naar gezocht wordt. Zie
+ * content/lokaal-rooster.ts voor de zoekopdrachten achter elke regel.
+ * Combinaties die er niet in staan sturen hieronder met een 308 door naar de
+ * stadpagina, die alle zes diensten voor die plaats behandelt.
+ */
+// Alles buiten het rooster wordt al door next.config.ts met een 308 omgeleid
+// naar de stadpagina; wat hier binnenkomt hoort te bestaan.
+export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const params: { slug: string; city: string }[] = []
-  for (const s of services) for (const c of cities) params.push({ slug: s.slug, city: c.slug })
-  return params
+  return lokaalRooster.map((r) => ({ slug: r.dienst, city: r.stad }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; city: string }> }) {
   const { slug, city } = await params
   const s = getService(slug)
   const c = getCity(city)
-  if (!s || !c) return {}
-  const title = `${s.title} in ${c.name}, JDG Maatwerk Interieur`
-  const desc = `${s.title} in ${c.name}? JDG ontwerpt en bouwt maatwerk voor woningen in ${c.name} en omgeving. Werkplaats Terheijden, geleverd door heel Nederland.`
+  if (!s || !c || !heeftLokalePagina(slug, city)) return {}
+  // Enkelvoud, want zo wordt er gezocht: "kledingkast op maat breda", niet
+  // "kledingkasten op maat breda" (GSC 23-31 aug 2026).
+  const title = `${s.singular} in ${c.name} laten maken`
+  const desc = `${s.singular} in ${c.name}? JDG is meubelmaker en interieurbouwer in ${business.address.city}, ${c.distanceKm} km verderop. Zelf ontworpen, zelf gebouwd in de eigen werkplaats, zelf geplaatst. Gratis inmeten en offerte.`
   return {
     title,
     description: desc,
@@ -31,35 +54,52 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
   const { slug, city } = await params
   const s = getService(slug)
   const c = getCity(city)
-  if (!s || !c) notFound()
+  if (!s || !c || !heeftLokalePagina(slug, city)) notFound()
 
-  const waHref = (msg: string) =>
-    `https://wa.me/${business.whatsapp.replace('+', '')}?text=${encodeURIComponent(msg)}`
+  const regel = roosterRegel(slug, city)
+  const projecten = projectenVoorDienst(s.slug, 3)
+  const vragen = vragenVoorDienst(s.slug, 5)
+  const factoren = prijsfactorenVoor(s.slug)
+  const buren = nearbyCities(c.slug, 4)
+  const andereDiensten = services.filter((x) => x.slug !== s.slug)
 
-  const otherCities = cities.filter((x) => x.slug !== c.slug).slice(0, 8)
+  const kruimels = [
+    { name: 'Home', url: '/' },
+    { name: 'Diensten', url: '/diensten' },
+    { name: s.title, url: `/diensten/${s.slug}` },
+    { name: c.name },
+  ]
+
+  const ld = pageSchema([
+    breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/diensten/${s.slug}/${c.slug}` }))),
+    serviceSchema(s.slug, c.slug),
+    faqPageSchema(vragen),
+  ])
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
+
       <section className="pt-32 pb-4">
         <div className="container-x">
-          <div className="flex items-center gap-2 text-[13px] text-ink-500">
-            <Link href="/diensten" className="hover:text-ink-900 transition-colors">Diensten</Link>
-            <span>/</span>
-            <Link href={`/diensten/${s.slug}`} className="hover:text-ink-900 transition-colors">{s.title}</Link>
-            <span>/</span>
-            <span className="text-ink-900">{c.name}</span>
-          </div>
+          <Kruimelpad items={kruimels} />
         </div>
       </section>
 
       <section className="pt-8 pb-16">
         <div className="container-x">
-          <span className="eyebrow">{c.region} · {c.postcodePrefix}</span>
+          <span className="eyebrow">{c.gemeente} · {c.region} · {c.postcodePrefix}</span>
           <h1 className="mt-6 font-display text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.02em] text-ink-950">
-            {s.title} in <span className="text-jdg-700">{c.name}</span>.
+            {s.singular} in <span className="text-jdg-700">{c.name}</span>.
           </h1>
-          <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
-            {c.intro}
+          <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">{c.intro}</p>
+          {regel && (
+            <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-ink-700">{regel.lokaleTekst}</p>
+          )}
+          <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
+            JDG is meubelmaker en interieurbouwer in {business.address.city}, op {c.distanceKm} kilometer van{' '}
+            {c.name}. {s.short} Ontwerp, productie en montage komen uit één werkplaats, dus er zit geen
+            tussenpartij tussen de tekening en wat er uiteindelijk in je huis staat.
           </p>
 
           <div className="mt-16 grid grid-cols-12 gap-8">
@@ -67,7 +107,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-ink-900">
                 <Image
                   src={s.hero}
-                  alt={`${s.title} in ${c.name}`}
+                  alt={`${s.singular} gemaakt door JDG Maatwerk Interieur, werkgebied ${c.name}`}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 60vw"
@@ -81,10 +121,13 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 <span className="eyebrow">De afstand</span>
                 <div className="mt-4 flex items-baseline gap-3">
                   <span className="font-display text-6xl text-ink-950 tabular">{c.distanceKm || '±0'}</span>
-                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-600">km vanuit Terheijden</span>
+                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-600">
+                    km vanuit {business.address.city}
+                  </span>
                 </div>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-ink-700">
-                  JDG komt kosteloos langs voor een eerste gesprek. Rond {c.landmark} staat JDG vaker ingepland voor {s.title.toLowerCase()}.
+                  Inmeten in {c.name} gebeurt bij jou thuis en is gratis. Ook {c.kernen.slice(0, 3).join(', ')}{' '}
+                  vallen binnen dezelfde rit.
                 </p>
               </div>
 
@@ -92,7 +135,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 <span className="eyebrow">Direct contact</span>
                 <div className="mt-6 flex flex-col gap-3">
                   <a
-                    href={waHref(`Hoi JDG, ik zoek ${s.title.toLowerCase()} in ${c.name}. Kunnen we vrijblijvend afspreken?`)}
+                    href={waHref(`Hoi JDG, ik zoek een ${s.singular.toLowerCase()} in ${c.name}. Kunnen we vrijblijvend afspreken?`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary justify-center"
@@ -111,7 +154,12 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      <section className="py-24 bg-paper-2">
+      {/* Het blok 'Wat je krijgt' en de materialenstrook stonden hier ook. Ze
+          zijn identiek voor elke stad én staan al op /diensten/<dienst>, dus ze
+          maakten deze pagina's alleen maar meer op elkaar lijkend. Weg hier;
+          de link naar de dienstpagina onderaan brengt de lezer erheen. */}
+
+      <section className="py-24">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
@@ -143,29 +191,63 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container-x">
-          <div className="max-w-3xl">
-            <span className="eyebrow">Andere plaatsen</span>
-            <h2 className="mt-6 font-display text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] text-ink-950">
-              {s.title} elders in Nederland.
-            </h2>
-          </div>
+      <ProjectenStrook
+        projecten={projecten}
+        titel={`Eerder gemaakt: ${s.title.toLowerCase()}.`}
+        intro="Werk uit de eigen werkplaats. Dezelfde manier van bouwen, dezelfde afwerking."
+      />
 
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {otherCities.map((oc) => (
+      <PrijsfactorenBlok
+        factoren={factoren}
+        titel={`Wat kost een ${s.singular.toLowerCase()}?`}
+        intro={`Maatwerk heeft geen kant-en-klare prijs, maar wel een vaste set knoppen. Dit zijn de factoren die de offerte voor ${c.name} bepalen. Een indicatie krijg je na een appje met foto's en globale maten.`}
+      />
+
+      <PlaatsFeiten city={c} dienst={s.singular} />
+
+      <VragenBlok vragen={vragen} titel={`Vragen over ${s.singular.toLowerCase()}.`} />
+
+      <ContactBlok
+        kop={`${s.singular} in ${c.name}? Stuur een appje.`}
+        waMsg={`Hoi JDG, ik zoek een ${s.singular.toLowerCase()} in ${c.name}. Kunnen we vrijblijvend overleggen?`}
+      />
+
+      <PlaatsenRooster
+        titel={`${s.singular} elders in de buurt.`}
+        intro="Alleen plaatsen waar hier een eigen pagina voor is; voor de overige plaatsen staat alles bij elkaar op de stadpagina."
+        links={buren.map((b) => ({
+          name: b.name,
+          href: heeftLokalePagina(s.slug, b.slug) ? `/diensten/${s.slug}/${b.slug}` : `/werkgebied/${b.slug}`,
+        }))}
+      />
+
+      <section className="py-16 border-t border-ink-900/10">
+        <div className="container-x">
+          <span className="eyebrow">Ook maatwerk in {c.name}</span>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {andereDiensten.slice(0, 3).map((o) => (
               <Link
-                key={oc.slug}
-                href={`/diensten/${s.slug}/${oc.slug}`}
-                className="group flex items-center justify-between border-b border-ink-900/15 py-3 hover:border-jdg-500 transition-colors"
+                key={o.slug}
+                href={heeftLokalePagina(o.slug, c.slug) ? `/diensten/${o.slug}/${c.slug}` : `/diensten/${o.slug}`}
+                className="group border-t border-ink-900/15 pt-6"
               >
-                <span className="flex items-center gap-2 text-[14px] font-medium text-ink-900">
-                  <MapPin className="h-3.5 w-3.5 text-jdg-700" />
-                  {oc.name}
-                </span>
-                <ArrowUpRight className="h-3.5 w-3.5 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-display text-2xl text-ink-950 group-hover:text-jdg-700 transition-colors">
+                    {o.singular} in {c.name}
+                  </h3>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
+                </div>
+                <p className="mt-3 text-[13.5px] leading-relaxed text-ink-600">{o.short}</p>
               </Link>
             ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-600">
+            <Link href={`/werkgebied/${c.slug}`} className="inline-flex items-center gap-1.5 hover:text-jdg-700 transition-colors">
+              <MapPin className="h-3.5 w-3.5" /> Alles wat JDG maakt in {c.name}
+            </Link>
+            <Link href={`/diensten/${s.slug}`} className="hover:text-jdg-700 transition-colors">
+              {s.title} in heel Nederland
+            </Link>
           </div>
         </div>
       </section>

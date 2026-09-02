@@ -5,6 +5,17 @@ import { LogoMark } from '@/components/logo'
 import { business } from '@/content/business'
 import { services } from '@/content/services'
 import { cities } from '@/content/cities'
+import { faqs } from '@/content/faq'
+import { projects } from '@/content/projects'
+import { VragenBlok, ProjectenStrook } from '@/components/secties'
+import { faqPageSchema, pageSchema } from '@/lib/schema'
+import type { Metadata } from 'next'
+
+// De canonical stond in de root layout en werd daardoor door élke pagina geërfd.
+// Hij hoort op precies één plek: hier.
+export const metadata: Metadata = {
+  alternates: { canonical: business.url },
+}
 
 export default function Home() {
   const waHref = (msg: string) =>
@@ -14,8 +25,16 @@ export default function Home() {
   const keukens = services[0]
   const restServices = services.slice(1)
 
+  const homeVragen = faqs
+    .filter((f) => f.category === 'algemeen' || f.category === 'proces' || f.category === 'garantie')
+    .map((f) => ({ q: f.q, a: f.a }))
+    .slice(0, 6)
+  const ld = pageSchema([faqPageSchema(homeVragen)])
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
+
       {/* ══════════════════════════════════════════════ HERO ══ */}
       <section className="relative pt-24 pb-16 lg:pt-28 lg:pb-24">
         <div className="container-x">
@@ -38,7 +57,9 @@ export default function Home() {
                 className="reveal mt-8 max-w-xl text-[17px] leading-[1.7] text-ink-800"
                 style={{ animationDelay: '0.15s' }}
               >
-                JDG ontwerpt en maakt maatwerk interieur, vanuit de werkplaats in Terheijden, geleverd door heel Nederland en op verzoek daarbuiten.
+                JDG is meubelmaker en interieurbouwer in Terheijden. Keukens, kledingkasten, inloopkasten,
+                tv-meubels en badkamermeubels op maat: zelf ontworpen, zelf gebouwd in de eigen werkplaats
+                en zelf geplaatst. Geleverd door heel Nederland en op verzoek daarbuiten.
               </p>
               <div
                 className="reveal mt-10 flex flex-wrap gap-3"
@@ -266,12 +287,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═════════════════════════════════════ WERK, ECHT GEMAAKT ══ */}
+      <ProjectenStrook
+        projecten={projects.slice(0, 3)}
+        eyebrow="Gemaakt door JDG"
+        titel="Werk uit de werkplaats."
+        intro="Geen renders en geen catalogusfoto's: dit staat er echt, gebouwd in Terheijden en geplaatst bij de klant."
+      />
+      <div className="container-x -mt-12 pb-12">
+        <Link href="/projecten" className="inline-flex items-center gap-2 text-[14px] font-medium text-ink-900 hover:text-jdg-700 transition-colors">
+          Alle projecten <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </div>
+
+      {/* ══════════════════════════════════════════ VEELGESTELDE VRAGEN ══ */}
+      <VragenBlok vragen={homeVragen} titel="Wat mensen als eerste vragen." />
+
       {/* ══════════════════════════════════════════════ CTA ══ */}
       <section className="py-24 lg:py-32">
         <div className="container-x">
-          <div className="rounded-2xl bg-jdg-800 text-paper p-10 lg:p-20">
-            <div className="grid grid-cols-12 gap-8">
-              <div className="col-span-12 lg:col-span-8">
+          {/* Was: p-10 met daarin een grid-cols-12 gap-8 voor één kind. Elf gaps
+              van 32px leggen een ondergrens van 352px onder dat raster, en met
+              40px binnenmarge past dat niet meer op een telefoon van 390px: de
+              homepage schoof 22px horizontaal. Het raster deed hier niets (er is
+              maar één kolom), dus het is eruit. */}
+          <div className="rounded-2xl bg-jdg-800 text-paper p-8 sm:p-10 lg:p-20">
+            <div>
+              <div className="max-w-3xl">
                 <span className="eyebrow !text-jdg-200">Even overleggen</span>
                 <h2 className="mt-6 font-display text-4xl lg:text-6xl leading-[0.98] tracking-[-0.02em] text-paper">
                   Een goede maat begint bij een goed gesprek.

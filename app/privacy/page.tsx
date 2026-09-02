@@ -4,6 +4,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacyverklaring',
   description: 'Hoe JDG Maatwerk Interieur omgaat met jouw persoonsgegevens.',
+  // Ontbrak, waardoor deze pagina de canonical van de root layout erfde en
+  // zichzelf als kopie van de homepage aanmeldde.
+  alternates: { canonical: `${business.url}/privacy` },
 }
 
 export default function PrivacyPage() {
