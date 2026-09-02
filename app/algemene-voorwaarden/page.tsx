@@ -45,7 +45,7 @@ export default function AlgemeneVoorwaarden() {
 
       <section className="pb-32">
         <div className="container-x">
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 gap-y-12 gap-x-0 lg:gap-x-12">
             <aside className="col-span-12 lg:col-span-4">
               <div className="lg:sticky lg:top-28 rounded-xl border border-ink-900/12 bg-paper-2 p-6">
                 <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700">Bedrijfsgegevens</span>

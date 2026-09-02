@@ -32,7 +32,7 @@ export default function OverJonas() {
 
       <section className="pb-24">
         <div className="container-x">
-          <div className="grid grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-12 gap-y-12 gap-x-0 lg:gap-16">
             <div className="col-span-12 lg:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-900">
                 <Image

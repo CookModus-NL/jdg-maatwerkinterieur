@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <section className="pt-40 pb-32">
       <div className="container-x">
-        <div className="grid grid-cols-12 gap-12">
+        <div className="grid grid-cols-12 gap-y-12 gap-x-0 lg:gap-x-12">
           <div className="col-span-12 lg:col-span-6">
             <span className="eyebrow">Contact</span>
             <h1 className="mt-6 font-display text-[clamp(3rem,9vw,8rem)] leading-[0.94] tracking-[-0.02em] text-ink-950">
