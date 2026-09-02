@@ -104,11 +104,11 @@ export default async function MateriaalPage({ params }: { params: Promise<{ slug
       <section className="py-16">
         <div className="container-x grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="border-l-2 border-jdg-500 pl-6">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700 mb-2">Duurzaamheid</div>
+            <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700 mb-2">Duurzaamheid</div>
             <p className="text-[15px] leading-[1.7] text-ink-700">{m.duurzaamheid}</p>
           </div>
           <div className="border-l-2 border-jdg-500 pl-6">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700 mb-2">Onderhoud</div>
+            <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700 mb-2">Onderhoud</div>
             <p className="text-[15px] leading-[1.7] text-ink-700">{m.onderhoud}</p>
           </div>
         </div>

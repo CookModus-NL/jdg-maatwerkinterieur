@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section className="pt-8 pb-16">
         <div className="container-x max-w-3xl">
-          <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.22em] text-jdg-700 mb-6">
+          <div className="flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.22em] text-jdg-700 mb-6">
             <span>{post.category}</span>
             <span className="text-ink-300">·</span>
             <span>{post.readingMinutes} min lezen</span>
@@ -116,10 +116,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="container-x max-w-3xl">
           <div className="p-8 rounded-xl bg-paper-2 border border-ink-100">
             <div className="flex items-center gap-4 mb-4">
-              <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700">Geschreven door</span>
+              <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700">Geschreven door</span>
             </div>
             <div className="font-display text-2xl text-ink-950">Jonas de Graaf</div>
-            <div className="text-[14px] text-ink-500 mt-1">Oprichter van JDG Maatwerk Interieur, Terheijden</div>
+            <div className="text-[14px] text-ink-600 mt-1">Oprichter van JDG Maatwerk Interieur, Terheijden</div>
             <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[13px] font-medium hover:bg-jdg-700 transition-colors">
               Overleg jouw project <ArrowUpRight className="h-4 w-4" />
             </Link>

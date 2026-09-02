@@ -57,7 +57,7 @@ export default function MaterialenPage() {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-jdg-700">{m.prijsklasse}</span>
+                        <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-jdg-700">{m.prijsklasse}</span>
                         <ArrowUpRight className="h-4 w-4 text-ink-400 group-hover:text-jdg-700 group-hover:translate-x-1 transition-all" />
                       </div>
                       <h3 className="font-display text-xl text-ink-950 group-hover:text-jdg-700 transition-colors">{m.name}</h3>

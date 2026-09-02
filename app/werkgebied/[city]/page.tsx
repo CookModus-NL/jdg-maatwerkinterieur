@@ -54,7 +54,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             </a>
           </div>
 
-          <div className="mt-8 inline-flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-500">
+          <div className="mt-8 inline-flex items-baseline gap-3 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-500">
             <span className="text-jdg-700">Afstand</span>, <span className="tabular">{c.distanceKm} km vanuit Terheijden</span>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 className="group flex items-baseline justify-between gap-4 py-4 border-b border-ink-900/15 hover:border-jdg-500 transition-colors"
               >
                 <div className="flex items-baseline gap-4">
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700 tabular">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700 tabular">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h3 className="font-display text-xl leading-tight text-ink-950 group-hover:text-jdg-700 transition-colors">

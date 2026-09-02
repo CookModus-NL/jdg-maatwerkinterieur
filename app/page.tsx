@@ -133,7 +133,7 @@ export default function Home() {
                 <Image src={business.photos.keuken2} alt="Keuken detail door JDG" fill sizes="30vw" className="object-cover" />
               </div>
               <div className="rounded-xl bg-jdg-800 text-paper p-6 flex flex-col justify-between flex-1">
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-jdg-200">Wat JDG doet</span>
+                <span className="font-mono text-[12px] uppercase tracking-[0.24em] text-jdg-200">Wat JDG doet</span>
                 <ul className="mt-3 space-y-1.5 text-[13px] leading-relaxed">
                   <li>Ontwerp op basis van jouw dagelijkse routine</li>
                   <li>Werkbladen in composiet, keramiek of natuursteen</li>
@@ -171,7 +171,7 @@ export default function Home() {
                 className="group rounded-xl border border-ink-900/10 bg-paper-2 p-7 hover:border-jdg-500 transition-all"
               >
                 <div className="flex items-baseline justify-between mb-6">
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-jdg-700">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.24em] text-jdg-700">
                     0{i + 2}
                   </span>
                   <ArrowUpRight className="h-4 w-4 text-ink-400 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
@@ -210,7 +210,7 @@ export default function Home() {
                 ].map((step, idx) => (
                   <div key={idx} className="grid grid-cols-12 gap-4 rounded-xl border border-ink-900/10 bg-paper p-6 lg:p-7">
                     <div className="col-span-2 lg:col-span-1">
-                      <span className="inline-flex items-center justify-center rounded-full bg-jdg-700 text-paper w-9 h-9 font-mono text-[11px] font-medium tabular">
+                      <span className="inline-flex items-center justify-center rounded-full bg-jdg-700 text-paper w-9 h-9 font-mono text-[12px] font-medium tabular">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                     </div>
@@ -248,7 +248,7 @@ export default function Home() {
               <Link
                 key={c.slug}
                 href={`/werkgebied/${c.slug}`}
-                className="group inline-flex items-center gap-2 rounded-full bg-paper-2 border border-ink-900/12 px-5 py-2.5 text-[13.5px] font-medium text-ink-900 hover:border-jdg-500 hover:bg-jdg-50 transition-all"
+                className="group inline-flex items-center gap-2 rounded-full bg-paper-2 border border-ink-900/12 px-5 py-3 text-[13.5px] font-medium text-ink-900 hover:border-jdg-500 hover:bg-jdg-50 transition-all"
               >
                 {c.name}
                 <ArrowRight className="h-3 w-3 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 transition-all" strokeWidth={2} />

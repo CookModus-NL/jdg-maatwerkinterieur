@@ -81,7 +81,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {s.benefits.map((b, i) => (
               <div key={i} className="border-t border-ink-900/20 pt-6">
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700 tabular">
+                <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700 tabular">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-4 font-display text-2xl leading-tight text-ink-950">{b.title}</h3>

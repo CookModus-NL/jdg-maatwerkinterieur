@@ -41,7 +41,7 @@ export default function Werkwijze() {
               { n: '04', title: 'Plaatsing bij jou', body: 'Montage door JDG zelf, inclusief afkitting en oplevering. Bij voorkeur op casco, sloop van bestaande installatie is in overleg mogelijk.' },
             ].map((s, idx) => (
               <div key={idx} className="rounded-xl border border-ink-900/12 bg-paper-2 p-8">
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-jdg-700">Stap {String(idx + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-[12px] uppercase tracking-[0.24em] text-jdg-700">Stap {String(idx + 1).padStart(2, '0')}</span>
                 <h2 className="mt-4 font-display text-3xl text-ink-950 leading-tight">{s.title}</h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{s.body}</p>
               </div>

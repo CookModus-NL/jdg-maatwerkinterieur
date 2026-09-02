@@ -53,7 +53,7 @@ export function Footer() {
                 <div>
                   <div>Werkplaats {business.address.street}</div>
                   <div>{business.address.postalCode} {business.address.city}</div>
-                  <div className="text-ink-500 mt-1 text-[12px]">Bezoek op afspraak</div>
+                  <div className="text-ink-400 mt-1 text-[12px]">Bezoek op afspraak</div>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-ink-800">
-        <div className="container-x py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] uppercase tracking-[0.22em] text-ink-500 font-mono">
+        <div className="container-x py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12px] uppercase tracking-[0.22em] text-ink-400 font-mono">
           <div>© {new Date().getFullYear()} {business.legalName}</div>
           <div className="flex items-center gap-4">
             {/* KvK stond wel in content/business.ts maar nergens op de site.

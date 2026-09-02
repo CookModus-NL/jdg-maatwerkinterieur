@@ -60,12 +60,12 @@ export default function Contact() {
                   {business.address.street}
                   <br />
                   {business.address.postalCode} {business.address.city}
-                  <div className="text-ink-500 mt-2 text-[12.5px]">Bezoek uitsluitend op afspraak.</div>
+                  <div className="text-ink-600 mt-2 text-[12.5px]">Bezoek uitsluitend op afspraak.</div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 space-y-1 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500">
+            <div className="mt-8 space-y-1 font-mono text-[12px] uppercase tracking-[0.22em] text-ink-500">
               <div>Werkgebied, heel Nederland, op verzoek daarbuiten</div>
             </div>
           </div>

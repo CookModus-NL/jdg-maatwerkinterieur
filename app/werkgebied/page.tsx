@@ -38,7 +38,7 @@ export default function Werkgebied() {
               <Link key={c.slug} href={`/werkgebied/${c.slug}`} className="group">
                 <div className="flex items-baseline gap-4 mb-3">
                   <MapPin className="h-4 w-4 text-jdg-700" />
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-ink-500 tabular">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-ink-500 tabular">
                     {c.distanceKm} km · {c.region}
                   </span>
                 </div>
@@ -76,7 +76,7 @@ export default function Werkgebied() {
                     className="group flex items-center justify-between gap-6 py-6 border-b border-ink-800"
                   >
                     <div className="flex items-baseline gap-6">
-                      <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-jdg-300 tabular">
+                      <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-300 tabular">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <h3 className="font-display text-2xl leading-tight text-paper group-hover:text-jdg-300 transition-colors">

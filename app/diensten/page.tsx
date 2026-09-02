@@ -44,7 +44,7 @@ export default function DienstenIndex() {
                     />
                   </div>
                   <div className="flex items-baseline gap-4 mb-4">
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700 tabular">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700 tabular">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span className="h-px flex-1 max-w-20 bg-ink-900/20" />

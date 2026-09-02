@@ -81,7 +81,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 <span className="eyebrow">De afstand</span>
                 <div className="mt-4 flex items-baseline gap-3">
                   <span className="font-display text-6xl text-ink-950 tabular">{c.distanceKm || '±0'}</span>
-                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-500">km vanuit Terheijden</span>
+                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-600">km vanuit Terheijden</span>
                 </div>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-ink-700">
                   JDG komt kosteloos langs voor een eerste gesprek. Rond {c.landmark} staat JDG vaker ingepland voor {s.title.toLowerCase()}.

@@ -88,9 +88,9 @@ body {
   align-items: center;
   gap: 0.7em;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-jdg-700);
 }
@@ -180,4 +180,24 @@ a { text-decoration: none; }
       color-mix(in oklab, var(--color-ink-900) 8%, transparent) 3px 4px,
       transparent 4px 7px
     );
+}
+
+/*
+ * prefers-reduced-motion — de site moet ZONDER beweging volwaardig zijn
+ * (DESIGN.md: reduced_motion: volwaardige site zonder beweging).
+ * `transition: none` en `animation: none` zetten de gemeten waarden
+ * daadwerkelijk op 0s / none; een korte duur (0.01ms) telt nog steeds als
+ * beweging en verandert dus niets aan het gedrag dat de bezoeker ervaart.
+ * .reveal start op opacity 0 en wordt door zijn animatie zichtbaar — die
+ * moet hier expliciet zichtbaar worden gezet, anders verdwijnt de inhoud.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
 }

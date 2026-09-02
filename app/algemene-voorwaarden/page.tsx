@@ -48,29 +48,29 @@ export default function AlgemeneVoorwaarden() {
           <div className="grid grid-cols-12 gap-12">
             <aside className="col-span-12 lg:col-span-4">
               <div className="lg:sticky lg:top-28 rounded-xl border border-ink-900/12 bg-paper-2 p-6">
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-700">Bedrijfsgegevens</span>
+                <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-700">Bedrijfsgegevens</span>
                 <dl className="mt-5 space-y-3 text-[14px]">
                   <div>
-                    <dt className="text-ink-500">Bedrijf</dt>
+                    <dt className="text-ink-600">Bedrijf</dt>
                     <dd className="mt-0.5 text-ink-950 font-medium">JDG Maatwerk Interieur</dd>
                   </div>
                   <div>
-                    <dt className="text-ink-500">Eenmanszaak van</dt>
+                    <dt className="text-ink-600">Eenmanszaak van</dt>
                     <dd className="mt-0.5 text-ink-950 font-medium">Jonas de Graaf</dd>
                   </div>
                   <div>
-                    <dt className="text-ink-500">Adres</dt>
+                    <dt className="text-ink-600">Adres</dt>
                     <dd className="mt-0.5 text-ink-950">
                       Zeggelaan 47<br />
                       4844 SB Terheijden
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-ink-500">KvK-nummer</dt>
+                    <dt className="text-ink-600">KvK-nummer</dt>
                     <dd className="mt-0.5 text-ink-950 tabular">93463332</dd>
                   </div>
                   <div>
-                    <dt className="text-ink-500">Versie</dt>
+                    <dt className="text-ink-600">Versie</dt>
                     <dd className="mt-0.5 text-ink-950">{VERSIE}</dd>
                   </div>
                 </dl>

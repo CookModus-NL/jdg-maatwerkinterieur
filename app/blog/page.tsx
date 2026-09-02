@@ -36,7 +36,7 @@ export default function BlogPage() {
                   <Image src={post.hero} alt={post.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="mt-4">
-                  <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.2em] text-jdg-700 mb-2">
+                  <div className="flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.2em] text-jdg-700 mb-2">
                     <span>{post.category}</span>
                     <span className="text-ink-300">·</span>
                     <span>{post.readingMinutes} min lezen</span>

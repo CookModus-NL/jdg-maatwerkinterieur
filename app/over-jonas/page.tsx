@@ -46,26 +46,26 @@ export default function OverJonas() {
               </div>
 
               <div className="mt-8 rounded-xl border border-ink-900/12 bg-paper-2 p-6">
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-jdg-700">In het kort</span>
+                <span className="font-mono text-[12px] uppercase tracking-[0.24em] text-jdg-700">In het kort</span>
                 <dl className="mt-5 space-y-3 text-[14px]">
                   <div className="flex justify-between border-b border-ink-900/10 pb-3">
-                    <dt className="text-ink-500">Begonnen</dt>
+                    <dt className="text-ink-600">Begonnen</dt>
                     <dd className="text-ink-950 font-medium tabular">2008 (18 jaar)</dd>
                   </div>
                   <div className="flex justify-between border-b border-ink-900/10 pb-3">
-                    <dt className="text-ink-500">Opleiding</dt>
+                    <dt className="text-ink-600">Opleiding</dt>
                     <dd className="text-ink-950 font-medium">BBL Interieurbouw</dd>
                   </div>
                   <div className="flex justify-between border-b border-ink-900/10 pb-3">
-                    <dt className="text-ink-500">Ervaring</dt>
+                    <dt className="text-ink-600">Ervaring</dt>
                     <dd className="text-ink-950 font-medium tabular">17 jaar in het vak</dd>
                   </div>
                   <div className="flex justify-between border-b border-ink-900/10 pb-3">
-                    <dt className="text-ink-500">Werkplaats</dt>
+                    <dt className="text-ink-600">Werkplaats</dt>
                     <dd className="text-ink-950 font-medium">Terheijden</dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt className="text-ink-500">Favoriet</dt>
+                    <dt className="text-ink-600">Favoriet</dt>
                     <dd className="text-ink-950 font-medium">Keukens</dd>
                   </div>
                 </dl>

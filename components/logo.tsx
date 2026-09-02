@@ -60,13 +60,13 @@ export function Logo({ className = '', variant = 'lockup', tone = 'ink', size }:
         <span className="inline-flex flex-col leading-none gap-1.5">
           <span
             className="font-display leading-none"
-            style={{ color: c.word, fontSize: '26px' }}
+            style={{ color: c.word, fontSize: '24px' }}
           >
             JDG
           </span>
           <span
-            className="font-mono uppercase tracking-[0.24em]"
-            style={{ color: c.sub, fontSize: '10px' }}
+            className="font-mono uppercase tracking-[0.14em]"
+            style={{ color: c.sub, fontSize: '12px' }}
           >
             Maatwerk Interieur
           </span>
@@ -82,13 +82,13 @@ export function Logo({ className = '', variant = 'lockup', tone = 'ink', size }:
       <span className="inline-flex flex-col leading-none">
         <span
           className="font-display"
-          style={{ color: c.word, fontSize: '22px', lineHeight: 1 }}
+          style={{ color: c.word, fontSize: '24px', lineHeight: 1 }}
         >
           JDG
         </span>
         <span
-          className="font-mono uppercase tracking-[0.24em] mt-1.5"
-          style={{ color: c.sub, fontSize: '9.5px' }}
+          className="font-mono uppercase tracking-[0.14em] mt-1.5"
+          style={{ color: c.sub, fontSize: '12px' }}
         >
           Maatwerk Interieur
         </span>

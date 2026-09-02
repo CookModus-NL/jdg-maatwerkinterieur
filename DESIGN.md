@@ -1,5 +1,5 @@
 ---
-versie: 1
+versie: 2
 klant: jdg
 domein: https://www.jdg-maatwerkinterieur.nl
 opgesteld: 2026-09-02
@@ -55,9 +55,15 @@ colors:
   canvas-diep: "#100e08"
   surface-diep: "#1a170f"
   ink: "#100e08"
-  ink-mute: "#74684d"
+  # BESLUIT 2 sep 2026 (dispatcher-20260902-1305, TAAK-20260902-JDG-A11Y): de gedempte
+  # inkt is GRONDGEBONDEN. #74684d haalt 4,70:1 op canvas (#f2ede2) en is daar de mute,
+  # maar 4,20:1 op surface (#e8e1cf) en 3,52:1 op canvas-diep (#100e08) — beide onder AA.
+  # Daarom drie rollen in plaats van een. Alle drie de waarden stonden al in het palet;
+  # er is geen kleur toegevoegd en geen meting weggepoetst (doctrine par. 6, wet art. 9.5).
+  ink-mute: "#74684d"            # alleen op canvas #f2ede2 — 4,70:1
+  ink-mute-op-surface: "#524730" # op surface #e8e1cf — 6,99:1
   op-diep: "#d6ccae"
-  op-diep-mute: "#9b8f6f"
+  op-diep-mute: "#9b8f6f"        # de mute op canvas-diep #100e08 — 6,02:1
   signaal: "#1c4728"
   signaal-licht: "#7db47a"
 
@@ -263,3 +269,14 @@ niet bij l3art.
    25 verschillende lettergroottes over vier pagina's, waarvan 9,5 / 10 / 10,5 / 11px onder de
    ondergrens van 12px. De poort zal hierop een harde afwijking melden. Dat is de bedoeling —
    het contract legt het doel vast, niet de huidige staat (doctrine par. 6, wet art. 9.5).
+   **Stand 2 sep 2026 na `TAAK-20260902-JDG-A11Y`:** de ondergrens is gehaald — alle lopende
+   tekst staat op minimaal 12px en de teller ging van 25 naar 17 maten. De resterende acht
+   maten (13,5 / 14,5 / 13 / 17 / 15 / 44 / 16,5 / 15,5px) zijn merkverwatering, geen
+   leesfout, en horen bij `TAAK-20260902-JDG-TYPESCHAAL`.
+5. **Het logo-lockup is geen uitzondering op de ondergrens.** De onderregel "Maatwerk
+   Interieur" stond op 9,5px (lockup) en 10px (stacked). WCAG zou een logotype vrijstellen,
+   maar dit is gezet als tekst en wordt door bezoekers ook zo gelezen. Besluit 2 sep 2026
+   (dispatcher-20260902-1305): beide naar 12px, de spatiëring van 0,24em naar 0,14em zodat
+   het lockup niet breder wordt dan de kop, en het woordmerk van 22/26px naar de
+   contractstap 24px. Geverifieerd op een echte render bij 390px: geen omloop, geen
+   botsing met de menuknop.

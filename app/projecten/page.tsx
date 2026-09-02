@@ -51,7 +51,7 @@ export default function ProjectenPage() {
                 {/* Overlay-verloop van BENEDEN naar boven, voorkomt tekstoverlap bovenaan */}
                 <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink-950 via-ink-950/70 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 lg:p-10">
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-jdg-300">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-jdg-300">
                     {p.location}
                   </span>
                   <h2 className="mt-2 font-display text-3xl lg:text-4xl leading-tight text-paper">
