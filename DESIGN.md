@@ -273,6 +273,18 @@ niet bij l3art.
    tekst staat op minimaal 12px en de teller ging van 25 naar 17 maten. De resterende acht
    maten (13,5 / 14,5 / 13 / 17 / 15 / 44 / 16,5 / 15,5px) zijn merkverwatering, geen
    leesfout, en horen bij `TAAK-20260902-JDG-TYPESCHAAL`.
+   **REGRESSIE EN HERSTEL 3–4 sep 2026.** De leesondergrens hield het één dag. Commit
+   `4e4f1fa` (vindbaarheid-sep26, 3 sep 01:11) zette op drie plaatsen opnieuw
+   `text-[11.5px]` neer, in dezelfde regel met `text-ink-500` (#74684d) op grond
+   `bg-paper-2` (#e8e1cf) — precies de combinatie die het besluit hierboven verbiedt
+   (4,20:1). Hersteld 4 sep 2026 door `dispatcher-20260904-1405` binnen
+   `TAAK-20260903-JDG-DESIGNPOORT`: alle vijf de plekken naar 12px, en de
+   grondgebonden mute toegepast (`ink-mute-op-surface` #524730, 6,99:1). Gemeten met
+   `motor/scripts/_jdg-verify.mjs` over vier paden: productie 28 van 28 elementen fout,
+   de gerepareerde build 0 van 28. **De les die het contract raakt:** de designpoort
+   toetst vier paden, en die drie regels stonden voor 50 van de 87 live-URL's — de poort
+   zag er één. Wie hier iets aan `contract.paden` verandert, verandert het bereik van
+   élke a11y-bewaking op deze site.
 5. **Het logo-lockup is geen uitzondering op de ondergrens.** De onderregel "Maatwerk
    Interieur" stond op 9,5px (lockup) en 10px (stacked). WCAG zou een logotype vrijstellen,
    maar dit is gezet als tekst en wordt door bezoekers ook zo gelezen. Besluit 2 sep 2026

@@ -87,7 +87,7 @@ export function ProjectenStrook({
               </div>
               <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">{p.description}</p>
               {p.material && (
-                <p className="mt-3 font-mono text-[11.5px] uppercase tracking-[0.18em] text-ink-500">{p.material}</p>
+                <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-500">{p.material}</p>
               )}
             </Link>
           ))}
@@ -130,7 +130,7 @@ export function MaterialenStrook({
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
               </div>
               <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700">{m.short}</p>
-              <p className="mt-3 font-mono text-[11.5px] uppercase tracking-[0.18em] text-ink-500">{m.prijsklasse}</p>
+              <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-600">{m.prijsklasse}</p>
             </Link>
           ))}
         </div>
@@ -259,12 +259,12 @@ export function PlaatsFeiten({ city, dienst }: { city: City; dienst?: string }) 
             <dl className="border-t border-ink-900/15">
               {rijen.map((r) => (
                 <div key={r.label} className="grid grid-cols-12 gap-6 py-5 border-b border-ink-900/15">
-                  <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-500">{r.label}</dt>
+                  <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-600">{r.label}</dt>
                   <dd className="col-span-7 text-[15px] text-ink-900">{r.waarde}</dd>
                 </div>
               ))}
               <div className="grid grid-cols-12 gap-6 py-5 border-b border-ink-900/15">
-                <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-500">
+                <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-600">
                   Ook in de buurt
                 </dt>
                 <dd className="col-span-7 text-[15px] text-ink-900">{city.kernen.join(', ')}</dd>

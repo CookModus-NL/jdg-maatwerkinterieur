@@ -163,7 +163,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       {s.singular} in {c.name}
                     </h3>
                     <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">{s.short}</p>
-                    <p className="mt-2 font-mono text-[11.5px] uppercase tracking-[0.18em] text-ink-500">
+                    <p className="mt-2 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-600">
                       {s.synoniemen.slice(0, 3).join(' · ')}
                     </p>
                   </div>
