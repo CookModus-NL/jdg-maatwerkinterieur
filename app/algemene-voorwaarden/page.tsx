@@ -15,7 +15,7 @@ function Article({ n, title, children }: { n: number; title: string; children: R
       <h2 className="font-display text-3xl text-ink-950 leading-tight">
         Artikel {n}. {title}
       </h2>
-      <div className="mt-6 text-[15.5px] leading-[1.75] text-ink-800 space-y-3">
+      <div className="mt-6 text-[16px] leading-[1.75] text-ink-800 space-y-3">
         {children}
       </div>
     </section>
@@ -35,7 +35,7 @@ export default function AlgemeneVoorwaarden() {
                 <br />
                 voor goed <span className="text-jdg-700">maatwerk</span>.
               </h1>
-              <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
+              <p className="mt-8 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
                 Maatwerk vraagt om vakmanschap, precisie en duidelijke afspraken. Deze algemene voorwaarden beschrijven wat opdrachtgever en JDG Maatwerk Interieur van elkaar mogen verwachten. Daarbij staat een goede samenwerking voorop.
               </p>
             </div>
@@ -349,7 +349,7 @@ export default function AlgemeneVoorwaarden() {
                 </ol>
               </Article>
 
-              <div className="mt-16 pt-8 border-t border-ink-900/15 text-[13.5px] text-ink-500 font-mono">
+              <div className="mt-16 pt-8 border-t border-ink-900/15 text-[12px] text-ink-500 font-mono">
                 <div>JDG Maatwerk Interieur</div>
                 <div>Jonas de Graaf</div>
                 <div>Zeggelaan 47, 4844 SB Terheijden</div>

@@ -23,7 +23,7 @@ export default function Werkgebied() {
                 <br />
                 door <span className="text-jdg-700">heel Nederland</span>.
               </h1>
-              <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">
+              <p className="mt-8 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
                 JDG werkt door heel Nederland, met focus op Noord- en West-Brabant. Ook kleine projecten in het buitenland zijn welkom.
               </p>
             </div>
@@ -45,10 +45,10 @@ export default function Werkgebied() {
                 <h2 className="font-display text-3xl leading-tight text-ink-950 group-hover:text-jdg-700 transition-colors">
                   {c.name}
                 </h2>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700 max-w-md">
+                <p className="mt-3 text-[16px] leading-relaxed text-ink-700 max-w-md">
                   {c.intro}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-ink-900 link-underline">
+                <div className="mt-4 inline-flex items-center gap-2 text-[14px] font-medium text-ink-900 link-underline">
                   Meer over {c.name}
                   <ArrowUpRight className="h-4 w-4" />
                 </div>

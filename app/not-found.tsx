@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section className="container-x py-24 lg:py-32 text-center">
       <div className="mx-auto max-w-xl">
-        <p className="font-display text-7xl font-bold text-jdg-500">404</p>
+        <p className="font-display text-7xl font-bold text-jdg-700">404</p>
         <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Deze pagina bestaat niet (meer)</h1>
         <p className="mt-4 text-lg text-ink-800">
           De link is mogelijk verouderd of er staat een typefout in het adres. Geen nood. Alles wat je zoekt vind je via de homepage of door even te WhatsAppen.

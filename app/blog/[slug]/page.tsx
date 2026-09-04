@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
           </div>
           <h1 className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] text-ink-950">{post.h1}</h1>
-          <p className="mt-8 text-[17px] leading-[1.75] text-ink-700">{post.intro}</p>
+          <p className="mt-8 text-[16px] leading-[1.75] text-ink-700">{post.intro}</p>
         </div>
       </section>
 
@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {section.bullets && (
                 <ul className="mt-4 space-y-2">
                   {section.bullets.map((b, j) => (
-                    <li key={j} className="flex items-start gap-3 text-[15.5px] text-ink-800">
+                    <li key={j} className="flex items-start gap-3 text-[16px] text-ink-800">
                       <span className="text-jdg-700 mt-1">→</span>
                       <span>{b}</span>
                     </li>
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 ? 'Oprichter van JDG Maatwerk Interieur, Terheijden'
                 : 'Uit de werkplaats van JDG Maatwerk Interieur in Terheijden'}
             </div>
-            <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[13px] font-medium hover:bg-jdg-700 transition-colors">
+            <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[14px] font-medium hover:bg-jdg-700 transition-colors">
               Overleg jouw project <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <ul className="mt-5 space-y-3">
                 {livePosts.filter((p) => p.slug !== post.slug).map((p) => (
                   <li key={p.slug}>
-                    <Link href={`/blog/${p.slug}`} className="text-[15.5px] text-ink-900 hover:text-jdg-700 transition-colors">
+                    <Link href={`/blog/${p.slug}`} className="text-[16px] text-ink-900 hover:text-jdg-700 transition-colors">
                       {p.title}
                     </Link>
                   </li>

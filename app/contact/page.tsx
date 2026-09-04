@@ -19,7 +19,7 @@ export default function Contact() {
             <h1 className="mt-6 font-display text-[clamp(3rem,9vw,8rem)] leading-[0.94] tracking-[-0.02em] text-ink-950">
               Even <span className="text-jdg-700">overleggen?</span>
             </h1>
-            <p className="mt-8 max-w-md text-[17px] leading-[1.75] text-ink-700">
+            <p className="mt-8 max-w-md text-[16px] leading-[1.75] text-ink-700">
               WhatsApp is het snelst. Bellen mag ook. Na een appje met foto's van de ruimte hoor je binnen één à twee weken een eerste schets en prijsindicatie.
             </p>
           </div>
@@ -41,11 +41,11 @@ export default function Contact() {
                   <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> Bellen</span>
                   <span className="tabular">{business.phone}</span>
                 </a>
-                <a href={`mailto:${business.email}`} className="flex items-center gap-2 pt-3 text-[13.5px] text-ink-700 hover:text-jdg-700 transition-colors">
+                <a href={`mailto:${business.email}`} className="flex items-center gap-2 pt-3 text-[14px] text-ink-700 hover:text-jdg-700 transition-colors">
                   <Mail className="h-4 w-4" /> {business.email}
                 </a>
                 {business.social.instagram && (
-                  <a href={business.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13.5px] text-ink-700 hover:text-jdg-700 transition-colors">
+                  <a href={business.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[14px] text-ink-700 hover:text-jdg-700 transition-colors">
                     <Instagram className="h-4 w-4" /> @{business.social.instagramHandle}
                   </a>
                 )}
@@ -54,13 +54,13 @@ export default function Contact() {
 
             <div className="mt-8 rounded-xl border border-ink-900/12 p-6">
               <span className="eyebrow">Werkplaats</span>
-              <div className="mt-4 flex items-start gap-3 text-[14.5px] text-ink-900">
+              <div className="mt-4 flex items-start gap-3 text-[14px] text-ink-900">
                 <MapPin className="h-4 w-4 mt-0.5 text-jdg-700 shrink-0" />
                 <div>
                   {business.address.street}
                   <br />
                   {business.address.postalCode} {business.address.city}
-                  <div className="text-ink-600 mt-2 text-[12.5px]">Bezoek uitsluitend op afspraak.</div>
+                  <div className="text-ink-600 mt-2 text-[14px]">Bezoek uitsluitend op afspraak.</div>
                 </div>
               </div>
             </div>

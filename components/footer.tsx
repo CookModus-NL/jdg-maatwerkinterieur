@@ -17,7 +17,7 @@ export function Footer() {
               <br />
               iets moois
               <br />
-              <span className="text-jdg-400">bouwen</span>
+              <span className="text-jdg-300">bouwen</span>
               <ArrowUpRight
                 className="ml-3 inline-block h-14 w-14 lg:h-20 lg:w-20 align-baseline text-ink-500 group-hover:text-jdg-300 group-hover:translate-x-3 group-hover:-translate-y-3 transition-all duration-500"
                 strokeWidth={1}
@@ -29,11 +29,11 @@ export function Footer() {
         <div className="grid grid-cols-12 gap-y-12 lg:gap-10 pt-14">
           <div className="col-span-12 lg:col-span-4">
             <Logo variant="stacked" tone="paper" />
-            <p className="mt-8 max-w-md text-[14.5px] leading-relaxed text-ink-300">
+            <p className="mt-8 max-w-md text-[16px] leading-relaxed text-ink-300">
               JDG ontwerpt en maakt maatwerk interieur vanuit de werkplaats in Terheijden. Werkgebied door heel Nederland, en op verzoek daarbuiten.
             </p>
 
-            <div className="mt-10 flex flex-col gap-3 text-[13.5px]">
+            <div className="mt-10 flex flex-col gap-3 text-[14px]">
               <a href={`tel:${business.phoneE164}`} className="inline-flex items-center gap-2 text-paper hover:text-jdg-300 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span className="tabular font-medium">{business.phone}</span>
@@ -49,7 +49,7 @@ export function Footer() {
                 </a>
               )}
               <div className="mt-2 flex items-start gap-2 text-ink-400">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-jdg-400" />
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-jdg-300" />
                 <div>
                   <div>Werkplaats {business.address.street}</div>
                   <div>{business.address.postalCode} {business.address.city}</div>
@@ -74,7 +74,7 @@ export function Footer() {
 
           <div className="col-span-6 lg:col-span-3">
             <h3 className="eyebrow !text-jdg-300">Werkgebied</h3>
-            <p className="mt-6 text-[13.5px] text-ink-300 leading-relaxed">
+            <p className="mt-6 text-[16px] text-ink-300 leading-relaxed">
               JDG werkt door heel Nederland — en op verzoek daarbuiten.
             </p>
             <ul className="mt-4 space-y-3 text-[14px]">
@@ -88,7 +88,7 @@ export function Footer() {
             </ul>
             <Link
               href="/werkgebied"
-              className="mt-6 inline-flex items-center gap-1.5 text-[12px] font-medium text-jdg-300 hover:text-jdg-200 transition-colors"
+              className="mt-6 inline-flex items-center gap-1.5 text-[12px] font-medium text-jdg-300 hover:text-jdg-300 transition-colors"
             >
               Volledig werkgebied
               <ArrowUpRight className="h-3 w-3" />

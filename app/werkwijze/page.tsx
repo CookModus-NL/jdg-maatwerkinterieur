@@ -23,7 +23,7 @@ export default function Werkwijze() {
                 <br />
                 <span className="text-jdg-700">, één huisstijl</span>.
               </h1>
-              <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-800">
+              <p className="mt-8 max-w-2xl text-[16px] leading-[1.75] text-ink-800">
                 JDG werkt aan één project tegelijk. Ontwerp, productie en montage gebeuren zonder tussenlagen, één handschrift van eerste schets tot laatste knop.
               </p>
             </div>
@@ -43,7 +43,7 @@ export default function Werkwijze() {
               <div key={idx} className="rounded-xl border border-ink-900/12 bg-paper-2 p-8">
                 <span className="font-mono text-[12px] uppercase tracking-[0.24em] text-jdg-700">Stap {String(idx + 1).padStart(2, '0')}</span>
                 <h2 className="mt-4 font-display text-3xl text-ink-950 leading-tight">{s.title}</h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{s.body}</p>
+                <p className="mt-3 text-[16px] leading-relaxed text-ink-700">{s.body}</p>
               </div>
             ))}
           </div>
@@ -59,7 +59,7 @@ export default function Werkwijze() {
               ].map((v) => (
                 <div key={v.title} className="border-t border-ink-900/15 pt-5">
                   <h3 className="font-display text-2xl text-ink-950">{v.title}</h3>
-                  <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700">{v.body}</p>
+                  <p className="mt-3 text-[16px] leading-relaxed text-ink-700">{v.body}</p>
                 </div>
               ))}
             </div>

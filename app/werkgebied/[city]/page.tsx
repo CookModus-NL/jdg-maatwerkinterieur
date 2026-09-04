@@ -100,7 +100,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
           <div className="mt-10 grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-7">
-              <p className="text-[17px] leading-[1.75] text-ink-900">{c.intro}</p>
+              <p className="text-[16px] leading-[1.75] text-ink-900">{c.intro}</p>
               <p className="mt-5 text-[16px] leading-[1.75] text-ink-700">
                 JDG Maatwerk Interieur werkt vanuit de eigen werkplaats aan de {business.address.street} in{' '}
                 {business.address.city}, {c.distanceKm} kilometer van {c.name}. Ontwerp, productie en montage
@@ -120,11 +120,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <span className="eyebrow">De afstand</span>
                 <div className="mt-4 flex items-baseline gap-3">
                   <span className="font-display text-6xl text-ink-950 tabular">{c.distanceKm || '±0'}</span>
-                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-600">
+                  <span className="text-[12px] font-mono uppercase tracking-[0.2em] text-ink-600">
                     km vanuit {business.address.city}
                   </span>
                 </div>
-                <p className="mt-4 text-[14.5px] leading-relaxed text-ink-700">
+                <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
                   Het eerste gesprek en het inmeten bij jou thuis zijn gratis en vrijblijvend.
                 </p>
                 <div className="mt-6 flex flex-col gap-3">
@@ -162,7 +162,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     <h3 className="font-display text-xl leading-tight text-ink-950 group-hover:text-jdg-700 transition-colors">
                       {s.singular} in {c.name}
                     </h3>
-                    <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">{s.short}</p>
+                    <p className="mt-2 text-[16px] leading-relaxed text-ink-600">{s.short}</p>
                     <p className="mt-2 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-600">
                       {s.synoniemen.slice(0, 3).join(' · ')}
                     </p>
@@ -210,7 +210,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
       <section className="py-16 border-t border-ink-900/10">
         <div className="container-x">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-600">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-ink-600">
             <Link href="/projecten" className="inline-flex items-center gap-1.5 hover:text-jdg-700 transition-colors">
               <MapPin className="h-3.5 w-3.5" /> Alle projecten
             </Link>

@@ -92,7 +92,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
           <h1 className="mt-6 font-display text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.02em] text-ink-950">
             {s.singular} in <span className="text-jdg-700">{c.name}</span>.
           </h1>
-          <p className="mt-8 max-w-2xl text-[17px] leading-[1.75] text-ink-700">{c.intro}</p>
+          <p className="mt-8 max-w-2xl text-[16px] leading-[1.75] text-ink-700">{c.intro}</p>
           {regel && (
             <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-ink-700">{regel.lokaleTekst}</p>
           )}
@@ -121,11 +121,11 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 <span className="eyebrow">De afstand</span>
                 <div className="mt-4 flex items-baseline gap-3">
                   <span className="font-display text-6xl text-ink-950 tabular">{c.distanceKm || '±0'}</span>
-                  <span className="text-[13px] font-mono uppercase tracking-[0.2em] text-ink-600">
+                  <span className="text-[12px] font-mono uppercase tracking-[0.2em] text-ink-600">
                     km vanuit {business.address.city}
                   </span>
                 </div>
-                <p className="mt-4 text-[14.5px] leading-relaxed text-ink-700">
+                <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
                   Inmeten in {c.name} gebeurt bij jou thuis en is gratis. Ook {c.kernen.slice(0, 3).join(', ')}{' '}
                   vallen binnen dezelfde rit.
                 </p>
@@ -167,7 +167,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
               <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
                 Zo verloopt een project.
               </h2>
-              <p className="mt-6 text-[15px] leading-[1.7] text-ink-700 max-w-md">
+              <p className="mt-6 text-[16px] leading-[1.7] text-ink-700 max-w-md">
                 Voor {c.name} volgt JDG dezelfde vier stappen als voor elk ander project, zonder verrassingen.
               </p>
             </div>
@@ -177,11 +177,11 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                 {s.process.map((step, idx) => (
                   <div key={idx} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
                     <div className="col-span-3 lg:col-span-2">
-                      <span className="font-mono text-[13px] text-jdg-700 tabular">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="font-mono text-[12px] text-jdg-700 tabular">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
                     <div className="col-span-9 lg:col-span-10">
                       <h3 className="font-display text-2xl text-ink-950 leading-tight">{step.title}</h3>
-                      <p className="mt-2 text-[14.5px] leading-relaxed text-ink-700">{step.body}</p>
+                      <p className="mt-2 text-[16px] leading-relaxed text-ink-700">{step.body}</p>
                     </div>
                   </div>
                 ))}
@@ -237,11 +237,11 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
                   </h3>
                   <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
                 </div>
-                <p className="mt-3 text-[13.5px] leading-relaxed text-ink-600">{o.short}</p>
+                <p className="mt-3 text-[16px] leading-relaxed text-ink-600">{o.short}</p>
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-600">
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-ink-600">
             <Link href={`/werkgebied/${c.slug}`} className="inline-flex items-center gap-1.5 hover:text-jdg-700 transition-colors">
               <MapPin className="h-3.5 w-3.5" /> Alles wat JDG maakt in {c.name}
             </Link>

@@ -27,7 +27,7 @@ export const waHref = (msg: string) =>
 
 export function Kruimelpad({ items }: { items: { name: string; url?: string }[] }) {
   return (
-    <nav aria-label="Kruimelpad" className="flex flex-wrap items-center gap-2 text-[13px] text-ink-500">
+    <nav aria-label="Kruimelpad" className="flex flex-wrap items-center gap-2 text-[14px] text-ink-500">
       {items.map((it, i) => (
         <span key={i} className="flex items-center gap-2">
           {it.url ? (
@@ -64,7 +64,7 @@ export function ProjectenStrook({
           <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
             {titel}
           </h2>
-          {intro && <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700">{intro}</p>}
+          {intro && <p className="mt-6 text-[16px] leading-[1.7] text-ink-700">{intro}</p>}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -85,7 +85,7 @@ export function ProjectenStrook({
                 </h3>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
               </div>
-              <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">{p.description}</p>
+              <p className="mt-2 text-[16px] leading-relaxed text-ink-600">{p.description}</p>
               {p.material && (
                 <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-500">{p.material}</p>
               )}
@@ -117,7 +117,7 @@ export function MaterialenStrook({
           <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
             {titel}
           </h2>
-          {intro && <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700">{intro}</p>}
+          {intro && <p className="mt-6 text-[16px] leading-[1.7] text-ink-700">{intro}</p>}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
@@ -129,7 +129,7 @@ export function MaterialenStrook({
                 </h3>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
               </div>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700">{m.short}</p>
+              <p className="mt-3 text-[16px] leading-relaxed text-ink-700">{m.short}</p>
               <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-600">{m.prijsklasse}</p>
             </Link>
           ))}
@@ -160,18 +160,18 @@ export function PrijsfactorenBlok({
             <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
               {titel}
             </h2>
-            <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700 max-w-md">{intro}</p>
+            <p className="mt-6 text-[16px] leading-[1.7] text-ink-700 max-w-md">{intro}</p>
           </div>
           <div className="col-span-12 lg:col-span-7">
             <div className="border-t border-ink-900/15">
               {factoren.map((f, i) => (
                 <div key={i} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
                   <div className="col-span-3 lg:col-span-2">
-                    <span className="font-mono text-[13px] text-jdg-700 tabular">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="font-mono text-[12px] text-jdg-700 tabular">{String(i + 1).padStart(2, '0')}</span>
                   </div>
                   <div className="col-span-9 lg:col-span-10">
                     <h3 className="font-display text-2xl text-ink-950 leading-tight">{f.titel}</h3>
-                    <p className="mt-2 text-[14.5px] leading-relaxed text-ink-700">{f.body}</p>
+                    <p className="mt-2 text-[16px] leading-relaxed text-ink-700">{f.body}</p>
                   </div>
                 </div>
               ))}
@@ -213,7 +213,7 @@ export function VragenBlok({
                     <h3 className="font-display text-xl lg:text-2xl text-paper pr-6">{f.q}</h3>
                     <span className="text-jdg-300 text-2xl mt-1 group-open:rotate-45 transition-transform inline-block">+</span>
                   </summary>
-                  <p className="mt-4 text-[15px] leading-relaxed text-ink-300 max-w-2xl">{f.a}</p>
+                  <p className="mt-4 text-[16px] leading-relaxed text-ink-300 max-w-2xl">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -247,7 +247,7 @@ export function PlaatsFeiten({ city, dienst }: { city: City; dienst?: string }) 
             <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
               Van de werkplaats naar {city.name}.
             </h2>
-            <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700 max-w-md">
+            <p className="mt-6 text-[16px] leading-[1.7] text-ink-700 max-w-md">
               De werkplaats staat aan de {business.address.street} in {business.address.city}, gemeente{' '}
               {business.address.municipality}. Inmeten gebeurt bij jou thuis, bouwen gebeurt hier, plaatsen
               weer bij jou{dienst ? ` — ook voor ${dienst.toLowerCase()}` : ''}. Bezoek aan de werkplaats kan
@@ -260,14 +260,14 @@ export function PlaatsFeiten({ city, dienst }: { city: City; dienst?: string }) 
               {rijen.map((r) => (
                 <div key={r.label} className="grid grid-cols-12 gap-6 py-5 border-b border-ink-900/15">
                   <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-600">{r.label}</dt>
-                  <dd className="col-span-7 text-[15px] text-ink-900">{r.waarde}</dd>
+                  <dd className="col-span-7 text-[16px] text-ink-900">{r.waarde}</dd>
                 </div>
               ))}
               <div className="grid grid-cols-12 gap-6 py-5 border-b border-ink-900/15">
                 <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-600">
                   Ook in de buurt
                 </dt>
-                <dd className="col-span-7 text-[15px] text-ink-900">{city.kernen.join(', ')}</dd>
+                <dd className="col-span-7 text-[16px] text-ink-900">{city.kernen.join(', ')}</dd>
               </div>
             </dl>
           </div>
@@ -289,7 +289,7 @@ export function ContactBlok({ kop, waMsg }: { kop: string; waMsg: string }) {
             <h2 className="mt-6 font-display text-4xl lg:text-6xl leading-[0.98] tracking-[-0.02em] text-ink-950">
               {kop}
             </h2>
-            <p className="mt-6 max-w-xl text-[15.5px] leading-[1.7] text-ink-700">
+            <p className="mt-6 max-w-xl text-[16px] leading-[1.7] text-ink-700">
               Het eerste gesprek en de offerte zijn gratis en vrijblijvend. Stuur een appje met een foto en
               de globale maten, dan weet je snel waar je aan toe bent.
             </p>
@@ -333,7 +333,7 @@ export function PlaatsenRooster({
           <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
             {titel}
           </h2>
-          {intro && <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700">{intro}</p>}
+          {intro && <p className="mt-6 text-[16px] leading-[1.7] text-ink-700">{intro}</p>}
         </div>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {links.map((l) => (

@@ -82,7 +82,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </div>
             <div className="col-span-12 lg:col-span-7 lg:col-start-6">
-              <p className="text-[17px] leading-[1.75] text-ink-900 mb-6">{s.intro}</p>
+              <p className="text-[16px] leading-[1.75] text-ink-900 mb-6">{s.intro}</p>
               {s.paragraphs.map((p, i) => (
                 <p key={i} className="text-[16px] leading-[1.75] text-ink-700 mt-5">{p}</p>
               ))}
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-4 font-display text-2xl leading-tight text-ink-950">{b.title}</h3>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-ink-700">{b.body}</p>
+                <p className="mt-3 text-[16px] leading-relaxed text-ink-700">{b.body}</p>
               </div>
             ))}
           </div>
@@ -128,11 +128,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 {s.process.map((step, idx) => (
                   <div key={idx} className="grid grid-cols-12 gap-6 py-8 border-b border-ink-900/15">
                     <div className="col-span-3 lg:col-span-2">
-                      <span className="font-mono text-[13px] text-jdg-700 tabular">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="font-mono text-[12px] text-jdg-700 tabular">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
                     <div className="col-span-9 lg:col-span-10">
                       <h3 className="font-display text-2xl text-ink-950 leading-tight">{step.title}</h3>
-                      <p className="mt-2 text-[14.5px] leading-relaxed text-ink-700">{step.body}</p>
+                      <p className="mt-2 text-[16px] leading-relaxed text-ink-700">{step.body}</p>
                     </div>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                       <h3 className="font-display text-xl lg:text-2xl text-paper pr-6">{f.q}</h3>
                       <span className="text-jdg-300 text-2xl mt-1 group-open:rotate-45 transition-transform inline-block">+</span>
                     </summary>
-                    <p className="mt-4 text-[15px] leading-relaxed text-ink-300 max-w-2xl">{f.a}</p>
+                    <p className="mt-4 text-[16px] leading-relaxed text-ink-300 max-w-2xl">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -193,7 +193,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
               {s.title} in jouw plaats.
             </h2>
-            <p className="mt-6 text-[15.5px] leading-[1.7] text-ink-700">
+            <p className="mt-6 text-[16px] leading-[1.7] text-ink-700">
               JDG rijdt vanuit {business.address.city} door heel Nederland. Voor deze plaatsen staat er een
               aparte pagina over {s.singular.toLowerCase()}, met de afstand en wat de woningen daar praktisch
               vragen. Staat jouw plaats er niet bij, kijk dan bij het werkgebied.
@@ -216,7 +216,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
           <div className="mt-10">
-            <Link href="/werkgebied" className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-ink-900 hover:text-jdg-700 transition-colors">
+            <Link href="/werkgebied" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink-900 hover:text-jdg-700 transition-colors">
               Volledig werkgebied ({cities.length} plaatsen) <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
@@ -263,7 +263,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </h3>
                   <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
                 </div>
-                <p className="mt-3 text-[13.5px] leading-relaxed text-ink-600">{o.short}</p>
+                <p className="mt-3 text-[16px] leading-relaxed text-ink-600">{o.short}</p>
               </Link>
             ))}
           </div>

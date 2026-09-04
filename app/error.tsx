@@ -20,7 +20,7 @@ export default function GlobalError({
   return (
     <section className="container-x py-24 lg:py-32 text-center">
       <div className="mx-auto max-w-xl">
-        <p className="font-display text-7xl font-bold text-jdg-500">!</p>
+        <p className="font-display text-7xl font-bold text-jdg-700">!</p>
         <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Er ging iets mis</h1>
         <p className="mt-4 text-lg text-ink-800">
           Excuses. De pagina kon niet worden geladen. Probeer het opnieuw of WhatsApp me direct.

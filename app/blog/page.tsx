@@ -32,7 +32,7 @@ export default function BlogPage() {
           <h1 className="mt-8 font-display text-[clamp(2.75rem,7vw,6rem)] leading-[0.95] text-ink-950">
             Kennis uit de<br /><span className="text-jdg-700">werkplaats</span>.
           </h1>
-          <p className="mt-8 text-[17px] leading-[1.75] text-ink-700">
+          <p className="mt-8 text-[16px] leading-[1.75] text-ink-700">
             Uitleg over hoe maatwerk werkt, waar het misgaat en waar je op let voor je iets laat maken.
             Geen showroomtaal, gewoon wat er in de werkplaats gebeurt.
           </p>

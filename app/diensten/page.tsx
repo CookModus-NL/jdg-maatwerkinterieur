@@ -52,10 +52,10 @@ export default function DienstenIndex() {
                   <h2 className="font-display text-4xl leading-[1.05] text-ink-950 group-hover:text-jdg-700 transition-colors">
                     {s.title}
                   </h2>
-                  <p className="mt-4 text-[15.5px] leading-[1.7] text-ink-700 max-w-md">
+                  <p className="mt-4 text-[16px] leading-[1.7] text-ink-700 max-w-md">
                     {s.short}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-[13.5px] font-medium text-ink-900 link-underline">
+                  <div className="mt-6 inline-flex items-center gap-2 text-[14px] font-medium text-ink-900 link-underline">
                     Lees over {s.title.toLowerCase()}
                     <ArrowUpRight className="h-4 w-4" />
                   </div>

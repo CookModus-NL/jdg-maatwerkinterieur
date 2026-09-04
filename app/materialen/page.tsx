@@ -34,7 +34,7 @@ export default function MaterialenPage() {
             <h1 className="mt-8 font-display text-[clamp(2.75rem,7vw,6rem)] leading-[0.95] tracking-tight text-ink-950">
               De juiste materialen<br /><span className="text-jdg-700">maken het verschil</span>.
             </h1>
-            <p className="mt-8 text-[17px] leading-[1.75] text-ink-700">
+            <p className="mt-8 text-[16px] leading-[1.75] text-ink-700">
               Elk maatwerk project start bij de vraag: welk materiaal past bij deze ruimte en deze gebruiker? Van warm eiken fineer voor een klassieke woonkamer tot onverwoestbaar keramiek voor een druk kookeiland, hier vind je alle opties met eerlijke voor- en nadelen.
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function MaterialenPage() {
           <p className="mt-6 text-[16px] text-ink-700">
             Bij het ontwerpgesprek nemen we materiaalstalen mee die passen bij jouw ruimte, gebruik en budget. Zo zie je vooraf hoe de kleur werkt in jouw licht.
           </p>
-          <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[13px] font-medium hover:bg-jdg-700 transition-colors">
+          <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink-950 text-paper px-6 py-3 text-[14px] font-medium hover:bg-jdg-700 transition-colors">
             Plan een gesprek <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

@@ -90,14 +90,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {/* Project specs strip */}
           <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-6 border-y border-ink-900/15 py-8">
             <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-jdg-500 mt-0.5" />
+              <MapPin className="h-5 w-5 text-jdg-700 mt-0.5" />
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Locatie</dt>
                 <dd className="mt-0.5 font-display text-lg font-semibold">{project.location}</dd>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Calendar className="h-5 w-5 text-jdg-500 mt-0.5" />
+              <Calendar className="h-5 w-5 text-jdg-700 mt-0.5" />
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Opgeleverd</dt>
                 <dd className="mt-0.5 font-display text-lg font-semibold">{project.date}</dd>
@@ -105,7 +105,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
             {project.surface && (
               <div className="flex items-start gap-3">
-                <Ruler className="h-5 w-5 text-jdg-500 mt-0.5" />
+                <Ruler className="h-5 w-5 text-jdg-700 mt-0.5" />
                 <div>
                   <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Oppervlakte</dt>
                   <dd className="mt-0.5 font-display text-lg font-semibold">{project.surface}</dd>
@@ -114,7 +114,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
             {project.material && (
               <div className="flex items-start gap-3">
-                <Layers className="h-5 w-5 text-jdg-500 mt-0.5" />
+                <Layers className="h-5 w-5 text-jdg-700 mt-0.5" />
                 <div>
                   <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Materiaal</dt>
                   <dd className="mt-0.5 font-display text-lg font-semibold">{project.material}</dd>
@@ -134,7 +134,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               const layouts = ['lg:col-span-6 lg:row-span-2', 'lg:col-span-3', 'lg:col-span-3', 'lg:col-span-2', 'lg:col-span-4']
               const span = i === 0 ? layouts[0] : layouts[(i % (layouts.length - 1)) + 1]
               return (
-                <div key={src} className={`relative overflow-hidden rounded-3xl img-zoom ${span}`}>
+                <div key={src} className={`relative overflow-hidden rounded-xl img-zoom ${span}`}>
                   <Image
                     src={src}
                     alt={`${project.title}, foto ${i + 1}`}
@@ -153,7 +153,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {project.quote && (
         <section className="bg-clay py-20">
           <div className="container-tight text-center">
-            <div className="font-display text-6xl text-jdg-500 leading-none">&ldquo;</div>
+            <div className="font-display text-6xl text-jdg-700 leading-none">&ldquo;</div>
             <blockquote className="mt-6 font-display text-3xl leading-snug text-ink-950 lg:text-4xl">
               {project.quote.text}
             </blockquote>
@@ -170,7 +170,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <h2 className="font-display text-3xl font-bold text-ink-950 mb-12">Andere projecten</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {otherProjects.map((p) => (
-              <Link key={p.slug} href={`/projecten/${p.slug}`} className="group relative overflow-hidden rounded-3xl img-zoom aspect-[16/10]">
+              <Link key={p.slug} href={`/projecten/${p.slug}`} className="group relative overflow-hidden rounded-xl img-zoom aspect-[16/10]">
                 <Image src={p.hero} alt={p.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8">

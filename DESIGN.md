@@ -66,6 +66,16 @@ colors:
   op-diep-mute: "#9b8f6f"        # de mute op canvas-diep #100e08 — 6,02:1
   signaal: "#1c4728"
   signaal-licht: "#7db47a"
+  # BESLUIT 4 sep 2026 (dispatcher-20260904-1605, TAAK-20260902-JDG-TYPESCHAAL): de
+  # drie groentinten die buiten dit palet stonden zijn NIET aan het contract toegevoegd
+  # maar uit de site gehaald. Reden is het Linear-principe hierboven ("een accent dat
+  # overal staat betekent niets") plus AA: jdg-400 #549e58 (8x) en jdg-500 #3d8b4c (7x)
+  # halen 3,62:1 op canvas en zijn geen tekstkleur; jdg-200 #a5cba1 en jdg-100 #cee2cc
+  # zijn pastels die het accent verwateren. Vervangen door tinten die hier al stonden:
+  # jdg-400/200 -> jdg-300 #7db47a (8,82:1 op canvas-diep), jdg-500 -> jdg-700 #245c34
+  # (7,05:1 op canvas), en de ene lopende alinea op donkere grond die in jdg-100 stond
+  # -> op-diep #d6ccae, want een ALINEA is geen accent. De tokens zelf blijven in
+  # globals.css bestaan als vlak-/randkleur; dit besluit gaat over TEKST.
 
 # ----------------------------------------------------------------- typografie
 typography:
@@ -155,12 +165,42 @@ contract:
   viewports: [1440, 390]
   fontfamilies: [DM Serif Display, DM Sans Variable, ui-monospace]
   fontschaal: [12, 14, 16, 20, 24, 30, 36, 48, 60]
-  fontschaal_vloeiend: [96-144]
+  # BESLUIT 4 sep 2026 (dispatcher-20260904-1605, Chief Architect Designer-pet,
+  # TAAK-20260902-JDG-TYPESCHAAL): het bereik ging van [96-144] naar [36-144].
+  # REDEN, en dit is een CORRECTIE van een coderingsfout, geen versoepeling van een
+  # besluit: de prescriptieve helft van dit contract zegt hierboven al
+  # `display.fontSizeMin: 36 / fontSizeMax: 144`. De regel [96-144] beschreef niet dat
+  # besluit maar de MEETUITKOMST van vier paden op 1440px, waar de clamps toevallig op
+  # 96-144 uitkwamen. De site draait tien verschillende display-clamps met minima
+  # 36/40/44/48px en maxima 64/80/96/112/128/144px; acht daarvan staan op pagina's die
+  # `contract.paden` niet bezoekt. Vloeiende displaytype landt per definitie op
+  # tussenwaarden — dat op discrete stappen eisen is een categoriefout.
+  # WAT HET KOST, expliciet: een niet-display tekst van bijv. 37px passeert de
+  # typeschaal-toets nu ongemerkt. De poort kan een vloeiend bereik niet aan een
+  # letterfamilie binden; belegd als TAAK-20260904-POORT-VLOEIEND-FAMILIE.
+  # WAT HET NIET AFDEKT: dat de site drie verschillende mobiele display-maten heeft
+  # (36/40/44/48px over de templates) blijft een openstaand ONTWERPbesluit, geen
+  # contractkwestie — TAAK-20260904-JDG-DISPLAY-MOBIEL.
+  fontschaal_vloeiend: [36-144]
   min_font_px: 12
   vlakken: ["#f2ede2", "#e8e1cf", "#100e08", "#1a170f", "#262218", "#1c4728"]
   tekstkleuren: ["#100e08", "#382f21", "#74684d", "#524730", "#d6ccae", "#beb597", "#9b8f6f", "#f2ede2", "#1c4728", "#245c34", "#7db47a"]
   kleur_tolerantie: 2
-  radii: [6, 20]
+  # BESLUIT 4 sep 2026 (dispatcher-20260904-1605, Chief Architect Designer-pet,
+  # TAAK-20260902-JDG-TYPESCHAAL punt 1): de pill (`rounded-full`, door de browser
+  # gerapporteerd als 3.35544e+07px) is TOEGEVOEGD aan het contract, niet uit de site
+  # gehaald. Reden: hij staat op 13 plekken in de bron en 66 in de render, consequent op
+  # precies een klasse elementen — knoppen, chips en badges. Dat is een vorm-BESLUIT dat
+  # nooit in het contract is geschreven, geen lek; hem weghalen zou de site veranderen om
+  # een document gelijk te krijgen dat de werkelijkheid niet had opgeschreven.
+  # De twee echte uitschieters zijn wel opgeruimd: `rounded-2xl` (32px, 1x) en
+  # `rounded-3xl` (24px, 2x) staan nu op `rounded-xl` = de contractstap 20px.
+  # LET OP de vorm van de waarde: de poort vergelijkt afrondingen als TEKST met wat de
+  # browser rapporteert, en Tailwind's `rounded-full` computeert naar `3.35544e+07px`.
+  # "9999" of "infinity" matcht dus niet. Dit is een gebrek van het gereedschap, niet van
+  # dit contract — belegd als TAAK-20260904-POORT-PILL, zodat een pill semantisch herkend
+  # wordt in plaats van via een browser-specifieke drijvendekommastring.
+  radii: [6, 20, "3.35544e+07"]
   contrast_min: 4.5
   ritme_metronoom_max: 0.5
   raakvlak_hard: false
@@ -273,6 +313,20 @@ niet bij l3art.
    tekst staat op minimaal 12px en de teller ging van 25 naar 17 maten. De resterende acht
    maten (13,5 / 14,5 / 13 / 17 / 15 / 44 / 16,5 / 15,5px) zijn merkverwatering, geen
    leesfout, en horen bij `TAAK-20260902-JDG-TYPESCHAAL`.
+   **UITGEVOERD 4 sep 2026 (dispatcher-20260904-1605).** 91 arbitraire lettergroottes in
+   19 bestanden teruggebracht tot drie contractstappen, niet per meting maar per ROL,
+   omdat het contract die rollen zelf definieert (`basis: 16 — alle lopende tekst, een
+   maat` · `micro: 12 — werkplaatsnotities in mono` · 14 voor labels, links en meta):
+   17/16,5/15,5/15px lopende tekst -> **16** · 13,5/13/12,5px labels, links, knoppen en
+   kruimelpad -> **14** · 13/13,5px in `font-mono` -> **12** · de FAQ-kop 19/22px ->
+   **20/24**. Twee handmatige uitzonderingen mét reden: de titel van een verwant artikel
+   (`/blog/[slug]` r163) is een kop-link en ging naar 16 in plaats van 14, en de cursieve
+   lead onder de h1 op `/materialen/[slug]` (r79) houdt zijn lead-rol op stap **20**.
+   Eindstand in de bron: 71x 16px · 38x 14px · 33x 12px · 2x 20px · 1x 24px, nul
+   tussenwaarden. **Belangrijk voor wie dit hermeet:** dit is BRONBREED gedaan, niet
+   poortbreed. 17 van de 21 geraakte bestanden staan op pagina's die `contract.paden`
+   nooit bezoekt; wie alleen de poort afgaat mist ze, precies zoals bij de
+   11,5px-regressie van 3 sep.
    **REGRESSIE EN HERSTEL 3–4 sep 2026.** De leesondergrens hield het één dag. Commit
    `4e4f1fa` (vindbaarheid-sep26, 3 sep 01:11) zette op drie plaatsen opnieuw
    `text-[11.5px]` neer, in dezelfde regel met `text-ink-500` (#74684d) op grond

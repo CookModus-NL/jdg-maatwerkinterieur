@@ -23,7 +23,7 @@ export default function ProjectenPage() {
               <br />
               <span className="text-jdg-700">zichzelf spreekt</span>.
             </h1>
-            <p className="mt-8 max-w-xl text-[17px] leading-[1.75] text-ink-700">
+            <p className="mt-8 max-w-xl text-[16px] leading-[1.75] text-ink-700">
               Recente projecten van JDG Maatwerk Interieur. Klik door voor foto's, gebruikte materialen en context.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function ProjectenPage() {
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-paper/80">
                     {p.description}
                   </p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-paper transition-all group-hover:gap-3">
+                  <div className="mt-5 inline-flex items-center gap-2 text-[14px] font-medium text-paper transition-all group-hover:gap-3">
                     Bekijk project
                     <ArrowUpRight className="h-4 w-4" />
                   </div>

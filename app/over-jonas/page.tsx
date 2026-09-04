@@ -73,7 +73,7 @@ export default function OverJonas() {
             </div>
 
             <div className="col-span-12 lg:col-span-7">
-              <div className="space-y-6 text-[17px] leading-[1.8] text-ink-900">
+              <div className="space-y-6 text-[16px] leading-[1.8] text-ink-900">
                 <p>
                   Op zijn achttiende begon Jonas aan de BBL opleiding interieurbouw. Niet omdat het handig was of omdat de school ver weg was, maar omdat hij wist wat hij wilde. Iets maken met zijn handen, elke dag anders.
                 </p>
@@ -97,7 +97,7 @@ export default function OverJonas() {
                 ].map((b) => (
                   <div key={b.title} className="border-t border-ink-900/15 pt-5">
                     <h3 className="font-display text-2xl text-ink-950 leading-tight">{b.title}</h3>
-                    <p className="mt-2 text-[14.5px] leading-relaxed text-ink-700">{b.body}</p>
+                    <p className="mt-2 text-[16px] leading-relaxed text-ink-700">{b.body}</p>
                   </div>
                 ))}
               </div>
@@ -135,7 +135,7 @@ export default function OverJonas() {
               <p className="text-[16px] leading-[1.75] text-ink-800">
                 Elke keuken heeft zijn eigen puzzel. Een schuine muur, een raam op een onhandige hoogte, een schoorsteen die dwarsligt. Voor Jonas is dat juist de reden waarom het vak boeit. Geen twee keukens zijn hetzelfde, dus je bent nooit klaar met leren.
               </p>
-              <Link href="/diensten/keukens-op-maat" className="mt-6 inline-flex items-center gap-2 text-[13.5px] font-medium text-ink-950 link-underline">
+              <Link href="/diensten/keukens-op-maat" className="mt-6 inline-flex items-center gap-2 text-[14px] font-medium text-ink-950 link-underline">
                 Meer over keukens op maat
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
