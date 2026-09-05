@@ -45,7 +45,7 @@ export default function BlogPage() {
             {livePosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}
                 className="group block">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-ink-100">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-paper-2">
                   <Image src={post.hero} alt={post.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="mt-4">

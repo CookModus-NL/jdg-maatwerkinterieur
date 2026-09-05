@@ -83,7 +83,7 @@ export default async function MateriaalPage({ params }: { params: Promise<{ slug
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-ink-100">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-paper-2">
                 <Image src={m.hero} alt={m.name} fill priority sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover" />
               </div>
             </div>

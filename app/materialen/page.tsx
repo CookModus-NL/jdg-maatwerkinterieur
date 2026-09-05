@@ -52,7 +52,7 @@ export default function MaterialenPage() {
                 {items.map((m) => (
                   <Link key={m.slug} href={`/materialen/${m.slug}`}
                     className="group block rounded-xl overflow-hidden border border-ink-100 bg-paper hover:border-jdg-500 transition-colors">
-                    <div className="relative aspect-[4/3] bg-ink-100">
+                    <div className="relative aspect-[4/3] bg-paper-2">
                       <Image src={m.hero} alt={m.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     </div>
                     <div className="p-6">

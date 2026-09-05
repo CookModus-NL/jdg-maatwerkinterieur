@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-ink-950 sm:text-5xl lg:text-6xl leading-[1.05]">
               {project.title}
             </h1>
-            <p className="mt-6 text-lg text-ink-700 leading-relaxed">{project.description}</p>
+            <p className="mt-6 text-[16px] text-ink-700 leading-relaxed">{project.description}</p>
           </div>
 
           {/* Project specs strip */}
@@ -93,14 +93,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <MapPin className="h-5 w-5 text-jdg-700 mt-0.5" />
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Locatie</dt>
-                <dd className="mt-0.5 font-display text-lg font-semibold">{project.location}</dd>
+                <dd className="mt-0.5 text-[16px] font-semibold text-ink-900">{project.location}</dd>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Calendar className="h-5 w-5 text-jdg-700 mt-0.5" />
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Opgeleverd</dt>
-                <dd className="mt-0.5 font-display text-lg font-semibold">{project.date}</dd>
+                <dd className="mt-0.5 text-[16px] font-semibold text-ink-900">{project.date}</dd>
               </div>
             </div>
             {project.surface && (
@@ -108,7 +108,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <Ruler className="h-5 w-5 text-jdg-700 mt-0.5" />
                 <div>
                   <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Oppervlakte</dt>
-                  <dd className="mt-0.5 font-display text-lg font-semibold">{project.surface}</dd>
+                  <dd className="mt-0.5 text-[16px] font-semibold text-ink-900">{project.surface}</dd>
                 </div>
               </div>
             )}
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <Layers className="h-5 w-5 text-jdg-700 mt-0.5" />
                 <div>
                   <dt className="text-xs uppercase tracking-[0.18em] text-ink-500">Materiaal</dt>
-                  <dd className="mt-0.5 font-display text-lg font-semibold">{project.material}</dd>
+                  <dd className="mt-0.5 text-[16px] font-semibold text-ink-900">{project.material}</dd>
                 </div>
               </div>
             )}

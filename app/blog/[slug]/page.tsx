@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section className="pb-16">
         <div className="container-x">
-          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-xl overflow-hidden bg-ink-100">
+          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-xl overflow-hidden bg-paper-2">
             <Image src={post.hero} alt={post.title} fill priority sizes="(max-width: 1024px) 100vw, 80vw" className="object-cover" />
           </div>
         </div>
