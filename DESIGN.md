@@ -161,7 +161,42 @@ do_not_use:
 # CONTRACT — machinaal gehandhaafd door motor/scripts/designpoort.mjs.
 # ---------------------------------------------------------------------------
 contract:
-  paden: [/, /diensten/keukens-op-maat, /projecten, /over-jonas]
+  # PADEN = PAGINATYPES, niet een greep uit de sitemap. Uitgebreid 5 sep 2026
+  # (TAAK-20260904-CONTRACT-PADENDEKKING). Aanleiding, gemeten: een contrastfout die op
+  # 50 van de 87 live URL's rendert werd door de poort op 1 pagina gezien, en twee van de
+  # vijf codeplekken zaten in een component dat UITSLUITEND op dienst-x-stad voorkomt —
+  # een type dat geen enkel pad in dit contract had. Die twee stonden op 4,20:1 en waren
+  # door geen poort ooit bekeken. Een paginatype kan tientallen URL's dragen; een
+  # ongedekt type is daarom geen gaatje maar een gat.
+  # Per regel staat welk TYPE het pad vertegenwoordigt. Een pad toevoegen verscherpt de
+  # norm en mag door de bouwer; een pad WEGHALEN is een ontwerpbesluit en mag niet.
+  # De YAML-subset van de poort kent geen commentaar ACHTER een lijstitem; het type
+  # staat daarom op een eigen regel boven het pad.
+  paden:
+    # homepage
+    - /
+    # overzicht
+    - /diensten
+    # dienst-detail
+    - /diensten/keukens-op-maat
+    # dienst-x-stad — dekt circa 61 van de 87 live URL's
+    - /diensten/keukens-op-maat/tilburg
+    # werkgebied-stad
+    - /werkgebied/tilburg
+    # materiaal-detail
+    - /materialen/eiken-fineer
+    # overzicht met kaartenraster
+    - /projecten
+    # project-detail
+    - /projecten/kookeiland-donker-eiken
+    # blog-artikel
+    - /blog/meubelmaker-interieurbouwer-of-keukenzaak
+    # redactionele pagina
+    - /over-jonas
+    # formulierpagina
+    - /contact
+    # vraag-en-antwoord
+    - /veelgestelde-vragen
   viewports: [1440, 390]
   fontfamilies: [DM Serif Display, DM Sans Variable, ui-monospace]
   fontschaal: [12, 14, 16, 20, 24, 30, 36, 48, 60]
