@@ -175,13 +175,21 @@ contract:
   # 36/40/44/48px en maxima 64/80/96/112/128/144px; acht daarvan staan op pagina's die
   # `contract.paden` niet bezoekt. Vloeiende displaytype landt per definitie op
   # tussenwaarden — dat op discrete stappen eisen is een categoriefout.
-  # WAT HET KOST, expliciet: een niet-display tekst van bijv. 37px passeert de
-  # typeschaal-toets nu ongemerkt. De poort kan een vloeiend bereik niet aan een
-  # letterfamilie binden; belegd als TAAK-20260904-POORT-VLOEIEND-FAMILIE.
+  # WAT HET KOSTTE, en dat is 5 sep 2026 verholpen: een niet-display tekst van bijv.
+  # 37px passeerde de typeschaal-toets ongemerkt, omdat de poort een vloeiend bereik
+  # niet aan een letterfamilie kon binden. Dat kan nu wel (TAAK-20260904-POORT-VLOEIEND-
+  # FAMILIE), en het bereik is daarom gebonden aan DM Serif Display — precies wat de
+  # prescriptieve helft van dit contract hierboven al zegt. GEMETEN vóór het besluit,
+  # tegen productie: met en zonder binding geeft de poort exact dezelfde vier harde
+  # bevindingen, want er staat vandaag geen enkele 36-144px tekst in een andere familie.
+  # Deze aanscherping kost dus niets en dekt een gat dat er wel was. Bewijs dat hij
+  # werkt staat los van jdg: op een fixture met een 37px DM Sans-alinea en een 44px
+  # DM Serif Display-kop meldt het kale bereik NIETS en het gebonden bereik exact
+  # '37px in DM Sans Variable'.
   # WAT HET NIET AFDEKT: dat de site drie verschillende mobiele display-maten heeft
   # (36/40/44/48px over de templates) blijft een openstaand ONTWERPbesluit, geen
   # contractkwestie — TAAK-20260904-JDG-DISPLAY-MOBIEL.
-  fontschaal_vloeiend: [36-144]
+  fontschaal_vloeiend: [36-144@DM Serif Display]
   min_font_px: 12
   vlakken: ["#f2ede2", "#e8e1cf", "#100e08", "#1a170f", "#262218", "#1c4728"]
   tekstkleuren: ["#100e08", "#382f21", "#74684d", "#524730", "#d6ccae", "#beb597", "#9b8f6f", "#f2ede2", "#1c4728", "#245c34", "#7db47a"]
