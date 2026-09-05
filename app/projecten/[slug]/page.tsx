@@ -134,7 +134,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               const layouts = ['lg:col-span-6 lg:row-span-2', 'lg:col-span-3', 'lg:col-span-3', 'lg:col-span-2', 'lg:col-span-4']
               const span = i === 0 ? layouts[0] : layouts[(i % (layouts.length - 1)) + 1]
               return (
-                <div key={src} className={`relative overflow-hidden rounded-xl img-zoom ${span}`}>
+                <div key={src} className={`relative overflow-hidden rounded-xl img-zoom aspect-[4/3] lg:aspect-auto ${span}`}>
                   <Image
                     src={src}
                     alt={`${project.title}, foto ${i + 1}`}

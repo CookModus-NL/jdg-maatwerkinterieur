@@ -51,7 +51,7 @@ export default function BlogPage() {
                 <div className="mt-4">
                   <div className="flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.2em] text-jdg-700 mb-2">
                     <span>{post.category}</span>
-                    <span className="text-ink-300">·</span>
+                    <span aria-hidden="true" className="text-ink-300">·</span>
                     <span>{post.readingMinutes} min lezen</span>
                   </div>
                   <h2 className="font-display text-xl lg:text-2xl text-ink-950 group-hover:text-jdg-700 transition-colors leading-tight">

@@ -85,9 +85,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="container-x max-w-3xl">
           <div className="flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.22em] text-jdg-700 mb-6">
             <span>{post.category}</span>
-            <span className="text-ink-300">·</span>
+            <span aria-hidden="true" className="text-ink-300">·</span>
             <span>{post.readingMinutes} min lezen</span>
-            <span className="text-ink-300">·</span>
+            <span aria-hidden="true" className="text-ink-300">·</span>
             <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
           </div>
           <h1 className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] text-ink-950">{post.h1}</h1>
