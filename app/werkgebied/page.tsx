@@ -5,7 +5,10 @@ import { services } from '@/content/services'
 import { business } from '@/content/business'
 
 export const metadata = {
-  title: 'Werkgebied, heel Nederland',
+  // "heel Nederland" is waar maar zegt een lokale zoeker niets: 28 vertoningen
+  // op positie 7,3 met nul klikken (GSC 30 aug - 6 sep 2026). De plaatsnamen
+  // waarop deze pagina gemeten wordt horen in de titel.
+  title: 'Werkgebied: Terheijden, Breda, Tilburg en heel Noord-Brabant',
   description: 'JDG Maatwerk Interieur werkt vanuit Terheijden door heel Nederland, en op verzoek daarbuiten. Bekijk het volledige werkgebied per plaats.',
   alternates: { canonical: `${business.url}/werkgebied` },
 }

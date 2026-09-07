@@ -41,7 +41,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Enkelvoud, want zo wordt er gezocht: "kledingkast op maat breda", niet
   // "kledingkasten op maat breda" (GSC 23-31 aug 2026).
   const title = `${s.singular} in ${c.name} laten maken`
-  const desc = `${s.singular} in ${c.name}? JDG is meubelmaker en interieurbouwer in ${business.address.city}, ${c.distanceKm} km verderop. Zelf ontworpen, zelf gebouwd in de eigen werkplaats, zelf geplaatst. Gratis inmeten en offerte.`
+  // De afstand stond hier als tweede zin en dat is precies wat een lokale
+  // zoeker als eerste las: dertien query-paginaparen op positie 6 tot 10 met
+  // nul klikken (GSC 30 aug - 6 sep 2026). Het feit blijft op de pagina staan
+  // (zie de alinea hieronder met {c.distanceKm} kilometer); alleen de etalage
+  // gaat nu over wat de koper krijgt. TAAK-20260906-JDG-SNIPPET-DISKWALIFICEERT.
+  const desc = `${s.singular} in ${c.name}, van eerste schets tot plaatsing. JDG ontwerpt, bouwt in de eigen werkplaats en plaatst zelf. Bekijk het werk.`
   return {
     title,
     description: desc,
