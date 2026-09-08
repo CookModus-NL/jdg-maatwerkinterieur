@@ -2,6 +2,8 @@ export type FAQ = {
   q: string
   a: string
   category: 'algemeen' | 'proces' | 'materialen' | 'levering' | 'garantie'
+  /** Optionele verdieping: een pagina die deze vraag volledig uitwerkt. */
+  meer?: { label: string; href: string }
 }
 
 export const faqs: FAQ[] = [
@@ -24,7 +26,8 @@ export const faqs: FAQ[] = [
   { category: 'levering', q: 'Hoe lang duurt het van opdracht tot montage?',
     a: 'Reken op zes tot tien weken doorlooptijd voor een gemiddeld project. Grote keukens of complexe zolderinbouw kunnen twaalf weken duren. Kleine projecten soms binnen vier weken.' },
   { category: 'levering', q: 'Wie zorgt voor de montage?',
-    a: 'JDG regelt de montage volledig. De monteurs zijn vaste vakmensen die op de werkplaats en op locatie werken. Aansluitingen van gas, water, elektra en afzuiging worden in overleg geregeld.' },
+    a: 'JDG regelt de montage volledig. De monteurs zijn vaste vakmensen die op de werkplaats en op locatie werken. Aansluitingen van gas, water, elektra en afzuiging worden in overleg geregeld.',
+    meer: { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' } },
   { category: 'garantie', q: 'Wat is de garantie op maatwerk van JDG?',
     a: 'Op de constructie geeft JDG vijf jaar garantie. Op ingekochte onderdelen (scharnieren, lades, apparatuur) geldt de fabrieksgarantie, meestal twee tot tien jaar. Bij correct gebruik gaat een JDG kast of keuken twintig tot dertig jaar mee.' },
   { category: 'garantie', q: 'Wat als er iets kapot gaat na oplevering?',

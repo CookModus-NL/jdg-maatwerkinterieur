@@ -33,7 +33,18 @@ export type BlogPost = {
   intro: string
   sections: { heading: string; body: string; bullets?: string[] }[]
   hero: string
+  /** Alt-tekst van de hero. Beschrijft wat er werkelijk op de foto staat (beeldwaarheid). */
+  heroAlt?: string
   readingMinutes: number
+  /**
+   * Losse vraag-en-antwoordblokken onder het artikel. Toegevoegd 08-09-2026.
+   * Reden: een antwoordeenheid wordt niet als pagina overgenomen maar als passage.
+   * Staat dit gevuld, dan rendert de artikelpagina de blokken en voegt hij FAQPage-
+   * structured data toe; staat het leeg, dan verandert er niets aan bestaande artikelen.
+   */
+  faq?: { q: string; a: string }[]
+  /** Contextuele verwijzingen binnen deze site, in de lopende leesvolgorde van het artikel. */
+  verwijzingen?: { label: string; href: string }[]
 }
 
 export const blogPosts: BlogPost[] = [
@@ -422,6 +433,143 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     hero: '/images/jdg-23.jpg',
+    readingMinutes: 6,
+  },
+  {
+    // Antwoordeenheid op de vraag "Kan ik alleen laten maken en zelf monteren,
+    // of alleen laten monteren?" (motor_vraagdekking jdg, open sinds 01-09-2026).
+    // Alles wat hier over rechten en plichten staat komt uit de eigen algemene
+    // voorwaarden versie 5 augustus 2026, die integraal op deze site staan.
+    // Wat NIET geclaimd wordt: of JDG een opdracht zonder montage aanneemt.
+    // Daarover is geen beleid vastgelegd en er staat dus geen ja of nee op de pagina.
+    gepubliceerd: true,
+    slug: 'zelf-monteren-of-alleen-laten-maken',
+    title: 'Kan ik het maatwerk alleen laten maken en zelf monteren?',
+    h1: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?',
+    metaTitle: 'Maatwerk zelf monteren of alleen laten maken',
+    metaDescription:
+      'Bij maatwerk zitten maken en monteren aan elkaar vast. Wat er verandert als je zelf monteert: wie de maten draagt, wat de garantie wel en niet dekt, en van wie het meubel is tot de laatste factuur.',
+    publishedAt: '2026-09-08',
+    updatedAt: '2026-09-08',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'maatwerk zelf monteren',
+    relatedKeywords: [
+      'kast op maat zelf monteren',
+      'keuken op maat zelf monteren',
+      'alleen laten maken zelf monteren',
+      'kast op maat zelf in elkaar zetten',
+      'keuken laten monteren kosten',
+      'zelf keuken plaatsen',
+    ],
+    intro:
+      'Bij JDG zijn maken en monteren een opdracht. De offerte, de betaaltermijnen en de garantie zijn er alle drie op gebouwd: de garantie geldt op de deugdelijke constructie en montage van het maatwerk dat JDG zelf heeft vervaardigd. Alleen laten maken en zelf monteren is daarom geen standaardroute, en montage van een kast die je ergens anders kocht staat niet als losse dienst in het aanbod. Hieronder staat wat er verandert als je toch wilt splitsen, en welk risico daarbij naar jou verschuift.',
+    sections: [
+      {
+        heading: 'Het korte antwoord, per variant',
+        body: 'Deze vraag wordt op drie manieren gesteld en heeft drie verschillende antwoorden. Ze staan bij JDG niet in een verkoopfolder maar in de algemene voorwaarden, versie 5 augustus 2026, die je hieronder op deze site kunt nalezen.',
+        bullets: [
+          'Alleen laten maken en zelf monteren: geen standaardroute. Leg het voor de offerte voor, want vanaf dat moment liggen de maatvoering en het montageresultaat bij jou.',
+          'Alleen laten monteren, van een kast die je ergens anders hebt gekocht: montage staat niet als losse dienst in het aanbod van JDG. Elk project begint bij een schets en een inmeting.',
+          'Wat wel kan: een bestaande kast, bijvoorbeeld een IKEA Pax, laten aanvullen met onderdelen op maat tot het geheel een meubel is.',
+          'Het ontwerp van JDG door een andere partij laten uitvoeren: niet zonder schriftelijke toestemming. Tekeningen, renders en technische oplossingen blijven eigendom van JDG (artikel 3).',
+        ],
+      },
+      {
+        heading: 'Waarom maken en monteren bij maatwerk aan elkaar vastzitten',
+        body: 'Een kant-en-klare kast is af zodra hij de fabriek verlaat. Een maatwerkkast is dat niet. Die wordt getekend op de wand die er staat, inclusief plint, radiator en scheefstand, en een deel van de maten wordt pas op locatie definitief. Bij een keuken wordt het werkblad daarom pas ingemeten nadat de onderkasten geplaatst en gesteld zijn, zodat het de werkelijke wandlijn volgt in plaats van de tekening. Wie het maken en het monteren uit elkaar haalt, knipt precies op de plek waar de meting nog niet klaar is.',
+      },
+      {
+        heading: 'Wat er verandert als jij zelf monteert',
+        body: 'Vier dingen, en ze staan alle vier zwart op wit in de algemene voorwaarden. Lees ze voordat je vraagt om een prijs zonder montage; ze bepalen samen wie er straks verantwoordelijk is als iets niet past.',
+        bullets: [
+          'De maten worden jouw verantwoordelijkheid. Lever jij zelf maten, tekeningen of technische gegevens aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan, en komen de gevolgen van onjuiste of onvolledige informatie voor jouw rekening (artikel 3).',
+          'De garantie volgt de montage. JDG verleent garantie op de deugdelijke constructie en montage van het door JDG vervaardigde maatwerk, en die garantie geldt niet voor gebreken die zijn veroorzaakt door aanpassingen of werkzaamheden door derden (artikel 12). Wettelijke rechten van een consument worden daardoor niet beperkt.',
+          'Losse onderdelen blijven eigendom van JDG. Materialen en meubels die nog niet duurzaam gemonteerd zijn, blijven van JDG totdat de facturen volledig zijn betaald (artikel 15).',
+          'De betaalregeling gaat uit van montage. De tweede termijn valt bij levering van de voornaamste maatwerkonderdelen op locatie en aanvang van de montage; zonder montage bestaat dat moment niet en moet er dus iets anders worden afgesproken (artikel 4).',
+        ],
+      },
+      {
+        heading: 'Wat montage bij maatwerk werkelijk inhoudt',
+        body: 'De montage-uren op een maatwerkofferte zijn geen opbouwuren. Ze gaan grotendeels op aan het verschil tussen de tekening en het huis. Dat verschil is precies wat een strak ingepast meubel onderscheidt van een meubel met een kier en een kitrand.',
+        bullets: [
+          'Stellen en waterpas zetten voordat er iets definitief vast zit',
+          'Passtukken en zijpanelen aftekenen op de werkelijke wandlijn en bijzagen',
+          'Verankeren in een constructie die het gewicht daadwerkelijk draagt',
+          'Aansluitpunten voor elektra, water, afvoer en ventilatie op hun plek laten uitkomen',
+          'Afkitten en het afwerken van plinten en aansluitnaden',
+        ],
+      },
+      {
+        heading: 'Wanneer zelf monteren logisch is, en wanneer het risico erin zit',
+        body: 'Eerlijk is eerlijk: niet elke montage is even risicovol. Bij een losstaand meubel tegen een rechte wand is het werk kort en overzichtelijk. Het risico zit in precies die situaties waar maatwerk voor bedoeld is.',
+        bullets: [
+          'Overzichtelijk: een losstaand meubel, een rechte wand, geen aansluitingen en geen doorlopend blad.',
+          'Risicovol: een keuken met gas, water, elektra en afzuiging, waar achter elke fout een aansluiting hangt.',
+          'Risicovol: een kast tot aan het plafond of onder een schuin dak, waarbij elk paneel op de werkelijke hoek is gezaagd.',
+          'Risicovol: een doorlopend werkblad over meerdere kasten, dat pas na het stellen definitief wordt ingemeten.',
+        ],
+      },
+      {
+        heading: 'Waarom de besparing van een keukenketen hier niet opgaat',
+        body: 'De grote keukenketens rekenen zelfmontage voor als besparing. KeukenConcurrent noemt op zijn zelfmontagepagina "Bespaar tot 1000 euro bij zelfmontage" en legt uit dat de kasten al in elkaar zitten en het werkblad al op maat is (gelezen 8 september 2026). Dat klopt voor dat product: een systeem in vaste maten dat de fabriek af verlaat, waarbij het inmeten al achter de rug is voordat jij begint. Bij maatwerk is de montage geen losse handeling aan het eind maar de laatste stap van het inmeten. Wat je erop bespaart, verdwijnt dus niet, het verschuift naar jou, samen met de vier gevolgen die hierboven staan.',
+      },
+      {
+        heading: 'Wat mensen hierover intypen',
+        body: 'De formuleringen waarmee mensen deze vraag stellen verraden waar het echt om gaat: niet om de handeling, maar om de rekening. Gemeten op 8 september 2026 in de Nederlandse zoeksuggesties: "zelf keuken plaatsen", "zelf keuken plaatsen moeilijk", "keuken kopen zelf plaatsen", "keuken monteren kosten", "kast op maat zelf in elkaar zetten", "kast op maat zelf samenstellen" en "zelf kast op maat maken schuine wand". Twee dingen vallen op. Een groot deel van de aanvullingen gaat over kant-en-klare systemen van IKEA, Kvik of Bruynzeel, waar zelfmontage een normale optie is en de maten al vaststaan. En op "zelf monteren garantie" komt in diezelfde meting geen enkele aanvulling. Dat betekent niet dat niemand het wil weten; het betekent dat het niet de woorden zijn waarin mensen het intypen. Daarom staat het antwoord erop hierboven, zonder dat je ernaar hoeft te zoeken.',
+      },
+      {
+        heading: 'Zes vragen voordat je een opdracht splitst',
+        body: 'Bij welke maatwerkpartij je ook uitkomt: met deze zes vragen weet je binnen een gesprek of splitsen bij hen verstandig is. Een partij die ze alle zes concreet beantwoordt, heeft erover nagedacht.',
+        bullets: [
+          'Wie meet in, en op welk moment wordt er definitief gemeten?',
+          'Wie draagt het risico als een maat niet klopt, de maker of ik?',
+          'Geldt de garantie ook op onderdelen die ik zelf monteer?',
+          'Welke betaaltermijnen gelden er als er geen montagemoment is?',
+          'Van wie is het meubel tussen levering en de laatste factuur?',
+          'Mag ik jullie tekening door een andere partij laten uitvoeren?',
+        ],
+      },
+      {
+        heading: 'Waar dit antwoord vandaan komt',
+        body: 'Alles wat hierboven over rechten en verplichtingen staat, komt uit de algemene voorwaarden van JDG, versie 5 augustus 2026, die integraal op deze site staan; de artikelnummers staan er telkens bij. De montagestappen komen van de werkwijze- en dienstenpagina’s. Een ding staat er bewust niet bij: of JDG in jouw specifieke situatie een opdracht zonder montage aanneemt. Daarover is geen beleid gepubliceerd, en er komt hier geen ja of nee te staan die Jonas niet zelf heeft gegeven. Vraag het in het kennismakingsgesprek: dat is gratis en vrijblijvend.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Kan JDG een kast monteren die ik ergens anders heb gekocht?',
+        a: 'Montage staat niet als losse dienst in het aanbod van JDG: elk project begint bij een schets en een inmeting. Wat wel kan, is een bestaande kast, bijvoorbeeld een IKEA Pax, laten aanvullen met onderdelen op maat, zoals een opzetkast tot aan het plafond, een passtuk tegen een schuine wand of fronten die het geheel een meubel maken.',
+      },
+      {
+        q: 'Vervalt de garantie als ik zelf monteer?',
+        a: 'De garantie van JDG geldt op de deugdelijke constructie en montage van het door JDG vervaardigde maatwerk, en niet voor schade of gebreken die zijn veroorzaakt door aanpassingen of werkzaamheden door derden (algemene voorwaarden, artikel 12). Montage die jij zelf doet, valt daar dus buiten. De fabrieksgarantie op ingekochte onderdelen zoals scharnieren, lades en apparatuur blijft gewoon gelden, en de wettelijke rechten van een consument worden er nooit door beperkt.',
+      },
+      {
+        q: 'Wie is aansprakelijk als het meubel niet blijkt te passen?',
+        a: 'Dat hangt af van wie de maat heeft genomen. Meet JDG in, dan is de maatvoering het werk van JDG en ontslaat jouw goedkeuring van de tekening JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten. Lever jij de maten of tekeningen aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan en komen de gevolgen van onjuiste of onvolledige informatie voor jouw rekening (artikel 3).',
+      },
+      {
+        q: 'Mag ik het ontwerp van JDG door een goedkopere partij laten maken?',
+        a: 'Niet zonder schriftelijke toestemming. Ontwerpen, tekeningen, renders en technische oplossingen blijven intellectueel eigendom van JDG en mogen zonder die toestemming niet door derden worden uitgevoerd of gekopieerd (artikel 3).',
+      },
+      {
+        q: 'Levert JDG een bouwpakket dat ik zelf in elkaar zet?',
+        a: 'Een bouwpakket is geen product dat op de site wordt aangeboden. In de werkplaats in Terheijden worden de onderdelen genummerd en gecontroleerd voordat ze vertrekken, maar ze vertrekken naar een montage door JDG zelf. Wil je toch alleen levering, leg dat dan voor de offerte voor.',
+      },
+      {
+        q: 'Wat kost het om de montage over te slaan?',
+        a: 'Daar staat op deze site geen bedrag bij. JDG publiceert geen prijslijst, omdat dezelfde meter met een ander front, ander beslag en een andere situatie ter plaatse een heel ander bedrag oplevert. Wat er in jouw project wel en niet in de prijs zit, staat in de offerte: alleen de werkzaamheden, materialen en leveringen die daarin staan zijn inbegrepen (artikel 2). Het eerste gesprek en de offerte zijn gratis en vrijblijvend.',
+      },
+    ],
+    verwijzingen: [
+      { label: 'De algemene voorwaarden, met de artikelen 2, 3, 4, 12 en 15', href: '/algemene-voorwaarden' },
+      { label: 'De werkwijze: van inmeten tot plaatsing', href: '/werkwijze' },
+      { label: 'Kledingkast laten monteren of meteen een kast op maat', href: '/blog/kledingkast-montage-of-kast-op-maat' },
+      { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
+      { label: 'Keukens op maat', href: '/diensten/keukens-op-maat' },
+    ],
+    hero: '/images/jdg-29.jpg',
+    heroAlt: 'Keukeneiland van JDG halverwege de montage: het werkblad ligt, de vloer is nog afgedekt en de plinten en afwerking volgen nog.',
     readingMinutes: 6,
   },
 ]

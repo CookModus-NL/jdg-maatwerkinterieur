@@ -64,6 +64,14 @@ export default function Page() {
                       <span className="font-mono text-jdg-700 text-2xl leading-none mt-0.5 group-open:rotate-45 transition-transform">+</span>
                     </summary>
                     <p className="mt-4 text-[16px] leading-[1.8] text-ink-700 max-w-[68ch]">{f.a}</p>
+                    {f.meer && (
+                      <Link
+                        href={f.meer.href}
+                        className="mt-3 inline-flex items-center gap-2 text-[15px] text-ink-900 underline underline-offset-4 decoration-ink-300 hover:text-jdg-700 hover:decoration-jdg-700 transition-colors"
+                      >
+                        {f.meer.label} <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    )}
                   </details>
                 ))}
               </div>

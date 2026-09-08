@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { ArrowUpRight } from 'lucide-react'
 import { livePosts, getBlogPost } from '@/content/blog'
 import { services } from '@/content/services'
-import { breadcrumbSchema, pageSchema } from '@/lib/schema'
+import { breadcrumbSchema, pageSchema, faqPageSchema } from '@/lib/schema'
 import { Kruimelpad, ContactBlok } from '@/components/secties'
 import { business } from '@/content/business'
 
@@ -70,6 +70,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const ld = pageSchema([
     articleSchema,
     breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/blog/${post.slug}` }))),
+    post.faq?.length ? faqPageSchema(post.faq) : null,
   ])
 
   return (
@@ -98,7 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="pb-16">
         <div className="container-x">
           <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-xl overflow-hidden bg-paper-2">
-            <Image src={post.hero} alt={post.title} fill priority sizes="(max-width: 1024px) 100vw, 80vw" className="object-cover" />
+            <Image src={post.hero} alt={post.heroAlt ?? post.title} fill priority sizes="(max-width: 1024px) 100vw, 80vw" className="object-cover" />
           </div>
         </div>
       </section>
@@ -123,6 +124,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           ))}
         </div>
       </article>
+
+      {post.faq && post.faq.length > 0 && (
+        <section className="pb-16">
+          <div className="container-x max-w-3xl">
+            <h2 className="font-display text-2xl lg:text-3xl text-ink-950 leading-tight mb-6">Korte vragen, korte antwoorden</h2>
+            <div className="divide-y divide-ink-100 border-y border-ink-100">
+              {post.faq.map((f, i) => (
+                <details key={i} className="group py-6" open={i === 0}>
+                  <summary className="cursor-pointer flex items-start justify-between gap-4 list-none">
+                    <h3 className="font-display text-[20px] lg:text-[24px] leading-snug text-ink-950 group-open:text-jdg-700 transition-colors">
+                      {f.q}
+                    </h3>
+                    <span className="font-mono text-jdg-700 text-2xl leading-none mt-0.5 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="mt-4 text-[16px] leading-[1.8] text-ink-700 max-w-[68ch]">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {post.verwijzingen && post.verwijzingen.length > 0 && (
+        <section className="pb-16">
+          <div className="container-x max-w-3xl">
+            <span className="eyebrow">Waar dit op verder bouwt</span>
+            <ul className="mt-5 space-y-3">
+              {post.verwijzingen.map((v) => (
+                <li key={v.href} className="flex items-start gap-3 text-[16px]">
+                  <span aria-hidden="true" className="text-jdg-700 mt-1">&rarr;</span>
+                  <Link href={v.href} className="text-ink-900 underline underline-offset-4 decoration-ink-300 hover:text-jdg-700 hover:decoration-jdg-700 transition-colors">
+                    {v.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 border-t border-ink-100">
         <div className="container-x max-w-3xl">
