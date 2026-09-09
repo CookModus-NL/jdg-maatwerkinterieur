@@ -7,7 +7,8 @@ import { cities, getCity } from '@/content/cities'
 import { stedenVoorDienst } from '@/content/lokaal-rooster'
 import { business } from '@/content/business'
 import { projectenVoorDienst, materialenVoorDienst, prijsfactorenVoor } from '@/content/relaties'
-import { Kruimelpad, ProjectenStrook, MaterialenStrook, PrijsfactorenBlok } from '@/components/secties'
+import { Kruimelpad, ProjectenStrook, MaterialenStrook, PrijsfactorenBlok, Vertrouwensstrook } from '@/components/secties'
+import { heeftVertrouwensstrook } from '@/content/vertrouwen'
 import { breadcrumbSchema, faqPageSchema, serviceSchema, pageSchema } from '@/lib/schema'
 
 export async function generateStaticParams() {
@@ -141,6 +142,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </section>
+
+      {/* Vertrouwensstrook: alleen op de vier clusterpagina's van contract e3ee8441.
+          /diensten/keukens-op-maat en /diensten/badkamermeubels-op-maat blijven in
+          het meetvenster ongewijzigd en zijn de referentie. */}
+      {heeftVertrouwensstrook(s.slug) && <Vertrouwensstrook dienst={s.singular} />}
 
       <ProjectenStrook
         projecten={projecten}

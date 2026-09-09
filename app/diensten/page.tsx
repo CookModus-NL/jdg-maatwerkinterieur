@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { services } from '@/content/services'
 import { business } from '@/content/business'
+import { Vertrouwensstrook } from '@/components/secties'
 
 export const metadata = {
   title: 'Diensten',
@@ -65,6 +66,8 @@ export default function DienstenIndex() {
           </div>
         </div>
       </section>
+
+      <Vertrouwensstrook />
     </>
   )
 }

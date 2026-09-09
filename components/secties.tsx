@@ -19,6 +19,7 @@ import { business } from '@/content/business'
 import type { Project } from '@/content/projects'
 import type { Material } from '@/content/materialen'
 import type { City } from '@/content/cities'
+import { vertrouwensregels } from '@/content/vertrouwen'
 
 export const waHref = (msg: string) =>
   `https://wa.me/${business.whatsapp.replace('+', '')}?text=${encodeURIComponent(msg)}`
@@ -349,6 +350,74 @@ export function PlaatsenRooster({
               <ArrowUpRight className="h-3.5 w-3.5 text-ink-500 group-hover:text-jdg-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
             </Link>
           ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------------------------------------------------------------- */
+
+/**
+ * De vertrouwensstrook. Toegevoegd 09-09-2026, interventiecontract e3ee8441.
+ *
+ * Eén vorm op elke pagina die hem draagt — alleen het onderwerp in de eerste zin
+ * wisselt mee met de dienst. Dat is bewust: vertrouwen komt uit herkenning, niet
+ * uit keurmerken (lering 24ffb894), en een strook die per pagina van vorm
+ * verandert leest als reclame in plaats van als een gegeven.
+ *
+ * Elke regel komt uit `content/vertrouwen.ts` en daar staat per regel het feit
+ * waar hij vandaan komt. Er staat hier bewust geen garantietermijn, geen review
+ * en geen prijs: die feiten wachten op de handtekening van de ondernemer
+ * (DE WET art. 1.3).
+ *
+ * Alle klassen zijn letterlijk overgenomen uit PlaatsFeiten hierboven, zodat er
+ * geen waarde buiten DESIGN.md bij komt.
+ */
+export function Vertrouwensstrook({ dienst }: { dienst?: string }) {
+  const opening = dienst
+    ? `Een ${dienst.toLowerCase()} van JDG wordt getekend, gebouwd en gemonteerd door dezelfde persoon.`
+    : 'Al het maatwerk van JDG wordt getekend, gebouwd en gemonteerd door dezelfde persoon.'
+  return (
+    <section className="py-24 bg-paper-2">
+      <div className="container-x">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-5">
+            <span className="eyebrow">Wie er achter staat</span>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
+              Geen bedrijfsnaam, een naam.
+            </h2>
+            <p className="mt-6 text-[16px] leading-[1.7] text-ink-700 max-w-md">
+              {opening} Dat is te controleren, en daarom staat het hier en niet alleen in de
+              voettekst. Hoe Jonas de Graaf in het vak kwam en waarom hij zonder tussenlagen werkt
+              lees je op{' '}
+              <Link href="/over-jonas" className="link-underline text-ink-900">
+                de pagina over de maker
+              </Link>
+              ; wat er tussen kennismaking en montage gebeurt staat stap voor stap in{' '}
+              <Link href="/werkwijze" className="link-underline text-ink-900">
+                de werkwijze van JDG
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div className="col-span-12 lg:col-span-7">
+            <dl className="border-t border-ink-900/15">
+              {vertrouwensregels.map((r) => (
+                <div key={r.label} className="grid grid-cols-12 gap-6 py-5 border-b border-ink-900/15">
+                  <dt className="col-span-5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-600">
+                    {r.label}
+                  </dt>
+                  <dd className="col-span-7 text-[16px] text-ink-900">{r.waarde}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-6 text-[14px] leading-relaxed text-ink-600">
+              JDG bestaat sinds {business.founded}. De ervaring erachter is ouder dan het bedrijf, en
+              dat verschil staat er liever eerlijk dan mooi.
+            </p>
+          </div>
         </div>
       </div>
     </section>
