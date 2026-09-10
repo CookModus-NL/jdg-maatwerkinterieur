@@ -30,6 +30,13 @@ export type BlogPost = {
   category: 'kosten' | 'proces' | 'materialen' | 'inspiratie'
   primaryKeyword: string
   relatedKeywords: string[]
+  /**
+   * Intro, sectietekst en bullets mogen sinds 10-09-2026 anker-markup dragen voor een
+   * verwijzing IN de lopende tekst: `<a href="/algemene-voorwaarden">artikel 3</a>`.
+   * Alleen interne paden; de parser staat in lib/tekst.tsx en injecteert geen HTML.
+   * Teksten zonder die markup veranderen niet. FAQ-antwoorden blijven bewust plat:
+   * die gaan als tekst in de FAQPage-structured data.
+   */
   intro: string
   sections: { heading: string; body: string; bullets?: string[] }[]
   hero: string
@@ -572,6 +579,7 @@ export const blogPosts: BlogPost[] = [
       { label: 'Kledingkast laten monteren of meteen een kast op maat', href: '/blog/kledingkast-montage-of-kast-op-maat' },
       { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
       { label: 'Moet ik aanbetalen, en wanneer betaal ik de rest?', href: '/blog/aanbetaling-en-betaaltermijnen-maatwerk' },
+      { label: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?', href: '/blog/keuken-of-kast-past-niet-verkeerd-ingemeten' },
       { label: 'Keukens op maat', href: '/diensten/keukens-op-maat' },
     ],
     hero: '/images/jdg-29.jpg',
@@ -708,11 +716,181 @@ export const blogPosts: BlogPost[] = [
       { label: 'De werkwijze: van kennismaking en offerte tot oplevering', href: '/werkwijze' },
       { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
       { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' },
+      { label: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?', href: '/blog/keuken-of-kast-past-niet-verkeerd-ingemeten' },
       { label: 'Kennismaken of een offerte aanvragen', href: '/contact' },
     ],
     hero: '/images/jdg-31.jpg',
     heroAlt: 'Opgeleverde kastenwand in zachtroze gelakt MDF met smalle messing greeplijsten, doorlopend tot tegen de schuine wand; de kamer eromheen is leeg.',
     readingMinutes: 7,
+  },
+  {
+    // Antwoordeenheid op de vraag "Wat gebeurt er als de maat niet klopt of iets niet past bij
+    // de montage?" (motor_vraagdekking jdg, rij c33f3b61, open sinds 01-09-2026; contract
+    // 689edd57). Alles wat hier over de rechten, plichten en gevolgen bij JDG staat, komt uit
+    // de eigen algemene voorwaarden versie 5 augustus 2026, die integraal op deze site staan;
+    // het artikelnummer staat er telkens bij. De wettelijke onderlaag komt uit de geldende
+    // tekst van Boek 7 van het Burgerlijk Wetboek op wetten.overheid.nl (BWBR0005290, geldend
+    // van 01-07-2026, uitgelezen 10-09-2026): titel 1 (koop) en titel 12 (aanneming van werk)
+    // gelden bij maatwerk naast elkaar.
+    // Wat hier NIET staat: projectprijzen, herstelkosten, hersteltermijnen in dagen, en een
+    // uitspraak over of een vast gemonteerde keuken een "bouwwerk" is in de zin van artikel
+    // 7:758 lid 4 BW. Dat laatste is geen vastgestelde waarheid en wordt hier niet beslist.
+    gepubliceerd: true,
+    slug: 'keuken-of-kast-past-niet-verkeerd-ingemeten',
+    title: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?',
+    h1: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?',
+    metaTitle: 'Keuken of kast past niet: wie draait ervoor op',
+    metaDescription:
+      'Vier situaties, vier uitkomsten: JDG heeft ingemeten, jij leverde de maten, de muur is niet recht, of de montage kan niet doorgaan. Per geval het artikel uit de eigen voorwaarden van JDG en het wetsartikel erbij.',
+    publishedAt: '2026-09-10',
+    updatedAt: '2026-09-10',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'keuken verkeerd ingemeten',
+    relatedKeywords: [
+      'keuken past niet',
+      'kast op maat past niet',
+      'keuken verkeerd geplaatst',
+      'wie is aansprakelijk bij verkeerd opmeten',
+      'maatwerk maat klopt niet',
+      'keuken sluit niet aan op de muur',
+      'keuken niet goed gemonteerd',
+    ],
+    intro:
+      'Wie de maat heeft genomen, bepaalt het antwoord. Heeft JDG ingemeten en klopt de maat niet, dan is dat een eigen meetfout van JDG en verandert jouw goedkeuring van de tekening daar niets aan: goedkeuring door de opdrachtgever ontslaat JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten, en dat staat met zoveel woorden in <a href="/algemene-voorwaarden">artikel 3 van de algemene voorwaarden van JDG</a>, versie 5 augustus 2026. Heb jij de maten of de tekening aangeleverd, dan mag JDG in beginsel uitgaan van de juistheid daarvan en komen de gevolgen voor jouw rekening, tenzij JDG de fout kende of als vakman had moeten herkennen. En dan is er nog een derde geval dat vaker voorkomt dan de eerste twee samen: het maatwerk is precies goed, maar de muur, de vloer of het plafond is niet recht. Hieronder staan de vier situaties naast elkaar, met per situatie het artikel uit de voorwaarden, het wetsartikel eronder, en wat je concreet doet.',
+    sections: [
+      {
+        heading: 'Het korte antwoord: vier situaties, vier uitkomsten',
+        body: 'Bijna elk "het past niet" valt in een van deze vier hokjes, en het hokje bepaalt wie herstelt en wie betaalt. Wat in jouw offerte staat gaat altijd voor; de voorwaarden zijn de terugvalregeling.',
+        bullets: [
+          'JDG heeft ingemeten en de maat klopt niet. Eigen meetfout van JDG. Herstel is kosteloos, ook als jij de tekening had goedgekeurd (artikel 3, leden 1 en 6, en artikel 11, lid 4).',
+          'Jij hebt de maten of de tekening aangeleverd en die waren onjuist. De gevolgen zijn voor jouw rekening, tenzij JDG de fout kende of als vakman redelijkerwijs had moeten herkennen (artikel 3, leden 3 en 4).',
+          'Het maatwerk is goed, maar de muur, vloer of het plafond is niet recht. Een klein noodzakelijk aansluit- of maatverschil is geen gebrek zolang functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6).',
+          'Het past wel, maar de montage kan niet doorgaan omdat de ruimte niet gereed is. Dat heet verlet en heeft een vaste vergoeding, die niet verschuldigd is wanneer het aan JDG te wijten is (artikel 6, leden 4, 5 en 10).',
+        ],
+      },
+      {
+        heading: 'Situatie 1: JDG heeft ingemeten en de maat klopt niet',
+        body: 'Wanneer JDG de maatvoering verzorgt, wordt die zorgvuldig opgenomen op basis van de op dat moment aanwezige situatie (artikel 3, lid 1). Blijkt er daarna een maat mis, dan is dat werk van JDG. Het punt waar bij andere partijen de discussie begint, is bij JDG in de voorwaarden dichtgezet: door goedkeuring van een tekening bevestig je de zichtbare indeling, maatvoering, draairichtingen, kleuren en materialen (artikel 3, lid 5), maar die goedkeuring ontslaat JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten (artikel 3, lid 6). Je handtekening op een tekening is dus geen overdracht van het meetrisico. Praktisch betekent dit: JDG krijgt eerst een redelijke mogelijkheid om het gebrek te onderzoeken en, wanneer JDG daarvoor verantwoordelijk is, kosteloos te herstellen (artikel 11, lid 4), en op de deugdelijke constructie en montage van het door JDG vervaardigde maatwerk geldt vijf jaar aanvullende garantie vanaf de opleverdatum (artikel 12, leden 1 en 2).',
+        bullets: [
+          'Wie tekent, meet: bij JDG lopen ontwerp, productie en montage door dezelfde hand, en dat is precies de reden dat het meetrisico niet ergens tussen twee partijen kan blijven hangen. Hoe dat traject loopt staat in <a href="/werkwijze">de werkwijze van kennismaking tot oplevering</a>.',
+          'De kosten van herstel of vervanging mogen niet aan je in rekening worden gebracht; dat is geen coulance maar wet (artikel 7:21 lid 2 BW).',
+          'Doet JDG de montage ook, dan is een montagefout wettelijk hetzelfde als een verkeerd geleverd product: elk gebrek dat het gevolg is van een verkeerde installatie die deel uitmaakt van de koop en onder verantwoordelijkheid van de verkoper is uitgevoerd, wordt beschouwd als het niet beantwoorden van het afgeleverde aan de overeenkomst (artikel 7:18a lid 1 onder a BW).',
+        ],
+      },
+      {
+        heading: 'Situatie 2: jij hebt de maten of de tekening aangeleverd',
+        body: 'Lever je zelf maten, tekeningen of technische gegevens aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan (artikel 3, lid 3), en komen de gevolgen van onjuiste of onvolledige informatie voor jouw rekening, tenzij JDG de fout kende of deze als vakman redelijkerwijs had moeten herkennen (artikel 3, lid 4). Diezelfde uitzondering staat ook in de wet, en dat is de helft van dit onderwerp die op vrijwel geen enkele pagina wordt genoemd. De aannemer is bij het aangaan of het uitvoeren van de overeenkomst verplicht de opdrachtgever te waarschuwen voor onjuistheden in de opdracht voor zover hij deze kende of redelijkerwijs behoorde te kennen, en dat geldt uitdrukkelijk ook voor fouten of gebreken in door de opdrachtgever verstrekte plannen, tekeningen, berekeningen, bestekken of uitvoeringsvoorschriften (artikel 7:754 lid 1 BW). Een verkeerde maat van jou is dus niet automatisch jouw probleem: als de maker had moeten zien dat het niet kon, had hij het moeten zeggen. JDG legt die plicht ook zelf vast: JDG waarschuwt wanneer een gewenste uitvoering naar professioneel inzicht ondeugdelijk, onveilig of technisch onverantwoord is (artikel 9, lid 7).',
+        bullets: [
+          'De wettelijke risicoverdeling staat in artikel 7:760 BW: is de ondeugdelijke uitvoering te wijten aan zaken of gegevens die van jou afkomstig zijn, dan komen de gevolgen voor jouw rekening, maar alleen "voor zover de aannemer niet zijn in artikel 754 bedoelde waarschuwingsplicht heeft geschonden of anderszins met betrekking tot deze gebreken in deskundigheid of zorgvuldigheid tekort is geschoten" (lid 2, en lid 3 voor tekeningen en berekeningen).',
+          'Aan de koopkant staat hetzelfde: je kunt je niet beroepen op non-conformiteit als het te wijten is aan gebreken of ongeschiktheid van grondstoffen die van jou afkomstig zijn, "tenzij de verkoper hem voor deze gebreken of ongeschiktheid had moeten waarschuwen" (artikel 7:17 lid 5 BW).',
+          'Eén nuance die je elders niet leest: de zwaardere eis dat een waarschuwing schriftelijk en ondubbelzinnig moet zijn, geldt volgens artikel 7:754 lid 2 BW alleen bij aanneming van een bouwwerk. Bij een meubel of keuken is de waarschuwingsplicht er dus wel, maar de vormeis niet. Zet een mondelinge waarschuwing daarom zelf in een appje of mail terug, aan welke kant van de tafel je ook zit.',
+          'Verandert er na het inmeten iets aan muren, vloeren, plafonds, leidingen of aansluitpunten, dan hoort dat gemeld te worden (artikel 3, lid 2). Dat is de meest voorkomende bron van een maat die niet meer klopt: er is niets verkeerd gemeten, er is daarna gestuukt, getegeld of een leiding verlegd.',
+          'Wil je maken en monteren splitsen, dan verschuift deze verdeling. Wat er dan verandert staat apart uitgeschreven in <a href="/blog/zelf-monteren-of-alleen-laten-maken">alleen laten maken en zelf monteren: kan dat bij maatwerk</a>.',
+        ],
+      },
+      {
+        heading: 'Situatie 3: de muur is niet recht, en dat is geen fout',
+        body: 'Dit is de situatie die het vaakst voor een maatfout wordt aangezien en het minst vaak eerlijk wordt uitgelegd, ook niet door maatwerkbedrijven zelf. Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6). Datzelfde geldt voor kleine verschillen in kleur, glans, maat, nerf, structuur of tekening van hout, fineer, plaatmateriaal en natuursteen: die kunnen binnen normale professionele toleranties vallen (artikel 9, lid 3), en hout kan onder invloed van licht, luchtvochtigheid en temperatuur beperkt verkleuren, krimpen, uitzetten of vervormen zonder dat er iets mis is (artikel 9, leden 4 en 5). Wat dit in de praktijk betekent: een passtrook, een schaduwnaad of een millimeter kit waar de kast de scheve wand raakt, is vakwerk en geen gebrek. Een spleet waar je een hand in kwijt kunt, is dat niet.',
+        bullets: [
+          'De grens is niet "recht of niet recht" maar "wordt de functionaliteit, de duurzaamheid of de overeengekomen uitstraling wezenlijk aangetast". Dat is een oordeel over dit werk in deze ruimte, en daarom hoort het bij de oplevering samen bekeken te worden (artikel 10, lid 1).',
+          'Waar het wringt is precies waar het maatwerk het gebouw raakt: de aansluiting op vloer, wand en plafond. Een voorbeeld van hoe dat er opgelost uitziet staat bij <a href="/projecten/zolderinbouw-hangkast-lades">de zolderinbouw met lades onder de schuine wand</a>, waar de lades tot in de punt van het dak zijn gepast.',
+          'JDG is niet aansprakelijk voor schade die uitsluitend ontstaat door verborgen gebreken in muren, vloeren, plafonds, leidingen of constructies die JDG redelijkerwijs niet kon kennen, of door omstandigheden waartegen JDG vooraf aantoonbaar heeft gewaarschuwd (artikel 13, lid 5). Ook dit is dus een reden om een waarschuwing schriftelijk te hebben.',
+        ],
+      },
+      {
+        heading: 'Situatie 4: het past wel, maar de montage kan niet doorgaan',
+        body: 'De vierde variant van "het past niet" gaat niet over het meubel maar over de ruimte. Voor iedere opdracht reserveert JDG specifieke productie- en montagetijd (artikel 5, lid 1), en op de afgesproken datum hoort de projectlocatie volledig gereed, veilig en toegankelijk te zijn: voldoende leeg en bezemschoon, met een vrije aanvoerroute, met muren, vloeren en plafonds die gereed en voldoende droog en uitgehard zijn, met de aansluitpunten voor elektra, water, afvoer en ventilatie op de overeengekomen plaats, en met constructies die voldoende draagkrachtig zijn (artikel 6, leden 1 en 2). Kan JDG daardoor niet beginnen of niet normaal doorwerken, dan heet dat verlet (artikel 6, lid 4). De voorwaarden noemen daar zelf de voorbeelden bij, en de eerste is de meest voorkomende: muren die kort daarvoor zijn gestukadoord en nog onvoldoende droog of uitgehard zijn. Ook genoemd: schilder-, vloer- of tegelwerk dat niet gereed is, ontbrekende of verkeerd geplaatste aansluitpunten, andere vakmensen die de werkruimte nog gebruiken, en een feitelijke situatie die sinds het inmeten zonder overleg is gewijzigd.',
+        bullets: [
+          'Bij verlet geldt een vaste vergoeding van 350 euro exclusief btw per ingeplande vakman per verloren volledige werkdag, bij het huidige btw-tarief van 21 procent 423,50 euro inclusief btw per vakman per dag (artikel 6, lid 5). Gaat maar een deel van de dag verloren, dan wordt naar verhouding gerekend met een minimum van een halve werkdag per vakman (artikel 6, lid 6).',
+          'Er zitten drie remmen op die vergoeding, en die staan in dezelfde voorwaarden: hij wordt alleen berekend voor zover JDG de gereserveerde capaciteit niet redelijkerwijs elders heeft kunnen inzetten (artikel 6, lid 9), hij is niet verschuldigd wanneer het niet kunnen uitvoeren aan JDG is toe te rekenen (artikel 6, lid 10), en de oorzaak wordt zo veel mogelijk schriftelijk en met foto’s vastgelegd (artikel 6, lid 8).',
+          'Zo voorkom je het helemaal: meld uiterlijk vijf werkdagen vóór de geplande plaatsing dat de locatie mogelijk niet tijdig gereed zal zijn (artikel 6, lid 3). Dan wordt er opnieuw ingepland in plaats van afgerekend.',
+          'Verschuiven kan ook geld kosten als het maatwerk zelf al klaar is: verplaats je tussen vijf en twee werkdagen vóór aanvang, dan mag 50 procent van de gereserveerde arbeidscapaciteit worden berekend, en binnen 48 uur vóór aanvang 350 euro exclusief btw per ingeplande vakman per gereserveerde werkdag, in beide gevallen alleen voor zover de vrijgekomen capaciteit niet met ander betaald werk kon worden ingevuld (artikel 7, leden 2 en 3).',
+        ],
+      },
+      {
+        heading: 'De wettelijke onderlaag, met het artikelnummer erbij',
+        body: 'Van de pagina’s die deze vraag nu beantwoorden noemt geen enkele een wetsartikel. Dat is jammer, want de wet is hier ongewoon concreet, en bij maatwerk gelden twee sets regels naast elkaar: de regels voor aanneming van werk én de regels voor consumentenkoop. Dat laatste komt doordat een overeenkomst om een nog niet bestaande roerende zaak te maken, gesloten tussen een vakbedrijf en een particulier, volgens artikel 7:5 lid 4 BW mede als consumentenkoop wordt aangemerkt. De teksten hieronder komen uit de geldende versie van Boek 7 van het Burgerlijk Wetboek van 1 juli 2026, uitgelezen op wetten.overheid.nl op 10 september 2026.',
+        bullets: [
+          'Een maat die afwijkt ís non-conformiteit. Artikel 7:17 BW zegt in lid 1 dat het afgeleverde aan de overeenkomst moet beantwoorden, en in lid 3 letterlijk: "Hetzelfde geldt indien het afgeleverde in getal, maat of gewicht van het overeengekomene afwijkt."',
+          'Een montagefout van de maker is non-conformiteit. Artikel 7:18a lid 1 onder a BW rekent elk gebrek als gevolg van een verkeerde installatie tot het niet beantwoorden aan de overeenkomst, wanneer de installatie deel uitmaakt van de koop en is uitgevoerd door de verkoper of onder diens verantwoordelijkheid.',
+          'Het eerste jaar hoef jij niets te bewijzen. Bij een consumentenkoop wordt vermoed dat de zaak bij aflevering niet aan de overeenkomst beantwoordde als de afwijking zich binnen één jaar na aflevering openbaart, tenzij de verkoper anders aantoont of de aard van de zaak of van de afwijking zich daartegen verzet (artikel 7:18a lid 2 BW). Op meerdere pagina’s over dit onderwerp staat nog "zes maanden"; dat is een oudere stand van de wet.',
+          'Herstel is jouw recht en het kost je niets. Je kunt aflevering van het ontbrekende, herstel of vervanging eisen (artikel 7:21 lid 1 BW), en de kosten daarvan mogen niet aan je in rekening worden gebracht (lid 2). Bij een consumentenkoop vervalt dat recht alleen als herstel of vervanging onmogelijk is of niet van de verkoper kan worden gevergd (lid 4).',
+          'De maker mag het eerst zelf oplossen. Bij aanneming van werk moet je de aannemer de gelegenheid geven gebreken binnen een redelijke termijn weg te nemen, tenzij dat in verband met de omstandigheden niet van je kan worden gevergd, en je kunt vorderen dat hij dat doet tenzij de herstelkosten in geen verhouding staan tot jouw belang bij herstel in plaats van schadevergoeding (artikel 7:759 leden 1 en 2 BW).',
+          'Gebeurt er niets, dan mag je het laten doen. Voldoet de verkoper bij een consumentenkoop niet binnen een redelijke tijd nadat hij daartoe schriftelijk is aangemaand, dan mag je het herstel door een derde laten uitvoeren en de kosten op hem verhalen (artikel 7:21 lid 6 BW). Lukt herstel of vervanging niet, dan komen ontbinding en prijsvermindering in beeld (artikel 7:22 BW).',
+          'Kijk bij de oplevering goed. De aannemer is ontslagen van aansprakelijkheid voor gebreken die je op het tijdstip van oplevering redelijkerwijs had moeten ontdekken (artikel 7:758 lid 3 BW). In de voorwaarden van JDG staat daar de tegenhanger bij: ingebruikname kan gelden als aanvaarding van duidelijk zichtbare punten, maar doet geen afbreuk aan je rechten bij verborgen gebreken (artikel 10, lid 7), en de aanvullende garantie beperkt nooit de wettelijke rechten van een consument (artikel 12, lid 6).',
+        ],
+      },
+      {
+        heading: 'Wat je concreet doet, in de juiste volgorde',
+        body: 'De volgorde is niet alleen netjes, hij is ook wat je rechten bewaart. Wie meteen een andere partij laat repareren, verliest een deel van zijn aanspraak; wie te lang wacht met melden, ook. Dit is de route zoals de voorwaarden van JDG en de wet hem samen aangeven.',
+        bullets: [
+          'Meld het zodra je het ziet, bij voorkeur schriftelijk, met een duidelijke omschrijving en foto’s (artikel 11, leden 1 en 3). Een klacht van een consument die binnen twee maanden na ontdekking wordt gemeld, geldt in ieder geval als tijdig (artikel 11, lid 2).',
+          'Laat JDG eerst kijken. JDG krijgt een redelijke mogelijkheid om het vermeende gebrek te onderzoeken en, wanneer JDG daarvoor verantwoordelijk is, kosteloos te herstellen (artikel 11, lid 4); jij geeft daarvoor binnen redelijke grenzen toegang (lid 5).',
+          'Schakel niet zonder overleg een derde in. Dat mag wel bij een acute noodsituatie, of wanneer JDG na een redelijke schriftelijke termijn geen herstel uitvoert (artikel 11, lid 6). Doe je het zonder noodzaak, dan hoeft JDG die kosten niet te vergoeden voor zover JDG het gebrek zelf deugdelijk had kunnen herstellen (lid 7).',
+          'Houd niet de hele slotfactuur in. Een klein opleverpunt geeft dat recht niet (artikel 10, lid 4); wel mag je een redelijk bedrag inhouden dat in verhouding staat tot dat punt en de verwachte herstelkosten (artikel 10, lid 5). De volgorde van de termijnen zelf staat in <a href="/blog/aanbetaling-en-betaaltermijnen-maatwerk">moet ik aanbetalen, en wanneer betaal ik de rest</a>.',
+          'Leg vast wat er is afgesproken. Mondelinge aanvullende afspraken worden zo veel mogelijk schriftelijk bevestigd (artikel 2, lid 5), en meerwerk kan schriftelijk, per e-mail of via WhatsApp worden overeengekomen (artikel 8, lid 3). Een appje is een schriftelijke afspraak.',
+          'Komt er geen oplossing, dan zeggen de voorwaarden wat de route is: partijen proberen een geschil eerst door redelijk onderling overleg op te lossen, en biedt dat geen oplossing, dan wordt het geschil voorgelegd aan de rechter die volgens de Nederlandse wet bevoegd is (artikel 15, leden 8 en 9).',
+        ],
+      },
+      {
+        heading: 'Wat mensen hierover intypen',
+        body: 'De woorden waarin deze vraag wordt gesteld zeggen iets over waarom de antwoorden zo dun zijn. Gemeten op 10 september 2026 in de Nederlandse zoeksuggesties (hl=nl, gl=nl) levert "keuken verkeerd" drie aanvullingen op: "keuken verkeerd ingemeten", "keuken verkeerd geplaatst" en "keuken verkeerd geleverd". Op "keuken past niet" komt "ikea keuken past niet" terug. Maar type je alleen "verkeerd ingemeten", dan gaan alle tien de aanvullingen over kozijnen, schuifpuien, tuindeuren, ramen en trappen: geen enkele over een keuken, kast of meubel. En op "kast op maat past", "keuken opgemeten" en "keukenmontage fout" komt in diezelfde meting helemaal niets terug. De vraag wordt dus wel gesteld, maar er is nauwelijks een vaste formulering voor, en waar geen vaste formulering is, komt ook geen goed antwoord bovendrijven. Dat is de reden dat deze pagina de vier situaties uitschrijft in plaats van één zoekterm te bedienen.',
+      },
+      {
+        heading: 'Wat hier bewust niet staat',
+        body: 'Er staan op deze pagina geen projectprijzen en geen herstelkosten. Wat een oplossing kost hangt af van wat er precies mis is en wat de situatie ter plaatse toelaat, en dat hoort in een gesprek en op een factuur, niet in een tabel op een website. Er staat ook geen termijn in dagen waarbinnen herstel gebeurt: de voorwaarden en de wet spreken van een redelijke termijn, en wat redelijk is verschilt tussen een scharnier bijstellen en een front opnieuw laten spuiten. Er staat geen geschillencommissie op deze pagina, omdat de voorwaarden van JDG er geen aanwijzen: artikel 15 stuurt een geschil naar onderling overleg en daarna naar de bevoegde rechter. En er staat geen uitspraak over de vraag of een vast gemonteerde keuken een "bouwwerk" is in de zin van artikel 7:758 lid 4 BW, want dat is niet vastgesteld; wel is duidelijk dat de voorwaarden van JDG je rechten bij verborgen gebreken uitdrukkelijk in stand laten (artikel 10, lid 7). Twijfel je over een specifieke situatie, leg hem dan voor voordat er iets gedemonteerd of hersteld wordt — dat is het moment waarop de meeste opties nog open staan.',
+      },
+      {
+        heading: 'Waar dit antwoord vandaan komt',
+        body: 'Alles wat hierboven over de rechten, plichten en gevolgen bij JDG staat, komt uit de algemene voorwaarden van JDG, versie 5 augustus 2026, die integraal op deze site staan; het artikelnummer staat er telkens bij, zodat je elke regel zelf kunt nalezen in <a href="/algemene-voorwaarden">de volledige voorwaarden, met de artikelen 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13 en 15</a>. De wetsartikelen komen uit de geldende tekst van Boek 7 van het Burgerlijk Wetboek op wetten.overheid.nl, versie van 1 juli 2026, uitgelezen op 10 september 2026. De zoeksuggesties zijn op 10 september 2026 opgevraagd met hl=nl en gl=nl. JDG Maatwerk Interieur is de eenmanszaak van Jonas de Graaf, ingeschreven in het Handelsregister onder KvK-nummer 93463332, met de werkplaats in Terheijden; ontwerp, productie en montage lopen door dezelfde hand, en dat is de reden dat deze pagina de vraag "wie draait ervoor op" niet hoeft door te schuiven.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Wie is aansprakelijk als de maat niet klopt?',
+        a: 'Dat hangt af van wie de maat heeft genomen. Heeft JDG ingemeten, dan is de maatvoering het werk van JDG en ontslaat jouw goedkeuring van de tekening JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten (algemene voorwaarden, artikel 3, lid 6). Heb jij de maten of tekeningen aangeleverd, dan mag JDG in beginsel uitgaan van de juistheid daarvan en komen de gevolgen voor jouw rekening, tenzij JDG de fout kende of als vakman redelijkerwijs had moeten herkennen (artikel 3, leden 3 en 4).',
+      },
+      {
+        q: 'Ik heb de tekening goedgekeurd. Ben ik dan van mijn rechten af?',
+        a: 'Nee. Met je goedkeuring bevestig je de zichtbare indeling, maatvoering, draairichtingen, kleuren en materialen (algemene voorwaarden, artikel 3, lid 5), maar diezelfde goedkeuring ontslaat JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten (artikel 3, lid 6). Je handtekening op een tekening is dus geen overdracht van het meetrisico.',
+      },
+      {
+        q: 'De kast sluit niet naadloos aan op de muur. Is dat een gebrek?',
+        a: 'Niet per definitie. Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak, en kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (algemene voorwaarden, artikel 9, lid 6). De grens is dus niet "recht of niet recht" maar of een van die drie dingen wezenlijk wordt aangetast. Daarom hoort het werk bij de oplevering samen bekeken te worden (artikel 10, lid 1).',
+      },
+      {
+        q: 'Mag ik het zelf laten repareren en de rekening doorsturen?',
+        a: 'Niet zonder overleg. Volgens de voorwaarden laat je een gebrek niet zonder voorafgaand overleg door een derde herstellen, behalve bij een acute noodsituatie of wanneer JDG na een redelijke schriftelijke termijn geen herstel uitvoert (artikel 11, lid 6); doe je het zonder noodzaak, dan hoeft JDG die kosten niet te vergoeden voor zover JDG het zelf deugdelijk had kunnen herstellen (lid 7). De wet loopt daarmee gelijk: bij een consumentenkoop mag je het herstel door een derde laten doen en de kosten verhalen als de verkoper niet binnen een redelijke tijd reageert nadat hij daartoe schriftelijk is aangemaand (artikel 7:21 lid 6 BW).',
+      },
+      {
+        q: 'Hoe lang na de oplevering kan ik nog klagen?',
+        a: 'Een klacht van een consument die binnen twee maanden na ontdekking wordt gemeld, geldt volgens de voorwaarden in ieder geval als tijdig (artikel 11, lid 2). Daarnaast geldt vijf jaar aanvullende garantie op de deugdelijke constructie en montage van het door JDG vervaardigde maatwerk, gerekend vanaf de opleverdatum (artikel 12, leden 1 en 2), en die garantie beperkt nooit je wettelijke rechten (lid 6). Bij een consumentenkoop wordt bovendien vermoed dat een afwijking die zich binnen één jaar na aflevering openbaart al bij aflevering aanwezig was, tenzij de verkoper anders aantoont (artikel 7:18a lid 2 BW).',
+      },
+      {
+        q: 'Wat kost het als de montage niet door kan gaan omdat mijn ruimte niet klaar is?',
+        a: 'Dat heet verlet en de voorwaarden noemen daar een vast bedrag bij: 350 euro exclusief btw per ingeplande vakman per verloren volledige werkdag, bij het huidige btw-tarief van 21 procent 423,50 euro inclusief btw (artikel 6, lid 5); bij een deel van de dag naar verhouding, met een minimum van een halve werkdag (lid 6). De vergoeding wordt alleen berekend voor zover de gereserveerde capaciteit niet redelijkerwijs elders is ingezet (lid 9) en is niet verschuldigd wanneer het niet kunnen uitvoeren aan JDG is toe te rekenen (lid 10). Meld uiterlijk vijf werkdagen vóór de plaatsing dat de locatie mogelijk niet gereed is (lid 3), dan wordt er opnieuw ingepland.',
+      },
+      {
+        q: 'Ik heb na het inmeten laten stuken en tegelen. Verandert dat iets?',
+        a: 'Ja, op twee manieren. Wijzigingen aan muren, vloeren, plafonds, leidingen of aansluitpunten na het inmeten horen gemeld te worden (artikel 3, lid 2), omdat de maatvoering is opgenomen op basis van de situatie zoals die op dat moment was (lid 1). En zijn muren kort voor de montage gestukadoord en nog onvoldoende droog of uitgehard, dan noemen de voorwaarden dat uitdrukkelijk als verlet (artikel 6, lid 4). Stuc-, schilder-, tegel- en vloerwerk moet voldoende lang hebben kunnen drogen en uitharden voordat er gemonteerd wordt (artikel 6, lid 2).',
+      },
+      {
+        q: 'Kan ik de opdracht ontbinden als het niet past?',
+        a: 'Dat is de laatste stap, niet de eerste. Bij een consumentenkoop ontstaan ontbinding en prijsvermindering pas wanneer herstel en vervanging onmogelijk zijn of niet van de verkoper kunnen worden gevergd, of wanneer hij tekortschiet in zijn verplichting om binnen een redelijke termijn en zonder ernstige overlast te herstellen (artikel 7:22 leden 1 en 2 BW); onmiddellijk ontbinden of de prijs verminderen kan onder meer wanneer herstel niet is voltooid, is geweigerd, of de afwijking zo ernstig is dat het gerechtvaardigd is (lid 5). Ontbinden is bij maatwerk zelden de gunstigste route, omdat het gemaakte werk niet aan iemand anders te leveren is; herstel levert vaker een bruikbaar resultaat op.',
+      },
+    ],
+    verwijzingen: [
+      { label: 'De algemene voorwaarden van JDG, met de artikelen 3, 6, 9, 10, 11, 12 en 13', href: '/algemene-voorwaarden' },
+      { label: 'De werkwijze: van inmeten en tekening tot montage en oplevering', href: '/werkwijze' },
+      { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' },
+      { label: 'Moet ik aanbetalen, en wanneer betaal ik de rest?', href: '/blog/aanbetaling-en-betaaltermijnen-maatwerk' },
+      { label: 'Zolderinbouw met lades tot in de punt van het dak', href: '/projecten/zolderinbouw-hangkast-lades' },
+      { label: 'Kennismaken of een situatie voorleggen', href: '/contact' },
+    ],
+    hero: '/images/jdg-33.jpg',
+    heroAlt: 'Zachtroze gelakte kastenwand met één deur open: witte binnenkant met planken en drie uitgetrokken lades, messing greeplijsten op de fronten; rechts loopt de kast schuin mee met de dakhelling, met een donkerpaarse wand en grijze houtlook-vloer ernaast.',
+    readingMinutes: 9,
   },
 ]
 

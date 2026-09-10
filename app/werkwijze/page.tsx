@@ -94,6 +94,22 @@ export default function Werkwijze() {
             </Link>
           </div>
 
+          <div className="mt-16 max-w-3xl border-t border-ink-900/15 pt-8">
+            <h2 className="font-display text-2xl text-ink-950">En als de maat niet blijkt te kloppen?</h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-ink-700">
+              Het inmeten en de montage zijn bij JDG hetzelfde werk als het tekenen en het bouwen, en daarom kan het meetrisico niet
+              tussen twee partijen blijven hangen: jouw goedkeuring van de tekening ontslaat JDG niet van verantwoordelijkheid voor eigen
+              meet-, productie- of montagefouten. Wat er geldt als jij de maten aanlevert, wanneer een scheve muur juist géén gebrek is,
+              en wat er gebeurt als de montage niet door kan gaan, staat per artikel uitgeschreven.
+            </p>
+            <Link
+              href="/blog/keuken-of-kast-past-niet-verkeerd-ingemeten"
+              className="mt-4 inline-flex items-center gap-2 text-[15px] text-ink-900 underline underline-offset-4 decoration-ink-300 hover:text-jdg-700 hover:decoration-jdg-700 transition-colors"
+            >
+              Wat gebeurt er als de maat niet klopt of iets niet past bij de montage? <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
           <div className="mt-16 flex flex-wrap gap-3">
             <a href={waHref('Hoi JDG, ik wil graag overleggen over een project.')} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <MessageCircle className="h-4 w-4" />

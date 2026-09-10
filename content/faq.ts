@@ -33,6 +33,9 @@ export const faqs: FAQ[] = [
     meer: { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' } },
   { category: 'garantie', q: 'Wat is de garantie op maatwerk van JDG?',
     a: 'Op de constructie geeft JDG vijf jaar garantie. Op ingekochte onderdelen (scharnieren, lades, apparatuur) geldt de fabrieksgarantie, meestal twee tot tien jaar. Bij correct gebruik gaat een JDG kast of keuken twintig tot dertig jaar mee.' },
+  { category: 'garantie', q: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?',
+    a: 'Dat hangt af van wie de maat heeft genomen. Heeft JDG ingemeten, dan is de maatvoering het werk van JDG, en jouw goedkeuring van de tekening ontslaat JDG niet van verantwoordelijkheid voor eigen meet-, productie- of montagefouten (algemene voorwaarden, artikel 3, lid 6). Lever jij de maten of tekeningen aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan (artikel 3, leden 3 en 4). En is het maatwerk goed maar de muur niet recht, dan is een klein noodzakelijk aansluitverschil geen gebrek zolang functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6).',
+    meer: { label: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?', href: '/blog/keuken-of-kast-past-niet-verkeerd-ingemeten' } },
   { category: 'garantie', q: 'Wat als er iets kapot gaat na oplevering?',
     a: 'Bel of mail direct. Kleine gebreken worden binnen twee weken opgelost. Voor onderdelen die vervangen moeten worden hebben we contact met dezelfde leveranciers, zodat kleuren en materialen exact matchen.' },
 ]

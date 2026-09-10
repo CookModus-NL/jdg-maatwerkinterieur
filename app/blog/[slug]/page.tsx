@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { livePosts, getBlogPost } from '@/content/blog'
 import { services } from '@/content/services'
 import { breadcrumbSchema, pageSchema, faqPageSchema } from '@/lib/schema'
+import { tekstMetLinks } from '@/lib/tekst'
 import { Kruimelpad, ContactBlok } from '@/components/secties'
 import { business } from '@/content/business'
 
@@ -92,7 +93,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
           </div>
           <h1 className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] text-ink-950">{post.h1}</h1>
-          <p className="mt-8 text-[16px] leading-[1.75] text-ink-700">{post.intro}</p>
+          <p className="mt-8 text-[16px] leading-[1.75] text-ink-700">{tekstMetLinks(post.intro)}</p>
         </div>
       </section>
 
@@ -109,13 +110,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {post.sections.map((section, i) => (
             <div key={i} className="mb-12">
               <h2 className="font-display text-2xl lg:text-3xl text-ink-950 leading-tight mb-4">{section.heading}</h2>
-              <p className="text-[16px] leading-[1.8] text-ink-700">{section.body}</p>
+              <p className="text-[16px] leading-[1.8] text-ink-700">{tekstMetLinks(section.body)}</p>
               {section.bullets && (
                 <ul className="mt-4 space-y-2">
                   {section.bullets.map((b, j) => (
                     <li key={j} className="flex items-start gap-3 text-[16px] text-ink-800">
                       <span className="text-jdg-700 mt-1">→</span>
-                      <span>{b}</span>
+                      <span>{tekstMetLinks(b)}</span>
                     </li>
                   ))}
                 </ul>
