@@ -66,6 +66,21 @@ export default function Werkwijze() {
           </div>
 
           <div className="mt-16 max-w-3xl border-t border-ink-900/15 pt-8">
+            <h2 className="font-display text-2xl text-ink-950">En wanneer betaal je wat?</h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-ink-700">
+              De betaalmomenten hangen aan deze vier stappen: de eerste termijn hoort bij het akkoord op de offerte, de tweede
+              valt bij levering op locatie en aanvang van de montage, en de laatste pas na oplevering. Welk deel dat precies is,
+              waar de wettelijke bovengrens ligt en wat je bij een openstaand opleverpunt mag inhouden, staat per artikel uitgeschreven.
+            </p>
+            <Link
+              href="/blog/aanbetaling-en-betaaltermijnen-maatwerk"
+              className="mt-4 inline-flex items-center gap-2 text-[15px] text-ink-900 underline underline-offset-4 decoration-ink-300 hover:text-jdg-700 hover:decoration-jdg-700 transition-colors"
+            >
+              Moet ik aanbetalen, en wanneer betaal ik de rest? <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-16 max-w-3xl border-t border-ink-900/15 pt-8">
             <h2 className="font-display text-2xl text-ink-950">En als je het wilt splitsen?</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-ink-700">
               Maken en monteren zijn bij JDG een opdracht: de offerte, de betaaltermijnen en de garantie zijn er alle drie op gebouwd.

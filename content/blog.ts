@@ -432,6 +432,11 @@ export const blogPosts: BlogPost[] = [
         body: 'Een prijs per meter zegt bij maatwerk weinig, omdat dezelfde meter met een ander front, ander beslag en een andere situatie ter plaatse een heel ander bedrag oplevert. JDG geeft daarom geen richtprijzen op de site maar een offerte op basis van wat er werkelijk staat. Het eerste gesprek en de offerte zijn gratis en vrijblijvend; een appje met foto\'s en globale maten is genoeg om te beginnen.',
       },
     ],
+    verwijzingen: [
+      { label: 'Moet ik aanbetalen, en wanneer betaal ik de rest?', href: '/blog/aanbetaling-en-betaaltermijnen-maatwerk' },
+      { label: 'De algemene voorwaarden, met de artikelen over meerwerk en oplevering', href: '/algemene-voorwaarden' },
+      { label: 'De werkwijze: van kennismaking tot plaatsing', href: '/werkwijze' },
+    ],
     hero: '/images/jdg-23.jpg',
     readingMinutes: 6,
   },
@@ -566,11 +571,148 @@ export const blogPosts: BlogPost[] = [
       { label: 'De werkwijze: van inmeten tot plaatsing', href: '/werkwijze' },
       { label: 'Kledingkast laten monteren of meteen een kast op maat', href: '/blog/kledingkast-montage-of-kast-op-maat' },
       { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
+      { label: 'Moet ik aanbetalen, en wanneer betaal ik de rest?', href: '/blog/aanbetaling-en-betaaltermijnen-maatwerk' },
       { label: 'Keukens op maat', href: '/diensten/keukens-op-maat' },
     ],
     hero: '/images/jdg-29.jpg',
     heroAlt: 'Keukeneiland van JDG halverwege de montage: het werkblad ligt, de vloer is nog afgedekt en de plinten en afwerking volgen nog.',
     readingMinutes: 6,
+  },
+  {
+    // Antwoordeenheid op de vraag "Moet ik aanbetalen, en wanneer betaal ik de rest?"
+    // (motor_vraagdekking jdg, open sinds 01-09-2026; contract c4ba5d85).
+    // Alles wat hier over termijnen, rechten en plichten staat komt uit de eigen algemene
+    // voorwaarden versie 5 augustus 2026, die integraal op deze site staan; het artikelnummer
+    // staat er telkens bij. De wettelijke onderlaag komt uit de geldende tekst van Boek 7 BW
+    // op wetten.overheid.nl (BWBR0005290, geldend van 01-07-2026, uitgelezen 10-09-2026).
+    // Wat NIET op de pagina staat: bedragen, richtprijzen en welk percentage in een concrete
+    // offerte terechtkomt. Daarover beslist Jonas per project, en dat staat in de offerte.
+    gepubliceerd: true,
+    slug: 'aanbetaling-en-betaaltermijnen-maatwerk',
+    title: 'Moet ik aanbetalen, en wanneer betaal ik de rest?',
+    h1: 'Moet ik aanbetalen, en wanneer betaal ik de rest?',
+    metaTitle: 'Aanbetaling maatwerk: wanneer betaal je wat',
+    metaDescription:
+      'De betaaltermijnen bij JDG, met het artikel uit de eigen voorwaarden erbij: wat je bij akkoord betaalt, wat bij levering en montage, en wat pas na oplevering. Plus de wettelijke bovengrens en waar die vandaan komt.',
+    publishedAt: '2026-09-10',
+    updatedAt: '2026-09-10',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'aanbetaling maatwerk keuken',
+    relatedKeywords: [
+      'aanbetaling keuken hoeveel',
+      'aanbetaling keuken verplicht',
+      'keuken betalen voor levering',
+      'betaaltermijnen keuken op maat',
+      'hoeveel aanbetaling mag een aannemer vragen',
+      'aanbetaling kast op maat',
+    ],
+    intro:
+      'Ja, bij JDG betaal je aan. Voor particuliere opdrachtgevers geldt, tenzij in de offerte iets anders is afgesproken, een verdeling in drie: 50 procent na akkoord op de offerte, 40 procent bij levering van de voornaamste maatwerkonderdelen op locatie en aanvang van de montage, en 10 procent na oplevering. Dat staat in artikel 4 van de algemene voorwaarden van JDG, versie 5 augustus 2026, die je hieronder op deze site kunt nalezen. Hieronder staat waarom die verdeling zo loopt, waar de wettelijke bovengrens ligt en welk artikel die grens stelt, en wat er precies gebeurt op het moment dat de laatste factuur komt.',
+    sections: [
+      {
+        heading: 'Het korte antwoord, in vier regels',
+        body: 'Deze vier regels zijn de volledige betaalafspraak zoals die in de voorwaarden staat. Wat in jouw offerte staat gaat er altijd voor: de termijnregeling geldt uitdrukkelijk tenzij in de offerte iets anders is overeengekomen.',
+        bullets: [
+          '50 procent na akkoord op de offerte (artikel 4, lid 1).',
+          '40 procent bij levering van de voornaamste maatwerkonderdelen op locatie en aanvang van de montage (artikel 4, lid 1).',
+          '10 procent na oplevering (artikel 4, lid 1).',
+          'Elke factuur wordt binnen zeven dagen na factuurdatum betaald, tenzij schriftelijk een andere termijn is afgesproken (artikel 4, lid 3).',
+        ],
+      },
+      {
+        heading: 'Waarom er bij maatwerk vooraf betaald wordt',
+        body: 'Bij een kant-en-klare kast koopt de winkel in op voorraad en verkoopt hij wat er al ligt. Bij maatwerk bestaat het product nog niet en is het na productie ook aan niemand anders te verkopen: het is getekend op jouw wand, in jouw kleur, op jouw maat. De eerste termijn dekt de inkoop van plaatmateriaal, fronten, beslag en werkblad die speciaal voor jouw project worden besteld. Daarom staat in de voorwaarden ook dat JDG materialen niet hoeft te bestellen en de productie niet hoeft te starten voordat de eerste termijn is ontvangen (artikel 4, lid 4), en dat de productie pas begint nadat de aanbetaling is ontvangen, de definitieve maatvoering is vastgesteld en de tekeningen en materiaalkeuzes zijn goedgekeurd (artikel 2, lid 4). De planning is mede afhankelijk van tijdige betaling (artikel 5, lid 3). Betalen is bij maatwerk dus geen formaliteit achteraf maar een startsein.',
+      },
+      {
+        heading: 'De wettelijke bovengrens, met het artikelnummer erbij',
+        body: 'Vrijwel elke pagina over dit onderwerp zegt dat een verkoper wettelijk niet meer dan de helft vooruit mag vragen, en laat vervolgens weg waar dat staat. Het staat in artikel 26 lid 2 van Boek 7 van het Burgerlijk Wetboek, en de zin luidt letterlijk: "Bij een consumentenkoop kan de koper tot vooruitbetaling van ten hoogste de helft van de koopprijs worden verplicht." (Geldende tekst van 1 juli 2026, uitgelezen op wetten.overheid.nl op 10 september 2026.) Dat is precies de reden dat de eerste termijn van JDG op 50 procent staat en niet hoger.',
+        bullets: [
+          'Waarom dit ook voor maatwerk geldt: een overeenkomst om een roerende zaak te maken die er nog niet is, gesloten tussen een vakbedrijf en een particulier, wordt volgens artikel 5 lid 4 van Boek 7 mede als consumentenkoop aangemerkt. De regels voor koop en de regels voor aanneming van werk gelden daarbij naast elkaar, en bij strijd gaan de koopregels voor.',
+          'Wat aanneming van werk is: de overeenkomst waarbij de aannemer zich verbindt om buiten dienstbetrekking een werk van stoffelijke aard tot stand te brengen en op te leveren, tegen een door de opdrachtgever te betalen prijs in geld (artikel 750 lid 1 van Boek 7). Een keuken of kastenwand op maat valt daaronder.',
+          'De nuance die bijna nergens staat: van artikel 26 mag in theorie worden afgeweken, maar volgens artikel 6 lid 2 van Boek 7 wordt een beding in de algemene voorwaarden dat ten nadele van de koper van artikel 26 afwijkt, als onredelijk bezwarend aangemerkt. Een bedrijf dat in zijn algemene voorwaarden meer dan de helft vooruit eist, heeft dus een beding staan dat de rechter kan vernietigen.',
+          'Wat dat voor jou betekent bij welke maatwerkpartij dan ook: staat er in de algemene voorwaarden een aanbetaling boven de helft, dan is dat een rode vlag met een concrete juridische naam, en geen kwestie van smaak.',
+        ],
+      },
+      {
+        heading: 'Waarom 50 procent en niet de 15 procent van een keukenwinkel',
+        body: 'Wie deze vraag googelt komt vaak uit bij een lager percentage, en dat klopt ook, alleen geldt het voor een ander soort bedrijf. De Centrale Branchevereniging Wonen hanteert in haar erkende voorwaarden voor woonwinkels een maximum van 25 procent aanbetaling in het algemeen en 15 procent voor keukens, badkamers en sanitair. KeukenConcurrent noemt datzelfde maximum van 15 procent in artikel 5 van zijn CBW-erkende voorwaarden (gelezen 10 september 2026). Die regeling geldt voor woonwinkels die bij die vereniging zijn aangesloten en die voorwaarden voeren. JDG voert eigen algemene voorwaarden: die zijn van toepassing op alle offertes, opdrachten en werkzaamheden, en afwijkingen gelden alleen als ze schriftelijk of digitaal zijn overeengekomen (artikel 1). Het verschil in percentage is dus geen verschil in netheid maar een verschil in bedrijfsmodel: een woonwinkel verkoopt een systeem in vaste maten dat de fabriek af verlaat, een maatwerkbedrijf koopt per project in en bouwt iets dat verder aan niemand te leveren is.',
+      },
+      {
+        heading: 'Wanneer de tweede termijn precies valt',
+        body: 'Dit is het punt waar de meeste onduidelijkheid ontstaat, want de tweede termijn hangt niet aan een datum maar aan twee gebeurtenissen die samenvallen: levering van de voornaamste maatwerkonderdelen op locatie, en aanvang van de montage. Dat betekent dat je die 40 procent niet betaalt terwijl het maatwerk nog in de werkplaats in Terheijden staat, maar op het moment dat het bij jou binnen is en er begonnen wordt. Schuift de planning op, dan schuift dat moment mee. Opgegeven productie-, leverings- en montagedata zijn in de voorwaarden zorgvuldige planningen en geen fatale termijnen, tenzij schriftelijk uitdrukkelijk anders is afgesproken (artikel 5, lid 2). Praktisch gevolg: je hebt op geen enkel moment meer dan de helft betaald zonder dat er iets in huis staat.',
+      },
+      {
+        heading: 'De laatste 10 procent, en wat je mag inhouden',
+        body: 'De slottermijn valt na oplevering. Na afronding bekijken JDG en opdrachtgever het werk zo mogelijk samen, en openstaande punten worden vastgelegd en binnen een redelijke termijn afgehandeld (artikel 10, leden 1 en 2). Voor wat er dan met de slotfactuur gebeurt, staan er twee regels naast elkaar, en juist die combinatie is wat een oplevering rustig maakt.',
+        bullets: [
+          'Een klein opleverpunt geeft je niet het recht om de volledige slotfactuur in te houden (artikel 10, lid 4).',
+          'Je mag wel een redelijk bedrag inhouden dat in verhouding staat tot dat opleverpunt en de verwachte herstelkosten (artikel 10, lid 5).',
+          'Een klein of ondergeschikt punt verhindert de oplevering niet, mits het werk veilig te gebruiken is, de hoofdfunctionaliteit niet wordt aangetast en het punt eenvoudig en binnen redelijke tijd te herstellen is (artikel 10, lid 3).',
+          'Ingebruikname kan gelden als aanvaarding van duidelijk zichtbare punten, maar doet geen afbreuk aan je rechten bij verborgen gebreken (artikel 10, lid 7).',
+        ],
+      },
+      {
+        heading: 'Van wie is de kast tussen levering en de laatste factuur',
+        body: 'Een vraag die zelden gesteld wordt en die er wel toe doet zodra er iets misgaat. Losse en nog niet duurzaam gemonteerde materialen en meubels blijven eigendom van JDG totdat de facturen die daarop betrekking hebben volledig zijn betaald (artikel 15, lid 1). Zodra onderdelen door montage juridisch onderdeel van de woning zijn geworden, vervalt dat eigendomsvoorbehoud, maar behoudt JDG zijn betalingsvordering en de wettelijke incassorechten (artikel 15, lid 2). Het eigendomsvoorbehoud is er dus voor de maker, niet voor jou. Wat aan jouw kant staat is de volgorde van de termijnen zelf: er is geen moment waarop je vooruitbetaalt voor iets dat nog niet is geleverd of gemonteerd, behalve die eerste helft die de wet uitdrukkelijk toestaat.',
+      },
+      {
+        heading: 'Wat er gebeurt als je niet op tijd betaalt',
+        body: 'Ook dit staat in dezelfde vier artikelen, en het is nuttig om te weten voordat het speelt. Bij niet-tijdige betaling mag JDG de werkzaamheden na waarschuwing opschorten, en de planning kan daardoor worden verschoven (artikel 4, lid 5). Voor een consument geldt daarna de wettelijke volgorde: je bent pas incassokosten verschuldigd nadat je een correcte schriftelijke betalingsherinnering hebt gehad en vervolgens minimaal veertien dagen niet hebt betaald (artikel 4, lid 6); daarna zijn de wettelijke rente en de wettelijk toegestane incassokosten verschuldigd (artikel 4, lid 7). Een zakelijke opdrachtgever is na het verstrijken van de betalingstermijn de wettelijke handelsrente en redelijke incassokosten verschuldigd (artikel 4, lid 8). Het verschil tussen consument en bedrijf zit hem dus niet in de termijnen zelf maar in wat er na de vervaldatum gebeurt.',
+      },
+      {
+        heading: 'Wat mensen hierover intypen',
+        body: 'De woorden waarin deze vraag wordt gesteld verraden waar de onrust zit. Gemeten op 10 september 2026 in de Nederlandse zoeksuggesties (hl=nl, gl=nl) verschijnen onder meer: "aanbetaling keuken verplicht", "aanbetaling keuken hoeveel", "aanbetaling keuken faillissement", "keuken betalen voor levering", "keuken volledig betalen voor levering", "keuken vooraf betalen", "voorschot keuken betalen", "hoeveel aanbetaling mag een aannemer vragen" en "hoeveel aanbetaling is normaal". Twee dingen vallen op. De helft van die vragen gaat niet over de hoogte maar over het moment: mensen willen weten of ze alles moeten overmaken voordat er iets in huis staat. En op "aanbetaling kast op maat" komt in diezelfde meting geen enkele aanvulling terug, terwijl precies daar hetzelfde bedrag en hetzelfde risico spelen als bij een keuken. Dat is de reden dat deze pagina het antwoord voor beide geeft en niet alleen voor de keuken.',
+      },
+      {
+        heading: 'Wat hier bewust niet staat',
+        body: 'Er staan op deze pagina geen bedragen en geen richtprijzen. Wat een project kost hangt af van het materiaal, het beslag en de situatie ter plaatse, en dat komt in de offerte te staan, niet in een tabel op een website; hoe zo\'n offerte is opgebouwd staat apart uitgeschreven. Wat er ook niet staat, is welk percentage in jouw offerte terechtkomt: de termijnregeling uit artikel 4 geldt tenzij in de offerte anders is overeengekomen, en voor zakelijke opdrachtgevers kan in de offerte een andere regeling worden opgenomen (artikel 4, lid 2). En er staat geen aanbetalingsgarantie of waarborgregeling in de voorwaarden van JDG, omdat die er niet is; dat soort regelingen hoort bij de brancheverenigingen waar JDG niet bij is aangesloten. Wat je wel zelf kunt controleren voordat je de eerste termijn overmaakt: JDG Maatwerk Interieur is de eenmanszaak van Jonas de Graaf, ingeschreven in het Handelsregister onder KvK-nummer 93463332, met de werkplaats in Terheijden. Bij een eenmanszaak staat de ondernemer met zijn privévermogen achter de verplichtingen van het bedrijf. Dat is geen garantie en geen waarborgfonds; het is wel een ander risicoprofiel dan een besloten vennootschap, en het is in vijf minuten na te kijken.',
+      },
+      {
+        heading: 'Waar dit antwoord vandaan komt',
+        body: 'Alles wat hierboven over termijnen, rechten en verplichtingen van JDG staat, komt uit de algemene voorwaarden van JDG, versie 5 augustus 2026, die integraal op deze site staan; het artikelnummer staat er telkens bij, zodat je elke regel zelf kunt nalezen. De wetsartikelen komen uit de geldende tekst van Boek 7 van het Burgerlijk Wetboek op wetten.overheid.nl, versie van 1 juli 2026, uitgelezen op 10 september 2026. Het percentage van de brancheregeling komt uit de CBW-erkende voorwaarden zoals KeukenConcurrent die publiceert, gelezen op 10 september 2026. Twijfel je over een termijn in jouw situatie, vraag het dan vóór je tekent: het eerste gesprek en de offerte zijn gratis en vrijblijvend, en de afspraak die in de offerte staat gaat boven de standaardregeling.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Is een aanbetaling verplicht?',
+        a: 'Een aanbetaling is verschuldigd als dat is afgesproken of als het in de algemene voorwaarden staat. Bij JDG staat het in artikel 4: voor particuliere opdrachtgevers geldt 50 procent na akkoord op de offerte, 40 procent bij levering op locatie en aanvang van de montage, en 10 procent na oplevering, tenzij in de offerte iets anders is overeengekomen. Zonder ontvangen eerste termijn hoeft JDG geen materialen te bestellen en de productie niet te starten (artikel 4, lid 4).',
+      },
+      {
+        q: 'Hoeveel mag een bedrijf maximaal als aanbetaling vragen?',
+        a: 'Bij een consumentenkoop kan de koper tot vooruitbetaling van ten hoogste de helft van de koopprijs worden verplicht; dat is artikel 26 lid 2 van Boek 7 van het Burgerlijk Wetboek. Voor maatwerk dat nog gemaakt moet worden geldt dat ook, omdat zo\'n overeenkomst volgens artikel 5 lid 4 van Boek 7 mede als consumentenkoop wordt aangemerkt. Staat er in algemene voorwaarden een hoger percentage, dan wordt dat beding volgens artikel 6 lid 2 van Boek 7 als onredelijk bezwarend aangemerkt.',
+      },
+      {
+        q: 'Wat gebeurt er met mijn aanbetaling als de maker failliet gaat?',
+        a: 'Daar bestaat geen algemeen vangnet voor. Bij woonwinkels die zijn aangesloten bij de brancheorganisatie valt een aanbetaling onder de garantieregeling van die organisatie; JDG voert eigen algemene voorwaarden en er staat geen aanbetalingsgarantie of waarborgregeling in. Wat er in de opzet van de termijnen wel tegenover staat: je betaalt nooit meer dan de eerste helft voordat er maatwerk bij je op locatie is geleverd en de montage begint. En JDG Maatwerk Interieur is een eenmanszaak, geen rechtspersoon, wat betekent dat de ondernemer persoonlijk achter de verplichtingen van het bedrijf staat. Dat is geen garantie, maar het is wel iets anders dan een lege vennootschap.',
+      },
+      {
+        q: 'Kan ik de termijnen vanuit een bouwdepot betalen?',
+        a: 'Dat loopt tussen jou en je geldverstrekker, niet tussen jou en JDG. JDG factureert per termijn zoals in artikel 4, en die factuur is wat je bij je bank indient. Welke eisen jouw geldverstrekker aan een factuur en aan het moment van uitbetalen stelt, verschilt per bank en per depot; vraag dat na voordat je een montagedatum vastlegt, want de planning is mede afhankelijk van tijdige betaling (artikel 5, lid 3).',
+      },
+      {
+        q: 'Mag ik de laatste factuur inhouden als er nog een puntje open staat?',
+        a: 'Niet de hele factuur. Een klein opleverpunt geeft geen recht om de volledige slotfactuur in te houden (artikel 10, lid 4), maar je mag wel een redelijk bedrag inhouden dat in verhouding staat tot dat punt en de verwachte herstelkosten (artikel 10, lid 5). Openstaande punten worden bij de oplevering vastgelegd en binnen een redelijke termijn afgehandeld.',
+      },
+      {
+        q: 'Geldt dezelfde regeling voor een zakelijke opdracht?',
+        a: 'Niet automatisch. De verdeling 50, 40, 10 staat in de voorwaarden als regeling voor particuliere opdrachtgevers; voor zakelijke opdrachtgevers kan in de offerte een andere termijnregeling worden opgenomen (artikel 4, lid 2). Ook het vervolg verschilt: een zakelijke opdrachtgever is na het verstrijken van de betalingstermijn de wettelijke handelsrente en redelijke incassokosten verschuldigd (artikel 4, lid 8), terwijl bij een consument eerst een correcte herinnering en een termijn van veertien dagen moeten zijn verstreken (artikel 4, lid 6).',
+      },
+      {
+        q: 'Wanneer begint de productie precies?',
+        a: 'Pas als drie dingen rond zijn: de overeengekomen aanbetaling is ontvangen, de definitieve maatvoering is vastgesteld, en de relevante tekeningen en materiaalkeuzes zijn goedgekeurd (artikel 2, lid 4). Dat is ook waarom een offerte tekenen en dan wachten met betalen de levertijd verlengt in plaats van de opdracht te vervroegen.',
+      },
+    ],
+    verwijzingen: [
+      { label: 'De algemene voorwaarden van JDG, met de artikelen 1, 2, 4, 5, 10 en 15', href: '/algemene-voorwaarden' },
+      { label: 'De werkwijze: van kennismaking en offerte tot oplevering', href: '/werkwijze' },
+      { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
+      { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' },
+      { label: 'Kennismaken of een offerte aanvragen', href: '/contact' },
+    ],
+    hero: '/images/jdg-31.jpg',
+    heroAlt: 'Opgeleverde kastenwand in zachtroze gelakt MDF met smalle messing greeplijsten, doorlopend tot tegen de schuine wand; de kamer eromheen is leeg.',
+    readingMinutes: 7,
   },
 ]
 
