@@ -173,6 +173,11 @@ export const blogPosts: BlogPost[] = [
         body: 'Schuifdeuren nemen geen ruimte in maar geven maar half toegang tegelijk. Draaideuren geven volledig zicht maar hebben zwaaimeter nodig. Voor lage zolders is een combinatie soms de beste keuze: schuifdeuren voor het hoofdvak, draaideuren voor de nauwe schuine kant.',
       },
     ],
+    verwijzingen: [
+      { label: 'Kan een kast onder een schuin dak of tegen een schuine wand?', href: '/blog/kast-onder-schuin-dak-of-schuine-wand' },
+      { label: 'Zolderinbouw met lades tot in de punt van het dak', href: '/projecten/zolderinbouw-hangkast-lades' },
+      { label: 'Inloopkasten op maat, ook achter de knieschotten op zolder', href: '/diensten/inloopkasten-op-maat' },
+    ],
     hero: '/images/jdg-28.jpg',
     readingMinutes: 6,
   },
@@ -886,11 +891,157 @@ export const blogPosts: BlogPost[] = [
       { label: 'Alleen laten maken en zelf monteren: kan dat bij maatwerk?', href: '/blog/zelf-monteren-of-alleen-laten-maken' },
       { label: 'Moet ik aanbetalen, en wanneer betaal ik de rest?', href: '/blog/aanbetaling-en-betaaltermijnen-maatwerk' },
       { label: 'Zolderinbouw met lades tot in de punt van het dak', href: '/projecten/zolderinbouw-hangkast-lades' },
+      { label: 'Kan een kast onder een schuin dak of tegen een schuine wand?', href: '/blog/kast-onder-schuin-dak-of-schuine-wand' },
       { label: 'Kennismaken of een situatie voorleggen', href: '/contact' },
     ],
     hero: '/images/jdg-33.jpg',
     heroAlt: 'Zachtroze gelakte kastenwand met één deur open: witte binnenkant met planken en drie uitgetrokken lades, messing greeplijsten op de fronten; rechts loopt de kast schuin mee met de dakhelling, met een donkerpaarse wand en grijze houtlook-vloer ernaast.',
     readingMinutes: 9,
+  },
+  {
+    gepubliceerd: true,
+    slug: 'kast-onder-schuin-dak-of-schuine-wand',
+    title: 'Kan een kast onder een schuin dak of tegen een schuine wand?',
+    h1: 'Kan een kast onder een schuin dak of tegen een schuine wand?',
+    metaTitle: 'Kast onder een schuin dak: kan dat, en wat bepaalt het',
+    metaDescription:
+      'Ja, het kan. Wat beslist is niet de schuinte maar de bruikbare hoogte. Met de drie maten waarmee elke schuine wand te tekenen is, waar hangen en lades horen, en wat er geldt als de wand niet recht blijkt.',
+    publishedAt: '2026-09-14',
+    updatedAt: '2026-09-14',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'kast onder schuin dak',
+    relatedKeywords: [
+      'kledingkast schuine wand',
+      'inbouwkast op maat schuin dak',
+      'kast tegen schuine wand',
+      'knieschot kast op maat',
+      'zolderkast op maat',
+      'kast onder dakkapel',
+      'kledingkast schuine wand links',
+    ],
+    intro:
+      'Ja. Een kast kan onder een schuin dak, tegen een schuine wand, achter een knieschot en onder een dakkapel. Dit is ook precies het geval waarin maatwerk een gekochte kast verslaat: een standaardkast heeft over de hele breedte één hoogte, en onder een schuinte verandert de hoogte met elke centimeter die je naar voren komt. De vraag die het besluit maakt is daarom niet of het kan, maar hoeveel bruikbare hoogte je overhoudt op de diepte die je kiest. Dat volgt uit drie maten die je zelf met een rolmaat opneemt. In het portfolio van JDG Maatwerk Interieur staan vier projecten onder een schuinte, alle vier uit 2025 in West-Brabant; de foto bovenaan is er een van.',
+    sections: [
+      {
+        heading: 'Het korte antwoord, en de vraag die eronder zit',
+        body: 'Een kast onder een schuin dak of tegen een schuine wand kan, in alle vormen waarin die vraag gesteld wordt: tegen een dakschuinte in een slaapkamer, achter een knieschot op zolder, onder de schuine wang van een dakkapel, en in de hoek waar een schuinte op een rechte wand uitkomt. Wat de uitkomst bepaalt is niet de hellingshoek maar de bruikbare hoogte, oftewel de hoogte die overblijft op de diepte die de kast krijgt. Hangen vraagt de meeste hoogte, een legbord minder en een lade het minst, en daarom volgt de indeling onder een schuinte bijna altijd dezelfde volgorde.',
+        bullets: [
+          'Hangen aan de hoge kant, legborden en lades onder de schuinte. Zo staat het ook in het werk van JDG: in <a href="/projecten/zolderinbouw-hangkast-lades">de zolderinbouw met lades onder de schuine wand</a> hangt de roede in het hoge vak en zijn de drie lades tot in de punt van het dak gepast.',
+          'De diepte van de kast is de knop waar je aan draait. Elke centimeter diepte levert aan de voorkant hoogte op, en hoeveel dat precies is volgt uit drie maten die je zelf kunt opnemen.',
+          'Een gekochte kast heeft één hoogte over de hele breedte. Onder een schuinte past die alleen op de plek waar het dak het hoogst is, en dat is meestal de plek waar je wilt kunnen lopen.',
+          'Een schuinte is zelden overal gelijk. Een dakkapel, een spant of een knieschot dat niet overal even hoog staat verandert de maat over de breedte. Daarom wordt er ter plaatse ingemeten en niet op een bouwtekening.',
+        ],
+      },
+      {
+        heading: 'De drie maten waarmee elke schuinte te tekenen is',
+        body: 'Een schuine wand ligt met drie maten volledig vast, en die drie neem je zelf op met een rolmaat voordat er iemand langskomt. Eén: de hoogte aan de lage kant, van de vloer tot het punt waar het dakvlak begint. Bij een knieschot is dat de hoogte van dat schot. Twee: de hoogte aan de hoge kant, tot het punt waar het dakvlak overgaat in het plafond. Drie: de horizontale afstand tussen die twee punten, over de vloer gemeten. Tussen de lage en de hoge kant loopt de hoogte gelijkmatig op, dus uit die drie maten volgt de hoogte op elke diepte. Staat het dakvlak bijvoorbeeld op 120 centimeter aan de lage kant en op 240 aan de hoge kant, met 150 centimeter vloer ertussen, dan wint elke 10 centimeter diepte ongeveer 8 centimeter hoogte aan de voorkant van de kast. Die getallen zijn een rekenvoorbeeld en geen maat van jouw zolder.',
+        bullets: [
+          'Meet op drie plekken over de breedte, niet op één. Een dakvlak is zelden over de hele lengte gelijk, en juist de plek waar het afwijkt bepaalt hoe de kast getekend wordt.',
+          'Noteer ook wat er in de weg zit: een spant, een dakraam, een radiator, een stopcontact, de dikte van de plint. Die punten bepalen de indeling net zo hard als de schuinte zelf.',
+          'Een foto van de hoek met de rolmaat erin zegt meer dan de drie getallen los. <a href="/contact">Stuur hem mee als je een situatie voorlegt</a>, dan is meteen duidelijk waar de kast begint en waar hij ophoudt.',
+        ],
+      },
+      {
+        heading: 'Hoeveel hoogte je nodig hebt staat in je eigen kast, niet in een tabel',
+        body: 'De maat die beslist of er onder een schuinte gehangen kan worden is de lengte van wat er moet hangen, en die verschilt per huishouden. Meet hem zelf: hang het langste kledingstuk dat je hebt aan een hanger en meet van de bovenkant van de roede tot de onderkant van dat kledingstuk. Tel daar de ruimte bij op die je nodig hebt om de hanger er schuin uit te tillen. Dat getal bepaalt op welke diepte het hangvak onder de schuinte kan beginnen, en niet een algemene norm. Voor de rest van de indeling werkt het net zo: een lade vraagt de hoogte van de lade plus het front, een legbord vraagt de hoogte van wat erop staat. Onder een schuinte is dat geen detail, want elke centimeter hoogte die je niet nodig hebt kun je teruggeven aan diepte of aan bergruimte.',
+        bullets: [
+          'Jassen en lange jurken zijn de bepalende maat. Overhemden, broeken op een klemhanger en truien vragen minder, dus een vak voor korte hang past vaak nog waar een lang vak niet meer kan.',
+          'Waar de hoogte het snelst wegloopt doen lades en uittrekbare elementen het werk: je haalt ze naar je toe in plaats van dat je erin moet kijken. In <a href="/projecten/zolderinbouw-hangkast-lades">dezelfde zolderinbouw in West-Brabant</a> zit onder de plankenkolom een reeks lades die precies dat doet.',
+          'Wat er in de kast komt hoort bij het gesprek voordat er getekend wordt. Hoe dat traject loopt, van kennismaking tot montage, staat in <a href="/werkwijze">de werkwijze van JDG</a>.',
+        ],
+      },
+      {
+        heading: 'Links of rechts is bij een schuine wand een echte vraag',
+        body: 'Aan welke kant de schuinte zit bepaalt hoe een kast onder een schuin dak opengaat, en daar wordt ook letterlijk op gezocht: in de Nederlandse zoeksuggesties (hl=nl, gl=nl, gemeten op 14 september 2026) staan zowel "kledingkast schuine wand links" als "kledingkast schuine wand rechts". Bij een kast uit een configurator is de zijde een harde beperking. Pickawood, op 14 september 2026 de nummer één in de index van DuckDuckGo op "kledingkast op maat schuin dak", schrijft het zelf op zijn productpagina: bij een schuin dak aan de linkerkant van de kast kan alleen een deur op kniehoogte worden gepland die naar rechts opent, en bij een schuinte aan de rechterkant precies andersom. De reden daarvoor is meetkundig. Een deur onder een schuinte is aan de ene kant hoger dan aan de andere, en dat hoge deel moet bij het opendraaien wegdraaien van het lage dakvlak. Het scharnier hoort dus aan de hoge kant. Bij maatwerk is dat geen beperking maar een keuze op de tekening: de deur wordt op de werkelijke schuinte gezaagd, of het lage deel krijgt lades in plaats van een deur.',
+        bullets: [
+          'Schuifdeuren hebben dit probleem niet, omdat ze in hun eigen vlak blijven. Ze geven wel maar de helft van de kast tegelijk vrij, en dat weegt onder een lage schuinte zwaarder dan in een gewone kamer.',
+          'Een open vak of een uittrekelement heeft helemaal geen deurrichting, en is onder het laagste punt vaak de rustigste oplossing.',
+          'Welke deur bij welke situatie past en wat er verder bij een zolder komt kijken staat in <a href="/blog/zolderinbouw-op-maat-7-dingen-vergeten">zolderinbouw op maat: zeven dingen die vaak vergeten worden</a>, van verwarming en verlichting tot ventilatie en de toegang tot leidingen.',
+        ],
+      },
+      {
+        heading: 'Onder een schuin dak is vrijwel niets haaks',
+        body: 'Een schuine wand is bijna nooit een zuivere hoek: de dakhelling, de aansluiting op het knieschot en de vloer eronder lopen elk een paar millimeter anders dan de bouwtekening zegt. Elk paneel wordt daarom op de werkelijke hoek gezaagd, en de kast wordt getekend op de wand die er staat, inclusief plint, radiator en scheefstand. Dat is ook de reden dat de maatvoering bij JDG ter plaatse wordt opgenomen op basis van de situatie zoals die op dat moment is, en dat wijzigingen aan muren, vloeren, plafonds, leidingen of aansluitpunten ná het inmeten gemeld horen te worden. Dat staat in <a href="/algemene-voorwaarden">artikel 3 van de algemene voorwaarden van JDG</a>, versie 5 augustus 2026.',
+        bullets: [
+          'Wat dat betekent voor de aansluiting staat in dezelfde voorwaarden: bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak, en kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek zolang functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6). Een passtrook of een schaduwnaad langs een scheve dakschuinte is dus vakwerk en geen fout.',
+          'Wat er gebeurt als de maat wél mis is, staat apart uitgeschreven in <a href="/blog/keuken-of-kast-past-niet-verkeerd-ingemeten">wat er gebeurt als de maat niet klopt of iets niet past bij de montage</a>.',
+          'Ontwerp, productie en montage lopen bij JDG door dezelfde hand, vanuit de eigen werkplaats in Terheijden. Onder een schuinte telt dat zwaarder dan bij een rechte wand, omdat de hoek op de tekening dezelfde hoek moet zijn als die op de zaagtafel en die op zolder.',
+        ],
+      },
+      {
+        heading: 'Wanneer een kast onder een schuinte niet het goede antwoord is',
+        body: 'Niet elke schuine hoek moet een kast worden, en dat hoor je liever vóór de tekening dan erna. JDG waarschuwt wanneer een gewenste uitvoering naar professioneel inzicht ondeugdelijk, onveilig of technisch onverantwoord is; die verplichting staat in <a href="/algemene-voorwaarden">artikel 9, lid 7 van de voorwaarden</a>. In de praktijk komen er een paar situaties terug waarin een andere oplossing beter werkt dan een kast.',
+        bullets: [
+          'De bruikbare hoogte zakt onder wat erin moet. Past er op de gekozen diepte geen hangvak meer, dan is een lage ladekast of een uittrekelement het antwoord, en niet een hangkast die je niet gebruikt.',
+          'Achter het knieschot zit de enige toegang tot leidingen, bekabeling of de ruimte eronder. Dan hoort er een demontabel paneel in het ontwerp, en bepaalt die toegang de indeling.',
+          'De ruimte is nog niet af. Wordt er na het inmeten nog geïsoleerd, betimmerd, gestukadoord of een vloer gelegd, dan verandert de maat. Meld dat dus voordat de productie begint.',
+          'Het dakvlak zelf is het probleem. Vocht, een lekkende dakkapel of een constructie die nog aangepast moet worden is werk voor een aannemer of dakdekker. Een kast ervoor zetten verbergt dat en lost het niet op.',
+        ],
+      },
+      {
+        heading: 'Wat de bestaande antwoorden over schuine wanden niet zeggen',
+        body: 'Op 14 september 2026 zijn vier zoekopdrachten over dit onderwerp gemeten in de index van DuckDuckGo: "kast onder schuin dak", "kledingkast op maat schuin dak", "kledingkast op maat schuine wand" en "inbouwkast op maat schuine wand". Die veertig posities zijn verdeeld over onder meer pickawood.com, kastenstudio.eu, maatkastenonline.nl, demaatfabriek.nl, kasten-op-maat.nl en doe-hetzelf.nl. Van de pagina’s die op die dag zijn gelezen noemt er geen enkele een bruikbare hoogte, legt er geen enkele uit hoe je een schuinte opmeet zodat er een kast van te tekenen is, en zegt er geen enkele wanneer een kast onder een schuinte niet de beste keuze is. Een assistent die dezelfde vraag krijgt antwoordt in dezelfde termen: gevraagd op 14 september 2026 komt daar "ja, maatwerk is de oplossing" uit, met een uitleg over standaardkasten die niet passen en zonder één maat. Deze meting is gedaan in de index van DuckDuckGo en niet in die van Google, en zegt dus iets over wie dit antwoord vandaag bezit, niet over de Nederlandse marktverhouding.',
+        bullets: [
+          'Er is ook geen vaste formulering voor de vraag. In dezelfde meting geven "kast schuin dak hoogte" en "kast op maat schuin dak kosten" nul zoeksuggesties, terwijl "kast onder schuin dak" er tien geeft, waarvan zes naar zelf maken of naar een bouwmarkt wijzen.',
+          'Wat die pagina’s goed doen is laten zien dát het kan. Wat ze niet doen is je in staat stellen zelf te bepalen of het bij jou kan, en daar zijn de drie maten hierboven voor.',
+        ],
+      },
+      {
+        heading: 'Wat hier bewust niet staat',
+        body: 'Op deze pagina staan geen bedragen. Wat een kast onder een schuinte kost hangt af van de breedte, de indeling, de deuren en het materiaal; die factoren staan per dienst op de site, bij <a href="/diensten/kledingkasten-op-maat">kledingkasten op maat</a> en bij <a href="/diensten/inloopkasten-op-maat">inloopkasten op maat</a>. De bedragen zelf zijn niet vrijgegeven en worden daarom niet geraden. Er staat ook geen minimale hoogte in centimeters als algemene regel, want die bestaat niet: de maat volgt uit wat erin moet, en dat verschilt per huishouden. Om dezelfde reden staat er geen hellingshoek waarboven of waaronder iets wel of niet zou kunnen. En er staat niets over dakconstructie, isolatie of het vervangen van een dakkapel, want dat is werk van een aannemer en niet van een interieurbouwer. Hoe lang een project duurt en wat er verder vaak gevraagd wordt staat op <a href="/veelgestelde-vragen">de veelgestelde vragen</a>.',
+      },
+      {
+        heading: 'Waar dit antwoord vandaan komt',
+        body: 'De projecten in deze tekst staan in het portfolio van JDG Maatwerk Interieur: vier opdrachten onder een schuinte, alle vier uit 2025 in West-Brabant, waaronder de zolderinbouw met hangvak, plankenkolom en drie lades op de foto bovenaan. De artikelen over maatvoering, tolerantie en de waarschuwingsplicht komen uit de algemene voorwaarden van JDG, versie 5 augustus 2026, die integraal op deze site staan; het artikelnummer staat er telkens bij zodat je elke regel zelf kunt nalezen in <a href="/algemene-voorwaarden">de volledige voorwaarden, met de artikelen 3 en 9</a>. De posities en de zoeksuggesties zijn op 14 september 2026 gemeten met hl=nl en gl=nl: de suggesties komen van Google, de posities uit de index van DuckDuckGo. De regel over de deurrichting bij een configurator is op diezelfde dag gelezen op de productpagina van Pickawood zelf. JDG Maatwerk Interieur is de eenmanszaak van Jonas de Graaf, ingeschreven in het Handelsregister onder KvK-nummer 93463332, met de werkplaats in Terheijden; ontwerp, productie en montage lopen door dezelfde hand.',
+      },
+    ],
+    faq: [
+      {
+        q: 'Kan een kast onder een schuin dak?',
+        a: 'Ja. Een kast op maat kan onder een dakschuinte, achter een knieschot, onder de schuine wang van een dakkapel en in de hoek waar een schuinte op een rechte wand uitkomt. Wat de uitkomst bepaalt is niet de hellingshoek maar de bruikbare hoogte: de hoogte die overblijft op de diepte die de kast krijgt. In het portfolio van JDG Maatwerk Interieur staan vier van zulke projecten, alle vier uit 2025 in West-Brabant.',
+      },
+      {
+        q: 'Hoeveel hoogte heb ik nodig voor een kast onder een schuin dak?',
+        a: 'Er bestaat geen algemene minimumhoogte, want de maat volgt uit wat erin moet. Hangen vraagt de meeste hoogte, een legbord minder en een lade het minst. De maat die beslist is de lengte van je langste kledingstuk aan een hanger, gemeten van de bovenkant van de roede tot de onderkant van het kledingstuk, plus de ruimte om de hanger er schuin uit te tillen. Dat getal bepaalt op welke diepte een hangvak onder de schuinte kan beginnen.',
+      },
+      {
+        q: 'Hoe meet ik een schuine wand op?',
+        a: 'Met drie maten ligt een schuine wand volledig vast. Eén: de hoogte aan de lage kant, van de vloer tot het punt waar het dakvlak begint, oftewel de hoogte van het knieschot. Twee: de hoogte aan de hoge kant, tot waar het dakvlak overgaat in het plafond. Drie: de horizontale afstand tussen die twee punten, over de vloer gemeten. Tussen die twee punten loopt de hoogte gelijkmatig op, dus uit die drie maten volgt de hoogte op elke diepte. Meet op drie plekken over de breedte, want een dakvlak is zelden over de hele lengte gelijk.',
+      },
+      {
+        q: 'Kan er een draaideur onder de schuinte?',
+        a: 'Dat kan, maar de zijde bepaalt de richting. Een deur onder een schuinte is aan de ene kant hoger dan aan de andere, en dat hoge deel moet bij het opendraaien wegdraaien van het lage dakvlak. Het scharnier hoort dus aan de hoge kant. Pickawood publiceert dezelfde regel voor zijn configurator: bij een schuin dak links kan alleen een deur op kniehoogte die naar rechts opent, en bij een schuinte rechts precies andersom (gelezen op 14 september 2026). Bij maatwerk is het een keuze op de tekening: de deur wordt op de werkelijke schuinte gezaagd, of het lage deel krijgt lades in plaats van een deur.',
+      },
+      {
+        q: 'Kan een kast onder een dakkapel?',
+        a: 'Ja. Een dakkapel geeft twee schuine wangen en een recht stuk ertussen, en die drie delen krijgen elk hun eigen maat. In het portfolio van JDG staan twee voorbeelden: twee ladekasten met een doorlopend blad onder de schuine wand van een dakkapel, en een kastenwand in een kinderkamer die rechts doorloopt onder de schuinte van de dakkapel. Beide zijn uit 2025, in West-Brabant.',
+      },
+      {
+        q: 'Wat is een knieschotkast?',
+        a: 'Een knieschot is de lage rechte wand waar het dakvlak op zolder op uitkomt. Een knieschotkast benut de ruimte tegen of achter dat schot, meestal met lades of uittrekbare elementen, omdat je daar niet rechtop in kunt kijken. Let er wel op wat er achter het schot zit: loopt daar de enige toegang tot leidingen, bekabeling of de ruimte eronder, dan hoort er een demontabel paneel in het ontwerp en bepaalt die toegang de indeling.',
+      },
+      {
+        q: 'Sluit een kast wel netjes aan als de schuine wand niet recht is?',
+        a: 'Onder een schuin dak is vrijwel niets haaks, en daarom wordt elk paneel op de werkelijke hoek gezaagd en de kast getekend op de wand die er staat. In de algemene voorwaarden van JDG, versie 5 augustus 2026, staat wat dat betekent voor de aansluiting: bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak, en kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek zolang functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6). Een passtrook of een schaduwnaad langs een scheve dakschuinte is dus vakwerk, geen fout.',
+      },
+      {
+        q: 'Wanneer is een kast onder een schuin dak niet de beste oplossing?',
+        a: 'In vier gevallen. Als de bruikbare hoogte op de gekozen diepte onder zakt wat erin moet, want dan is een lage ladekast of een uittrekelement beter dan een hangkast die je niet gebruikt. Als achter het knieschot de enige toegang tot leidingen of de ruimte eronder zit. Als de ruimte nog niet af is en er na het inmeten nog geïsoleerd, betimmerd, gestukadoord of een vloer gelegd wordt, want dan verandert de maat. En als het dakvlak zelf het probleem is: vocht of een lekkende dakkapel is werk voor een aannemer of dakdekker, en een kast ervoor verbergt het alleen. JDG waarschuwt wanneer een gewenste uitvoering naar professioneel inzicht ondeugdelijk, onveilig of technisch onverantwoord is (algemene voorwaarden, artikel 9, lid 7).',
+      },
+    ],
+    verwijzingen: [
+      { label: 'Kledingkasten op maat: nissen, schuine daken en tot aan het plafond', href: '/diensten/kledingkasten-op-maat' },
+      { label: 'Inloopkasten op maat, ook achter de knieschotten op zolder', href: '/diensten/inloopkasten-op-maat' },
+      { label: 'Zolderinbouw op maat: zeven dingen die vaak vergeten worden', href: '/blog/zolderinbouw-op-maat-7-dingen-vergeten' },
+      { label: 'Zolderinbouw met lades tot in de punt van het dak', href: '/projecten/zolderinbouw-hangkast-lades' },
+      { label: 'De algemene voorwaarden van JDG, met de artikelen 3 en 9', href: '/algemene-voorwaarden' },
+      { label: 'De werkwijze: van inmeten en tekening tot montage en oplevering', href: '/werkwijze' },
+      { label: 'Een situatie voorleggen met drie maten en een foto', href: '/contact' },
+    ],
+    hero: '/images/jdg-34.jpg',
+    heroAlt: 'Open inbouwkast onder een schuin dak: links een leeg hangvak met zwarte roede waarvan de bovenkant schuin meeloopt met de dakhelling, rechts een kolom met vier witte plankvakken waarvan het bovenste schuin is afgezaagd, met daaronder drie lades en een uitgeschoven lade. Alles wit, eikenhouten vloer, rechts zicht op een slaapkamer.',
+    readingMinutes: 8,
   },
 ]
 
