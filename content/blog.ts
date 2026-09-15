@@ -1054,15 +1054,28 @@ export const blogPosts: BlogPost[] = [
     // IKEA-keuken, en is het het waard?" (motor_vraagdekking jdg, rij 281c274a, open sinds
     // 01-09-2026, beschikbaar=nee; contract 6c0f5a98).
     //
-    // De maten van het IKEA METOD-systeem in dit artikel zijn op 15-09-2026 uitgelezen op
-    // ikea.com/nl/nl (productpagina's METOD onderkast en hoog kastelement, de productpagina
-    // van de METOD poot van 8 cm, en twee helpartikelen: "Hoe maak ik een passtuk voor mijn
-    // IKEA keuken?" en "Hoe hoog monteer ik de METOD ophangrail"). Het prijsbereik komt van
-    // ikea.com/be/nl "Wat is de prijs van een IKEA keuken?", zelfde datum.
+    // DE MATEN VAN IKEA ZIJN GEMETEN, NIET OVERGESCHREVEN. De hele rekenregel van dit
+    // artikel hangt aan het maatraster van IKEA METOD, en dat is een gegeven van de
+    // tegenpartij. "Uitgelezen op ikea.com" is daarvoor geen bron: er staat geen pagina bij
+    // en niemand kan het overdoen. Daarom draait scripts/meting-ikea-metod.mjs (in deze
+    // werkmap) elke maat langs de pagina waar hij vandaan komt, zoekt het getal letterlijk
+    // terug in de gerenderde tekst en maakt er een schermafdruk van. Stand 15-09-2026:
+    // 16 van de 16 claims teruggevonden. Motorregister: feit jdg-markt-ikea-metod-maatraster
+    // (met alle product-URL's) en bewijs jdg-bron-ikea-metod-20260915 (met de afdrukken).
+    // Een maat die het script niet terugvindt, hoort hier niet zonder [AANNAME] te staan.
     //
-    // Alles wat over JDG zelf wordt beweerd komt uit de eigen algemene voorwaarden versie
-    // 5 augustus 2026 (artikelen 2, 3 en 9), die integraal op deze site staan, of is op
-    // /projecten na te tellen.
+    // DE TELLING OVER /projecten is het eigen gegeven van JDG waar deze pagina op draait,
+    // en een telling zonder telmethode is geen gegeven. De regel staat in
+    // scripts/telling-projecten-niet-recht.mjs en op de pagina zelf: een project telt mee
+    // wanneer de op /projecten zichtbare beschrijving zelf een schuin vlak, een dakkapel,
+    // een trapprofiel of een nis noemt. Categorie, slug en foto tellen niet mee. Uitkomst
+    // 15-09-2026: zeven van de zestien. Motorregister: feit
+    // jdg-portfolio-projecten-niet-recht.
+    //
+    // WAT OVER JDG ZELF WORDT BEWEERD komt uit de eigen algemene voorwaarden versie
+    // 5 augustus 2026, die integraal op deze site staan; de artikelen 2 lid 7, 3 lid 1,
+    // 3 lid 2 en 9 lid 6 worden letterlijk geciteerd en met lidnummer genoemd, zodat de
+    // lezer ze op /algemene-voorwaarden kan nalezen.
     //
     // Wat er bewust NIET op staat: bedragen van JDG, richtprijzen, garantietermijnen,
     // levertijden, een uitspraak over de kwaliteit of levensduur van een IKEA-keuken, en
@@ -1089,7 +1102,7 @@ export const blogPosts: BlogPost[] = [
       'maatwerk keuken breda',
     ],
     intro:
-      'Het verschil tussen een standaardkeuken en een keuken op maat is geen kwaliteitsklasse en geen prijsklasse. Het is een maatraster. Een standaardkeuken wordt gebouwd uit kasten in vaste breedtes: bij het METOD-systeem van IKEA zijn dat 20, 30, 40, 60 en 80 cm (uitgelezen op ikea.com, 15 september 2026). De som van die kasten is dus altijd een veelvoud van tien centimeter. Jouw muur is dat vrijwel nooit. Wat overblijft wordt een passtuk, een open strook of een kast die je laat vallen. Een keuken op maat heeft dat raster niet, en dat is precies waar het geld naartoe gaat. Hieronder staat hoe groot dat verschil op jouw muur is, met de maten erbij zodat je het zelf kunt narekenen.',
+      'Het verschil tussen een standaardkeuken en een keuken op maat is geen kwaliteitsklasse en geen prijsklasse. Het is een maatraster. Een standaardkeuken wordt gebouwd uit kasten in vaste breedtes: bij het METOD-systeem van IKEA zijn dat 20, 30, 40, 60 en 80 cm. Die vijf maten staan op 15 september 2026 gewoon in de productnaam op de vijf onderkastpagina\'s van ikea.com zelf, van "METOD Onderkast, wit, 20x60x80 cm" tot "80x60x80 cm"; onderaan deze pagina staat hoe dat is nagemeten. De som van die kasten is dus altijd een veelvoud van tien centimeter. Jouw muur is dat vrijwel nooit. Wat overblijft wordt een passtuk, een open strook of een kast die je laat vallen. Een keuken op maat heeft dat raster niet, en dat is precies waar het geld naartoe gaat. Hieronder staat hoe groot dat verschil op jouw muur is, met de maten erbij zodat je het zelf kunt narekenen.',
     sections: [
       {
         heading: 'Het korte antwoord, in een rekenregel',
@@ -1098,20 +1111,20 @@ export const blogPosts: BlogPost[] = [
           'Een rest kleiner dan ongeveer 5 cm is de vervelendste uitkomst. Die is te smal voor een fatsoenlijk passtuk, dus laat je een kast een maat zakken en wordt de rest 10 cm groter.',
           'Bij een hoekopstelling verlies je twee keer: een keer aan het raster en een keer aan de hoek zelf.',
           'Staat de koelkast tegen de zijmuur, dan schrijft IKEA zelf een passtuk van minimaal 5 cm voor. Die 5 cm is er dus altijd, ook als je muur toevallig wel uitkomt.',
-          'Een keuken op maat kent geen rest, maar haalt de scheefstand van je muur er niet uit. Wat dat betekent staat verderop bij <a href="/algemene-voorwaarden">artikel 9 van de voorwaarden</a>.',
+          'Een keuken op maat kent geen rest, maar haalt de scheefstand van je muur er niet uit. Wat dat betekent staat verderop, en zwart op wit in <a href="/algemene-voorwaarden">artikel 9, lid 6 van de algemene voorwaarden</a>.',
         ],
       },
       {
         heading: 'Het raster van een standaardkeuken, in centimeters',
-        body: 'Een standaardkeuken is een systeem van kasten in vaste maten. Om het verschil met maatwerk te kunnen narekenen heb je die maten nodig, en die publiceert IKEA gewoon op de eigen productpagina\'s. Dit is de stand op 15 september 2026, uitgelezen op ikea.com/nl/nl voor het METOD-systeem. Andere merken hebben hun eigen raster, maar het principe is hetzelfde: een eindig aantal breedtes en hoogtes.',
+        body: 'Een standaardkeuken is een systeem van kasten in vaste maten. Om het verschil met maatwerk te kunnen narekenen heb je die maten nodig, en die publiceert IKEA gewoon op de eigen productpagina\'s. Hieronder staat de stand van 15 september 2026 voor het METOD-systeem. Elke maat is die dag teruggezocht op de pagina van IKEA waar hij vandaan komt en daar letterlijk in de tekst teruggevonden; welke pagina dat per maat is, staat onderaan in de laatste sectie, waar dit antwoord vandaan komt. Wat hieronder staat geldt voor METOD en voor die datum. Andere merken hebben hun eigen raster, en IKEA kan het zijne morgen wijzigen; het principe blijft hetzelfde, namelijk een eindig aantal breedtes en hoogtes.',
         bullets: [
           'Onderkasten: 20, 30, 40, 60 en 80 cm breed. Diepte 37 of 60 cm. Romphoogte 80 cm.',
           'Poten: 8 cm, verstelbaar om oneffenheden in de vloer op te vangen. De romp van 80 cm staat dus op 88 cm, en daar komt het werkblad nog bovenop.',
           'Bovenkasten: 40, 60, 80 of 100 cm hoog.',
           'Hoge kasten: 200 of 220 cm hoog. Met de poot van 8 cm eindigen ze op 208 of 228 cm boven de vloer.',
-          'Passtuk bij de koelkast: minimaal 5 cm, volgens het eigen helpartikel van IKEA over passtukken.',
-          'Passtuk bij een hoekkast: 7,5 cm of breder, afhankelijk van de beschikbare ruimte.',
-          'Een passtuk is geen apart product met een eigen maat. Je koopt een bedekkingspaneel en zaagt dat zelf op maat, staat in datzelfde helpartikel.',
+          'Passtuk bij de koelkast: IKEA schrijft in het eigen helpartikel over passtukken letterlijk "Tussen de muur en de kast voor de koelkast moet je altijd een passtuk van minimaal 5 cm plaatsen".',
+          'Passtuk bij een onderhoekkast: in datzelfde helpartikel staat dat je het bedekkingspaneel zaagt "op een breedte van 7.5 cm of breder als er meer ruimte zit tussen de onderhoekkast en de kast ernaast".',
+          'Een passtuk is geen apart product met een eigen maat: "Om een passtuk te maken, gebruik je een bedekkingspaneel dat je zelf op maat zaagt", staat er.',
         ],
       },
       {
@@ -1138,18 +1151,18 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Wat een keuken op maat hier wel en niet oplost',
-        body: 'Een keuken op maat is een keuken zonder raster. De breedte van een kast is de breedte die overblijft, de hoogte loopt door tot het plafond als je dat wilt, en de diepte hoeft geen 37 of 60 cm te zijn. Bij JDG wordt de maatvoering ter plaatse opgenomen op basis van de situatie zoals die op dat moment is, en dat staat zo in <a href="/algemene-voorwaarden">artikel 3 van de algemene voorwaarden</a>. Maar maatwerk is geen toverwoord, en de eerlijke grens staat in diezelfde voorwaarden.',
+        body: 'Een keuken op maat is een keuken zonder raster. De breedte van een kast is de breedte die overblijft, de hoogte loopt door tot het plafond als je dat wilt, en de diepte hoeft geen 37 of 60 cm te zijn. Bij JDG wordt de maatvoering ter plaatse opgenomen op basis van de situatie zoals die op dat moment is: "Wanneer JDG de maatvoering verzorgt, wordt deze zorgvuldig opgenomen op basis van de op dat moment aanwezige situatie" (<a href="/algemene-voorwaarden">artikel 3, lid 1 van de algemene voorwaarden</a>). Maar maatwerk is geen toverwoord, en de eerlijke grens staat in diezelfde voorwaarden.',
         bullets: [
           'Wel opgelost: de rest. Er is geen veelvoud van tien meer waar je omheen moet werken.',
           'Wel opgelost: de hoogte tot het plafond, en de diepte die buiten het raster valt.',
           'Wel opgelost: de hoek, de nis en het kozijn waar het blad langs of onderdoor moet.',
-          'Niet opgelost: een muur die niet recht is, wordt niet recht. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek zolang functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6).',
-          'Niet opgelost: wat er na het inmeten aan de ruimte verandert. Wijzigingen aan muren, vloeren, plafonds, leidingen of aansluitpunten na de inmeting moet je melden (artikel 3, lid 2).',
+          'Niet opgelost: een muur die niet recht is, wordt niet recht. <a href="/algemene-voorwaarden">Artikel 9, lid 6 van de algemene voorwaarden</a> zegt dat woordelijk zo: "Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en overeengekomen uitstraling niet wezenlijk worden aangetast."',
+          'Niet opgelost: wat er na het inmeten aan de ruimte verandert. Artikel 3, lid 2 legt die meldplicht bij jou: "Opdrachtgever meldt iedere wijziging aan muren, vloeren, plafonds, leidingen, aansluitpunten of andere relevante onderdelen die na het inmeten plaatsvindt."',
         ],
       },
       {
         heading: 'Waarom twee bedragen naast elkaar nog geen vergelijking zijn',
-        body: 'De vraag of een keuken op maat het waard is, wordt bijna altijd beantwoord met twee bedragen naast elkaar. Dat werkt niet, en de reden staat bij de bron zelf. IKEA noemt voor METOD-keukens een bereik van €4.469 tot €9.775 (ikea.com/be/nl, gelezen 15 september 2026) en zet er meteen bij: "De prijs is afhankelijk van de gekozen afmetingen en keuzes van materiaal en keukentoestellen." Bij JDG geldt hetzelfde principe vanuit de andere kant: alleen de werkzaamheden, materialen en leveringen die in de offerte of opdrachtbevestiging staan, zijn in de prijs inbegrepen (<a href="/algemene-voorwaarden">artikel 2, lid 7</a>). Een totaalbedrag zegt dus niets zonder de lijst die eronder hoort. Zet die lijst naast elkaar en de vergelijking wordt wel eerlijk. Hoe zo\'n lijst bij maatwerk is opgebouwd staat in <a href="/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd">hoe een offerte voor maatwerk is opgebouwd</a>.',
+        body: 'De vraag of een keuken op maat het waard is, wordt bijna altijd beantwoord met twee bedragen naast elkaar. Dat werkt niet, en de reden staat bij de bron zelf. IKEA noemt op de eigen pagina over de prijs van een IKEA-keuken (ikea.com/be/nl, gelezen 15 september 2026) voor METOD-keukens een bereik van €4.469 tot €9.775 en zet er meteen bij: "De prijs is afhankelijk van de gekozen afmetingen en keuzes van materiaal en keukentoestellen." Bij JDG geldt hetzelfde principe vanuit de andere kant, en ook dat staat woordelijk in de voorwaarden: "Alleen de werkzaamheden, materialen en leveringen die in de offerte of opdrachtbevestiging staan, zijn in de prijs inbegrepen" (<a href="/algemene-voorwaarden">artikel 2, lid 7</a>). Een totaalbedrag zegt dus niets zonder de lijst die eronder hoort. Zet die lijst naast elkaar en de vergelijking wordt wel eerlijk. Hoe zo\'n lijst bij maatwerk is opgebouwd staat in <a href="/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd">hoe een offerte voor maatwerk is opgebouwd</a>.',
         bullets: [
           'Zit het inmeten erin, en wie doet het?',
           'Zitten de fronten, de grepen en het beslag erin, of is dat een keuzelijst?',
@@ -1174,7 +1187,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Wanneer de rekensom omslaat naar maatwerk',
-        body: 'De keuze voor een keuken op maat wordt zelden beslist door smaak. Hij wordt beslist door een beperking in de ruimte die zich niet laat wegwerken met een paneel. Van de zestien projecten die op <a href="/projecten">de projectenpagina van JDG</a> staan, staan er zeven tegen een vlak dat niet recht is: een dakschuinte, een dakkapel, een trapprofiel of een nis in de wand. Dat is na te tellen. In geen van die zeven had een rechthoekige kast uit een raster gepast, hoeveel panelen je er ook bij koopt.',
+        body: 'De keuze voor een keuken op maat wordt zelden beslist door smaak. Hij wordt beslist door een beperking in de ruimte die zich niet laat wegwerken met een paneel. Van de zestien projecten die op <a href="/projecten">de projectenpagina van JDG</a> staan, staan er zeven tegen een vlak dat niet recht is. Tel zelf mee, want de regel is expres eng gehouden: een project telt mee als de beschrijving die op die pagina staat zelf een schuine wand of een schuin dak, een dakkapel, dakspanten of de punt van het dak, een trapprofiel of een kast die de trap volgt, of een nis noemt. De categorie en de foto tellen niet mee, want een kast die "trapkast" heet zat daarom nog niet tegen een schuinte. Geteld op 15 september 2026 levert dat zeven op: het wandsysteem in walnoot (nis), de commodes in de dakkapel, de trapkast met kleuraccenten, de kastenwand onder de trap, de zolderinbouw met lades tot in de punt van het dak, de kinderkamerkast onder de dakkapel en de zolderinbouw met de hangroede in dakvorm. In geen van die zeven had een rechthoekige kast uit een raster gepast, hoeveel panelen je er ook bij koopt.',
         bullets: [
           'Een schuinte, een trapprofiel of een nis: er is geen rechthoek die daar past.',
           'Een muur die zichtbaar uit het lood staat, waardoor een kant-en-klare kast aan de bovenkant een andere kier heeft dan aan de onderkant.',
@@ -1190,7 +1203,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Waar dit antwoord vandaan komt, en wat er bewust niet staat',
-        body: 'De maten van het METOD-systeem in dit artikel zijn op 15 september 2026 uitgelezen op de eigen pagina\'s van IKEA: de productpagina\'s van de METOD onderkast, het hoge kastelement en de poot van 8 cm, plus de helpartikelen over het maken van een passtuk en over de montagehoogte van de ophangrail. Het prijsbereik komt van de IKEA-pagina over de prijs van een keuken. Alles wat hierboven over JDG zelf staat, komt uit de algemene voorwaarden versie 5 augustus 2026 die integraal op deze site staan, met het artikelnummer erbij, of is op de projectenpagina na te tellen. Wat hier bewust niet staat: bedragen van JDG, richtprijzen per meter, garantietermijnen, levertijden, en een oordeel over de kwaliteit of de levensduur van een IKEA-keuken. Dat laatste is geen bescheidenheid maar een meetprobleem: JDG heeft er geen eigen meting van, en een oordeel zonder meting hoort hier niet. Op deze site staat geen prijslijst, omdat dezelfde meter met een ander front, ander beslag en een andere situatie ter plaatse een ander bedrag oplevert. Het eerste gesprek en de offerte zijn gratis en vrijblijvend, en het staat je vrij om met de drie maten hierboven eerst zelf te rekenen.',
+        body: 'Een pagina die je vraagt zelf te gaan rekenen, moet laten zien waar de getallen vandaan komen. Daarom staat het hier uitgeschreven. De maten van het METOD-systeem zijn op 15 september 2026 stuk voor stuk teruggezocht op de pagina van IKEA zelf, en daar letterlijk in de tekst teruggevonden. De vijf onderkastbreedtes staan in de productnaam op de vijf onderkastpagina\'s van ikea.com/nl/nl (artikelnummers 30212562, 50417195, 80213432, 50205626 en 10205633, van 20x60x80 tot 80x60x80 cm); de diepte van 37 cm staat op 10205628 (80x37x80 cm); de poot van 8 cm is artikel 70556067; de hoge kasten van 200 en 220 cm zijn 60212565 en 90212564; de bovenkasthoogtes staan op de categoriepagina voor bovenkasten en op 20205538 (60x37x100 cm); dat een romp van 80 cm op poten van 8 cm staat, staat in het IKEA-helpartikel over de montagehoogte van de ophangrail; en de twee passtukmaten plus de zin dat je een passtuk zelf uit een bedekkingspaneel zaagt, komen uit het IKEA-helpartikel "Hoe maak ik een passtuk voor mijn IKEA keuken?". Van elk van die pagina\'s is die dag een schermafdruk bewaard. Dat is een momentopname: IKEA kan het raster wijzigen, en vind je op ikea.com iets anders dan hierboven, dan heeft ikea.com gelijk. Alles wat hierboven over JDG zelf staat, is een letterlijk citaat uit de algemene voorwaarden versie 5 augustus 2026 met het lidnummer erbij, na te lezen op <a href="/algemene-voorwaarden">de pagina met de algemene voorwaarden</a>, of het is de telling op <a href="/projecten">de projectenpagina</a> die hierboven met telregel en al staat uitgeschreven. Wat hier bewust niet staat: bedragen van JDG, richtprijzen per meter, garantietermijnen, levertijden, en een oordeel over de kwaliteit of de levensduur van een IKEA-keuken. Dat laatste is geen bescheidenheid maar een meetprobleem: JDG heeft er geen eigen meting van, en een oordeel zonder meting hoort hier niet. Op deze site staat geen prijslijst, omdat dezelfde meter met een ander front, ander beslag en een andere situatie ter plaatse een ander bedrag oplevert. Het eerste gesprek en de offerte zijn gratis en vrijblijvend, en het staat je vrij om met de drie maten hierboven eerst zelf te rekenen.',
       },
     ],
     faq: [
@@ -1200,11 +1213,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: 'Hoe breed moet een passtuk in een keuken minimaal zijn?',
-        a: 'IKEA schrijft in het eigen helpartikel over passtukken voor dat er tussen de muur en de kast voor de koelkast altijd een passtuk van minimaal 5 cm moet zitten, en dat een passtuk bij een METOD-hoekkast 7,5 cm of breder hoort te zijn, afhankelijk van de beschikbare ruimte (gelezen 15 september 2026). Een passtuk koop je niet als apart product op maat: je koopt een bedekkingspaneel en zaagt dat zelf op maat. In een keuken op maat bestaat het passtuk niet, omdat de kast zelf de maat van de ruimte heeft.',
+        a: 'In het eigen helpartikel over passtukken schrijft IKEA het zo op, gelezen op 15 september 2026: "Tussen de muur en de kast voor de koelkast moet je altijd een passtuk van minimaal 5 cm plaatsen." Voor de onderhoekkast staat er dat je het bedekkingspaneel zaagt "op een breedte van 7.5 cm of breder als er meer ruimte zit tussen de onderhoekkast en de kast ernaast". Een passtuk koop je dus niet als apart product op maat: "Om een passtuk te maken, gebruik je een bedekkingspaneel dat je zelf op maat zaagt." In een keuken op maat bestaat het passtuk niet, omdat de kast zelf de maat van de ruimte heeft.',
       },
       {
         q: 'Welke kastmaten heeft een IKEA-keuken precies?',
-        a: 'Voor het METOD-systeem, uitgelezen op ikea.com op 15 september 2026: onderkasten in 20, 30, 40, 60 en 80 cm breed, in een diepte van 37 of 60 cm, met een romphoogte van 80 cm. De poten zijn 8 cm en verstelbaar. Bovenkasten zijn 40, 60, 80 of 100 cm hoog. Hoge kasten zijn 200 of 220 cm hoog en eindigen met de poot dus op 208 of 228 cm boven de vloer. Andere merken hebben een ander raster, maar altijd een eindig aantal maten.',
+        a: 'Voor het METOD-systeem, op 15 september 2026 per maat teruggezocht in de productnaam op de betreffende pagina van ikea.com/nl/nl: onderkasten in 20, 30, 40, 60 en 80 cm breed, in een diepte van 37 of 60 cm, met een romphoogte van 80 cm. De poten zijn 8 cm en verstelbaar. Bovenkasten zijn 40, 60, 80 of 100 cm hoog. Hoge kasten zijn 200 of 220 cm hoog en eindigen met de poot dus op 208 of 228 cm boven de vloer. Onderaan de pagina hierboven staat per maat welk artikelnummer dat is, zodat je het kunt nakijken. Het is een momentopname van een catalogus: wijkt ikea.com af, dan heeft ikea.com gelijk. Andere merken hebben een ander raster, maar altijd een eindig aantal maten.',
       },
       {
         q: 'Kan ik een bestaande IKEA-keuken laten aanvullen met maatwerk?',
@@ -1212,17 +1225,17 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: 'Waarom staan er op deze pagina geen prijzen van JDG?',
-        a: 'Omdat een bedrag zonder de bijbehorende lijst niets zegt. Alleen de werkzaamheden, materialen en leveringen die in de offerte of opdrachtbevestiging staan zijn in de prijs inbegrepen (algemene voorwaarden, artikel 2, lid 7). Dezelfde meter keuken kost met een ander front, ander beslag, een ander werkblad en een andere situatie ter plaatse een ander bedrag. Het eerste gesprek en de offerte zijn gratis en vrijblijvend.',
+        a: 'Omdat een bedrag zonder de bijbehorende lijst niets zegt. De voorwaarden zeggen het woordelijk: "Alleen de werkzaamheden, materialen en leveringen die in de offerte of opdrachtbevestiging staan, zijn in de prijs inbegrepen" (artikel 2, lid 7). Dezelfde meter keuken kost met een ander front, ander beslag, een ander werkblad en een andere situatie ter plaatse een ander bedrag. Het eerste gesprek en de offerte zijn gratis en vrijblijvend.',
       },
       {
         q: 'Sluit een keuken op maat wel tot de laatste millimeter aan?',
-        a: 'Niet altijd, en dat staat zwart op wit in de eigen voorwaarden van JDG. Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak, en kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en de overeengekomen uitstraling niet wezenlijk worden aangetast (artikel 9, lid 6). Wat maatwerk wel wegneemt is de rest uit het maatraster: er is geen veelvoud van tien centimeter meer waar de opstelling omheen moet.',
+        a: 'Niet altijd, en dat staat zwart op wit in de eigen voorwaarden van JDG. Artikel 9, lid 6 luidt woordelijk: "Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en overeengekomen uitstraling niet wezenlijk worden aangetast." Wat maatwerk wel wegneemt is de rest uit het maatraster: er is geen veelvoud van tien centimeter meer waar de opstelling omheen moet.',
       },
     ],
     verwijzingen: [
       { label: 'Keukens op maat: wat JDG maakt en hoe het loopt', href: '/diensten/keukens-op-maat' },
-      { label: 'De projecten, waaronder de zeven tegen een schuinte, een trapprofiel of een nis', href: '/projecten' },
-      { label: 'De algemene voorwaarden van JDG, met de artikelen 2, 3 en 9', href: '/algemene-voorwaarden' },
+      { label: 'De projecten, met de zeven van de zestien tegen een schuinte, een trapprofiel of een nis', href: '/projecten' },
+      { label: 'De algemene voorwaarden van JDG: artikel 2 lid 7, artikel 3 lid 1 en 2, artikel 9 lid 6', href: '/algemene-voorwaarden' },
       { label: 'Hoe een offerte voor maatwerk is opgebouwd', href: '/blog/hoe-een-offerte-voor-maatwerk-is-opgebouwd' },
       { label: 'De werkwijze: van inmeten en tekening tot montage en oplevering', href: '/werkwijze' },
       { label: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?', href: '/blog/keuken-of-kast-past-niet-verkeerd-ingemeten' },
