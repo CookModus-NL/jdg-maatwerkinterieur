@@ -1,0 +1,77 @@
+{
+  "script": "scripts/meting-av-citaten.mjs",
+  "gemeten_op": "2026-09-17T10:09:09.033Z",
+  "live_url": "https://www.jdg-maatwerkinterieur.nl/algemene-voorwaarden",
+  "live_status": 200,
+  "bron_bestand": "app/algemene-voorwaarden/page.tsx",
+  "av_versie_op_pagina": "5 augustus 2026",
+  "citaten": [
+    {
+      "verwijzing": "artikel 2, lid 7",
+      "gebruikt_in": "content/blog.ts — keuken-op-maat-of-ikea-keuken (blok \"wat kost het\", FAQ \"waarom staat er geen prijs\")",
+      "citaat": "Alleen de werkzaamheden, materialen en leveringen die in de offerte of opdrachtbevestiging staan, zijn in de prijs inbegrepen.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 7,
+      "live_staat_op_lid": 7,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    },
+    {
+      "verwijzing": "artikel 3, lid 1",
+      "gebruikt_in": "content/blog.ts — keuken-op-maat-of-ikea-keuken (blok \"een keuken zonder raster\")",
+      "citaat": "Wanneer JDG de maatvoering verzorgt, wordt deze zorgvuldig opgenomen op basis van de op dat moment aanwezige situatie.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 1,
+      "live_staat_op_lid": 1,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    },
+    {
+      "verwijzing": "artikel 3, lid 2",
+      "gebruikt_in": "content/blog.ts — keuken-op-maat-of-ikea-keuken (blok \"wat maatwerk niet oplost\")",
+      "citaat": "Opdrachtgever meldt iedere wijziging aan muren, vloeren, plafonds, leidingen, aansluitpunten of andere relevante onderdelen die na het inmeten plaatsvindt.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 2,
+      "live_staat_op_lid": 2,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    },
+    {
+      "verwijzing": "artikel 9, lid 6",
+      "gebruikt_in": "content/blog.ts — keuken-op-maat-of-ikea-keuken (twee blokken + FAQ) en kast-onder-schuin-dak",
+      "citaat": "Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en overeengekomen uitstraling niet wezenlijk worden aangetast.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 6,
+      "live_staat_op_lid": 6,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    },
+    {
+      "verwijzing": "artikel 9, lid 7",
+      "gebruikt_in": "content/blog.ts — kast-onder-schuin-dak (blok \"wanneer een kast niet het antwoord is\" + FAQ)",
+      "citaat": "JDG waarschuwt opdrachtgever wanneer een gewenste uitvoering naar professioneel inzicht ondeugdelijk, onveilig of technisch onverantwoord is.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 7,
+      "live_staat_op_lid": 7,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    }
+  ],
+  "gevonden": 5,
+  "totaal": 5
+}
