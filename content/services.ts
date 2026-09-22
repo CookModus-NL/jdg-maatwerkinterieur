@@ -54,7 +54,7 @@ export const services: Service[] = [
       'JDG werkt vanaf schets tot montage aan hetzelfde project. Ontwerp, productie in eigen werkplaats en plaatsing komen samen uit één huis, waardoor er niets tussen wal en schip valt en de kwaliteit strak in de hand blijft.',
     ],
     benefits: [
-      { title: 'Millimeterprecies', body: 'Elke lade, elk kastdeurtje en elke plank passen exact. Geen kitranden om scheve naden weg te werken.' },
+      { title: 'Millimeterprecies', body: 'Elke lade, elk kastdeurtje en elke plank passen exact. Afkitten langs de muur hoort bij de oplevering; een kitrand of vulpaneel om een scheve naad te verbergen niet.' },
       { title: 'Eén huisstijl door het hele project', body: 'Ontwerp, productie en montage komen samen. Geen tussenlagen, geen ruis in de vertaling.' },
       { title: 'Vrij in keuze materialen en fronten', body: 'Werkbladen in composiet, keramiek of natuursteen. Fronten in lak, fineer, deco legno of melamine. Combineren mag.' },
       { title: 'Gemaakt om te blijven', body: 'Materialen worden met zorg gekozen, om kwaliteit en een lange levensduur te kunnen garanderen.' },
