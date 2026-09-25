@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// meting-prijsuitleg.mjs — WAT LEGGEN DE PAGINA'S DIE GOOGLE ZELF GEBRUIKT WERKELIJK UIT
+// meting-prijsuitleg.mjs: WAT LEGGEN DE PAGINA'S DIE GOOGLE ZELF GEBRUIKT WERKELIJK UIT
 // over de vraag "waarom is maatwerk duurder dan standaard"?
 //
 // Aanleiding: interventiecontract 5d2d15ad (jdg, vraagdekking 6b5dffbc "Waarom is een kast of
