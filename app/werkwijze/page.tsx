@@ -95,6 +95,22 @@ export default function Werkwijze() {
           </div>
 
           <div className="mt-16 max-w-3xl border-t border-ink-900/15 pt-8">
+            <h2 className="font-display text-2xl text-ink-950">En als er eerst een plan moet komen?</h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-ink-700">
+              Stap 02 is het ontwerp van het meubel, en dat zit in deze vier stappen. Gaat de vraag over de ruimte zelf &mdash; een
+              andere indeling, een wand die weg moet, meerdere kamers die op elkaar moeten aansluiten &mdash; dan is dat het werk van
+              een ontwerper en komen wij daarna. Wie je in welk geval nodig hebt, wat de beroepsnamen wettelijk wel en niet zeggen en
+              wie er inmeet als je ze allebei inschakelt, staat in een eigen stuk uitgeschreven.
+            </p>
+            <Link
+              href="/blog/binnenhuisarchitect-interieurstylist-of-interieurbouwer"
+              className="mt-4 inline-flex items-center gap-2 text-[15px] text-ink-900 underline underline-offset-4 decoration-ink-300 hover:text-jdg-700 hover:decoration-jdg-700 transition-colors"
+            >
+              Heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer? <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-16 max-w-3xl border-t border-ink-900/15 pt-8">
             <h2 className="font-display text-2xl text-ink-950">En als de maat niet blijkt te kloppen?</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-ink-700">
               Het inmeten en de montage zijn bij JDG hetzelfde werk als het tekenen en het bouwen, en daarom kan het meetrisico niet

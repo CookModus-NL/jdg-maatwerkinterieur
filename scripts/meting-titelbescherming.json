@@ -1,0 +1,50 @@
+{
+ "regeling": "BWBR0004189",
+ "naam": "Wet op de architectentitel",
+ "artikel": 23,
+ "lid": 1,
+ "bron": "https://wetten.overheid.nl/BWBR0004189/2021-08-26",
+ "toestand": "2021-08-26",
+ "gemeten_op": "2026-09-25",
+ "citaat_woordelijk_gevonden": true,
+ "beschermde_titels_aanwezig": [
+  {
+   "woord": "architect",
+   "gevonden": true
+  },
+  {
+   "woord": "stedenbouwkundige",
+   "gevonden": true
+  },
+  {
+   "woord": "tuin- en landschapsarchitect",
+   "gevonden": true
+  },
+  {
+   "woord": "interieurarchitect",
+   "gevonden": true
+  }
+ ],
+ "niet_genoemde_woorden_afwezig": [
+  {
+   "woord": "binnenhuisarchitect",
+   "afwezig": true
+  },
+  {
+   "woord": "interieurstylist",
+   "afwezig": true
+  },
+  {
+   "woord": "interieurontwerper",
+   "afwezig": true
+  },
+  {
+   "woord": "interieuradviseur",
+   "afwezig": true
+  }
+ ],
+ "gebruikt_in": [
+  "content/blog.ts — binnenhuisarchitect-interieurstylist-of-interieurbouwer (blok \"Van die namen is er precies een wettelijk beschermd\" + FAQ \"Is binnenhuisarchitect een beschermde titel?\")",
+  "content/faq.ts — proces, \"Heb ik eerst een interieurstylist of binnenhuisarchitect nodig?\""
+ ]
+}

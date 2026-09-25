@@ -39,6 +39,11 @@ const CITATEN = [
     gebruikt_in: 'content/blog.ts — keuken-op-maat-of-ikea-keuken (blok "wat maatwerk niet oplost")',
   },
   {
+    artikel: 3, lid: 7,
+    tekst: 'Ontwerpen, tekeningen, renders en technische oplossingen blijven intellectueel eigendom van JDG en mogen zonder schriftelijke toestemming niet door derden worden uitgevoerd of gekopieerd.',
+    gebruikt_in: 'content/blog.ts — binnenhuisarchitect-interieurstylist-of-interieurbouwer (FAQ "van wie is de tekening die JDG maakt") en zelf-monteren-of-alleen-laten-maken (FAQ)',
+  },
+  {
     artikel: 9, lid: 6,
     tekst: 'Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en overeengekomen uitstraling niet wezenlijk worden aangetast.',
     gebruikt_in: 'content/blog.ts — keuken-op-maat-of-ikea-keuken (twee blokken + FAQ) en kast-onder-schuin-dak',

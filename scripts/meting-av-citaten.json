@@ -1,6 +1,6 @@
 {
   "script": "scripts/meting-av-citaten.mjs",
-  "gemeten_op": "2026-09-17T10:09:09.033Z",
+  "gemeten_op": "2026-09-25T07:54:25.443Z",
   "live_url": "https://www.jdg-maatwerkinterieur.nl/algemene-voorwaarden",
   "live_status": 200,
   "bron_bestand": "app/algemene-voorwaarden/page.tsx",
@@ -46,6 +46,19 @@
       "bron_tekst_op_dat_lid": null
     },
     {
+      "verwijzing": "artikel 3, lid 7",
+      "gebruikt_in": "content/blog.ts — binnenhuisarchitect-interieurstylist-of-interieurbouwer (FAQ \"van wie is de tekening die JDG maakt\") en zelf-monteren-of-alleen-laten-maken (FAQ)",
+      "citaat": "Ontwerpen, tekeningen, renders en technische oplossingen blijven intellectueel eigendom van JDG en mogen zonder schriftelijke toestemming niet door derden worden uitgevoerd of gekopieerd.",
+      "bron_ok": true,
+      "live_ok": true,
+      "bron_leden_in_artikel": 7,
+      "live_leden_in_artikel": 7,
+      "bron_staat_op_lid": 7,
+      "live_staat_op_lid": 7,
+      "live_tekst_op_dat_lid": null,
+      "bron_tekst_op_dat_lid": null
+    },
+    {
       "verwijzing": "artikel 9, lid 6",
       "gebruikt_in": "content/blog.ts — keuken-op-maat-of-ikea-keuken (twee blokken + FAQ) en kast-onder-schuin-dak",
       "citaat": "Bestaande muren, vloeren en plafonds zijn niet altijd volledig recht of vlak. Kleine noodzakelijke aansluit- of maatverschillen vormen geen gebrek wanneer de functionaliteit, duurzaamheid en overeengekomen uitstraling niet wezenlijk worden aangetast.",
@@ -72,6 +85,6 @@
       "bron_tekst_op_dat_lid": null
     }
   ],
-  "gevonden": 5,
-  "totaal": 5
+  "gevonden": 6,
+  "totaal": 6
 }

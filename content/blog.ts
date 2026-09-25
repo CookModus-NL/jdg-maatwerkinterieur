@@ -292,7 +292,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'De interieurstylist en de binnenhuisarchitect tekenen, maar bouwen niet',
-        body: 'Een interieurstylist, interieuradviseur of binnenhuisarchitect denkt na over indeling, licht, kleur, materiaal en sfeer. Dat is een eigen vak met een eigen waarde, maar er komt geen kast uit een werkplaats. Zij leveren een plan; de uitvoering gaat daarna alsnog naar een meubelmaker, een interieurbouwer of een aannemer. Wie zoekt op interieuradvies terwijl hij eigenlijk een kast wil laten maken, zoekt dus één schakel te vroeg in de keten.',
+        body: 'Een interieurstylist, interieuradviseur of binnenhuisarchitect denkt na over indeling, licht, kleur, materiaal en sfeer. Dat is een eigen vak met een eigen waarde, maar er komt geen kast uit een werkplaats. Zij leveren een plan; de uitvoering gaat daarna alsnog naar een meubelmaker, een interieurbouwer of een aannemer. Wie zoekt op interieuradvies terwijl hij eigenlijk een kast wil laten maken, zoekt dus één schakel te vroeg in de keten. Welke van de twee jij nodig hebt, wat die beroepsnamen wettelijk wel en niet zeggen en wie er inmeet als je ze allebei inschakelt, staat uitgewerkt in <a href="/blog/binnenhuisarchitect-interieurstylist-of-interieurbouwer">heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer</a>.',
       },
       {
         heading: 'Waar JDG in dit rijtje staat',
@@ -310,6 +310,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     verwijzingen: [
+      { label: 'Heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer?', href: '/blog/binnenhuisarchitect-interieurstylist-of-interieurbouwer' },
       { label: 'Keuken op maat of een standaard- of IKEA-keuken: het verschil in centimeters', href: '/blog/keuken-op-maat-of-ikea-keuken' },
       { label: 'Keukens op maat: wat JDG maakt en hoe het loopt', href: '/diensten/keukens-op-maat' },
       { label: 'De werkwijze: van inmeten en tekening tot montage en oplevering', href: '/werkwijze' },
@@ -1245,6 +1246,134 @@ export const blogPosts: BlogPost[] = [
     hero: '/images/jdg-16.jpg',
     heroAlt: 'L-vormige keuken van JDG met greeploze fronten in beton-look en een licht werkblad dat onder het raamkozijn doorloopt tot tegen de zijwand. Rechtsboven twee bovenkasten in eiken-decor met een geintegreerde afzuigkap eronder, daaronder een vlakke inductiekookplaat in het blad. Op de voorgrond een houten eettafel, links een hoge kastwand in dezelfde beton-look.',
     readingMinutes: 8,
+  },
+  {
+    gepubliceerd: true,
+    slug: 'binnenhuisarchitect-interieurstylist-of-interieurbouwer',
+    title: 'Heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer?',
+    h1: 'Heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer?',
+    metaTitle: 'Binnenhuisarchitect of interieurbouwer?',
+    metaDescription:
+      'Een ontwerper bedenkt hoe de ruimte wordt, een interieurbouwer maakt het meubel. Welke van de twee je nodig hebt, wat de drie beroepsnamen wettelijk wel en niet zeggen, en wie er inmeet als je ze allebei inschakelt.',
+    publishedAt: '2026-09-25',
+    updatedAt: '2026-09-25',
+    author: 'JDG Maatwerk Interieur',
+    category: 'proces',
+    primaryKeyword: 'wat doet een binnenhuisarchitect',
+    relatedKeywords: [
+      'wat doet een interieurstylist',
+      'verschil interieurstylist en binnenhuisarchitect',
+      'verschil binnenhuisarchitect en interieurarchitect',
+      'binnenhuisarchitect of interieurbouwer',
+      'interieurstylist of interieurbouwer',
+      'keuken laten ontwerpen',
+      'binnenhuisarchitect keuken',
+      'heb ik een binnenhuisarchitect nodig',
+    ],
+    intro:
+      'Kort antwoord: een interieurstylist of binnenhuisarchitect bedenkt hoe een ruimte moet worden, een interieurbouwer maakt het meubel dat erin komt. Weet je al wat er moet komen en is de vraag alleen nog of het past en hoe het gemaakt wordt, dan heb je de maker nodig en de ontwerper niet. Verandert er iets aan de ruimte zelf, of weet je nog niet hoe die moet werken, dan is de ontwerper de eerste stap en de maker de tweede. Hieronder staat per geval wie je nodig hebt, wat die drie beroepsnamen wettelijk wel en niet over iemand zeggen, en wat er verandert in de verantwoordelijkheid als je ze allebei inschakelt.',
+    sections: [
+      {
+        heading: 'Van die namen is er precies één wettelijk beschermd',
+        body: 'Interieurstylist, binnenhuisarchitect, interieurontwerper, interieuradviseur: die woorden mag iedereen op zijn bus zetten. Eén woord uit dat rijtje niet. De Wet op de architectentitel zegt in artikel 23, lid 1 woordelijk: "Gerechtigd tot het voeren van de titel van architect, stedenbouwkundige, tuin- en landschapsarchitect of interieurarchitect of een afkorting van die titel, hetzij zonder nadere aanduiding, hetzij in woordsamenstellingen waarin de titel of een afkorting daarvan voorkomt, is uitsluitend hij die onder deze titel in het register staat ingeschreven." (Geldende tekst op wetten.overheid.nl, toestand 26 augustus 2021, gelezen 25 september 2026.) De wet noemt dus vier titels, en interieurarchitect is er één van. Binnenhuisarchitect, interieurstylist, interieurontwerper en interieuradviseur staan niet in dat rijtje. Eerlijk erbij: dezelfde zin verbiedt ook woordsamenstellingen waarin een beschermde titel zit, en of "binnenhuisarchitect" daaronder valt is een vraag voor een jurist, niet voor een meubelmaker. Voor jou verandert dat de praktijk niet, want de controle is dezelfde: het architectenregister is openbaar en doorzoekbaar op naam, dus je kunt in één handeling nakijken of iemand er echt in staat.',
+        bullets: [
+          'Beschermd volgens de wet: architect, stedenbouwkundige, tuin- en landschapsarchitect, interieurarchitect',
+          'Niet in die opsomming genoemd: binnenhuisarchitect, interieurstylist, interieurontwerper, interieuradviseur',
+          'Ook niet in die wet genoemd, en dat geldt net zo goed voor ons: meubelmaker, interieurbouwer, timmerman',
+          'Een titel zegt iets over een inschrijving, niet over of iemand goed werk levert — vraag dus altijd ook om werk dat af is',
+        ],
+      },
+      {
+        heading: 'Wat een ontwerper doet dat een interieurbouwer niet doet',
+        body: 'Een ontwerper kijkt naar de ruimte; een interieurbouwer kijkt naar het meubel dat erin moet. Dat verschil is groter dan het klinkt. Een binnenhuisarchitect of interieurontwerper werkt aan de plattegrond, de looproutes, het daglicht en het kunstlicht, en aan de samenhang tussen kamers die je los van elkaar nooit ziet. Hij of zij werkt bovendien vóórdat er een maker gekozen is, en heeft geen eigen belang bij wie het uiteindelijk bouwt. Dat laatste is een echt voordeel, en het is een voordeel dat wij niet kunnen bieden: wij verkopen ons eigen werk.',
+        bullets: [
+          'Indeling, doorbraken, wanden verplaatsen en waar de leidingen en aansluitpunten komen',
+          'Een licht-, kleur- en materiaalplan dat over meerdere ruimtes klopt in plaats van over één meubel',
+          'Afwegen tussen partijen zonder eigen belang bij de uitvoering',
+          'Coördineren tussen aannemer, installateur, stukadoor en maker',
+        ],
+      },
+      {
+        heading: 'Wat een interieurbouwer doet dat een ontwerper niet doet',
+        body: 'Inmeten op de situatie zoals die er werkelijk bij staat, de constructie bedenken, het maken en het monteren. Bij JDG is dat één lijn zonder tussenlagen: wat JDG tekent, bouwt JDG, en wat JDG bouwt, monteert JDG ook zelf, vanuit de eigen werkplaats in Terheijden. Het ontwerp van het meubel zit dus al in het traject. Na een vrijblijvend gesprek bij je thuis ligt er binnen één à twee weken een schets met materialen en een prijsopgave, en aanpassingen zijn onbeperkt tot je akkoord bent; dat staat stap voor stap in <a href="/werkwijze">de werkwijze</a>. Voor een kast, een keuken of een wandmeubel hoeft daar geen aparte ontwerper aan te pas te komen. Waar het werk van een maker het duidelijkst zichtbaar wordt, is tegen een vlak dat niet recht is: van de zestien projecten op <a href="/projecten">de projectenpagina</a> staan er zeven tegen zo\'n vlak — een schuine wand, een schuin dak, een dakkapel, een trapprofiel of een nis.',
+        bullets: [
+          'Definitief inmeten van de werkelijke ruimte, inclusief scheve muren en niveauverschillen',
+          'De constructie: hoe het meubel draagt, hoe het scharniert en schuift en hoe het aan wand of vloer vastzit',
+          'Produceren in de eigen werkplaats en op locatie monteren en afwerken',
+          'Het ontwerp van het meubel zelf, als onderdeel van dezelfde opdracht',
+        ],
+      },
+      {
+        heading: 'De keuze, in drie vragen',
+        body: 'Je hoeft hier geen vak voor te kennen. Loop deze drie langs, in deze volgorde, en je weet bij wie je begint.',
+        bullets: [
+          'Verandert er iets aan de ruimte zelf — een wand, een raam, een doorbraak, leidingen? Dan begin je bij een ontwerper of een architect, en komt de maker daarna.',
+          'Weet je wat er moet komen, en is de vraag alleen of het past en hoe het gemaakt wordt? Dan heb je de maker nodig en de ontwerper niet.',
+          'Gaat het om kleur, sfeer, losse meubels en accessoires, zonder dat er iets gebouwd of ingebouwd wordt? Dan is een stylist de juiste, en zijn wij het niet.',
+          'Twijfel je tussen de laatste twee? Leg de situatie voor met drie maten en een foto. Blijkt daaruit dat de ruimte eerst een plan nodig heeft, dan hoor je dat — en dan is dat plan de eerste uitgave, niet het meubel.',
+        ],
+      },
+      {
+        heading: 'Schakel je ze allebei in: wie meet er dan in?',
+        body: 'Een ontwerptekening is geen productietekening. Een plan van een ontwerper zegt waar de kast komt, hoe hoog hij is en in welke kleur; het zegt niet hoe de romp is opgebouwd, hoeveel speling er tegen een scheve muur nodig is of waar de kabeldoorvoer zit. De maker meet daarom altijd zelf opnieuw in vóór productie. Dat is geen wantrouwen naar de ontwerper, het is het punt waar de verantwoordelijkheid overgaat — en dat punt is bij JDG zwart op wit vastgelegd. Levert de opdrachtgever zelf maten, tekeningen of technische gegevens aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan (<a href="/algemene-voorwaarden">algemene voorwaarden, artikel 3, lid 3</a>), en komen de gevolgen van onjuiste of onvolledige aangeleverde informatie voor rekening van de opdrachtgever, tenzij JDG de fout kende of die als vakman redelijkerwijs had moeten herkennen (lid 4). Meet JDG zelf in, dan ligt dat risico bij JDG. Wat er dan precies gebeurt als de maat toch niet blijkt te kloppen, staat per artikel uitgeschreven in <a href="/blog/keuken-of-kast-past-niet-verkeerd-ingemeten">wat er gebeurt als de maat niet klopt of iets niet past bij de montage</a>. En het werkt ook de andere kant op: ontwerpen, tekeningen, renders en technische oplossingen die JDG maakt blijven eigendom van JDG en mogen zonder schriftelijke toestemming niet door derden worden uitgevoerd (artikel 3, lid 7). Vraag dat dus vooraf na bij iedereen die iets voor je tekent: van wie is de tekening straks, en mag een ander hem uitvoeren?',
+        bullets: [
+          'Laat de maker altijd zelf definitief inmeten, ook als er al een ontwerptekening ligt',
+          'Spreek vooraf af wie welke maten aanlevert — dat bepaalt bij wie het meetrisico ligt',
+          'Vraag van wie de tekening is na afloop, en of een andere partij hem mag uitvoeren',
+        ],
+      },
+      {
+        heading: 'Wanneer je geen van de drie nodig hebt',
+        body: 'Staat de muur recht, is de ruimte leeg, zit er geen schoorsteen, nis of schuinte in de weg en past je opstelling toevallig in een standaardmaat, dan levert maatwerk je weinig op en een ontwerper nog minder. Koop dan kant-en-klaar. Hoeveel het in centimeters scheelt als de maat níét uitkomt, kun je narekenen in <a href="/blog/keuken-op-maat-of-ikea-keuken">het verschil tussen een keuken op maat en een standaard- of IKEA-keuken</a>; voor de schuine gevallen staat het uitgewerkt in <a href="/blog/kast-onder-schuin-dak-of-schuine-wand">kan een kast onder een schuin dak of tegen een schuine wand</a>.',
+      },
+      {
+        heading: 'Waar JDG in dit rijtje staat',
+        body: 'JDG Maatwerk Interieur is meubelmaker en interieurbouwer. Eigen werkplaats in Terheijden, zelf tekenen, zelf bouwen, zelf plaatsen, en geen fabrikant of tussenpartij ertussen. Los interieuradvies of een stylingtraject zonder dat er iets gemaakt wordt, doet JDG niet — daar is een stylist of een ontwerper voor, en die vind je niet bij ons. Welk verschil er zit tussen een meubelmaker, een interieurbouwer en een keukenzaak, dus tussen de makers onderling, staat uitgewerkt in <a href="/blog/meubelmaker-interieurbouwer-of-keukenzaak">meubelmaker, interieurbouwer of keukenzaak: wie doet wat</a>.',
+        bullets: [
+          'Wel: keukens, kledingkasten, inloopkasten, tv-meubels, boekenkasten en badkamermeubels op maat, elk project vanaf schets',
+          'Wel: het ontwerp van dat meubel, inbegrepen in hetzelfde traject',
+          'Niet: los interieuradvies, styling of een inrichtingsplan zonder uitvoering',
+          'Niet: doorverkopen van een fabriekskeuken uit een maatprogramma',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Is binnenhuisarchitect een beschermde titel?',
+        a: 'De wet noemt vier beschermde titels: architect, stedenbouwkundige, tuin- en landschapsarchitect en interieurarchitect (Wet op de architectentitel, artikel 23, lid 1). Het woord binnenhuisarchitect staat niet in die opsomming; interieurarchitect wel. Dezelfde bepaling gaat ook over woordsamenstellingen waarin een beschermde titel voorkomt, dus of binnenhuisarchitect daar juridisch onder valt, is niet aan ons om te beslissen. Wat je zelf kunt doen is de naam opzoeken in het architectenregister: dat is openbaar.',
+      },
+      {
+        q: 'Moet ik eerst een ontwerper inschakelen voordat ik een keuken of kast op maat laat maken?',
+        a: 'Nee. Het ontwerp van het meubel hoort bij de opdracht: na het eerste gesprek volgt binnen één à twee weken een schets met materialen en een prijsopgave, en aanpassingen zijn onbeperkt tot je akkoord geeft. Een ontwerper heb je nodig als de vraag groter is dan het meubel — een andere indeling, een wand die weg moet, of meerdere ruimtes die op elkaar moeten aansluiten.',
+      },
+      {
+        q: 'Kan ik de tekening van mijn interieurontwerper meenemen naar een meubelmaker?',
+        a: 'Dat kan, maar vraag de ontwerper eerst of dat mag: ook zijn of haar tekening kan intellectueel eigendom zijn. En houd er rekening mee dat de maker hoe dan ook zelf opnieuw komt inmeten. Lever je de maten of de tekening zelf aan, dan mag JDG in beginsel uitgaan van de juistheid daarvan, en komen de gevolgen van onjuiste of onvolledige gegevens voor jouw rekening, tenzij JDG de fout kende of als vakman redelijkerwijs had moeten herkennen (algemene voorwaarden, artikel 3, leden 3 en 4).',
+      },
+      {
+        q: 'Van wie is de tekening die JDG maakt?',
+        a: 'Van JDG. Ontwerpen, tekeningen, renders en technische oplossingen blijven intellectueel eigendom van JDG en mogen zonder schriftelijke toestemming niet door derden worden uitgevoerd of gekopieerd (algemene voorwaarden, artikel 3, lid 7).',
+      },
+      {
+        q: 'Doet JDG ook alleen advies, zonder dat er iets gemaakt wordt?',
+        a: 'Nee. JDG tekent, bouwt en monteert; een los adviestraject of stylingopdracht zonder uitvoering hoort daar niet bij. Zoek je dat wel, dan is een interieurstylist, interieurontwerper of interieurarchitect de juiste partij.',
+      },
+      {
+        q: 'Wat kost een binnenhuisarchitect?',
+        a: 'Dat verschilt per bureau en daar doen wij geen uitspraak over — het is niet ons vak en niet onze prijslijst. Wat je wel altijd kunt vragen voordat je ergens aan tafel gaat: is het een uurtarief, een vast bedrag of een percentage van de uitvoeringssom, wat valt er precies onder, hoeveel aanpassingsrondes zitten erbij, en van wie is de tekening na afloop. Met die vier antwoorden kun je twee offertes echt vergelijken.',
+      },
+    ],
+    verwijzingen: [
+      { label: 'Meubelmaker, interieurbouwer of keukenzaak: wie doet wat?', href: '/blog/meubelmaker-interieurbouwer-of-keukenzaak' },
+      { label: 'De werkwijze: van kennismaking en schets tot montage en oplevering', href: '/werkwijze' },
+      { label: 'De algemene voorwaarden van JDG: artikel 3 over ontwerp, maatvoering en goedkeuring', href: '/algemene-voorwaarden' },
+      { label: 'Wat gebeurt er als de maat niet klopt of iets niet past bij de montage?', href: '/blog/keuken-of-kast-past-niet-verkeerd-ingemeten' },
+      { label: 'De projecten, met zeven van de zestien tegen een schuinte, een trapprofiel of een nis', href: '/projecten' },
+      { label: 'Een situatie voorleggen met drie maten en een foto', href: '/contact' },
+    ],
+    hero: '/images/jdg-08.jpg',
+    heroAlt: 'Zwevend bureau op maat tegen een witte wand: een eikenkleurig blad met een opstaande achterwand waarin twee ronde kabeldoorvoeren zitten, met een iMac erop. Onder het blad drie lades en daartussen een open vak met een toetsenbord en muis. Links een lamellenwand, rechts op de muur een thermostaat en een schakelaar, onderaan een stopcontact met snoer en een houten vloer.',
+    readingMinutes: 6,
   },
 ]
 
