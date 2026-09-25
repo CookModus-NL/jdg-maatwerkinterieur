@@ -1,5 +1,8 @@
 ---
 versie: 2
+# route toegevoegd 23 sep 2026 (wet art. 3.5b): deze site is door l3art gebouwd, dus het
+# contract komt uit ontwerpbesluiten en niet uit een opgraving van een bestaande site.
+route: ontworpen
 klant: jdg
 domein: https://www.jdg-maatwerkinterieur.nl
 opgesteld: 2026-09-02
