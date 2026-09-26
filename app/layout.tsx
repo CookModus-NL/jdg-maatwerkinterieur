@@ -3,7 +3,6 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import Beacon from '@/components/Beacon'
 import { localBusinessSchema, organizationSchema, websiteSchema, founderPersonSchema, siteNavigationSchema } from '@/lib/schema'
 import { business } from '@/content/business'
 import '@fontsource-variable/dm-sans'
@@ -79,8 +78,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <Analytics />
-        <Beacon />
         <SpeedInsights />
+        {/*
+          l3art-beacon (26-09-2026). Telt anoniem dat een bezoeker contact zoekt — klik op
+          tel:, mailto: of WhatsApp, en het versturen van een formulier met een e-mail- of
+          telefoonveld. Nooit wie: sessionStorage, geen cookie, geen identificatie, dus geen
+          gevolgen voor de cookie- of privacytekst.
+
+          Dit verving components/Beacon.tsx, dat hetzelfde deed in eigen code. Eén gedeeld
+          script is op één plek te repareren: de vorige teller stond 18-26 september stil
+          zonder dat iemand het zag. Beide naast elkaar laten staan zou elke klik dubbel
+          tellen, dus het component is verwijderd en niet alleen ontkoppeld.
+
+          `defer`, geen `async`: React hoist alleen async-scripts naar de head, dus deze regel
+          blijft staan waar hij staat, ná de inhoud, en vertraagt de eerste render niet.
+          b.js leest zijn bedrijf uit document.currentScript — dat werkt bij een defer-script,
+          en zonder geldige data-bedrijf doet het script niets.
+        */}
+        <script src="https://l3art.nl/b.js" data-bedrijf="jdg" defer></script>
       </body>
     </html>
   )
