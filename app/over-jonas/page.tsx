@@ -93,7 +93,7 @@ export default function OverJonas() {
                   { title: 'Zonder tussenlagen', body: 'Wat er wordt afgesproken staat op papier. Wat op papier staat, wordt gebouwd. Wat wordt gebouwd, monteert Jonas zelf.' },
                   { title: 'Elk project vanaf schets', body: 'Geen standaard modules. Elke keuken en elke kast begint als leeg vel, en eindigt precies passend in jouw ruimte.' },
                   { title: 'Werkplaats in Terheijden', body: 'Alle onderdelen komen uit één werkplaats. Vanuit daar rijden ze naar jou, klaar om binnen enkele werkdagen te staan.' },
-                  { title: 'Werk waar je op terugkomt', body: 'Constructie voor twintig jaar, scharnieren die je nooit meer hoort, planken die niet gaan zakken. Simpel gezegd: goed werk.' },
+                  { title: 'Werk waar je op terugkomt', body: 'Een constructie die vastzit, scharnieren die je nooit meer hoort, planken die niet gaan zakken. Simpel gezegd: goed werk.' },
                 ].map((b) => (
                   <div key={b.title} className="border-t border-ink-900/15 pt-5">
                     <h3 className="font-display text-2xl text-ink-950 leading-tight">{b.title}</h3>
