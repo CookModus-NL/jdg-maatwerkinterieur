@@ -1,0 +1,111 @@
+{
+  "geteld_op": "2026-09-30",
+  "bron": "content/projects.ts (de lijst die /projecten rendert)",
+  "telmethode": "alleen de zichtbare titel en beschrijving; categorie, slug en foto tellen niet mee",
+  "alle_projecten": {
+    "totaal": 16,
+    "niet_recht": 7
+  },
+  "kast_en_zolderinbouw": {
+    "totaal": 6,
+    "niet_recht": 4
+  },
+  "projecten": [
+    {
+      "slug": "wandsysteem-boekenkast-bureau-walnoot",
+      "category": "boekenkast",
+      "niet_recht": true,
+      "aanwijzing": "nis"
+    },
+    {
+      "slug": "slaapkamer-commodes-dakkapel-eik",
+      "category": "zolderinbouw",
+      "niet_recht": true,
+      "aanwijzing": "dakkapel"
+    },
+    {
+      "slug": "trapkast-samenstelling-blauw-hout",
+      "category": "trapkast",
+      "niet_recht": true,
+      "aanwijzing": "de trap volgt"
+    },
+    {
+      "slug": "zwevend-bureau-imac-eiken",
+      "category": "werkkamer",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "werkkamer-antraciet-wandsysteem",
+      "category": "werkkamer",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "trapkast-mahonie-uitschuiftrap",
+      "category": "trapkast",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "tv-wand-akoestisch-latten",
+      "category": "tv",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "trap-onderkast-wit-modulair",
+      "category": "trapkast",
+      "niet_recht": true,
+      "aanwijzing": "onder de trap"
+    },
+    {
+      "slug": "wandkast-walnoot-solitair",
+      "category": "boekenkast",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "kledingkast-licht-eiken-schuin",
+      "category": "kast",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "losse-kast-eiken-keuken",
+      "category": "kast",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "keuken-betonlook-eiken-najaar",
+      "category": "keuken",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "kookeiland-donker-eiken",
+      "category": "keuken",
+      "niet_recht": false,
+      "aanwijzing": null
+    },
+    {
+      "slug": "zolderinbouw-hangkast-lades",
+      "category": "zolderinbouw",
+      "niet_recht": true,
+      "aanwijzing": "schuine wand"
+    },
+    {
+      "slug": "kinderkamer-blush-roze-wandkast",
+      "category": "kast",
+      "niet_recht": true,
+      "aanwijzing": "schuine wand"
+    },
+    {
+      "slug": "zolderinbouw-wit-hoekopstelling",
+      "category": "zolderinbouw",
+      "niet_recht": true,
+      "aanwijzing": "dakvorm"
+    }
+  ]
+}
