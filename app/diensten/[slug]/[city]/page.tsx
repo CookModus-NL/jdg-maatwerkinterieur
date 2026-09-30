@@ -15,8 +15,10 @@ import {
   PlaatsFeiten,
   ContactBlok,
   PlaatsenRooster,
+  AntwoordeenheidBlok,
   waHref,
 } from '@/components/secties'
+import { tekstZonderLinks } from '@/lib/tekst'
 import { breadcrumbSchema, faqPageSchema, serviceSchema, pageSchema } from '@/lib/schema'
 
 /**
@@ -66,6 +68,11 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
   const vragen = vragenVoorDienst(s.slug, 5)
   const factoren = prijsfactorenVoor(s.slug)
   const buren = nearbyCities(c.slug, 4)
+  // De verdiepte antwoordeenheid staat per rooster-rij (content/lokaal-rooster.ts) en
+  // bestaat alleen waar de zoekvraag gemeten is. Haar vragen staan zichtbaar op de
+  // pagina én in het FAQ-schema; zonder markup, want JSON-LD draagt geen ankers.
+  const eenheid = regel?.antwoordeenheid ?? null
+  const eenheidVragen = (eenheid?.vragen ?? []).map((v) => ({ q: v.q, a: tekstZonderLinks(v.a) }))
   const andereDiensten = services.filter((x) => x.slug !== s.slug)
 
   const kruimels = [
@@ -78,7 +85,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
   const ld = pageSchema([
     breadcrumbSchema(kruimels.map((k) => ({ name: k.name, url: k.url ?? `/diensten/${s.slug}/${c.slug}` }))),
     serviceSchema(s.slug, c.slug),
-    faqPageSchema(vragen),
+    faqPageSchema([...eenheidVragen, ...vragen]),
   ])
 
   return (
@@ -158,6 +165,8 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
           </div>
         </div>
       </section>
+
+      {eenheid && <AntwoordeenheidBlok eenheid={eenheid} />}
 
       {/* Het blok 'Wat je krijgt' en de materialenstrook stonden hier ook. Ze
           zijn identiek voor elke stad én staan al op /diensten/<dienst>, dus ze

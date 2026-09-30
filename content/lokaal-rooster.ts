@@ -39,6 +39,34 @@ import { cities } from './cities'
  * precies hoe het rooster van 96 is ontstaan.
  */
 
+/**
+ * Een verdiepte antwoordeenheid: het volledige antwoord op één gemeten zoekvraag,
+ * op precies één dienst-in-plaats-pagina.
+ *
+ * Waarom dit per rij staat en niet in de sjabloon. Het rooster hierboven is ontstaan
+ * omdat dezelfde tekst op zestien plaatsen de pagina's juist meer op elkaar liet
+ * lijken. Een antwoordeenheid die op elke stad zou verschijnen herhaalt die fout in
+ * een duurdere vorm. Hij hoort dus bij één rij, staat er alleen als de vraag gemeten
+ * is, en de pagina's zonder eenheid veranderen niet.
+ *
+ * Elke tekst mag anker-markup dragen (zie lib/tekst.tsx): alleen interne paden, en
+ * de pagina rendert React-elementen, geen HTML-injectie.
+ */
+export type Antwoordeenheid = {
+  /** De gemeten zoekvraag waarop deze eenheid het beste Nederlandse antwoord wil zijn. */
+  vraag: string
+  kop: string
+  /** Het antwoord in één zin, bovenaan, zodat het los van de pagina leesbaar blijft. */
+  kern: string
+  alineas: string[]
+  /** Zichtbare vraag-en-antwoordblokken. Ze staan letterlijk zo ook in het FAQ-schema. */
+  vragen: { q: string; a: string }[]
+  /** Waar de getallen vandaan komen. Zichtbaar op de pagina, niet in een voetnoot. */
+  bronregel: string
+  /** De zin waarmee /werkgebied/<stad> naar deze eenheid verwijst. */
+  verwijzing: string
+}
+
 export type RoosterRegel = {
   dienst: DienstSlug
   stad: string
@@ -56,6 +84,11 @@ export type RoosterRegel = {
    * koppelen, komen die er hier bovenop en wordt het pas echt onvervangbaar.
    */
   lokaleTekst: string
+  /**
+   * Optioneel: het uitgewerkte antwoord op de gemeten zoekvraag van deze rij.
+   * Alleen invullen waar de vraag gemeten is en er eigen materiaal onder ligt.
+   */
+  antwoordeenheid?: Antwoordeenheid
 }
 
 export const lokaalRooster: RoosterRegel[] = [
@@ -139,7 +172,45 @@ export const lokaalRooster: RoosterRegel[] = [
   { dienst: 'tv-meubels-op-maat', stad: 'roosendaal', vertoningen: 13,
     lokaleTekst:
       'In de vooroorlogse Roosendaalse woningen staat de tv meestal in de voorkamer, met een erker of een schouw die de vrije wand beperkt. In de ruimere naoorlogse wijken is de wand juist lang en leeg, en gaat het erom dat het meubel niet verdrinkt. Twee heel verschillende opgaven, waar in beide gevallen de maat van de wand het ontwerp bepaalt.',
-    bewijs: ['tv wandmeubel roosendaal (13)'] },
+    bewijs: ['tv wandmeubel roosendaal (13)'],
+    antwoordeenheid: {
+      vraag: 'tv wandmeubel roosendaal',
+      kop: 'Een tv-wandmeubel in Roosendaal: eerst de wand, dan de televisie',
+      kern:
+        'Bij een tv-wandmeubel op maat bepaalt de wand de breedte en de televisie alleen de indeling. De vuistregel dat het meubel 15 tot 20 centimeter aan weerszijden breder moet zijn dan het scherm helpt je kiezen uit een bestaande maatreeks; hij helpt je niet bij een wand met een erker, een schouw of een radiator erin.',
+      alineas: [
+        'Die vuistregel is geen bouwkundige norm maar een keuzehulp, en dat verklaart waarom hij overal precies hetzelfde luidt. De samenvatting die Google op 30 september 2026 boven de vraag "hoeveel groter moet je tv-meubel zijn dan je tv" zette, noemt 15 tot 20 centimeter aan weerszijden, een hoogte van 40 tot 55 centimeter en een diepte van 35 tot 45 centimeter. De pagina’s waar die samenvatting naar verwijst zeggen hetzelfde. Zinnig advies — zolang je uit een reeks kiest.',
+        'En dat is wat eronder zit. De twee Nederlandse aanbieders die op 30 september 2026 bovenaan stonden op de zoekopdracht "tv-meubel op maat" verkopen hun maatwerk in een raster: breedtes van 120 tot 400 centimeter met de kleinste stap van 10 centimeter, en dieptes van 30, 35, 40 of 45 centimeter. De een biedt dertien breedtes aan, de ander drieëntwintig. Een regel die zegt "neem twintig centimeter extra" is dan handig, want je hoeft alleen de eerstvolgende stap te pakken. Alleen komt een woonkamerwand zelden op een veelvoud van tien centimeter uit, en wat overblijft is een kier of een strook wand die niets doet. Wat er dan wél gebeurt staat op <a href="/diensten/tv-meubels-op-maat">de pagina over tv-meubels op maat</a>: de maat komt van de wand.',
+        'In Roosendaal levert dat twee verschillende opgaven op, en het is niet hetzelfde probleem. In de vooroorlogse woningen rond de binnenstad en in Kalsdonk staat de televisie meestal in de voorkamer, waar de vrije wand de restmaat is tussen een erker, een schouw of de deur naar de gang: de breedte ligt vast voordat er iets getekend is, en de vraag is wat er binnen die maat nog past. In de ruimere naoorlogse wijken is de wand juist lang en leeg, en is de vraag omgekeerd — hoe voorkom je dat het meubel erin verdwijnt. In het eerste geval bepaalt de maat het ontwerp, in het tweede de verhouding.',
+        'Een vlak dat niet recht is, is in dit werk eerder regel dan uitzondering. Van de zestien projecten op <a href="/projecten">de projectenpagina</a> zijn er zeven gemaakt tegen een vlak dat niet recht is: een nis, een schuine wand, een dakkapel of een trapprofiel. Die telling is van 15 september 2026 en aan de lage kant, want alleen projecten waarvan de beschrijving zelf zo’n vlak noemt tellen mee. Bij het inmeten thuis wordt daarom niet één breedte opgenomen, maar de werkelijke wandlijn, inclusief plint, radiator en scheefstand.',
+      ],
+      vragen: [
+        {
+          q: 'Hoeveel groter moet een tv-meubel zijn dan de tv?',
+          a: 'De gangbare regel is 15 tot 20 centimeter extra aan weerszijden van het scherm, en voor een rustiger beeld anderhalf tot twee keer de schermbreedte; zo stond het op 30 september 2026 ook in de samenvatting die Google boven deze vraag toont. Bij een meubel dat je koopt is dat de juiste vraag, want je kiest uit vaste maten. Bij een wandvullend meubel op maat is het de verkeerde vraag: daar ligt de breedte al vast door de wand, en gaat het erom hoeveel van die breedte gesloten wordt, hoeveel open blijft, en waar het scherm binnen dat vlak zijn plek krijgt.',
+        },
+        {
+          q: 'Waarom zijn tv-meubels zo laag, en hoeveel ruimte hoort er tussen het meubel en de tv?',
+          a: 'De gangbare hoogte is 40 tot 55 centimeter (dezelfde samenvatting, 30 september 2026), en de reden erachter is de enige die telt: het midden van het scherm hoort op ooghoogte als je op de bank zit. Dat is geen vaste maat maar een gevolg van jouw zithoogte en kijkafstand. Bij maatwerk wordt die hoogte daarom bij het inmeten bepaald, met de bank die er staat, in plaats van uit een tabel overgenomen.',
+        },
+        {
+          q: 'Past een standaardmaat op mijn wand?',
+          a: 'Alleen als je wand toevallig op een veelvoud van tien centimeter uitkomt. De twee best gerangschikte Nederlandse aanbieders van een tv-meubel op maat leverden op 30 september 2026 in breedtes van 120 tot 400 centimeter met de kleinste stap van 10 centimeter, en in dieptes van 30, 35, 40 en 45 centimeter. Is je wand 268 centimeter, dan houd je bij de dichtstbijzijnde maat acht centimeter over: aan één kant, of twee keer vier. Bij een losstaand meubel valt dat niet op; bij een wandvullend meubel is die kier het eerste wat je ziet.',
+        },
+        {
+          q: 'Kan een zwevend tv-wandmeubel aan elke muur?',
+          a: 'Niet zonder meer. Een zwevend meubel hangt met zijn eigen gewicht én dat van de apparatuur aan de wand, dus wat er achter het stucwerk zit — metselwerk, een voorzetwand of een dichtgezet schouwkanaal — bepaalt hoe de ophangconstructie eruitziet. Dat is zelden een reden om het niet te doen, maar het is wel iets wat je vóór het ontwerp wilt weten en niet tijdens de montage. Het wordt bij het inmeten vastgesteld.',
+        },
+        {
+          q: 'Wanneer is een tv-wandmeubel op maat niet de beste keuze?',
+          a: 'Als je wand recht en vrij is, de breedte dicht bij een standaardmaat ligt, er geen erker, schouw, radiator of meterkast in de weg zit en je vooral een plek zoekt voor een televisie en een soundbar. Dan lost maatwerk een probleem op dat je niet hebt. Het wordt pas interessant zodra de wand de maat dicteert, de bekabeling door de wand moet, of het meubel tegelijk boekenkast of haardwand is. JDG ontwerpt dat meubel als onderdeel van de bouwopdracht; los interieuradvies of een inrichtingsplan zonder dat er iets gemaakt wordt hoort niet tot het aanbod.',
+        },
+      ],
+      bronregel:
+        'Gemeten op 30 september 2026: de zoekopdrachten "tv wandmeubel roosendaal" en "tv-meubel op maat" in Google Nederland (waarneming via DataForSEO), de samenvatting die Google boven "hoeveel groter moet je tv-meubel zijn dan je tv" toont, en de gepubliceerde maatreeksen van de twee best gerangschikte Nederlandse aanbieders van een tv-meubel op maat. De projecttelling is van 15 september 2026.',
+      verwijzing:
+        'Waarom in een Roosendaalse voorkamer met een erker of een schouw de wand de breedte bepaalt en niet de televisie, staat uitgewerkt op de pagina over <a href="/diensten/tv-meubels-op-maat/roosendaal">een tv-wandmeubel op maat in Roosendaal</a>.',
+    } },
   { dienst: 'kledingkasten-op-maat', stad: 'roosendaal', vertoningen: 5,
     lokaleTekst:
       'De arbeiderswoningen in Kalsdonk en rond de binnenstad hebben smalle slaapkamers waar een kast van standaarddiepte de deur blokkeert. Ondiepere kasten met een andere binnenindeling lossen dat op, iets wat je alleen kunt doen als de kast op de kamer wordt getekend in plaats van andersom.',
@@ -219,6 +290,18 @@ export function stedenVoorDienst(dienst: string) {
     .filter((r) => r.dienst === dienst)
     .sort((a, b) => b.vertoningen - a.vertoningen)
     .map((r) => r.stad)
+}
+
+/**
+ * De verdiepte antwoordeenheden voor deze plaats, sterkste vraag eerst.
+ * De stadpagina verwijst er in lopende tekst naar; een pagina waar niemand
+ * naartoe wijst wordt niet gevonden.
+ */
+export function antwoordeenhedenVoorStad(stad: string) {
+  return lokaalRooster
+    .filter((r) => r.stad === stad && r.antwoordeenheid)
+    .sort((a, b) => b.vertoningen - a.vertoningen)
+    .map((r) => ({ dienst: r.dienst, eenheid: r.antwoordeenheid! }))
 }
 
 /** Diensten met een eigen pagina in deze plaats, sterkste vraag eerst. */

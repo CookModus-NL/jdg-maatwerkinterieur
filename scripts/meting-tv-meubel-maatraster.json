@@ -1,0 +1,75 @@
+{
+  "gemeten_op": "2026-09-30",
+  "zoekopdracht": "tv-meubel op maat",
+  "bronnen": [
+    {
+      "naam": "tv-kasten.nl",
+      "url": "https://tv-kasten.nl/collections/tv-meubel-op-maat",
+      "serp_positie": 1,
+      "http": 200,
+      "breedtes_cm": [
+        120,
+        130,
+        140,
+        150,
+        160,
+        180,
+        200,
+        220,
+        240,
+        250,
+        280,
+        300,
+        400
+      ],
+      "dieptes_cm": [],
+      "kleinste_stap_cm": 10,
+      "bereik_cm": [
+        120,
+        400
+      ]
+    },
+    {
+      "naam": "puuur-interiors.nl",
+      "url": "https://puuur-interiors.nl/wandmeubelen/tv-meubelen/op-maat",
+      "serp_positie": 2,
+      "http": 200,
+      "breedtes_cm": [
+        120,
+        130,
+        140,
+        150,
+        160,
+        170,
+        180,
+        190,
+        200,
+        210,
+        220,
+        230,
+        240,
+        250,
+        260,
+        270,
+        280,
+        300,
+        320,
+        340,
+        350,
+        360,
+        400
+      ],
+      "dieptes_cm": [
+        30,
+        35,
+        40,
+        45
+      ],
+      "kleinste_stap_cm": 10,
+      "bereik_cm": [
+        120,
+        400
+      ]
+    }
+  ]
+}

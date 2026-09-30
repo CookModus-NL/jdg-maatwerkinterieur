@@ -18,6 +18,8 @@ import { ArrowUpRight, MapPin, Phone, MessageCircle } from 'lucide-react'
 import { business } from '@/content/business'
 import type { Project } from '@/content/projects'
 import type { Material } from '@/content/materialen'
+import type { Antwoordeenheid } from '@/content/lokaal-rooster'
+import { tekstMetLinks } from '@/lib/tekst'
 import type { City } from '@/content/cities'
 import { vertrouwensregels } from '@/content/vertrouwen'
 
@@ -218,6 +220,60 @@ export function VragenBlok({
                 </details>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------------------------------------------------------------- */
+
+/**
+ * De verdiepte antwoordeenheid: het volledige antwoord op één gemeten zoekvraag.
+ *
+ * Toegevoegd 30-09-2026. Waarom het een eigen sectie is en geen extra alinea in de
+ * hero: de eenheid moet losgeknipt leesbaar blijven. Een antwoordmachine of een
+ * passage-ranking neemt zelden een hele pagina over, dus staat het antwoord in één
+ * zin bovenaan, staan de getallen mét hun herkomst in de tekst zelf, en zijn de
+ * vervolgvragen gewone koppen — geen uitklapper waar een citaat uit wegvalt.
+ *
+ * De klassen komen letterlijk uit de bestaande secties van deze site: eyebrow,
+ * font-display voor de koppen, ink-700 op 16px/1.75 voor de leestekst en
+ * border-ink-900/15 als scheiding. Geen nieuwe waarde buiten DESIGN.md.
+ */
+export function AntwoordeenheidBlok({ eenheid }: { eenheid: Antwoordeenheid }) {
+  return (
+    <section className="py-24 bg-paper-2">
+      <div className="container-x">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-5">
+            <span className="eyebrow">Het antwoord</span>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] text-ink-950">
+              {eenheid.kop}
+            </h2>
+            <p className="mt-6 text-[16px] leading-[1.75] text-ink-900 max-w-md">{eenheid.kern}</p>
+          </div>
+
+          <div className="col-span-12 lg:col-span-7">
+            {eenheid.alineas.map((t, i) => (
+              <p key={i} className={`${i === 0 ? '' : 'mt-5 '}text-[16px] leading-[1.75] text-ink-700 max-w-2xl`}>
+                {tekstMetLinks(t)}
+              </p>
+            ))}
+
+            <div className="mt-12 border-t border-ink-900/15">
+              {eenheid.vragen.map((v, i) => (
+                <div key={i} className="border-b border-ink-900/15 py-6">
+                  <h3 className="font-display text-xl lg:text-2xl leading-tight text-ink-950">{v.q}</h3>
+                  <p className="mt-3 text-[16px] leading-[1.75] text-ink-700 max-w-2xl">{tekstMetLinks(v.a)}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 font-mono text-[12px] leading-relaxed text-ink-600 max-w-2xl">
+              {eenheid.bronregel}
+            </p>
           </div>
         </div>
       </div>
