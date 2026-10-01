@@ -108,6 +108,20 @@ export type RoosterRegel = {
    * het pad zoekt de verwijzing ook in de bron kan vinden.
    */
   verwijzing?: string
+  /**
+   * De keerzijde van `verwijzing`: de zin waarmee DEZE dienst×stad-pagina zelf zegt dat zij
+   * het antwoord draagt, en waar de rest staat.
+   *
+   * Aanwijzen werkt maar half als alleen de zwakkere pagina wegwijst. De aangewezen pagina
+   * had tot nu toe geen enkele verwijzing in lopende tekst, alleen links in navigatieblokken
+   * onderaan; een passage die uit zo'n pagina wordt geknipt nam dus niets mee over waar zij
+   * thuishoort. Deze zin staat in de leestekst boven de vouw en doet twee dingen tegelijk:
+   * zij zegt wat hier beantwoord wordt en wijst naar de stadpagina en de dienstpagina.
+   *
+   * Zelfde regels als `verwijzing`: alleen interne paden, alleen invullen waar er een reden
+   * voor is, rijen zonder dit veld veranderen niet.
+   */
+  aanwijzing?: string
 }
 
 export const lokaalRooster: RoosterRegel[] = [
@@ -296,7 +310,9 @@ export const lokaalRooster: RoosterRegel[] = [
     // voor de dienstpagina. Nul klikken op beide. De dienstpagina is dus de sterkste en
     // wordt aangewezen; de stadpagina verwijst hier in lopende tekst naartoe.
     verwijzing:
-      'Eén van de zes dingen die JDG maakt heeft voor Dongen een eigen pagina, en dat is het badkamermeubel. Zoek je <a href="/diensten/badkamermeubels-op-maat/dongen">een badkamermeubel op maat in Dongen</a>, dan staat het volledige antwoord daar en niet hier: wat een badkamer in de Dongense buitengebieden praktisch vraagt, de afstand vanaf de werkplaats in Terheijden en de vier stappen van inmeten tot montage. Deze pagina blijft het overzicht van alles wat JDG voor Dongen maakt. Hoe een wastafelmeubel wordt opgebouwd, los van één plaats, staat op <a href="/diensten/badkamermeubels-op-maat">de pagina over badkamermeubels op maat</a>.' },
+      'Eén van de zes dingen die JDG maakt heeft voor Dongen een eigen pagina, en dat is het badkamermeubel. Zoek je <a href="/diensten/badkamermeubels-op-maat/dongen">een badkamermeubel op maat in Dongen</a>, dan staat het volledige antwoord daar en niet hier: wat een badkamer in de Dongense buitengebieden praktisch vraagt, de afstand vanaf de werkplaats in Terheijden en de vier stappen van inmeten tot montage. Deze pagina blijft het overzicht van alles wat JDG voor Dongen maakt. Hoe een wastafelmeubel wordt opgebouwd, los van één plaats, staat op <a href="/diensten/badkamermeubels-op-maat">de pagina over badkamermeubels op maat</a>.',
+    aanwijzing:
+      'Alles over een badkamermeubel op maat in Dongen staat op deze pagina: wat de badkamers in de buitengebieden praktisch vragen, de afstand vanaf de werkplaats en de vier stappen van inmeten tot montage. Zoek je iets anders voor Dongen, dan staan de zes diensten bij elkaar op <a href="/werkgebied/dongen">de overzichtspagina voor Dongen</a>; hoe een wastafelmeubel wordt opgebouwd, los van de plaats, staat op <a href="/diensten/badkamermeubels-op-maat">de pagina over badkamermeubels op maat</a>.' },
 
   // ── Oosterhout
   { dienst: 'badkamermeubels-op-maat', stad: 'oosterhout', vertoningen: 4,

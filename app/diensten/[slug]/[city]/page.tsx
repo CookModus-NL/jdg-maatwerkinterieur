@@ -18,7 +18,7 @@ import {
   AntwoordeenheidBlok,
   waHref,
 } from '@/components/secties'
-import { tekstZonderLinks } from '@/lib/tekst'
+import { tekstMetLinks, tekstZonderLinks } from '@/lib/tekst'
 import { breadcrumbSchema, faqPageSchema, serviceSchema, pageSchema } from '@/lib/schema'
 
 /**
@@ -113,6 +113,14 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
             {c.name}. {s.short} Ontwerp, productie en montage komen uit één werkplaats, dus er zit geen
             tussenpartij tussen de tekening en wat er uiteindelijk in je huis staat.
           </p>
+          {/* De keerzijde van de verwijzing op /werkgebied/<stad>: deze pagina zegt zelf dat zij
+              het antwoord draagt en waar de rest staat. Staat alleen in het rooster waar twee
+              eigen URL's op dezelfde zoekopdracht meedingen (content/lokaal-rooster.ts). */}
+          {regel?.aanwijzing && (
+            <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
+              {tekstMetLinks(regel.aanwijzing)}
+            </p>
+          )}
 
           <div className="mt-16 grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-7">
