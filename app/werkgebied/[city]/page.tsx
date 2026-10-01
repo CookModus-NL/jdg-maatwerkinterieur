@@ -7,7 +7,7 @@ import { materialen } from '@/content/materialen'
 import { projects } from '@/content/projects'
 import { faqs } from '@/content/faq'
 import { business } from '@/content/business'
-import { heeftLokalePagina, antwoordeenhedenVoorStad } from '@/content/lokaal-rooster'
+import { heeftLokalePagina, verwijzingenVoorStad } from '@/content/lokaal-rooster'
 import { tekstMetLinks } from '@/lib/tekst'
 import {
   Kruimelpad,
@@ -114,12 +114,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 die niet waterpas ligt — dat zijn geen problemen maar uitgangspunten. Ook {c.kernen.slice(0, 3).join(', ')}{' '}
                 en de rest van gemeente {c.gemeente} vallen binnen hetzelfde werkgebied.
               </p>
-              {/* Verwijzing naar een uitgewerkte antwoordeenheid, alleen waar die bestaat
-                  (content/lokaal-rooster.ts). Zo krijgt de verdiepte pagina een inkomende
-                  link in lopende tekst in plaats van alleen in een lijst. */}
-              {antwoordeenhedenVoorStad(c.slug).map(({ dienst, eenheid }) => (
+              {/* Verwijzing naar de dienst×stad-pagina die het volledige antwoord draagt,
+                  alleen waar die zin in het rooster staat (content/lokaal-rooster.ts): bij een
+                  uitgewerkte antwoordeenheid, of bij een rij die wordt aangewezen omdat twee
+                  eigen URL's op dezelfde zoekopdracht meedingen. Zo krijgt de sterkste pagina
+                  een inkomende link in lopende tekst in plaats van alleen in een lijst. */}
+              {verwijzingenVoorStad(c.slug).map(({ dienst, tekst }) => (
                 <p key={dienst} className="mt-5 text-[16px] leading-[1.75] text-ink-700">
-                  {tekstMetLinks(eenheid.verwijzing)}
+                  {tekstMetLinks(tekst)}
                 </p>
               ))}
             </div>

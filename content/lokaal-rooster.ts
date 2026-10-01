@@ -89,6 +89,25 @@ export type RoosterRegel = {
    * Alleen invullen waar de vraag gemeten is en er eigen materiaal onder ligt.
    */
   antwoordeenheid?: Antwoordeenheid
+  /**
+   * Optioneel: de zin waarmee /werkgebied/<stad> naar DEZE dienst×stad-pagina wijst,
+   * ook als er (nog) geen verdiepte antwoordeenheid onder ligt.
+   *
+   * Waarom dit los van `antwoordeenheid.verwijzing` bestaat. Op twee van de gemeten
+   * zoekopdrachten verschijnen twee EIGEN pagina's naast elkaar in de zoekuitslag: de
+   * dienst×stad-pagina en de stadpagina. Zolang beide op dezelfde vraag meedingen
+   * verdeelt de site haar eigen signaal over twee URL's, en wint geen van de twee.
+   * De remedie is niet samenvoegen (dat vraagt eerst onderzoek naar de bedoeling achter
+   * de vraag) maar AANWIJZEN: de zwakkere pagina zegt in lopende tekst, met een
+   * beschrijvende linktekst, welke pagina het volledige antwoord draagt. Een
+   * antwoordeenheid schrijven is daarvoor niet nodig en zou een andere ingreep zijn.
+   *
+   * Vul hem dus alleen waar Search Console twee eigen URL's op dezelfde vraag laat zien.
+   * Rijen zonder dit veld veranderen niet. Anker-markup mag (zie lib/tekst.tsx): alleen
+   * interne paden, en het volledige pad staat er letterlijk, zodat een controle die op
+   * het pad zoekt de verwijzing ook in de bron kan vinden.
+   */
+  verwijzing?: string
 }
 
 export const lokaalRooster: RoosterRegel[] = [
@@ -268,7 +287,16 @@ export const lokaalRooster: RoosterRegel[] = [
   { dienst: 'badkamermeubels-op-maat', stad: 'dongen', vertoningen: 16,
     lokaleTekst:
       'Dongen heeft naast de dorpskern buitengebieden met langgevelboerderijen, en daarin zijn badkamers vaak later ingebouwd in een ruimte die daar niet voor bedoeld was: een schuine wand, een balk op ooghoogte, een raam op een rare plek. Een wastafelmeubel op maat past zich daaraan aan, met een vochtbestendig corpus en een blad dat de wandlijn volgt.',
-    bewijs: ['badkamermeubel dongen (9)', 'badkamermeubels dongen (7)'] },
+    bewijs: ['badkamermeubel dongen (9)', 'badkamermeubels dongen (7)'],
+    // Twee eigen URL's dongen op dezelfde twee zoekopdrachten mee: deze pagina en
+    // /werkgebied/dongen. Gemeten in motor_gsc (dimensies query,page, 23-08 t/m 19-09-2026):
+    // "badkamermeubel dongen" 35 vertoningen op gemiddelde positie 8,9 voor /diensten/
+    // badkamermeubels-op-maat/dongen tegen 5 vertoningen op positie 13,8 voor
+    // /werkgebied/dongen; "badkamermeubels dongen" 14 vertoningen op positie 7,0, alleen
+    // voor de dienstpagina. Nul klikken op beide. De dienstpagina is dus de sterkste en
+    // wordt aangewezen; de stadpagina verwijst hier in lopende tekst naartoe.
+    verwijzing:
+      'Eén van de zes dingen die JDG maakt heeft voor Dongen een eigen pagina, en dat is het badkamermeubel. Zoek je <a href="/diensten/badkamermeubels-op-maat/dongen">een badkamermeubel op maat in Dongen</a>, dan staat het volledige antwoord daar en niet hier: wat een badkamer in de Dongense buitengebieden praktisch vraagt, de afstand vanaf de werkplaats in Terheijden en de vier stappen van inmeten tot montage. Deze pagina blijft het overzicht van alles wat JDG voor Dongen maakt. Hoe een wastafelmeubel wordt opgebouwd, los van één plaats, staat op <a href="/diensten/badkamermeubels-op-maat">de pagina over badkamermeubels op maat</a>.' },
 
   // ── Oosterhout
   { dienst: 'badkamermeubels-op-maat', stad: 'oosterhout', vertoningen: 4,
@@ -331,15 +359,21 @@ export function stedenVoorDienst(dienst: string) {
 }
 
 /**
- * De verdiepte antwoordeenheden voor deze plaats, sterkste vraag eerst.
- * De stadpagina verwijst er in lopende tekst naar; een pagina waar niemand
- * naartoe wijst wordt niet gevonden.
+ * Alle verwijzingen die /werkgebied/<stad> in lopende tekst hoort te zetten, sterkste
+ * vraag eerst: die van een verdiepte antwoordeenheid én die van een rij die alleen
+ * aangewezen wordt (zie `RoosterRegel.verwijzing`). Een rij levert hoogstens één zin,
+ * dus een pagina met beide krijgt geen dubbele alinea.
+ *
+ * Verving `antwoordeenhedenVoorStad` op 01-10-2026: die functie kon alleen naar een
+ * verdiepte eenheid wijzen, en een pagina aanwijzen vraagt geen verdieping. Een pagina
+ * waar niemand naartoe wijst wordt niet gevonden; twee pagina's die naar dezelfde vraag
+ * wijzen verdelen hun signaal.
  */
-export function antwoordeenhedenVoorStad(stad: string) {
+export function verwijzingenVoorStad(stad: string) {
   return lokaalRooster
-    .filter((r) => r.stad === stad && r.antwoordeenheid)
+    .filter((r) => r.stad === stad && (r.antwoordeenheid?.verwijzing || r.verwijzing))
     .sort((a, b) => b.vertoningen - a.vertoningen)
-    .map((r) => ({ dienst: r.dienst, eenheid: r.antwoordeenheid! }))
+    .map((r) => ({ dienst: r.dienst, tekst: r.antwoordeenheid?.verwijzing ?? r.verwijzing! }))
 }
 
 /** Diensten met een eigen pagina in deze plaats, sterkste vraag eerst. */
