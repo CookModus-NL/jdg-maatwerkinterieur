@@ -1,0 +1,192 @@
+{
+ "tabel": "82550NED",
+ "naam": "Voorraad woningen; gemiddeld oppervlak; woningtype, bouwjaarklasse, regio",
+ "bronhouder": "CBS Open Data (StatLine), cijfers uit de Basisregistratie Adressen en Gebouwen",
+ "bron": "https://opendata.cbs.nl/ODataApi/OData/82550NED/TypedDataSet?$filter=RegioS eq 'GM0855' and Perioden eq '2026JJ00'",
+ "regio": {
+  "code": "GM0855",
+  "naam": "Tilburg (gemeente)"
+ },
+ "peildatum": "1 januari 2026",
+ "periode": "2026JJ00",
+ "gemeten_op": "2026-10-03",
+ "voorraad": {
+  "totaal": 107966,
+  "eengezins": 66645,
+  "meergezins": 41321,
+  "meergezins_aandeel_pct": 38.3,
+  "gemiddelde_oppervlakte_eengezins_m2": 133,
+  "gemiddelde_oppervlakte_meergezins_m2": 73
+ },
+ "bouwjaar": {
+  "voor_1945": {
+   "aantal": 18126,
+   "aandeel_pct": 16.8
+  },
+  "voor_1905": {
+   "aantal": 926,
+   "aandeel_pct": 0.9
+  },
+  "naoorlogs_1945_1975": {
+   "aantal": 31929,
+   "aandeel_pct": 29.6
+  },
+  "grootste_klasse": {
+   "klasse": "1965 tot 1975",
+   "aantal": 17518,
+   "aandeel_pct": 16.2,
+   "waarvan_meergezins": 9060
+  },
+  "kleinste_gemiddelde_oppervlakte": {
+   "klasse": "1945 tot 1955",
+   "m2": 97
+  }
+ },
+ "per_klasse": [
+  {
+   "klasse": "1000 tot 1850",
+   "aantal": 144,
+   "gemiddelde_oppervlakte_m2": 157,
+   "eengezins": 36,
+   "meergezins": 108
+  },
+  {
+   "klasse": "1850 tot 1905",
+   "aantal": 782,
+   "gemiddelde_oppervlakte_m2": 163,
+   "eengezins": 379,
+   "meergezins": 403
+  },
+  {
+   "klasse": "1905 tot 1925",
+   "aantal": 7732,
+   "gemiddelde_oppervlakte_m2": 117,
+   "eengezins": 5783,
+   "meergezins": 1949
+  },
+  {
+   "klasse": "1925 tot 1945",
+   "aantal": 9468,
+   "gemiddelde_oppervlakte_m2": 123,
+   "eengezins": 8388,
+   "meergezins": 1080
+  },
+  {
+   "klasse": "1945 tot 1955",
+   "aantal": 4088,
+   "gemiddelde_oppervlakte_m2": 97,
+   "eengezins": 3159,
+   "meergezins": 929
+  },
+  {
+   "klasse": "1955 tot 1965",
+   "aantal": 10323,
+   "gemiddelde_oppervlakte_m2": 101,
+   "eengezins": 7040,
+   "meergezins": 3283
+  },
+  {
+   "klasse": "1965 tot 1975",
+   "aantal": 17518,
+   "gemiddelde_oppervlakte_m2": 108,
+   "eengezins": 8458,
+   "meergezins": 9060
+  },
+  {
+   "klasse": "1975 tot 1985",
+   "aantal": 11415,
+   "gemiddelde_oppervlakte_m2": 107,
+   "eengezins": 7058,
+   "meergezins": 4357
+  },
+  {
+   "klasse": "1985 tot 1995",
+   "aantal": 12592,
+   "gemiddelde_oppervlakte_m2": 111,
+   "eengezins": 8809,
+   "meergezins": 3783
+  },
+  {
+   "klasse": "1995 tot 2005",
+   "aantal": 13212,
+   "gemiddelde_oppervlakte_m2": 122,
+   "eengezins": 8864,
+   "meergezins": 4348
+  },
+  {
+   "klasse": "2005 tot 2015",
+   "aantal": 9964,
+   "gemiddelde_oppervlakte_m2": 100,
+   "eengezins": 3709,
+   "meergezins": 6255
+  },
+  {
+   "klasse": "2015 tot 2025",
+   "aantal": 10006,
+   "gemiddelde_oppervlakte_m2": 103,
+   "eengezins": 4769,
+   "meergezins": 5237
+  },
+  {
+   "klasse": "Vanaf 2025",
+   "aantal": 722,
+   "gemiddelde_oppervlakte_m2": 75,
+   "eengezins": 193,
+   "meergezins": 529
+  }
+ ],
+ "gebruikt_in": [
+  "content/cities.ts — Tilburg, intro",
+  "content/stadseenheden.ts — antwoordeenheid \"interieurbouwer tilburg\" (kern, alineas, vragen, bronregel)"
+ ],
+ "toetsen": [
+  {
+   "bewering": "woningvoorraad Tilburg 107.966",
+   "klopt": true
+  },
+  {
+   "bewering": "aandeel appartementen 38,3%",
+   "klopt": true
+  },
+  {
+   "bewering": "gemiddelde oppervlakte appartement 73 m2",
+   "klopt": true
+  },
+  {
+   "bewering": "gemiddelde oppervlakte eengezinswoning 133 m2",
+   "klopt": true
+  },
+  {
+   "bewering": "voor 1945 gebouwd 18.126 (16,8%)",
+   "klopt": true
+  },
+  {
+   "bewering": "voor 1905 gebouwd 926 (0,9%)",
+   "klopt": true
+  },
+  {
+   "bewering": "1945-1975 samen 31.929 (29,6%)",
+   "klopt": true
+  },
+  {
+   "bewering": "grootste klasse is 1965 tot 1975",
+   "klopt": true
+  },
+  {
+   "bewering": "die klasse telt 17.518 woningen",
+   "klopt": true
+  },
+  {
+   "bewering": "waarvan 9.060 appartementen",
+   "klopt": true
+  },
+  {
+   "bewering": "kleinste gemiddelde oppervlakte is 1945 tot 1955",
+   "klopt": true
+  },
+  {
+   "bewering": "en die is 97 m2",
+   "klopt": true
+  }
+ ]
+}

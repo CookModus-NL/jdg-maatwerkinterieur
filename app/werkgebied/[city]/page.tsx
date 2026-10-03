@@ -8,9 +8,11 @@ import { projects } from '@/content/projects'
 import { faqs } from '@/content/faq'
 import { business } from '@/content/business'
 import { heeftLokalePagina, verwijzingenVoorStad } from '@/content/lokaal-rooster'
-import { tekstMetLinks } from '@/lib/tekst'
+import { stadseenheidVoor } from '@/content/stadseenheden'
+import { tekstMetLinks, tekstZonderLinks } from '@/lib/tekst'
 import {
   Kruimelpad,
+  AntwoordeenheidBlok,
   ProjectenStrook,
   MaterialenStrook,
   VragenBlok,
@@ -58,6 +60,13 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   // niet alleen in de plaatsnaam verschillen.
   const projecten = [0, 1, 2].map((k) => projects[(index * 3 + k) % projects.length])
   const buren = nearbyCities(c.slug, 4)
+  // De verdiepte antwoordeenheid van DEZE stadpagina (content/stadseenheden.ts) en bestaat
+  // alleen waar de vakvraag op precies deze URL gemeten is. Haar vragen staan zichtbaar op
+  // de pagina EN in het FAQ-schema; zonder markup, want JSON-LD draagt geen ankers. Een
+  // schemavraag die niet zichtbaar op de pagina staat is een nalevingsfout, geen rijkere
+  // weergave (zoekcompliance, 23 sep 2026).
+  const eenheid = stadseenheidVoor(c.slug)
+  const eenheidVragen = (eenheid?.vragen ?? []).map((v) => ({ q: v.q, a: tekstZonderLinks(v.a) }))
   const vragen = faqs
     .filter((f) => f.category === 'algemeen' || f.category === 'proces' || f.category === 'levering')
     .map((f) => ({ q: f.q, a: f.a }))
@@ -79,7 +88,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         url: heeftLokalePagina(s.slug, c.slug) ? `/diensten/${s.slug}/${c.slug}` : `/diensten/${s.slug}`,
       })),
     ),
-    faqPageSchema(vragen),
+    faqPageSchema([...eenheidVragen, ...vragen]),
   ])
 
   return (
@@ -188,6 +197,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
         </div>
       </section>
+
+      {eenheid && <AntwoordeenheidBlok eenheid={eenheid} />}
 
       <ProjectenStrook
         projecten={projecten}

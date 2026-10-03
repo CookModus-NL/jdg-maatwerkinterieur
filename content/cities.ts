@@ -125,7 +125,7 @@ export const cities: City[] = [
     distanceKm: 25,
     postcodePrefix: '50',
     intro:
-      'Tilburg heeft van alles wat: negentiende-eeuwse arbeiderswoningen rond de oude textielfabrieken, appartementen aan de Piushaven en ruime nieuwbouw aan de randen. Vooral in de oudere panden lopen muren zelden zuiver — precies de situatie waarin een kast op maat het verschil maakt met een kast uit de doos.',
+      'Tilburg heeft van alles wat: negentiende-eeuwse arbeiderswoningen rond de oude textielfabrieken, naoorlogse wijken, appartementen aan de Piushaven en ruime nieuwbouw aan de randen. In het oudere deel van de stad is de vraag of de vlakken recht zijn, in het naoorlogse deel of de centimeters passen — en in beide gevallen wordt er eerst ingemeten en daarna getekend.',
     landmark: 'de Piushaven',
     kernen: ['Piushaven', 'Oud-Noord', 'Berkel-Enschot', 'Udenhout', 'Reeshof'],
     nabij: ['gilze', 'rijen', 'dongen', 'waalwijk'],

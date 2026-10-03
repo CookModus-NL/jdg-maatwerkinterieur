@@ -3,6 +3,8 @@ import { MapPin, ArrowUpRight } from 'lucide-react'
 import { cities } from '@/content/cities'
 import { services } from '@/content/services'
 import { business } from '@/content/business'
+import { stadseenheden } from '@/content/stadseenheden'
+import { tekstMetLinks } from '@/lib/tekst'
 
 export const metadata = {
   // "heel Nederland" is waar maar zegt een lokale zoeker niets: 28 vertoningen
@@ -29,6 +31,15 @@ export default function Werkgebied() {
               <p className="mt-8 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
                 JDG werkt door heel Nederland, met focus op Noord- en West-Brabant. Ook kleine projecten in het buitenland zijn welkom.
               </p>
+              {/* Verwijzingen in lopende tekst naar de verdiepte antwoordeenheden op de
+                  stadpagina's (content/stadseenheden.ts). Een overzicht dat alleen plaatsnamen
+                  linkt geeft de sterkste passage geen beschrijvende inkomende link, en een
+                  passage die uit haar pagina wordt geknipt neemt een kaartje niet mee. */}
+              {stadseenheden.map((se) => (
+                <p key={se.stad} className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-ink-700">
+                  {tekstMetLinks(se.eenheid.verwijzing)}
+                </p>
+              ))}
             </div>
           </div>
         </div>

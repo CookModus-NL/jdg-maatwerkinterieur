@@ -308,9 +308,14 @@ export const blogPosts: BlogPost[] = [
         heading: 'Hoe je kiest in drie vragen',
         body: 'Moet het passen in een ruimte die niet recht, niet standaard of niet leeg is? Dan is maatwerk geen luxe maar de enige manier waarop het klopt. Wil je vooral snel en binnen een vast systeem? Dan is een keukenzaak sneller. Weet je nog niet wát je wilt met de ruimte? Dan is een stylist of binnenhuisarchitect de logische eerste stap, en komt de maker daarna.',
       },
+      {
+        heading: 'Welk van de twee problemen in jouw huis speelt',
+        body: 'Of maatwerk bij jou over scheve vlakken of over krappe centimeters gaat, hangt af van het bouwjaar van je woning, en dat verschilt sterk per stad en per wijk. Voor Tilburg staat die verdeling uitgerekend op de woningvoorraad van de hele gemeente: welk probleem een interieurbouwer in een Tilburgse woning moet oplossen, en waarom het bouwjaar dat bepaalt, staat uitgewerkt in <a href="/werkgebied/tilburg">het antwoord over een interieurbouwer in Tilburg</a>.',
+      },
     ],
     verwijzingen: [
       { label: 'Heb ik een interieurstylist of binnenhuisarchitect nodig, of een interieurbouwer?', href: '/blog/binnenhuisarchitect-interieurstylist-of-interieurbouwer' },
+      { label: 'Een interieurbouwer in Tilburg: wat het bouwjaar van de woning bepaalt', href: '/werkgebied/tilburg' },
       { label: 'Keukens op maat: wat JDG maakt en hoe het loopt', href: '/diensten/keukens-op-maat' },
       { label: 'De werkwijze: van inmeten en tekening tot montage en oplevering', href: '/werkwijze' },
     ],

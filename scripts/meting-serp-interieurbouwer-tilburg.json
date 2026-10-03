@@ -1,0 +1,72 @@
+{
+ "zoekopdracht": "interieurbouwer tilburg",
+ "motor": "google",
+ "via": "dataforseo /v3/serp/google/organic/live/advanced",
+ "waarneming": "derde partij",
+ "markt": "Netherlands/nl/desktop",
+ "gemeten_op": "2026-10-03 12:39:26 +00:00",
+ "check_url": "https://www.google.com/search?q=interieurbouwer%20tilburg&hl=nl&gl=NL&ie=UTF-8&uule=w+CAIQIFISCbvkh9vDCcZHEZ8Kvf_OdaGz",
+ "momentopname": "scripts/serp-interieurbouwer-tilburg-20261003.json",
+ "blokken_totaal": 32,
+ "organisch_totaal": 19,
+ "organisch_over_het_beroep": 15,
+ "organisch_overig": 4,
+ "bedrijfsprofielen_lokaal_pakket": 12,
+ "eerste_drie_blokken_zijn_bedrijfsprofielen": true,
+ "ai_overview_aanwezig": false,
+ "beroepshosts_gevonden": [
+  "evokestaffing.com",
+  "nl.indeed.com",
+  "nl.jooble.org",
+  "nl.linkedin.com",
+  "www.jobbird.com",
+  "www.jobleads.com",
+  "www.mbokompas.nl",
+  "www.nationalevacaturebank.nl",
+  "www.technicus.nl",
+  "www.werkzoeken.nl"
+ ],
+ "overige_hosts": [
+  {
+   "rang": 4,
+   "domein": "www.instagram.com"
+  },
+  {
+   "rang": 11,
+   "domein": "www.xunoodlebar.com"
+  },
+  {
+   "rang": 13,
+   "domein": "boversinterieur.nl"
+  },
+  {
+   "rang": 27,
+   "domein": "www.web-index.nl"
+  }
+ ],
+ "gebruikt_in": [
+  "content/stadseenheden.ts — antwoordeenheid \"interieurbouwer tilburg\" (alinea 1, vraag \"Waarom vind ik vooral vacatures?\", bronregel)"
+ ],
+ "toetsen": [
+  {
+   "bewering": "19 organische resultaten geteld",
+   "klopt": true
+  },
+  {
+   "bewering": "15 daarvan gaan over het beroep, niet over het laten maken",
+   "klopt": true
+  },
+  {
+   "bewering": "12 bedrijfsprofielen in het lokale pakket",
+   "klopt": true
+  },
+  {
+   "bewering": "de eerste drie blokken zijn bedrijfsprofielen",
+   "klopt": true
+  },
+  {
+   "bewering": "geen AI-samenvatting op deze zoekopdracht",
+   "klopt": true
+  }
+ ]
+}
