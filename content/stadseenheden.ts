@@ -43,6 +43,15 @@ export const stadseenheden: Stadseenheid[] = [
     // Google Search Console, property https://www.jdg-maatwerkinterieur.nl/,
     // dimensies zoekopdracht × pagina, 2 sep t/m 29 sep 2026, op precies de URL
     // /werkgebied/tilburg: 858 vertoningen over 30 zoekopdrachten, 0 klikken.
+    //
+    // De positie hieronder is de op vertoningen GEWOGEN gemiddelde positie over die
+    // periode — dezelfde rekenwijze die Search Console zelf voor een zoekopdracht ×
+    // pagina rapporteert. Het interventiecontract van deze kans noemt voor dezelfde
+    // zoekopdracht, dezelfde URL en precies dezelfde twintig meetdagen positie 14,2;
+    // dat is de ONGEWOGEN gemiddelde positie over die dagen (14,16). Beide kloppen en
+    // ze gaan over hetzelfde; alleen de weging verschilt. Gewogen: 13,53. Ongewogen:
+    // 14,16. Wie de twee zonder die vermelding naast elkaar ziet, leest een
+    // tegenspraak die er niet is.
     bewijs: [
       'interieurbouwer tilburg (237, positie 13,5)',
       'interieurbouw tilburg (119, positie 20,1)',
@@ -86,7 +95,7 @@ export const stadseenheden: Stadseenheid[] = [
         },
       ],
       bronregel:
-        'Bronnen bij dit antwoord, alle drie na te rekenen. De woningcijfers komen uit CBS-tabel 82550NED ("Voorraad woningen; gemiddeld oppervlak; woningtype, bouwjaarklasse, regio"), gemeente Tilburg, peildatum 1 januari 2026, cijfers uit de Basisregistratie Adressen en Gebouwen; opgehaald op 3 oktober 2026 met scripts/meting-woningvoorraad-tilburg.mjs, dat elk getal op deze pagina tegen de tabel natelt. De zoekuitslag is de Nederlandse Google-uitslag op "interieurbouwer tilburg" van 3 oktober 2026 (Nederland, Nederlands, desktop), een waarneming van DataForSEO en niet van ons; de momentopname en de telling staan in scripts/meting-serp-interieurbouwer-tilburg.mjs. Het maatraster van IKEA METOD is op 15 september 2026 van de eigen productpagina\'s van IKEA gelezen, met een schermafdruk per maat. Bedragen staan hier niet: een prijsopgave volgt na het inmeten.',
+        'Bronnen bij dit antwoord, alle drie na te rekenen. De woningcijfers komen uit CBS-tabel 82550NED ("Voorraad woningen; gemiddeld oppervlak; woningtype, bouwjaarklasse, regio"), gemeente Tilburg, peildatum 1 januari 2026, cijfers uit de Basisregistratie Adressen en Gebouwen; opgehaald op 3 oktober 2026 met scripts/meting-woningvoorraad-tilburg.mjs, dat elk getal op deze pagina tegen de tabel natelt. De zoekuitslag is de Nederlandse Google-uitslag op "interieurbouwer tilburg" van 3 oktober 2026 (Nederland, Nederlands, desktop), een waarneming van DataForSEO en niet van ons; de momentopname en de telling staan in scripts/meting-serp-interieurbouwer-tilburg.mjs. Het maatraster van IKEA METOD is op 15 september 2026 van de eigen productpagina\'s van ikea.com/nl/nl gelezen, zestien maten in de gerenderde tekst teruggevonden met een schermafdruk per maat: onderkast basiselement 20, 30, 40, 60 en 80 centimeter breed (producten 30212562, 50417195, 80213432, 50205626 en 10205633), de romphoogte van 80 centimeter uit diezelfde producten, de METOD poot voor kast van 8 centimeter (product 70556067), de hoge kasten van 200 en 220 centimeter (producten 60212565 en 90212564), en het passtuk van minimaal 5 centimeter naast de koelkastkast uit het IKEA-helpartikel 51ee3539-133e-4b48-880c-bc83d953363e. Bronmeting en schermafdrukken liggen vast onder jdg-bron-ikea-metod-20260915. Bedragen staan hier niet: een prijsopgave volgt na het inmeten.',
       verwijzing:
         'Welk probleem een interieurbouwer in een Tilburgse woning moet oplossen, en waarom het bouwjaar dat bepaalt, staat uitgewerkt in <a href="/werkgebied/tilburg">het antwoord over een interieurbouwer in Tilburg</a>.',
     },
