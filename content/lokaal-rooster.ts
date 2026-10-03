@@ -146,7 +146,7 @@ export const lokaalRooster: RoosterRegel[] = [
   // ── Tilburg
   { dienst: 'kledingkasten-op-maat', stad: 'tilburg', vertoningen: 41,
     lokaleTekst:
-      'Voor een kledingkast levert dat twee heel verschillende opgaven op. Waar de muren niet haaks staan is de bruikbare breedte geen getal maar een reeks: bij de vloer een andere dan tegen het plafond, en dat verschil bepaalt of de kast aansluit of met een kier komt te staan. Waar de muren wel recht zijn maar de kamer krap is, verschuift de winst naar boven: de ruimte tussen een systeemkast en het plafond is dan vaak het enige wat nog vrij is. Welke van de twee het bij jou is, blijkt bij het inmeten en niet uit de bouwperiode van de straat.',
+      'Tilburg heeft veel negentiende-eeuwse arbeiderswoningen rond de oude textielbuurten. Smalle slaapkamers, muren die zelden haaks staan en plinten die je niet zomaar weghaalt. Een kast van 240 centimeter past daar niet in een gat van 240 centimeter, en dat merk je pas als hij er staat. In de appartementen aan de Piushaven en de nieuwbouw in de Reeshof zijn de muren wel recht, maar is de ruimte krap: daar wordt hoogte het antwoord.',
     bewijs: ['kledingkast montage tilburg (20)', 'kledingkast op maat tilburg (20)', 'kast op maat tilburg (1)'],
     antwoordeenheid: {
       vraag: 'kledingkast op maat tilburg',
